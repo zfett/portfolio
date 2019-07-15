@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/zfett
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zfett.github.io
+  * I am zfett (https://keybase.io/zfett) on keybase.
+  * I have a public key ASD1zdfeH5nqoXAkBqv2IaKUDlh-gRlw-eAYRVzBJKAsJAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017d8100365fae0c12cd710d794dec4fe8bfcb01194590413be7c3cc39d783dbd20a",
+      "host": "keybase.io",
+      "kid": "0120f5cdd7de1f99eaa1702406abf621a2940e587e811970f9e018455cc124a02c240a",
+      "uid": "8d193f66691153f2f6119b7244d25f19",
+      "username": "zfett"
+    },
+    "merkle_root": {
+      "ctime": 1563225046,
+      "hash": "662e719b48897cbf1f2aa0fde53f05cb095559804033608d18d2d9831111ddcd8774dad597edcc2b9a42de234792eb0e2ed0dd808a216757a69766f2e83fea7d",
+      "hash_meta": "709973eb643e0a4d8cf6415835e5e09447cdce86ac20e8c7e6f541269e2f1b56",
+      "seqno": 5769043
+    },
+    "service": {
+      "entropy": "0SlLMZ1t4/N4vTyjkz0fNbIR",
+      "hostname": "zfett.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.2.0"
+  },
+  "ctime": 1563225106,
+  "expire_in": 504576000,
+  "prev": "d43b9b76fb9edc39da9a4e7c928f84755c6bc4081776343d96b03ddaf244ed59",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg9c3X3h+Z6qFwJAar9iGilA5YfoEZcPngGEVcwSSgLCQKp3BheWxvYWTESpcCD8Qg1Dubdvue3Dnamk58ko+EdVxrxAgXdjQ9lrA92vJE7VnEIP7FNKGGpl19F+lQlAgBQZpNP9eUGQwHSXpyRJ3WeqUuAgHCo3NpZ8RAdLwPkAt7+6ZkOoCLjGZpjGotNmdB4bSLpkL7ruYUp0eOROCH6CWOy4DRmuBWFT5OymIaVUX2YV7ZaJZWzIMrDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKO45tzkpZ3bWoZL11FT/67vS/JdVL6JOJbMawtEve2Xo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zfett
+
+==================================================================
