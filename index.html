@@ -75,7 +75,16 @@
       <div class="slide-content-text 3"> <!--switch-->
         <h3 class="heading-slide3">CONTACT ME</h3> <!--switch-->
         <p>Want to commission me for your project? Reach out to me at <a href="mailto:zachary.fetters@yahoo.com">zachary(dot)fetters(at)yahoo.com</a></p>
+        <p>Visit <a href="https://keybase.io/zfett">my Keybase</a> to find other ways to follow / contact me!</p>
       </div>
+    </div>
+  </div>
+  
+  <div id="slide" class="slide-4">
+    <img src="i/topLight.svg" class="topBar"/>
+    <div class="thanks">
+      <img src="i/starBGdark.jpg" class="thanksstars"></img>
+      <img src="i/heart.png" class="heart"></img>
     </div>
   </div>
   
@@ -128,6 +137,19 @@
       $(".slide-blob-cont.3").removeClass("active");
       $(".slide-content-text.3").removeClass("active");
       $(".heading-slide3").removeClass("active");
+    }
+  });
+  
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+    var objectSelect = $(".slide-4");
+    var objectPosition = objectSelect.offset().top;
+    if (scroll >= (objectPosition - 10)) {
+      $(".thanks").addClass("active");
+      $(".topBar").addClass("active");
+    } else {
+      $(".thanks").removeClass("active");
+      $(".topBar").removeClass("active");
     }
   });
   </script>
