@@ -2,6 +2,22 @@
 <html lang="en-US">
 <head>
   <title>Zach Fetters - Portfolio</title>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Zach Fetters - Portfolio">
+  <meta property="og:site_name" content="zfett.github.io">
+  <meta property="og:url" content="https://zfett.github.io/">
+  <meta property="og:description" content="Welcome to my Universe!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://zfett.github.io/i/seoCover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="650">
+  <meta name="author" content="Zachary Fetters">
+  <meta name="robots" content="index, nofollow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@zachary_fetters">
+  <meta name="twitter:title" content="Zach Fetters - Portfolio">
+  <meta name="twitter:description" content="Welcome to my Universe!">
+  <meta name="twitter:image" content="https://zfett.github.io/i/seoCover.jpg">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
   <script src="scroll-to-section.min.js"></script>
@@ -27,7 +43,7 @@
   </div>
   
   <div id="slide" class="slide-1">
-    <img src="i/topDark.svg" class="topBar"/>
+    <img src="i/topDark.svg" class="topBar 1"/>
     <div class="slide-right-cont">
       <img src="i/starsBG.jpg" class="stars-bg 1"></img> <!--switch-->
       <div class="slide-blob-cont 1"> <!--switch-->
@@ -45,7 +61,7 @@
   </div>
   
   <div id="slide" class="slide-2">
-    <img src="i/topLight.svg" class="topBar"/>
+    <img src="i/topLight.svg" class="topBar 2"/>
     <div class="slide-right-cont">
       <div class="slide-content-text 2"> <!--switch-->
         <h3 class="heading-slide2">MY PROJECTS</h3> <!--switch-->
@@ -63,7 +79,7 @@
   </div>
   
   <div id="slide" class="slide-3">
-    <img src="i/topDark.svg" class="topBar"/>
+    <img src="i/topDark.svg" class="topBar 3"/>
     <div class="slide-right-cont">
       <img src="i/starsBG.jpg" class="stars-bg 3"></img> <!--switch-->
       <div class="slide-blob-cont 3"> <!--switch-->
@@ -82,7 +98,7 @@
   </div>
   
   <div id="slide" class="slide-4">
-    <img src="i/topLight.svg" class="topBar"/>
+    <img src="i/topLight.svg" class="topBar-Last"/>
     <div class="thanks">
       <img src="i/starBGdark.jpg" class="thanksstars"></img>
       <img src="i/heart.png" class="heart"></img>
@@ -95,11 +111,13 @@
     var objectSelect = $(".slide-1");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".topBar.1").addClass("active");
       $(".stars-bg.1").addClass("active");
       $(".slide-blob-cont.1").addClass("active");
       $(".slide-content-text.1").addClass("active");
       $(".heading-slide1").addClass("active");
     } else {
+      $(".topBar.1").removeClass("active");
       $(".stars-bg.1").removeClass("active");
       $(".slide-blob-cont.1").removeClass("active");
       $(".slide-content-text.1").removeClass("active");
@@ -112,11 +130,13 @@
     var objectSelect = $(".slide-2");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".topBar.2").addClass("active");
       $(".stars-bg.2").addClass("active");
       $(".slide-blob-cont.2").addClass("active");
       $(".slide-content-text.2").addClass("active");
       $(".heading-slide2").addClass("active");
     } else {
+      $(".topBar.2").removeClass("active");
       $(".stars-bg.2").removeClass("active");
       $(".slide-blob-cont.2").removeClass("active");
       $(".slide-content-text.2").removeClass("active");
@@ -129,11 +149,13 @@
     var objectSelect = $(".slide-3");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".topBar.3").addClass("active");
       $(".stars-bg.3").addClass("active");
       $(".slide-blob-cont.3").addClass("active");
       $(".slide-content-text.3").addClass("active");
       $(".heading-slide3").addClass("active");
     } else {
+      $(".topBar.3").removeClass("active");
       $(".stars-bg.3").removeClass("active");
       $(".slide-blob-cont.3").removeClass("active");
       $(".slide-content-text.3").removeClass("active");
@@ -147,10 +169,10 @@
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
       $(".thanks").addClass("active");
-      $(".topBar").addClass("active");
+      $(".topBar-Last").addClass("active");
     } else {
       $(".thanks").removeClass("active");
-      $(".topBar").removeClass("active");
+      $(".topBar-Last").removeClass("active");
     }
   });
   </script>

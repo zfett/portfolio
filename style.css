@@ -294,12 +294,38 @@ body {
   top: 0;
   transform: scaleY(0.5);
   transform-origin: top center;
-  opacity: 1.0;
+  transition: 1s;
+}
+
+.topBar {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  z-index: 5;
+  top: -10px;
+  transform: scaleY(0.5);
+  transform-origin: top center;
   transition: 1s;
 }
 
 .topBar.active {
-  opacity: 0.0;
+  top: 0px;
+  transition: 1s;
+}
+
+.topBar-Last {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  z-index: 5;
+  top: 0;
+  transform: scaleY(0.5);
+  transform-origin: top center;
+  transition: 1s;
+}
+
+.topBar-Last.active {
+  top: -100px;
   transition: 1s;
 }
 
