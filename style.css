@@ -3,15 +3,15 @@
 body {
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(16, 18, 19);
   overflow-x: hidden;
+}
+
+.hero {
+  background-color: rgb(16, 18, 19);
   background-image: url(i/heroBG.jpg);
   background-size: cover;
   background-position: top right;
   background-attachment: fixed;
-}
-
-.hero {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -522,5 +522,46 @@ body {
   }
   100% {
     transform: rotate(0deg) scale(1.0);
+  }
+}
+
+@media only screen and (max-width:1100px) { 
+  .slide-content-text p {
+    font-size: 1rem;
+  }
+	.blob-blur, .blob-blur2, .blob, .blob2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:790px) { 
+  .title-1, .title-2 {
+    font-size: 2rem;
+  }
+  .slide-right-cont, .slide-left-cont {
+    position: absolute;
+    width: 100vw;
+  }
+  .stars-bg, .slide-blob-cont {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:500px) { 
+  .slide-content-text h3 {
+    font-size: 20px;
+  }
+  .slide-content-text h3::after, .slide-content-text h3.active::after {
+    margin-top: 5px !important;
+    height: 15px  !important;
+  }
+  .topBar {
+    display: none;
+  }
+  .topBar-Last {
+    display: none;
+  }
+  .thanksstars {
+    width: 500px;
   }
 }
