@@ -6,6 +6,14 @@ body {
   overflow-x: hidden;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 .hero {
   background-color: rgb(16, 18, 19);
   background-image: url(i/heroBG.jpg);
@@ -119,6 +127,32 @@ body {
   animation-delay: 0s;
 }
 
+.title-1 span::before {
+  content: 'Zachary';
+  position: absolute;
+  font-size: 4rem;
+  color: #46acff;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.25;
+}
+
+.title-2 span::before {
+  content: 'Universe';
+  position: absolute;
+  font-size: 4rem;
+  color: #fcd769;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.25;
+}
+
 .title-2 {
   position: absolute;
   font-size: 4rem;
@@ -135,6 +169,218 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(.41,.21,.49,.91);
   animation-delay: 5s;
+}
+
+
+.twinkle {
+  position: absolute;
+  top: calc(50% + 125px);
+  left: calc(50% - 100px);
+  transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+  transform-origin: 0 0;
+  opacity: 0;
+  width: 65px;
+  height: 65px;
+  background-image: url(i/shooting-star.png);
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+  animation-name: twinkle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+  animation-delay: 3s;
+}
+
+.twinkle-2 {
+  position: absolute;
+  top: calc(50% - 165px);
+  left: calc(50% + 95px);
+  transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+  transform-origin: 0 0;
+  opacity: 0;
+  width: 65px;
+  height: 65px;
+  background-image: url(i/shooting-star.png);
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+  animation-name: twinkle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+  animation-delay: 7s;
+}
+
+.twinkle-3 {
+  position: absolute;
+  top: calc(50% - 55px);
+  left: calc(50% - 165px);
+  transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+  transform-origin: 0 0;
+  opacity: 0;
+  width: 65px;
+  height: 65px;
+  background-image: url(i/shooting-star.png);
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+  animation-name: twinkle;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+  animation-delay: 10s;
+}
+
+@keyframes twinkle {
+  0% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  10% {
+    transform: rotate(360deg) scale(0.75) translate(-50%, -50%);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  30% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  40% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  70% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  80% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  90% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(0.0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  left: 0%;
+  top: calc(50% + 300px);
+  transform: rotateZ(0deg) scale(0.65) translateY(-50%);
+  opacity: 0.25;
+  width: 65px;
+  height: 65px;
+  background-image: url(i/shooting-star.png);
+  background-size: cover;
+  animation-name: star;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.space-ship {
+  position: absolute;
+  right: calc(0% - 65px);
+  top: calc(50% + 300px);
+  transform: rotateZ(0deg) scale(0.65) translateY(-50%);
+  opacity: 0.75;
+  width: 65px;
+  height: 65px;
+  background-image: url(i/space-ship.png);
+  background-size: cover;
+  animation-name: ship;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 15s;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes star {
+  0% {
+    left: 0%;
+    top: calc(50% + 300px);
+    transform: rotateZ(0deg) scale(0.65) translateY(-50%);
+    opacity: 0.25;
+  }
+  25% {
+    left: 100%;
+    top: calc(50% - 300px);
+    transform: rotateZ(750deg) scale(0.85) translateY(-50%);
+    opacity: 1;
+  }
+  50% {
+    left: 100%;
+    top: calc(50% - 300px);
+    transform: rotateZ(750deg) scale(0.85) translateY(-50%);
+    opacity: 1;
+  }
+  75% {
+    left: 100%;
+    top: calc(50% - 300px);
+    transform: rotateZ(750deg) scale(0.85) translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    top: calc(50% - 300px);
+    transform: rotateZ(750deg) scale(0.85) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes ship {
+  0% {
+    right: calc(0% - 65px);
+    top: calc(50% + 300px);
+    transform: rotateZ(-65deg) scale(0.55) translateY(-50%);
+    opacity: 0.75;
+  }
+  25% {
+    right: calc(100% + 65px);
+    top: calc(50% - 300px);
+    transform: rotateZ(-85deg) scale(0.65) translateY(-50%);
+    opacity: 1;
+  }
+  50% {
+    right: calc(100% + 65px);
+    top: calc(50% - 300px);
+    transform: rotateZ(-85deg) scale(0.65) translateY(-50%);
+    opacity: 1;
+  }
+  75% {
+    right: calc(100% + 65px);
+    top: calc(50% - 300px);
+    transform: rotateZ(-85deg) scale(0.65) translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    right: calc(100% + 65px);
+    top: calc(50% - 300px);
+    transform: rotateZ(-85deg) scale(0.65) translateY(-50%);
+    opacity: 1;
+  }
 }
 
 @keyframes title {
@@ -461,12 +707,172 @@ body {
   left: 50%;
   transform: scale(1.0) translate(-50%, -50%);
   transform-origin: 0 0 ;
+  z-index: 2;
+  text-align: center;
+  animation-name: heartbeat;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+  animation-iteration-count: infinite;
+}
+
+.heart-blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1.0) translate(-50%, -50%);
+  transform-origin: 0 0 ;
   z-index: 1;
   text-align: center;
   animation-name: heartbeat;
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(.41,.21,.49,.91);
   animation-iteration-count: infinite;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.scroll-light {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  margin: 0 auto;
+  border: 0px;
+  background-color: rgba(0,0,0,0);
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  background-image: url(i/scroll-light.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.0;
+  transition: 1.1s;
+  z-index: 5;
+  cursor: pointer;
+  outline: 0px;
+  -moz-outline: 0px;
+}
+
+.scroll-light.active {
+  bottom: 30px;
+  opacity: 1.0;
+  transition: 1.1s;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+}
+
+.scroll-dark {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  margin: 0 auto;
+  border: 0px;
+  background-color: rgba(0,0,0,0);
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  background-image: url(i/scroll-dark.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.0;
+  transition: 1.1s;
+  z-index: 5;
+  cursor: pointer;
+  outline: 0px;
+  -moz-outline: 0px;
+}
+
+.scroll-dark.active {
+  bottom: 30px;
+  opacity: 1.0;
+  transition: 1.1s;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(.41,.21,.49,.91);
+}
+
+.scroll-up {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  margin: 0 auto;
+  border: 0px;
+  background-color: rgba(0,0,0,0);
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  background-image: url(i/scroll-up.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.0;
+  transition: 1.1s;
+  z-index: 5;
+  cursor: pointer;
+  outline: 0px;
+  -moz-outline: 0px;
+}
+
+.scroll-up::after {
+  content: 'GO TO TOP';
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  width: 68.5px;
+  text-align: left;
+  top: 10.5px;
+  margin-left: 0px;
+  opacity: 0.0;
+  transition: 1.1s;
+}
+
+.scroll-up:hover::after {
+  margin-left: 20px;
+  opacity: 1.0;
+  transition: 1.1s;
+}
+
+.scroll-up.active {
+  bottom: 30px;
+  opacity: 1.0;
+  transition: 1.1s;
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 30px;
+  }
+  10% {
+    bottom: 40px;
+  }
+  20% {
+    bottom: 30px;
+  }
+  30% {
+    bottom: 40px;
+  }
+  40% {
+    bottom: 30px;
+  }
+  50% {
+    bottom: 30px;
+  }
+  60% {
+    bottom: 30px;
+  }
+  70% {
+    bottom: 30px;
+  }
+  80% {
+    bottom: 30px;
+  }
+  90% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 30px;
+  }
 }
 
 @keyframes heartbeat {
@@ -527,6 +933,9 @@ body {
 }
 
 @media only screen and (max-width:790px) { 
+  .shooting-star, .space-ship {
+    display: none;
+  }
   .title-1, .title-2 {
     font-size: 2rem;
   }
@@ -540,6 +949,9 @@ body {
 }
 
 @media only screen and (max-width:500px) { 
+  .shooting-star, .space-ship {
+    display: none;
+  }
   .slide-content-text h3 {
     font-size: 20px;
   }

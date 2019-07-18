@@ -34,6 +34,8 @@
 
 <body id="body" oncontextmenu="return false;">
   <div id="slide" class="hero">
+    <div class="shooting-star"></div>
+    <div class="space-ship"></div>
     <a href="#2" onclick="$.scrollify.next();" class="scroll-down">SCROLL DOWN</a>
     <h1 class="title-2">Welcome to my <span>Universe</span>!</h1>
     <h1 class="title-1">Hello, I'm <span>Zachary</span>!</h1>
@@ -54,6 +56,7 @@
     </div>
     
     <div class="slide-left-cont">
+      <button class="scroll-dark 1" onclick="$.scrollify.next();"></button>
       <div class="slide-content-text 1"> <!--switch-->
         <h3 class="heading-slide1">ABOUT ME</h3> <!--switch-->
         <p>I'm an eighteen year old web and graphic designer from Lexington, Kentucky. I started designing when I was 12 years old and I've been freelancing since then! I'm currently a freshman at the Eastern Kentucky University majoring in General Computer Information Systems.</p>
@@ -64,6 +67,7 @@
   <div id="slide" class="slide-2">
     <img src="i/topLight.svg" class="topBar 2"/>
     <div class="slide-right-cont">
+      <button class="scroll-light 2" onclick="$.scrollify.next();"></button>
       <div class="slide-content-text 2"> <!--switch-->
         <h3 class="heading-slide2">MY PROJECTS</h3> <!--switch-->
         <p>Check out <a target="_blank" href="https://github.com/zfett">my GitHub</a> to see the projects I'm currently working on! In the past, I've done work for wave.ac, the Rockcastle County High School Baseball team, and various friends, family, and Internet artists and musicians. Oh, and I made this website as well!</p>
@@ -90,6 +94,7 @@
     </div>
     
     <div class="slide-left-cont">
+      <button class="scroll-dark 3" onclick="$.scrollify.next();"></button>
       <div class="slide-content-text 3"> <!--switch-->
         <h3 class="heading-slide3">CONTACT ME</h3> <!--switch-->
         <p>Want to commission me for your project? Reach out to me at <a target="_blank" href="mailto:zachary.fetters@yahoo.com">zachary(dot)fetters(at)yahoo.com</a></p>
@@ -99,10 +104,16 @@
   </div>
   
   <div id="slide" class="slide-4">
+    <button class="scroll-up" onclick="$.scrollify.move('#1');"></button>
+    <div class="twinkle"></div>
+    <div class="twinkle-2"></div>
+    <div class="twinkle-3"></div>
+    <div class="space-ship"></div>
     <img src="i/topLight.svg" class="topBar-Last"/>
     <div class="thanks">
       <img src="i/starBGdark.jpg" class="thanksstars"></img>
       <img src="i/heart.png" class="heart"></img>
+      <img src="i/heart.png" class="heart-blur"></img>
     </div>
   </div>
   
@@ -112,12 +123,14 @@
     var objectSelect = $(".slide-1");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".scroll-dark.1").addClass("active");
       $(".topBar.1").addClass("active");
       $(".stars-bg.1").addClass("active");
       $(".slide-blob-cont.1").addClass("active");
       $(".slide-content-text.1").addClass("active");
       $(".heading-slide1").addClass("active");
     } else {
+      $(".scroll-dark.1").removeClass("active");
       $(".topBar.1").removeClass("active");
       $(".stars-bg.1").removeClass("active");
       $(".slide-blob-cont.1").removeClass("active");
@@ -131,12 +144,14 @@
     var objectSelect = $(".slide-2");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".scroll-light.2").addClass("active");
       $(".topBar.2").addClass("active");
       $(".stars-bg.2").addClass("active");
       $(".slide-blob-cont.2").addClass("active");
       $(".slide-content-text.2").addClass("active");
       $(".heading-slide2").addClass("active");
     } else {
+      $(".scroll-light.2").removeClass("active");
       $(".topBar.2").removeClass("active");
       $(".stars-bg.2").removeClass("active");
       $(".slide-blob-cont.2").removeClass("active");
@@ -150,12 +165,14 @@
     var objectSelect = $(".slide-3");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".scroll-dark.3").addClass("active");
       $(".topBar.3").addClass("active");
       $(".stars-bg.3").addClass("active");
       $(".slide-blob-cont.3").addClass("active");
       $(".slide-content-text.3").addClass("active");
       $(".heading-slide3").addClass("active");
     } else {
+      $(".scroll-dark.3").removeClass("active");
       $(".topBar.3").removeClass("active");
       $(".stars-bg.3").removeClass("active");
       $(".slide-blob-cont.3").removeClass("active");
@@ -169,9 +186,11 @@
     var objectSelect = $(".slide-4");
     var objectPosition = objectSelect.offset().top;
     if (scroll >= (objectPosition - 10)) {
+      $(".scroll-up").addClass("active");
       $(".thanks").addClass("active");
       $(".topBar-Last").addClass("active");
     } else {
+      $(".scroll-up").removeClass("active");
       $(".thanks").removeClass("active");
       $(".topBar-Last").removeClass("active");
     }
