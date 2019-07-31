@@ -839,6 +839,10 @@ img {
   transition: 1.1s;
 }
 
+.project-showcase-cont {
+	width: 100%;
+}
+
 @keyframes bounce {
   0% {
     bottom: 30px;
