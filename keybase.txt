@@ -4,9 +4,9 @@ https://keybase.io/zfett
 
 I hereby claim:
 
-  * I am an admin of https://zfett.github.io
+  * I am an admin of https://zachfetters.com
   * I am zfett (https://keybase.io/zfett) on keybase.
-  * I have a public key ASD1zdfeH5nqoXAkBqv2IaKUDlh-gRlw-eAYRVzBJKAsJAo
+  * I have a public key with fingerprint A987 A420 B9E1 533D 7DB1  94BC 70AE C2A0 0F0D 55F3
 
 To do so, I am signing this object:
 
@@ -14,39 +14,57 @@ To do so, I am signing this object:
   "body": {
     "key": {
       "eldest_kid": "01017d8100365fae0c12cd710d794dec4fe8bfcb01194590413be7c3cc39d783dbd20a",
+      "fingerprint": "a987a420b9e1533d7db194bc70aec2a00f0d55f3",
       "host": "keybase.io",
-      "kid": "0120f5cdd7de1f99eaa1702406abf621a2940e587e811970f9e018455cc124a02c240a",
+      "key_id": "70aec2a00f0d55f3",
+      "kid": "01017d8100365fae0c12cd710d794dec4fe8bfcb01194590413be7c3cc39d783dbd20a",
       "uid": "8d193f66691153f2f6119b7244d25f19",
       "username": "zfett"
     },
-    "merkle_root": {
-      "ctime": 1563225046,
-      "hash": "662e719b48897cbf1f2aa0fde53f05cb095559804033608d18d2d9831111ddcd8774dad597edcc2b9a42de234792eb0e2ed0dd808a216757a69766f2e83fea7d",
-      "hash_meta": "709973eb643e0a4d8cf6415835e5e09447cdce86ac20e8c7e6f541269e2f1b56",
-      "seqno": 5769043
-    },
     "service": {
-      "entropy": "0SlLMZ1t4/N4vTyjkz0fNbIR",
-      "hostname": "zfett.github.io",
+      "hostname": "zachfetters.com",
       "protocol": "https:"
     },
     "type": "web_service_binding",
-    "version": 2
+    "version": 1
   },
-  "client": {
-    "name": "keybase.io go client",
-    "version": "4.2.0"
-  },
-  "ctime": 1563225106,
-  "expire_in": 504576000,
-  "prev": "d43b9b76fb9edc39da9a4e7c928f84755c6bc4081776343d96b03ddaf244ed59",
-  "seqno": 15,
+  "ctime": 1564767896,
+  "expire_in": 157680000,
+  "prev": "f16b8dfb3237cd1ec8fb0464aaec05b2268e38302e87bf7fe269f2e31c20cbf9",
+  "seqno": 25,
   "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg9c3X3h+Z6qFwJAar9iGilA5YfoEZcPngGEVcwSSgLCQKp3BheWxvYWTESpcCD8Qg1Dubdvue3Dnamk58ko+EdVxrxAgXdjQ9lrA92vJE7VnEIP7FNKGGpl19F+lQlAgBQZpNP9eUGQwHSXpyRJ3WeqUuAgHCo3NpZ8RAdLwPkAt7+6ZkOoCLjGZpjGotNmdB4bSLpkL7ruYUp0eOROCH6CWOy4DRmuBWFT5OymIaVUX2YV7ZaJZWzIMrDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKO45tzkpZ3bWoZL11FT/67vS/JdVL6JOJbMawtEve2Xo3RhZ80CAqd2ZXJzaW9uAQ==
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMNEAnicrZJrTBRXGIZ3haWFuLWVGJSQ0k4BsSKd+2XbRrks1KJIibRYqdu5nGFH
+YGfdnV2ELSA3QzAiskKQpWgRQyoRaNNWk0IrYEMBIdXEtA0U0bDaGpuWiAHxQmdI
+/defPX9Ozvne5z3v+fJdNgboQvT27sHTa4xZ9/VjA80u3UfJ7mYPxMlCEWTyQHlg
+ZQP5AnAqljxJgEwQjMAIJdAIDGMkIbIA5hGUFygEFigGFwCPi4DmRJ6DEYTBCQbG
+EYwDFI/xPMYIFI0JnIDCLBQHiZItFzjsDsmmqLYsQ1MsjsIcAxACwwRK4FSe4ymY
+BTzKwrAICwQhYipolZ0aoYbjWCeIl2T1Tj1YVuL9h/5/zu1asaMFhMFEkiQZRM0r
+oiKpchyF4riAEiLCaEIncNjYAqCqi0WgKFBJHKReuSUeaF3VvvGszPJWTQEcznhe
+LlBZu0NWZF7OV4tWRbE7TRqsFNk1dSHgLP/6WDjJJqh9VAm3CkuyDTIhqpJXJM0Y
+IUicIimaIeMgcNAuOYBF0hQERdKwurR3gFu1FBGSowWRw1CM4gUE8LTIwTiJs2oz
+YYJDUZIGGI3BKKApTqREgJKMiAIM4VGY50Ttt05wwCZDJpRQc7K5qqdTyrWxissB
+oJLBgZxAnT5EF2RYpQ2YLiT4xWdjR+xY82RdrMFepmRGVh1vGO5JOpi159SZk+8P
+/j5bhU2s/Xlosv7Qth2H658c8FVubqvrnItPGDl3nj1irhx5zt9BPv7TlRxx9/UB
+g2zgQj+PzfG8nHE2cnCrJ+n5Mtw9sSeGQMPSE23j5eF06OpGQ8rGGx3hFzfvS57J
+7jB9+tOGGddn0z7P3NL2mB+G90fovwqbuxCxYA40nGJNU4YvduX4S3+Tt16veJzx
+Vlca1uc/4Z1qjZYX6mrPRI/H5A81xGz75IW9WT9Suoezk8u1jWarO6jl+7qR0S6q
+aaE67egRe/fGt9tq+j0735kyv7rpy/7S1OENvsmy0HcD9m4pLIWtvQkt1mzf+YgH
+O+eOKzVYa20Vtfz1o1fuAmruxBbv+jvXDy8mDrjHbmF/VLhsi51XUiaD06LzKq+N
+hb033h45v33W1TxxqJrsQU96174RVBA13iZ/4w7031t2vPnxsV0Xrg0+TLc/nU3y
++qkrmyaXju6f+vbGdwupl3z1PX/5wvtrL3dOd4+mXDznb4IDZoj2wvSb1b923fQu
+fpiZ3WMuHt0d75vmC4djo40h3r7EhntFHbuNQm/OaORYVGZU1Aers/7OLV6Vua+h
+MWkxuPZ0yX1fU6w5Zt7gulTyIGnoavn6GeV2nf7q04SlmaZbvY+oX9rX1egjyzNa
+XiutuH1HMp5NeKmrdb4vVWz8B98qxAg=
+=AzzX
+-----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
