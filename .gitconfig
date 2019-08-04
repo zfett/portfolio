@@ -1,0 +1,17 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = Zachary Fetters
+	email = zachary.fetters@yahoo.com
+	signingkey = F2C7AB29F2C7AB29
+[core]
+	editor = \"C:\\Users\\zacha\\AppData\\Local\\atom\\app-1.35.1\\atom.exe\" --wait
+[winUpdater]
+	recentlySeenVersion = 2.21.0.windows.1
+
+# This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
+[include]
+  path = C:/Users/zacha/.netlify/helper/git-config
