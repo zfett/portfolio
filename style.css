@@ -171,6 +171,67 @@ img {
   animation-delay: 5s;
 }
 
+.planet-id-right {
+  position: absolute;
+  top: calc(50% - 180px);
+  left: calc(50% - 280px);
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  animation-name: planet-id-right;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  filter: blur(1px);
+  -moz-filter: blur(1px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.planet-id-left {
+  position: absolute;
+  top: calc(50% - 220px);
+  right: calc(50% - 480px);
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  animation-name: planet-id-left;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  filter: blur(1px);
+  -moz-filter: blur(1px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes planet-id-right {
+  0% {
+    top: calc(50% - 180px);
+    left: calc(50% - 280px);
+  }
+  50% {
+    top: calc(50% - 197px);
+    left: calc(50% - 297px);
+  }
+  100% {
+    top: calc(50% - 180px);
+    left: calc(50% - 280px);
+  }
+}
+
+@keyframes planet-id-left {
+  0% {
+    top: calc(50% - 220px);
+    right: calc(50% - 480px);
+  }
+  50% {
+    top: calc(50% - 230px);
+    right: calc(50% - 490px);
+  }
+  100% {
+    top: calc(50% - 220px);
+    right: calc(50% - 480px);
+  }
+}
 
 .twinkle {
   position: absolute;
@@ -1080,9 +1141,27 @@ p.hidden {
   .blob-blur, .blob-blur2, .blob, .blob2 {
     display: none;
   }
+  .shooting-star, .space-ship {
+    display: none;
+  }
+  .planet-id-right, .planet-id-left {
+    display: none;
+  }
 }
 
 @media only screen and (max-width:790px) { 
+  body {
+    background-color: rgb(16, 18, 19);
+  }
+  .hero {
+    background-image: none;
+  }
+  .title-1 span::before {
+    content: '';
+  }
+  .title-2 span::before {
+    content: '';
+  }
   .shooting-star, .space-ship {
     display: none;
   }
@@ -1096,9 +1175,24 @@ p.hidden {
   .stars-bg, .slide-blob-cont {
     display: none;
   }
+  .shooting-star, .space-ship {
+    display: none;
+  }
 }
 
 @media only screen and (max-width:500px) { 
+  body {
+    background-color: rgb(16, 18, 19);
+  }
+  .hero {
+    background-image: none;
+  }
+  .title-1 span::before {
+    content: '';
+  }
+  .title-2 span::before {
+    content: '';
+  }
   .shooting-star, .space-ship {
     display: none;
   }
