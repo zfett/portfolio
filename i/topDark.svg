@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a15c90615734fd5b1075532f56cb24438f4dfb0b7570ac73a3bc4ea739bbf27a
-size 286
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="216" viewBox="0 0 3840 216">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #101213;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M0,216S1922.57,20,3840,20s0-20,0-20H0V216Z"/>
+</svg>
