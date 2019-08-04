@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 }
 
+#body-about {
+  background-color: white !important;
+}
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -15,7 +19,6 @@ img {
 }
 
 .hero {
-  background-color: rgb(16, 18, 19);
   background-image: url(i/heroBG.jpg);
   background-size: cover;
   background-position: top right;
@@ -25,7 +28,93 @@ img {
   height: 100vh;
   padding-bottom: 10px;
   overflow: hidden;
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0,0,0,0);
+}
+
+.topBar-about {
+  position: absolute;
+  width: 101vw;
+  left: -0.5vw;
+  z-index: 5;
+  top: 50vh;
+  transform: scaleY(0.75);
+  transform-origin: top center;
+  transition: 1.1s;
+}
+
+.topBar-footer {
+  position: absolute;
+  width: 101vw;
+  left: -0.5vw;
+  z-index: 5;
+  top: 0px;
+  transform: scaleY(0.75);
+  transform-origin: top center;
+  transition: 1.1s;
+}
+
+.hero-about {
+  background-color: rgb(16, 18, 19);
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.footer-link {
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  color: #fcd769;
+  text-decoration: none;
+  font-size: 0.9rem;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#content a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #46acff;
+}
+
+.title span {
+  color: #fcd769;
+}
+
+#slide-content {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+}
+
+#content {
+  max-width: 600px;
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+footer {
+  position: relative;
+  padding-top: 100px;
+  height: 150px;
+  width: 100vw;
+  background-color: rgb(16, 18, 19);
+  color: white;
+  margin-top: 50px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: rgb(60, 60, 60);
+  font-weight: bold;
+  transform: scale(1.2);
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .blob {
@@ -107,6 +196,18 @@ img {
   100% {
     transform: rotateZ(360deg);
   }
+}
+
+.title {
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  width: 100vw;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .title-1 {
@@ -973,6 +1074,31 @@ form button:hover, button:focus {
   transition: 1.1s;
 }
 
+#btn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  border: 0px;
+  font-weight: bold;
+}
+
+.slide-2-btn {
+  background-color: rgba(0,0,0,0);
+  color: #fcd769;
+  transition: 0.2s;
+  box-shadow: 0px 0px 0px 2px #fcd769;
+  margin: 2px;
+}
+
+.slide-2-btn:hover {
+  background-color: #fcd769;
+  color: black;
+  transition: 0.2s;
+}
+
 .project-showcase-cont {
   position: relative;
   overflow: hidden;
@@ -1135,6 +1261,47 @@ p.hidden {
 }
 
 @media only screen and (max-width:1100px) { 
+  #content {
+    max-width: 100%;
+    margin-top: 75px;
+    margin: 25px;
+    font-size: 1rem;
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    color: rgb(60, 60, 60);
+    font-weight: bold;
+    transform: scale(1);
+    margin-bottom: 25px;
+    text-align: left;
+  }
+  .title {
+    position: absolute;
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  .topBar-footer {
+    display: none;
+  }
+  .topBar-about {
+    display: none;
+  }
+  .footer-link {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    color: #fcd769;
+    text-decoration: none;
+    font-size: 0.9rem;
+    left: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .slide-content-text p {
     font-size: 1rem;
   }
