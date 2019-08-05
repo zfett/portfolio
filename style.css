@@ -1417,8 +1417,11 @@ p.hidden {
 }
 
 @media only screen and (max-width:1100px) { 
-  #hidden-input, #easter-egg {
-    display: none;
+  #hidden-input {
+    display: none !important;
+  }
+  #easter-egg {
+    display: none !important;
   }
   #content {
     max-width: 100%;
