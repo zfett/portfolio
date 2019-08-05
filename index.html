@@ -27,21 +27,53 @@
 	$(function() {
 		$.scrollify({
 			section : "div#slide",
+			updateHash : false,
 		});
 	});
+	function easteregg() {
+		$('.enterprise').addClass("active");
+		$('.stars').addClass("active");
+		$('#easter-egg').addClass("active");
+		var audio = new Audio('theme.mp3');
+		audio.play();
+		setTimeout( function(){ 
+			closeegg()
+			document.getElementById("easterinput").value = "";
+			audio.stop();
+		}, 10000 );
+	}
+	function closeegg() {
+		$('.enterprise').removeClass("active");
+		$('.stars').removeClass("active");
+		$('#easter-egg').removeClass("active");
+	}
+	function checksecret() {
+		var input = document.getElementById("easterinput").value;
+		var cont = document.getElementById("hidden-input");
+		if (input == "ZACHISKEWL") {
+			easteregg();
+			cont.style.display = "none";
+		}
+	}
 	</script>
 	<style>
 	.hidden {
-	position: absolute;
-  	visibility: hidden;
-  	font-size: 0px;
-  	margin: 0px;
-  	transform: scale(0.0);
+		position: absolute;
+		visibility: hidden;
+		font-size: 0px;
+		margin: 0px;
+		transform: scale(0.0);
 	}
 	</style>
 </head>
 
 <body id="body" oncontextmenu="return false;">
+	
+	<div id="easter-egg">
+		<img src="i/enterprise.png" class="enterprise" />
+		<img src="i/stars.png" class="stars" />
+	</div>
+	
 	<a rel="me" class="hidden" href="https://mastodon.social/@zfett">Mastodon</a>
 	<div id="slide" class="hero">
 		<div class="shooting-star"></div>
@@ -131,9 +163,20 @@
 	</div>
 	
 	<div id="slide" class="slide-4">
+		<div id="hidden-input">
+			<button class="secret-close" onclick="document.getElementById('hidden-input').style.display = 'none'"></button>
+			<img src="i/ubuntu.png" id="ubuntu" />
+			<div class="secret-cont">
+				<p class="terminal"><span style="color: #88e233;">admin@zachswebsite</span>:<span style="color: #7babcb;">~</span>$ sudo</p>
+				<input type="text" id="easterinput" name="easterinput" placeholder="SECRET CODE"></input>
+			</div>
+			<button id="submitsecret" onclick="checksecret()">Submit Secret Code</button>
+			<!--HINT: The secret code is "ZACHISKEWL"-->
+		</div>
+		
 		<button class="scroll-up" onclick="$.scrollify.move('#1');"></button>
 		<div class="twinkle"></div>
-		<div class="twinkle-2"></div>
+		<a href="#" onclick="document.getElementById('hidden-input').style.display = 'block'"><div class="twinkle-2"></div></a>
 		<div class="twinkle-3"></div>
 		<div class="space-ship"></div>
 		<img src="i/topLight.svg" class="topBar-Last"/>

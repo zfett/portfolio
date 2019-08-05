@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700,700i&display=swap');
 
 body {
   margin: 0 auto;
@@ -366,7 +367,6 @@ footer {
   background-image: url(i/shooting-star.png);
   background-size: cover;
   z-index: 1;
-  pointer-events: none;
   animation-name: twinkle;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -1174,6 +1174,162 @@ p.hidden {
   transform: scale(1.1);
   transition: 0.2s;
   cursor: pointer;
+}
+
+#easter-egg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.9);
+  opacity: 0.0;
+  pointer-events: none;
+}
+
+#easter-egg.active {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1.0;
+  background-color: rgba(0,0,0,0.9);
+  pointer-events: none;
+}
+
+.enterprise {
+  height: 25px;
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+}
+
+.stars {
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: -100vw;
+  transform: translateY(-50%);
+  opacity: 0.1;
+}
+
+.enterprise.active {
+  height: 25px;
+  position: fixed;
+  top: 50%;
+  left: -200px;
+  transform: translateY(-50%);
+  animation-name: zoom;
+  animation-duration: 10s;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+}
+
+.stars.active {
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: -100vw;
+  transform: translateY(-50%);
+  animation-name: stars;
+  animation-duration: 10s;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+  opacity: 0.1;
+}
+
+#hidden-input {
+  position: fixed;
+  height: 100vh;
+  width: calc(100vw);
+  background-color: #300a24;
+  z-index: 9998;
+  text-align: center;
+  font-family: 'Ubuntu Mono', monospace;
+  box-shadow: 0px 0px 0px 10000px #300a24;
+  display: none;
+}
+
+.terminal {
+  display: inline-block;
+  color: white;
+}
+
+.secret-cont {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#ubuntu {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#easterinput {
+  display: inline-block;
+  text-align: left;
+  outline: none;
+  padding: 5px;
+  padding-left: 0px;
+  background-color: #300a24;
+  border: 0px;
+  color: white;
+  width: 75px;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.secret-close {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 3px;
+  left: 8px;
+  border: 0px;
+  z-index: 9998;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+}
+
+#submitsecret {
+  position: fixed;
+  top: calc(50vh + 45px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  outline: none;
+  background-color: white;
+  border: 0px;
+  color: #300a24;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+@keyframes zoom {
+  0% {
+    left: calc(0% - 200px);
+  }
+  100% {
+    left: calc(100% + 200px);
+  }
+}
+
+@keyframes stars {
+  0% {
+    left: 0vw;
+  }
+  100% {
+    left: -100vw;
+  }
 }
 
 @keyframes bounce {
