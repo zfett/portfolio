@@ -1417,6 +1417,9 @@ p.hidden {
 }
 
 @media only screen and (max-width:1100px) { 
+  #hidden-input, #easter-egg {
+    display: none;
+  }
   #content {
     max-width: 100%;
     margin-top: 75px;
