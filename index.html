@@ -39,7 +39,8 @@
 		setTimeout( function(){ 
 			closeegg()
 			document.getElementById("easterinput").value = "";
-			audio.stop();
+			audio.pause();
+			audio.currentTime = 0;
 		}, 10000 );
 	}
 	function closeegg() {
