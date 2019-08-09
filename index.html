@@ -30,7 +30,7 @@
 			updateHash : false,
 		});
 	});
-	function easteregg() {
+	function st_easteregg() {
 		$('.enterprise').addClass("active");
 		$('.stars').addClass("active");
 		$('#easter-egg').addClass("active");
@@ -43,16 +43,31 @@
 			audio.currentTime = 0;
 		}, 10000 );
 	}
-	function closeegg() {
+	function st_closeegg() {
 		$('.enterprise').removeClass("active");
 		$('.stars').removeClass("active");
 		$('#easter-egg').removeClass("active");
 	}
+	
+	function dm_easteregg() {
+		$('#doomguy-easteregg').addClass("active");
+		var audio = new Audio('doom.mp3');
+		audio.play();
+	}
+	function dm_closeegg() {
+		$('#doomguy-easteregg').removeClass("active");
+		document.getElementById("easterinput").value = "";
+	}
 	function checksecret() {
 		var input = document.getElementById("easterinput").value;
 		var cont = document.getElementById("hidden-input");
-		if (input == "ZACHISKEWL") {
-			easteregg();
+		if (input == "BEAMMEUPSCOTTY") {
+			st_easteregg();
+			cont.style.display = "none";
+		}
+		
+		if (input == "IDDQD") {
+			dm_easteregg();
 			cont.style.display = "none";
 		}
 	}
@@ -69,6 +84,12 @@
 </head>
 
 <body id="body" oncontextmenu="return false;">
+	
+	<div id="doomguy-easteregg">
+		<p class="clickclose" onclick="dm_closeegg()">CLICK TO CLOSE</p>
+		<p class="iddqd">DEGREELESSNESS MODE ON</p>
+		<img src="i/doomguy.png" class="doomguy"></img>
+	</div>
 	
 	<div id="easter-egg">
 		<img src="i/enterprise.png" class="enterprise" />
@@ -172,7 +193,9 @@
 				<input type="text" id="easterinput" name="easterinput" placeholder="SECRET CODE"></input>
 			</div>
 			<button id="submitsecret" onclick="checksecret()">Submit Secret Code</button>
-			<!--HINT: The secret code is "ZACHISKEWL"-->
+			<!--
+			List of secret codes: https://zachfetters.com/secret-codes.txt
+			-->
 		</div>
 		
 		<button class="scroll-up" onclick="$.scrollify.move('#1');"></button>

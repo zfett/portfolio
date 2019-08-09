@@ -665,6 +665,58 @@ footer {
   font-size: 2rem;
 }
 
+#doomguy-easteregg {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0);
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	display: none;
+}
+
+#doomguy-easteregg.active {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0);
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	display: block;
+}
+
+.doomguy {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.iddqd {
+	font-size: 0.8rem;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #bbb;
+	margin: 15px;
+	text-shadow: 1px 1px 0px black;
+}
+
+.clickclose {
+	pointer-events: all;
+	position: absolute;
+	right: 15px;
+	cursor: pointer;
+	top: 0;
+	font-size: 0.8rem;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #bbb;
+	margin: 15px;
+	text-shadow: 1px 1px 0px black;
+}
+
 .slide-content-text h3.heading-slide1 {
   color: #fcd769;
 }
