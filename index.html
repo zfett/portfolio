@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
 	<script src="scroll-to-section.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 	<link rel="icon" type="image/png" href="i/blob-1.png">
 	<script>
 	$(function() {
@@ -195,100 +196,122 @@
 			<button id="submitsecret" onclick="checksecret()">Submit Secret Code</button>
 			<!--
 			List of secret codes: https://zachfetters.com/secret-codes.txt
-			-->
-		</div>
-		
-		<button class="scroll-up" onclick="$.scrollify.move('#1');"></button>
-		<div class="twinkle"></div>
-		<a href="#" onclick="document.getElementById('hidden-input').style.display = 'block'"><div class="twinkle-2"></div></a>
-		<div class="twinkle-3"></div>
-		<div class="space-ship"></div>
-		<img src="i/topLight.svg" class="topBar-Last"/>
-		<div class="thanks">
-			<img src="i/starBGdark.jpg" class="thanksstars"></img>
-			<img src="i/heart.png" class="heart"></img>
-			<img src="i/heart.png" class="heart-blur"></img>
-		</div>
+		-->
 	</div>
 	
-	<script>
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-		var objectSelect = $(".slide-1");
-		var objectPosition = objectSelect.offset().top;
-		if (scroll >= (objectPosition - 10)) {
-			$(".scroll-dark.1").addClass("active");
-			$(".topBar.1").addClass("active");
-			$(".stars-bg.1").addClass("active");
-			$(".slide-blob-cont.1").addClass("active");
-			$(".slide-content-text.1").addClass("active");
-			$(".heading-slide1").addClass("active");
-		} else {
-			$(".scroll-dark.1").removeClass("active");
-			$(".topBar.1").removeClass("active");
-			$(".stars-bg.1").removeClass("active");
-			$(".slide-blob-cont.1").removeClass("active");
-			$(".slide-content-text.1").removeClass("active");
-			$(".heading-slide1").removeClass("active");
+	<button class="scroll-up" onclick="$.scrollify.move('#1');"></button>
+	<div class="twinkle"></div>
+	<a href="#" onclick="document.getElementById('hidden-input').style.display = 'block'"><div class="twinkle-2"></div></a>
+	<div class="twinkle-3"></div>
+	<div class="space-ship"></div>
+	<img src="i/topLight.svg" class="topBar-Last"/>
+	<div class="thanks">
+		<img src="i/starBGdark.jpg" class="thanksstars"></img>
+		<img src="i/heart.png" class="heart"></img>
+		<img src="i/heart.png" class="heart-blur"></img>
+	</div>
+</div>
+
+<script>
+$(window).scroll(function() {    
+	var scroll = $(window).scrollTop();
+	var objectSelect = $(".slide-1");
+	var objectPosition = objectSelect.offset().top;
+	if (scroll >= (objectPosition - 10)) {
+		$(".scroll-dark.1").addClass("active");
+		$(".topBar.1").addClass("active");
+		$(".stars-bg.1").addClass("active");
+		$(".slide-blob-cont.1").addClass("active");
+		$(".slide-content-text.1").addClass("active");
+		$(".heading-slide1").addClass("active");
+	} else {
+		$(".scroll-dark.1").removeClass("active");
+		$(".topBar.1").removeClass("active");
+		$(".stars-bg.1").removeClass("active");
+		$(".slide-blob-cont.1").removeClass("active");
+		$(".slide-content-text.1").removeClass("active");
+		$(".heading-slide1").removeClass("active");
+	}
+});
+
+$(window).scroll(function() {    
+	var scroll = $(window).scrollTop();
+	var objectSelect = $(".slide-2");
+	var objectPosition = objectSelect.offset().top;
+	if (scroll >= (objectPosition - 10)) {
+		$(".scroll-light.2").addClass("active");
+		$(".topBar.2").addClass("active");
+		$(".stars-bg.2").addClass("active");
+		$(".slide-blob-cont.2").addClass("active");
+		$(".slide-content-text.2").addClass("active");
+		$(".heading-slide2").addClass("active");
+	} else {
+		$(".scroll-light.2").removeClass("active");
+		$(".topBar.2").removeClass("active");
+		$(".stars-bg.2").removeClass("active");
+		$(".slide-blob-cont.2").removeClass("active");
+		$(".slide-content-text.2").removeClass("active");
+		$(".heading-slide2").removeClass("active");
+	} 
+});
+
+$(window).scroll(function() {    
+	var scroll = $(window).scrollTop();
+	var objectSelect = $(".slide-3");
+	var objectPosition = objectSelect.offset().top;
+	if (scroll >= (objectPosition - 10)) {
+		$(".scroll-dark.3").addClass("active");
+		$(".topBar.3").addClass("active");
+		$(".stars-bg.3").addClass("active");
+		$(".slide-blob-cont.3").addClass("active");
+		$(".slide-content-text.3").addClass("active");
+		$(".heading-slide3").addClass("active");
+	} else {
+		$(".scroll-dark.3").removeClass("active");
+		$(".topBar.3").removeClass("active");
+		$(".stars-bg.3").removeClass("active");
+		$(".slide-blob-cont.3").removeClass("active");
+		$(".slide-content-text.3").removeClass("active");
+		$(".heading-slide3").removeClass("active");
+	}
+});
+
+$(window).scroll(function() {    
+	var scroll = $(window).scrollTop();
+	var objectSelect = $(".slide-4");
+	var objectPosition = objectSelect.offset().top;
+	if (scroll >= (objectPosition - 10)) {
+		$(".scroll-up").addClass("active");
+		$(".thanks").addClass("active");
+		$(".topBar-Last").addClass("active");
+	} else {
+		$(".scroll-up").removeClass("active");
+		$(".thanks").removeClass("active");
+		$(".topBar-Last").removeClass("active");
+	}
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+	"palette": {
+		"popup": {
+			"background": "#101213"
+		},
+		"button": {
+			"background": "#46acff",
+			"text": "#101213"
 		}
-	});
-	
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-		var objectSelect = $(".slide-2");
-		var objectPosition = objectSelect.offset().top;
-		if (scroll >= (objectPosition - 10)) {
-			$(".scroll-light.2").addClass("active");
-			$(".topBar.2").addClass("active");
-			$(".stars-bg.2").addClass("active");
-			$(".slide-blob-cont.2").addClass("active");
-			$(".slide-content-text.2").addClass("active");
-			$(".heading-slide2").addClass("active");
-		} else {
-			$(".scroll-light.2").removeClass("active");
-			$(".topBar.2").removeClass("active");
-			$(".stars-bg.2").removeClass("active");
-			$(".slide-blob-cont.2").removeClass("active");
-			$(".slide-content-text.2").removeClass("active");
-			$(".heading-slide2").removeClass("active");
-		} 
-	});
-	
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-		var objectSelect = $(".slide-3");
-		var objectPosition = objectSelect.offset().top;
-		if (scroll >= (objectPosition - 10)) {
-			$(".scroll-dark.3").addClass("active");
-			$(".topBar.3").addClass("active");
-			$(".stars-bg.3").addClass("active");
-			$(".slide-blob-cont.3").addClass("active");
-			$(".slide-content-text.3").addClass("active");
-			$(".heading-slide3").addClass("active");
-		} else {
-			$(".scroll-dark.3").removeClass("active");
-			$(".topBar.3").removeClass("active");
-			$(".stars-bg.3").removeClass("active");
-			$(".slide-blob-cont.3").removeClass("active");
-			$(".slide-content-text.3").removeClass("active");
-			$(".heading-slide3").removeClass("active");
-		}
-	});
-	
-	$(window).scroll(function() {    
-		var scroll = $(window).scrollTop();
-		var objectSelect = $(".slide-4");
-		var objectPosition = objectSelect.offset().top;
-		if (scroll >= (objectPosition - 10)) {
-			$(".scroll-up").addClass("active");
-			$(".thanks").addClass("active");
-			$(".topBar-Last").addClass("active");
-		} else {
-			$(".scroll-up").removeClass("active");
-			$(".thanks").removeClass("active");
-			$(".topBar-Last").removeClass("active");
-		}
-	});
-	</script>
+	},
+	"theme": "edgeless",
+	"position": "bottom-right",
+	"content": {
+		"message": "My website uses cookies from the Clicky analytics service to track user interactions.",
+		"dismiss": "Okay!",
+		"link": "Privacy Policy",
+		"href": "https://zachfetters.com/privacy"
+	}
+});
+</script>
 </body>
 </html>
