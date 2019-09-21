@@ -29,7 +29,7 @@ img {
   height: 100vh;
   padding-bottom: 10px;
   overflow: hidden;
-  background-color: rgba(0,0,0,0);
+  background-color: #111214	!important;
 }
 
 .topBar-about {
@@ -1536,6 +1536,7 @@ p.hidden {
   }
   .hero {
     background-image: none;
+		background-color: #111214;
   }
   .title-1 span::before {
     content: '';
@@ -1567,6 +1568,7 @@ p.hidden {
   }
   .hero {
     background-image: none;
+		background-color: #111214;
   }
   .title-1 span::before {
     content: '';
