@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>ColonelCraft</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+	<link rel="icon" type="image/png" href="i/favicon.png">
+	<script>
+	function resizeIframe(obj) {
+		obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+	}
+	</script>
+</head>
+
+<body oncontextmenu="return false;">
+	<div id="hero">
+		<div class="splash-container">
+			<p id="splash-text">JUST A SPLASH!</p>
+		</div>
+		<img src="i/logo.png" draggable="false" class="logo" alt="ColonelCraft Logo"/>
+		<a onclick="scrollView()" class="scroll-down">SCROLL DOWN FOR MORE</a>
+	</div>
+	
+	<a name="about"></a>
+	<div id="content">
+		<h1>About ColonelCraft</h1>
+		<p><b>ColonelCraft</b> is a private, survival multi-player Minecraft server for EKU students, by EKU students! We are a self-ran, non-official student group that wants to create a platform where any student can play together at any time, any day, anywhere. With our group, there is no official meeting place, no BYO-Device rules, and no set meeting times. All you need is a legal copy of Java Minecraft and an Internet connection!</p>
+		<p><b>ColonelCraft</b> is currently in a beta state. As such, our server will be private and limited to a max of 12 players on the roster until we either gain an official student group status with EKU, or we gain enough donations to upgrade the server to a higher plan to allow more players to join. Until either or both of those requirements are met, <b>ColonelCraft</b> will remain whitelisted to a small roster of players.</p>
+		<p>Interested in joining? Fill out the form below and you could be a part of the first 12 players to join <b>ColonelCraft</b>! Act quick, as once the 12 slots fill up, the form will close and submissions will no longer be accepted!</p>
+		<br>
+		<iframe id="frame" src="https://docs.google.com/forms/d/e/1FAIpQLSemHRuE45ljaYWxwYuCN3WQS2dFJ8LdCYmW4oAzV6uh9VcxLA/viewform?embedded=true" height="1800px" width="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+	</div>
+	
+	<p class="disclaimer">ColonelCraft is <b>not</b> an official student group of Eastern Kentucky University.</p>
+	
+	<div id="background-container">
+		<div class="bg-sun"></div>
+		<div class="bg-clouds"></div>
+		<div class="bg-earth"></div>
+	</div>
+	
+	<script>
+	function scrollView() {
+		document.querySelector('#content').scrollIntoView({ 
+			behavior: 'smooth' 
+		});
+	}
+	</script>
+	<script>
+	var myArray = [
+		"Just a splash!",
+		"Home of the Colonels!",
+		"NOT official (yet!)",
+		"Not to be confused with ColonelRaft!",
+		"L337 5P33K is kewl!",
+		"Made in Kentucky!",
+		"By students, for students!",
+		"Pretty Cool!",
+		"What is 'KernalRaft?'",
+		"Don't sue us!",
+		"Not a fraternity!",
+		"Not a sorority, either!",
+		"Welcome to the KEWLZONE!",
+		"This site's pretty neat, don't cha think?",
+		"Have you tried restarting it?",
+		"I'm running out of things to say!",
+		"English majors, am I right?",
+		"What's the deal with Minecraft, anyway?",
+		"Made with love <3",
+		"You're not supposed to see this!",
+		"Not to be confused with 'ColonCraft!'"
+	];
+	
+	var randomSplash = myArray[Math.floor(Math.random()*myArray.length)];
+	document.getElementById("splash-text").innerHTML = randomSplash;
+	</script>
+</body>
+</html>
