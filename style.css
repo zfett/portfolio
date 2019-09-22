@@ -1,10 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700,700i&display=swap');
 
+#loading-screen {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	background-color: #111214;
+}
+
+#loading-text {
+	text-align: center;
+	color: white;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Ubuntu Mono', monospace;
+	font-weight: bold;
+	font-size: 25px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: 0.3s;
+}
+
 body {
   margin: 0 auto;
+	height: 100%;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+}
+
+html {
+	margin: 0px;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	user-select: none;
+}
+
+html.jeb_ {
+	animation-name: jeb;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes jeb {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(180deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+	}
 }
 
 #body-about {
@@ -704,6 +756,32 @@ footer {
 	text-shadow: 1px 1px 0px black;
 }
 
+.close-jeb {
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 0.8rem;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #bbb;
+	margin: 15px;
+	text-shadow: 1px 1px 0px black;
+	display: none;
+	z-index: 9999;
+}
+
+.close-jeb.active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 0.8rem;
+	font-family: 'Ubuntu Mono', monospace;
+	color: #bbb;
+	margin: 15px;
+	text-shadow: 1px 1px 0px black;
+	display: block;
+	z-index: 9999;
+}
+
 .clickclose {
 	pointer-events: all;
 	position: absolute;
@@ -768,7 +846,7 @@ footer {
 .topBar-Last {
   position: absolute;
   width: 100vw;
-  left: -0.5vw;
+  left: 0;
   z-index: 5;
   top: 0;
   transform: scaleY(0.75);
