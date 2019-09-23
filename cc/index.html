@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
+<!-- Made by Zach! - @zachary_fetters on Twitter -->
+
 <head>
 	<title>ColonelCraft</title>
 	<meta charset="utf-8">
@@ -25,12 +28,32 @@
 	
 	<a name="about"></a>
 	<div id="content">
-		<h1>About ColonelCraft</h1>
-		<p><b>ColonelCraft</b> is a private, survival multi-player Minecraft server for EKU students, by EKU students! We are a self-ran, non-official student group that wants to create a platform where any student can play together at any time, any day, anywhere. With our group, there is no official meeting place, no BYO-Device rules, and no set meeting times. All you need is a legal copy of Java Minecraft and an Internet connection!</p>
-		<p><b>ColonelCraft</b> is currently in a beta state. As such, our server will be private and limited to a max of 12 players on the roster until we either gain an official student group status with EKU, or we gain enough donations to upgrade the server to a higher plan to allow more players to join. Until either or both of those requirements are met, <b>ColonelCraft</b> will remain whitelisted to a small roster of players.</p>
-		<p>Interested in joining? Fill out the form below and you could be a part of the first 12 players to join <b>ColonelCraft</b>! Act quick, as once the 12 slots fill up, the form will close and submissions will no longer be accepted!</p>
-		<br>
-		<iframe id="frame" src="https://docs.google.com/forms/d/e/1FAIpQLSemHRuE45ljaYWxwYuCN3WQS2dFJ8LdCYmW4oAzV6uh9VcxLA/viewform?embedded=true" height="1800px" width="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+		<button class="accordion active">About ColonelCraft</button>
+		<div class="panel" style="display: block;">
+			<p><b>ColonelCraft</b> is a private, survival multi-player Minecraft server for EKU students, by EKU students! We are a self-ran, non-official student group that wants to create a platform where any student can play together at any time, any day, anywhere. With our group, there is no official meeting place, no BYO-Device rules, and no set meeting times. All you need is a legal copy of Java Minecraft and an Internet connection!</p>
+			<p><b>ColonelCraft</b> is currently in a beta state. As such, our server will be private and limited to a max of 12 players on the roster until we either gain an official student group status with EKU, or we gain enough donations to upgrade the server to a higher plan to allow more players to join. Until either or both of those requirements are met, <b>ColonelCraft</b> will remain whitelisted to a small roster of players.</p>
+		</div>
+		<button class="accordion">Join ColonelCraft</button>
+		<div class="panel">
+			<p>Interested in joining? Fill out the form below and you could be a part of the first 12 players to join <b>ColonelCraft</b>! Act quick, as once the 12 slots fill up, the form will close and submissions will no longer be accepted!</p>
+			<br>
+			<iframe id="frame" src="https://docs.google.com/forms/d/e/1FAIpQLSemHRuE45ljaYWxwYuCN3WQS2dFJ8LdCYmW4oAzV6uh9VcxLA/viewform?embedded=true" height="1800px" width="100%" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+		</div>
+		<button class="accordion">Support ColonelCraft</button>
+		<div class="panel">
+			<p>Want to start your own server? Use our affiliate link below on GGServers to start your own! If you use their service to purchase your own server, <b>ColonelCraft</b> gets 20% of your sale to go towards our server costs!</p>
+			<p style="text-align: center;"><a href="https://ggservers.com/billing/aff.php?aff=5813"><img width="100%" src="https://ggservers.net/images/ggbanner.gif"></a></p>
+			<p>Want to support us directly? Use our PayPal button below to donate to us so we can cover server costs and keep <b>ColonelCraft</b> running!</p>
+			<p style="text-align: center;">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_donations" />
+					<input type="hidden" name="business" value="EZ2GRSTMFMBX6" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="image" align="center" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+				</form>
+			</p>
+		</div>
 	</div>
 	
 	<p class="disclaimer">ColonelCraft is <b>not</b> an official student group of Eastern Kentucky University.</p>
@@ -70,11 +93,29 @@
 		"What's the deal with Minecraft, anyway?",
 		"Made with love <3",
 		"You're not supposed to see this!",
-		"Not to be confused with 'ColonCraft!'"
+		"Not to be confused with 'ColonCraft!'",
+		"Use our affiliate link!",
+		"Farm-raised, free range Minecraft server!",
 	];
 	
 	var randomSplash = myArray[Math.floor(Math.random()*myArray.length)];
 	document.getElementById("splash-text").innerHTML = randomSplash;
 	</script>
+	<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "block";
+			}
+		});
+	}
+</script>
 </body>
 </html>
