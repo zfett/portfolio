@@ -5,9 +5,9 @@ body {
 	margin: auto 0;
 	background-image: url("i/bg.jpg");
 	background-size: cover;
-	background-position: top left;
+	background-position: center bottom;
 	background-repeat: no-repeat;
-	background-color: #0a0a0a;
+	background-color: #4eb2fe;
 	image-rendering: crisp-edges;
 	image-rendering: -webkit-optimize-contrast;
 	-ms-interpolation-mode: nearest-neighbor;
@@ -18,26 +18,31 @@ img {
 }
 
 #hero {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-
-.hero_logo {
 	width: 500px;
+	height: 145px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	mix-blend-mode: difference;
 }
 
-.contact_me {
-	width: 170px;
+.hero_logo {
+	width: 100%;
 	position: absolute;
-	top: calc(50% - 35px);
-	left: calc(50% + 160px);
-	transform: translate(-50%, -50%);
-	mix-blend-mode: difference;
-	pointer-events: all !important;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@media only screen and (max-width:550px) { 
+	#hero {
+		width: 75%;
+		height: 100vh;
+		background-image: url("i/logo/Partial_Background_Invert.png");
+		background-position: center;
+		background-size: 50%;
+		background-repeat: no-repeat;
+	}
+	.hero_logo {
+		display: none;
+	}
 }
