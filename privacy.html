@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" style="overflow-y: auto !important; height: 100% !important; overflow-y: shown;">
 <head>
 	<title>Zach Fetters - Privacy Policy</title>
 	<meta charset="utf-8">
@@ -22,6 +22,41 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
 	<link rel="icon" type="image/png" href="i/blob-1.png">
+	<style>
+	button {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-align: center;
+		border: 0px;
+		background-color: rgba(0,0,0,0);
+		color: #6bb19d;
+		transition: 0.2s;
+		box-shadow: 0px 0px 0px 2px #6bb19d;
+		margin: 2px;
+		font-family: 'Roboto', sans-serif;
+	}
+	button:hover {
+		background-color: #6bb19d;
+		color: white;
+		transition: 0.2s;
+		cursor: pointer;
+	}
+	button:active, button:focus {
+		background-color: #6bb19d;
+	}
+	i {
+		color: #555;
+		font-size: 10px;
+	}
+	span {
+		display: inline-block;
+		font-size: 12px;
+		color: rgb(58, 232, 96);
+		margin-left: 20px;
+	}
+	</style>
 </head>
 
 <body id="body-about" oncontextmenu="return false;">
@@ -31,12 +66,49 @@
 	
 	<img src="i/topDark.svg" class="topBar-about"/>
 	<div id="content">
-		<h1>Privacy Policy</h1>
+		<p><i>SIMPLE ENGLISH VERSION:</i></p>
+		<p>My website uses the Clicky analytics library. As such, all data collected abides by their privacy policy, which can be found here: <a href="https://clicky.com/terms/privacy" target="_blank">https://clicky.com/terms/privacy</a> (Clicky abides by the GDPR and ePR policies for European visitors.)</p>
 		
+		<p>In abstract, cookies on my site collect information about users’ visits, such as the page’s URL, title, and referrer. For user data, it collects the user agent, browser language, screen resolution, x & y coordinates of mouse events, random UID, IP address, and any other custom data (my site does not collect any extra custom data.) All of this data is sent securely to the Clicky servers for me to view. I do not use or distribute this data beyond my analytic dashboard, and I will never use this data for purposes beyond viewing the performance of my website.</p>
 		
-		<p>Effective date: August 14, 2019</p>
+		<p>The following cookies might be placed on your browser when visiting my website:</p>
+		<p><ul>
+			<li><b>_referrer_og</b> – Stores external referrer URL for 90 days (if available).</li>
+			<li><b>_utm_og</b> – Stores campaign variables for 90 days (not used on my website).</li>
+			<li><b>_custom_data_[key]</b> – Not used on my website.</li>
+			<li><b>_jsuid</b> – Unique ID tracking cookie.</li>
+			<li><b>cluid</b> – Third-party UID tracking cookie. Only used to track visitor across multiple domains belonging to me. Not used as I only own one domain.</li>
+		</ul></p>
 		
+		<p>If you do not want any more tracking cookies to be set, then click the button below to disable all cookie setting and tracking. (NOTE: This does not delete cookies set before clicking the button, only future cookies.)</p>
+		<button id="disablecookies" onclick="disableCookies()">Disable Cookies & Tracking</button>
+		<span id="cleared" style="display: none;">Clicky Cookies & Tracking Cleared!</span>
+		<script type="text/javascript">
+		function disableCookies() {
+			var clicky_custom = clicky_custom || {};
+			clicky_custom.cookies_disable = 1;
+			clicky_custom.sticky_data_disable = 1;
+			clicky_custom.outbound_disable = 1;
+			clicky_custom.history_disable = 1;
+			clicky_custom.ping_disable = 1;
+			clicky_custom.pageview_disable = 1;
+			clicky_custom.osa_disable = 1;
+			clicky_custom.heatmap_disable = 1;
+			console.log("Cleared Clicky Cookies");
+			document.getElementById("cleared").style.display = "inline-block";
+		}
+		</script>
+		<script src="https://static.getclicky.com/js" type="text/javascript"></script> 
 		
+		<p>Clicky does everything in their power to keep your data safe and secure. I use HTTPS on my site to ensure that all data transmitted from my site to Clicky’s servers is encrypted. If you want to completely opt-out of all Clicky tracking, then visit this link to do so: <a href="https://clicky.com/optout" target="_blank">https://clicky.com/optout</a>.</p>
+		
+		<p>All EU and Swiss citizens have the right to request, correct, and remove their data from the Clicky service. To do so, contact me via the e-mail given below and I will contact the Clicky support group to initiate the process. (NOTE: Clicky support may require more information to verify your status as an EU or Swiss citizen.)</p>
+		<p><img src="i/email.gif" alt="zachary(dot)fetters(at)yahoo.com"></img></p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p><i>LEGALESE VERSION:</i></p>
 		<p>Zachary Fetters operates the https://zachfetters.com website (hereinafter referred to as the "Service").</p>
 		
 		<p>This page informs you of my policies regarding the collection, use, and disclosure of personal data when you use my Service and the choices you have associated with that data.</p>
@@ -55,14 +127,14 @@
 		<p>While using my Service, I may ask you to provide me with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
 		
 		<ul>
-		<li>Cookies and Usage Data</li>
+			<li>Cookies and Usage Data</li>
 		</ul>
 		
 		<h4>Usage Data</h4>
 		
 		<p>I may also collect information on how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of my Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
 		
-		<h4>Tracking & Cookies Data</h4>
+		<h4>Tracking &amp; Cookies Data</h4>
 		<p>I use cookies and similar tracking technologies to track the activity on my Service and hold certain information.</p>
 		<p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze my Service.</p>
 		<p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of my Service. You can learn more how to manage cookies in the <a href="https://privacypolicies.com/blog/how-to-delete-cookies/">Browser Cookies Guide</a>.</p>
@@ -116,7 +188,7 @@
 		<ul>
 			<li>
 				<p><strong>Clicky</strong></p>
-				<p>Clicky is a web analytics service. Read the Privacy Policy for Clicky here: <a href="https://clicky.com/terms">https://clicky.com/terms</a></p>
+				<p>Clicky is a web analytics service. Read the Privacy Policy for Clicky here: <a href="https://clicky.com/terms/privacy">https://clicky.com/terms/privacy</a></p>
 			</li>
 		</ul>
 		
@@ -136,7 +208,7 @@
 		<h2>Contact me</h2>
 		<p>If you have any questions about this Privacy Policy, please contact me:</p>
 		<ul>
-			<li>By email: zachary.fetters@yahoo.com</li>
+			<li>By email: <img src="i/email.gif" alt="zachary(dot)fetters(at)yahoo.com"></img></li>
 		</ul>
 	</div>
 	
