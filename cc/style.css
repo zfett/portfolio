@@ -11,7 +11,6 @@ body {
 	user-select: none;
 	-moz-user-select: none;
 	scroll-behavior: smooth;
-	margin-bottom: 25px;
 }
 
 #background-container {
@@ -104,7 +103,7 @@ body {
 	margin-top: 50px;
 	background-color: rgba(255, 255, 255, 0.95);
 	border-radius: 3px;
-	margin-bottom: 100px;
+	margin-bottom: 25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,18 +115,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .disclaimer {
-	position: absolute;
 	text-align: center;
-	left: 50%;
-	transform: translateX(-50%);
 	z-index: 5;
 	color: #777;
-	font-size: 0.8rem;
-	margin-bottom: 0px;
-	margin-top: -75px;
-	padding: 10px;
-	background-color: #0f0f10;
-	border-radius: 5px;
+	font-size: 0.9rem;
+	margin-bottom: 25px;
 }
 
 a {
@@ -173,36 +165,6 @@ a[name="about"] {
 	animation-iteration-count: infinite;
 	backface-visibility: hidden;
 	-webkit-font-smoothing: subpixel-antialiased;
-}
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
-	border-radius: 5px;
-	margin-bottom: 15px;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc; 
-}
-
-.panel {
-  padding: 0 20px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-	margin-bottom: 15px;
-	border-radius: 5px;
 }
 
 @keyframes bounce {
