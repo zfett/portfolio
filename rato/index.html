@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>birdlied - ratø</title>
+	<meta charset="utf-8">
+	<script src="libs/jquery.min.js"></script>
+	<link rel="stylesheet/less" type="text/css" href="styles/profile.less"/>
+	<script src="libs/less.min.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+	<div id="site_header">
+		<a href="#">
+			<div class="header_logo-container">
+				<img src="media/logolight.png"></img>
+			</div>
+		</a>
+	</div>
+	
+	<div id="profile_player-container">
+		<div id="seek-bar-container">
+			<div id="seek-bar-current"></div>
+			<div id="seek-bar-preload"></div>
+		</div>
+		
+		<div class="profile_player-cover" style="background-image: url(https://blob-static.s3.us-east-2.amazonaws.com/user/birdlied/art/profileIMG.png);"></div>
+		
+		<div class="profile_player-information">
+			<h1>Haumea</h1>
+			<p>birdlied</p>
+		</div>
+		
+		<div class="controls-container">
+			<button id="seek-forward-button"></button>
+			<button id="play-button"></button>
+			<button id="seek-backward-button"></button>
+		</div>
+		<button id="volume-button"></button>
+	</div>
+	
+	<div id="profile_main-container">
+		<div class="profile_cover-container" style="background-image: url(media/ph/examplecover.jpg)">
+			<div class="profile_information-container">
+				<h1 class="profile_information-name plus-user" title="Plus Member">birdlied</h1>
+				<p class="profile_information-location">Richmond, Kentucky</p>
+			</div>
+			<div class="profile_cover-picture staff-user" title="Staff Member" style="background-image: url(https://blob-static.s3.us-east-2.amazonaws.com/user/birdlied/art/profileIMG.png);">
+			</div>
+		</div>
+		
+		<div id="profile_main-content">
+			<div class="profile-main-content-menu-container">
+				<a href="#tracks" id="tracks" onclick="showTracks()" class="profile-main-content-menu-item active">Tracks</a>
+				<a href="#about" id="about" onclick="showAbout()" class="profile-main-content-menu-item">About</a>
+				<a href="#contact" id="contact" onclick="showContact()" class="profile-main-content-menu-item">Contact</a>
+				<a href="#favs" id="favs" onclick="showFavs()" class="profile-main-content-menu-item">Favs</a>
+			</div>
+			
+			<div class="profile-main-content-favs-container">
+				<h1>Favs</h1>
+			</div>
+			
+			<div class="profile-main-content-contact-container">
+				<h1>Contact</h1>
+				<form name="user-contact" action="#" method="POST">
+					<input name="email" type="text" placeholder="Email"></input>
+					<textarea name="message" type="text" placeholder="Message"></textarea>
+					<input type="submit" value="Send"></input>
+				</form>
+			</div>
+			
+			<div class="profile-main-content-about-container">
+				<div class="profile-main-content-about-text-container">
+					<h1>About</h1>
+					<p>Blah, blah, blah. Some shit about when I started making music, life story, same old boring shit.</p>
+				</div>
+				<div class="profile-main-content-about-links-container">
+					<h3>External Links</h3>
+					<a href="twitter.com" class="profile-main-content-about-link">My Twitter</a>
+					<a href="twitter.com" class="profile-main-content-about-link">My Twitter</a>
+					<a href="twitter.com" class="profile-main-content-about-link">My Twitter</a>
+				</div>
+			</div>
+			
+			<div class="profile-main-content-track-container">
+				<div class="profile-main-content-track-item spotlight">
+					<p class="profile-main-content-track-item-info-spotlight">Single  &middot;  1 Track(s)  &middot;  3 Minutes</p>
+					<h1 class="profile-main-content-track-item-title-spotlight">Haumea</h1>
+					<div class="profile-main-content-track-item-cover-spotlight" style="background-image: url(https://blob-static.s3.us-east-2.amazonaws.com/user/birdlied/art/profileIMG.png);"></div>
+					<div class="profile-main-content-track-item-bg" style="background-image: url(https://blob-static.s3.us-east-2.amazonaws.com/user/birdlied/art/profileIMG.png);"></div>
+				</div>
+				<div class="profile-main-content-track-item">
+					<p class="profile-main-content-track-item-info">Single  &middot;  1 Track(s)  &middot;  3 Minutes</p>
+					<h1 class="profile-main-content-track-item-title">Haumea</h1>
+					<div class="profile-main-content-track-item-cover" style="background-image: url(https://blob-static.s3.us-east-2.amazonaws.com/user/birdlied/art/profileIMG.png);"></div>
+				</div>
+				<div class="profile-main-content-track-item"></div>
+				<div class="profile-main-content-track-item"></div>
+				<div class="profile-main-content-track-item"></div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	function showAbout() {
+		$('.profile-main-content-track-container').hide("fast");
+		$('.profile-main-content-about-container').show("fast");
+		$('.profile-main-content-contact-container').hide("fast");
+		$('.profile-main-content-favs-container').hide("fast");
+		$('#favs').removeClass("active");
+		$('#tracks').removeClass("active");
+		$('#about').addClass("active");
+		$('#contact').removeClass("active");
+	}
+	function showTracks() {
+		$('.profile-main-content-track-container').show("fast");
+		$('.profile-main-content-about-container').hide("fast");
+		$('.profile-main-content-contact-container').hide("fast");
+		$('.profile-main-content-favs-container').hide("fast");
+		$('#favs').removeClass("active");
+		$('#tracks').addClass("active");
+		$('#about').removeClass("active");
+		$('#contact').removeClass("active");
+	}
+	function showContact() {
+		$('.profile-main-content-track-container').hide("fast");
+		$('.profile-main-content-about-container').hide("fast");
+		$('.profile-main-content-contact-container').show("fast");
+		$('.profile-main-content-favs-container').hide("fast");
+		$('#favs').removeClass("active");
+		$('#tracks').removeClass("active");
+		$('#about').removeClass("active");
+		$('#contact').addClass("active");
+	}
+	function showFavs() {
+		$('.profile-main-content-track-container').hide("fast");
+		$('.profile-main-content-about-container').hide("fast");
+		$('.profile-main-content-contact-container').hide("fast");
+		$('.profile-main-content-favs-container').show("fast");
+		$('#tracks').removeClass("active");
+		$('#about').removeClass("active");
+		$('#contact').removeClass("active");
+		$('#favs').addClass("active");
+	}
+	</script>
+</body>
+</html>
