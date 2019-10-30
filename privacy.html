@@ -84,6 +84,9 @@
 		<button id="disablecookies" onclick="disableCookies()">Disable Cookies & Tracking</button>
 		<span id="cleared" style="display: none;">Clicky Cookies & Tracking Cleared!</span>
 		<script type="text/javascript">
+		var delete_cookie = function(name) {
+			document.cookie = name + '=;value=null;domain=.zachfetters.com;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;';
+		};
 		function disableCookies() {
 			var clicky_custom = clicky_custom || {};
 			clicky_custom.cookies_disable = 1;
@@ -94,6 +97,10 @@
 			clicky_custom.pageview_disable = 1;
 			clicky_custom.osa_disable = 1;
 			clicky_custom.heatmap_disable = 1;
+			delete_cookie('_first_pageview');
+			delete_cookie('_referrer_og');
+			delete_cookie('_jsuid');
+			delete_cookie('cluid');
 			console.log("Cleared Clicky Cookies");
 			document.getElementById("cleared").style.display = "inline-block";
 		}
