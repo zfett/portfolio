@@ -37,6 +37,7 @@ html {
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
+	overflow-y: scroll;
 	user-select: none;
 }
 
@@ -146,19 +147,42 @@ img {
 #content {
   max-width: 600px;
   margin-top: 75px;
+	margin-bottom: 75px;
   margin-left: auto;
   margin-right: auto;
   font-size: 1.2rem;
 }
 
 footer {
-  position: relative;
-  padding-top: 100px;
+  position: fixed;
+	bottom: 0;
   height: 150px;
   width: 100vw;
-  background-color: rgb(16, 18, 19);
+  background-color: #0d0d0d;
   color: white;
-  margin-top: 50px;
+  margin-top: 0px;
+	z-index: -111;
+	background-image: url(i/footer-bg.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.footer-cont {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	text-align: center;
+	transform: translateY(-50%);
+}
+
+.footer-cont a {
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #fcd769;
+	text-decoration: none;
+	font-size: 10px;
 }
 
 .subtitle {
@@ -808,6 +832,10 @@ footer {
   text-decoration: none;
 }
 
+.slide-3 {
+	z-index: 5;
+}
+
 .slide-3 a {
   color: #ff7070;
   text-decoration: none;
@@ -964,7 +992,11 @@ footer {
 }
 
 #slide.slide-4 {
+	overflow: hidden;
   background-color: rgb(16, 18, 19);
+	height: calc(100vh) !important;
+	margin-bottom: 150px;
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.5);
 }
 
 .thanks {
