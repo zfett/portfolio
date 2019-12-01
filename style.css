@@ -8,22 +8,14 @@
 	top: 0;
 	left: 0;
 	z-index: 10000;
-	background-color: #111214;
+	background-color: #111114;
 }
 
-#loading-text {
-	text-align: center;
-	color: white;
-	margin: 0px;
-	padding: 0px;
-	font-family: 'Ubuntu Mono', monospace;
-	font-weight: bold;
-	font-size: 25px;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: 0.3s;
+.loading-video {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 body {

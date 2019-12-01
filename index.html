@@ -108,18 +108,11 @@
 <body id="body" oncontextmenu="return false;">
 	
 	<div id="loading-screen">
-		<p id="loading-text">LOADING</p>
+		<video class="loading-video" src="i/loading.mp4" autoplay loop preload="metadata" muted poster="i/blob-1.png"></video>
 		<script>
 		$(window).on( "load", function(){
 			$("#loading-screen").delay(3000).fadeOut(500);
 		})
-		
-		var count = 0;
-		setInterval(function(){
-			count++;
-			var dots = new Array(count % 5).join('.');
-			document.getElementById('loading-text').innerHTML = "LOADING." + dots;
-		}, 1000);
 		</script>
 	</div>
 	
