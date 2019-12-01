@@ -108,7 +108,7 @@
 <body id="body" oncontextmenu="return false;">
 	
 	<div id="loading-screen">
-		<video class="loading-video" src="i/loading.mp4" autoplay loop preload="metadata" muted poster="i/blob-1.png"></video>
+		<video class="loading-video" src="i/loading.mp4" playsinline="playsinline" autoplay loop preload="metadata" muted poster="i/blob-1.png"></video>
 		<script>
 		$(window).on( "load", function(){
 			$("#loading-screen").delay(3000).fadeOut(500);
