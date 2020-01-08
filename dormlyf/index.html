@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<title>DORM LYF SOFTWARE | Home</title>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="static/stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="static/scroll.js"></script>
+	<meta property="og:type" content="business.business">
+	<meta property="og:title" content="DORM LYF">
+	<meta property="og:url" content="https://zachfetters.com/dormlyf/">
+	<meta property="og:image" content="https://zachfetters.com/dormlyf/static/social-card.jpg">
+	<meta property="business:contact_data:street_address" content="433 University Drive">
+	<meta property="business:contact_data:locality" content="Richmond">
+	<meta property="business:contact_data:region" content="Kentucky">
+	<meta property="business:contact_data:postal_code" content="40475">
+	<meta property="business:contact_data:country_name" content="United States">
+	<script>
+	$(function() {
+		$.scrollify({
+			section : "div#slide",
+			updateHash : false,
+			scrollSpeed: 500,
+		});
+	});
+	</script>
+</head>
+
+<body oncontextmenu="return false;">
+	<div id="slide">
+		<div id="hero-section">
+			<div class="hero-section">
+				<p id="hero-quotes"><i></i></p>
+				<img class="hero-logo" src="static/branding/DORM_LYF_BRANDING_COLOR.svg" />
+				<div class="hero-text">
+					<h1 class="hero-tagline">We are just bored college students who (try to) make games.</h1>
+					<div class="hero-background-container">
+						<img class="hero-background-image" id="hero-1" src="static/hero/hero1.png" />
+						<img class="hero-background-image" id="hero-2" src="static/hero/hero2.png" />
+						<img class="hero-background-image" id="hero-3" src="static/hero/hero3.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="slide">
+		<div id="about-us">
+			<img class="about-logo" src="static/branding/DORM_LYF_BRANDING_WHITE.svg" />
+			<div class="about-text">
+				<h1 class="about-heading">Who are we?</h1>
+				<p class="about-para">We are bored college students with too much time on our hands. More specifically, we make games that pay homage to our favorite games and games that made an impact on us and/or our childhood. We strive to put that influence into everything we make.</p>
+			</div>
+		</div>
+	</div>
+	<div id="slide">
+		<div id="projects">
+			<div class="projects">
+				<img class="hero-logo" src="static/branding/DORM_LYF_BRANDING_COLOR.svg" />
+				<h1 class="projects-heading">Our Projects</h1>
+				<a href="project/block-30/index.html"><img class="b30-logo" src="static/games/b30/BLOCK_30_LOGO_FULL.png" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	var myQuotes = new Array();
+	
+	myQuotes[0] = "Wake up and smell the ashes.";
+	myQuotes[1] = "AARGH, DARGH, STAHP!";
+	myQuotes[2] = "It's time to kick *** and chew bubblegum... and I'm all outta gum.";
+	myQuotes[3] = "The cake is a lie.";
+	myQuotes[4] = "War. War never changes.";
+	myQuotes[5] = "You have died of dysentery.";
+	myQuotes[6] = "THE NUMBERS, MASON, WHAT DO THEY MEAN?";
+	myQuotes[7] = "You Died.";
+	myQuotes[8] = "The right man in the wrong place can make all the difference in the world.";
+	myQuotes[9] = "No gods or kings, only men.";
+	myQuotes[10] = "'...' - Gordan Freeman.";
+	myQuotes[11] = "I used to be an adventurer like you...";
+	myQuotes[12] = "It's dangerous to go alone! Take this.";
+	myQuotes[13] = "Endure and survive.";
+	myQuotes[14] = "Our princess is in another castle!";
+	myQuotes[15] = "FATALITY";
+	myQuotes[16] = "SNAAAAAAAKE!";
+	myQuotes[17] = "Grass grows, birds fly, sun shines, and brother, I hurt people.";
+	myQuotes[18] = "Hey, listen!";
+	myQuotes[19] = "It's super effective!";
+	
+	var myRandom = Math.floor(Math.random()*myQuotes.length);
+	
+	$(document).ready(function() {
+		$('#hero-quotes').html(myQuotes[myRandom]); 
+	});  
+	</script>
+</body>
+
+</html>
