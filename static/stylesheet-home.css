@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Source+Serif+Pro:400,600,700&display=swap');
+
+html, body {
+  margin: 0 auto;
+	padding: 20px;
+  width: 100%;
+  max-width: 860px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Serif Pro', serif;
+}
+
+pre, blockquote, code {
+  font-family: 'Source Code Pro', monospace;
+}
+
+code {
+	padding-left: 6px;
+	padding-right: 6px;
+	background-color: #ddd;
+	border-radius: 3px;
+}
+
+a {
+	color: #0f1c21;
+	text-decoration: none;
+	font-weight: bold;
+	transition: 0.1s;
+	border-bottom: 2px solid #0f1c21;
+}
+
+a:hover {
+	color: #2a6174;
+	transition: 0.1s;
+	border-bottom: 2px solid #2a6174;
+}
+
+.portrait {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	width: 150px;
+	user-select: none;
+}
+
+.intro {
+	margin: 0px;
+	padding: 0px;
+	margin-top: -7px;
+	font-size: 2.5rem;
+	color: #0f1c21;
+}
+
+.intro sup {
+	font-size: 1rem;
+	opacity: 0.5;
+	user-select: none;
+	pointer-events: none;
+	display: inline-block;
+}
+
+.description {
+	width: 100%;
+	font-size: 1.25rem;
+	margin-top: -5px;
+	text-align: justify;
+	line-height: 2.5rem;
+}
+
+.footer {
+	font-family: 'Source Code Pro', monospace;
+	text-align: center;
+	color: #bbb;
+	font-variant: small-caps;
+	font-size: 0.9rem;
+	margin-top: 40px;
+}
