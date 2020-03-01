@@ -4,7 +4,7 @@ https://keybase.io/zfett
 
 I hereby claim:
 
-  * I am an admin of https://zachfetters.com
+  * I am an admin of https://zfett.github.io
   * I am zfett (https://keybase.io/zfett) on keybase.
   * I have a public key with fingerprint A987 A420 B9E1 533D 7DB1  94BC 70AE C2A0 0F0D 55F3
 
@@ -22,48 +22,48 @@ To do so, I am signing this object:
       "username": "zfett"
     },
     "service": {
-      "hostname": "zachfetters.com",
+      "hostname": "zfett.github.io",
       "protocol": "https:"
     },
     "type": "web_service_binding",
     "version": 1
   },
-  "ctime": 1564767896,
+  "ctime": 1583032938,
   "expire_in": 157680000,
-  "prev": "f16b8dfb3237cd1ec8fb0464aaec05b2268e38302e87bf7fe269f2e31c20cbf9",
-  "seqno": 25,
+  "prev": "73742300162de7ab6ec801a370390aa97002746f8416627dc9383df4ad3da238",
+  "seqno": 33,
   "tag": "signature"
 }
 
 which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.3
+Version: Keybase OpenPGP v2.1.13
 Comment: https://keybase.io/crypto
 
-yMNEAnicrZJrTBRXGIZ3haWFuLWVGJSQ0k4BsSKd+2XbRrks1KJIibRYqdu5nGFH
-YGfdnV2ELSA3QzAiskKQpWgRQyoRaNNWk0IrYEMBIdXEtA0U0bDaGpuWiAHxQmdI
-/defPX9Ozvne5z3v+fJdNgboQvT27sHTa4xZ9/VjA80u3UfJ7mYPxMlCEWTyQHlg
-ZQP5AnAqljxJgEwQjMAIJdAIDGMkIbIA5hGUFygEFigGFwCPi4DmRJ6DEYTBCQbG
-EYwDFI/xPMYIFI0JnIDCLBQHiZItFzjsDsmmqLYsQ1MsjsIcAxACwwRK4FSe4ymY
-BTzKwrAICwQhYipolZ0aoYbjWCeIl2T1Tj1YVuL9h/5/zu1asaMFhMFEkiQZRM0r
-oiKpchyF4riAEiLCaEIncNjYAqCqi0WgKFBJHKReuSUeaF3VvvGszPJWTQEcznhe
-LlBZu0NWZF7OV4tWRbE7TRqsFNk1dSHgLP/6WDjJJqh9VAm3CkuyDTIhqpJXJM0Y
-IUicIimaIeMgcNAuOYBF0hQERdKwurR3gFu1FBGSowWRw1CM4gUE8LTIwTiJs2oz
-YYJDUZIGGI3BKKApTqREgJKMiAIM4VGY50Ttt05wwCZDJpRQc7K5qqdTyrWxissB
-oJLBgZxAnT5EF2RYpQ2YLiT4xWdjR+xY82RdrMFepmRGVh1vGO5JOpi159SZk+8P
-/j5bhU2s/Xlosv7Qth2H658c8FVubqvrnItPGDl3nj1irhx5zt9BPv7TlRxx9/UB
-g2zgQj+PzfG8nHE2cnCrJ+n5Mtw9sSeGQMPSE23j5eF06OpGQ8rGGx3hFzfvS57J
-7jB9+tOGGddn0z7P3NL2mB+G90fovwqbuxCxYA40nGJNU4YvduX4S3+Tt16veJzx
-Vlca1uc/4Z1qjZYX6mrPRI/H5A81xGz75IW9WT9Suoezk8u1jWarO6jl+7qR0S6q
-aaE67egRe/fGt9tq+j0735kyv7rpy/7S1OENvsmy0HcD9m4pLIWtvQkt1mzf+YgH
-O+eOKzVYa20Vtfz1o1fuAmruxBbv+jvXDy8mDrjHbmF/VLhsi51XUiaD06LzKq+N
-hb033h45v33W1TxxqJrsQU96174RVBA13iZ/4w7031t2vPnxsV0Xrg0+TLc/nU3y
-+qkrmyaXju6f+vbGdwupl3z1PX/5wvtrL3dOd4+mXDznb4IDZoj2wvSb1b923fQu
-fpiZ3WMuHt0d75vmC4djo40h3r7EhntFHbuNQm/OaORYVGZU1Aers/7OLV6Vua+h
-MWkxuPZ0yX1fU6w5Zt7gulTyIGnoavn6GeV2nf7q04SlmaZbvY+oX9rX1egjyzNa
-XiutuH1HMp5NeKmrdb4vVWz8B98qxAg=
-=AzzX
+yMM/AnicrVJtUFRVGF4UUBCEaRoFoW3mksOHBOd+7P1YDUYTmKkMElsKyO3ee85l
+Lx971927xIcwgFAYgiOBRVGAg5PZBAqlZWDB0AwJzjgRkTQ6sEzGh8qUP0Aj7F6q
+mX70s/PnzHnf53nO87zzDgWuN/h7OboG24MCX7znNTLwjttwMCsmtxQTFFiMmUux
+PLR2oXyIXKo1T4aYGQM4wBnI4gCQtEniERBxQoQMDiDDURCJlIRYQRIFgOMcZeIA
+hZMCYkRSFEkOMiwJBUgAHovFJNmeg5wOp2xXNVmeYxmeIoDAIdxEkpCBgsYXRAbw
+SCR4ACQATSaJ1Ig2xaUzNHMC70JxsqLVtId1zd5/4P9n3+41ORbiHCnRNM3hml+J
+kGiNJzAERUHCJOGcDnQhp50vQBq6REKqipXFYlqpUBaRPlU9xr/bcTmyanMLf+Vx
+OBVVEZV8rWlTVYfLrJPVYoeOfg0J1r91rIJsh9ocNUYhcrpkxY6ZcQ0pqrIujJtY
+EpAER7KxGCpyyE5klXWEiaFZoB39H1SoT41kKIIEAKcJiBheoJHIApwnGUBygOc5
+BgCCoWiJpXCaJhgoapIklCgekpAnSBbTkx2yK5iZJDWffI6m6ZJz7LzqdiKsbHAg
+29vg5W/w9VmnL5jB3y/4n7V7UBlsON7TFFqUM5EsTmcttH+7GjAZv7nnwlbbLyOW
+xKVR1JDpiUvrnYzwTe043pY0Xmux7LuzcrAF+Zl704OqJr8Yqw/v/rBhT+vWnvny
+8/e6fh66v5upGps1bkpp3fh03uflHWFH/OxTXxXtfPe2pedRsaneUj06M36Oulq9
+7VRlZ0BJbcTG64Gvxn9jNN6aIPzGSeFYVUmGVPfg9CXjDeOuxIeBtrm4l2dz0588
+86xx9fHuZXNXxDPJ5ptLKxwfGgj6Ln6csFCRHxn6SlKrRxhgaw7vLzuy19gb3+hZ
+ly43l+SOh10yHy7v/+OxL3+1J6zP8CZ+uo4vf1YTk51uftOIH8vLYqMUrHNmb/D3
+u0JGPSedTVnNH3UEFVT374i+G/ID521460LMuZsx7dM1jS+NZPq8PhdWN0Ivn55S
+l9S3rW/QcylRtxe31/nyH1yp2pB/w31KuvvEMBsdcLHvYXinI7l9pn3Y77u085ny
+iTvvzR5If77SNnSm5cRz3r7DHn7hkbbQ7KPdlUtpwm6fiuFrP2YkuH2Hsvgt9bVt
+h5IPyJ7I1ctXqpUE//5bQ4vMbyaXSYmo6Gvexo8lXt1fOjVxLTc1siUYbn7/hU+G
+pWbLYPN01Abb2RRwueDs4lP8zk3E/cnxxi34nqQ2KWg6iW0Mmfea314cs/xpdGr5
+10JZww5xciU2/PfKPwE1aLhb
+=vVvI
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
