@@ -56,14 +56,14 @@ a:hover {
   float: left;
   margin-right: 20px;
   margin-bottom: 0px;
-  width: 150px;
+  height: 14.5rem;
+	vertical-align: bottom;
   user-select: none;
 }
 
 .intro {
   margin: 0px;
   padding: 0px;
-  margin-top: -7px;
   font-size: 2.5rem;
   color: #0f1c21;
 }
@@ -92,6 +92,7 @@ a:hover {
   font-size: 0.9rem;
   user-select: none;
   margin-top: 40px;
+	line-height: 1rem;
 }
 
 /*Responsive Design Rules*/
@@ -111,7 +112,7 @@ a:hover {
 	}
 }
 
-@media screen and (max-width:400px) {
+@media all and (max-width:400px) {
   html, body {
     margin: 0 auto;
     padding: 20px;
