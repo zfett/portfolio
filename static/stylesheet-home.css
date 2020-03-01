@@ -96,7 +96,7 @@ a:hover {
 	line-height: 1rem;
 }
 
-#expand {
+#expand, #copy {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1.25rem;
 	border: 3px solid #0f1c21;
@@ -112,7 +112,7 @@ a:hover {
 	margin-bottom: 1.5rem;
 }
 
-#expand:hover {
+#expand:hover, #copy:hover {
 	border: 3px solid #0f1c21;
 	background-color: #0f1c21;
 	color: white;
@@ -120,6 +120,7 @@ a:hover {
 }
 
 #pgp {
+	font-family: 'Source Code Pro', monospace;
 	height: calc(1rem + 10px);
 	position: relative;
 	display: inline-block;
@@ -137,6 +138,43 @@ a:hover {
 #pgp.active {
 	height: calc(100%);
 	word-break: normal;
+}
+
+#copyTooltip {
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	font-size: 1rem;
+	width: 9.35rem;
+	text-align: center;
+	color: white;
+	background-color: #0f1c21;
+	margin-top: -40px;
+	vertical-align: middle;
+	border-radius: 4px;
+	user-select: none;
+	pointer-events: none;
+	opacity: 0.0;
+	transition: 0.3s;
+}
+
+#copyTooltip.active {
+	opacity: 1.0;
+	margin-top: -45px;
+	transition: 0.3s;
+}
+
+#copyTooltip::before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #0f1c21;
+	border-radius: 4px;
+	margin-top: 18px;
+	transform: rotateZ(45deg);
+	left: calc(50% - 10px);
+	z-index: -1;
 }
 
 /*Responsive Design Rules*/
