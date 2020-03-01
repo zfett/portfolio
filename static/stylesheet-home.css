@@ -53,7 +53,8 @@ a:hover {
 }
 
 .portrait {
-  float: left;
+	position: relative;
+	float: left;
   margin-right: 20px;
   margin-bottom: 0px;
   height: 14.5rem;
