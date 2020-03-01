@@ -140,7 +140,7 @@ a:hover {
 }
 
 /*Responsive Design Rules*/
-@media screen and (max-width:950px) {
+@media screen and (max-width:70rem) {
   html, body {
     margin: 0 auto;
     padding: 20px;
@@ -164,7 +164,7 @@ a:hover {
 	}
 }
 
-@media all and (max-width:400px) {
+@media all and (max-width:30rem) {
   html, body {
     margin: 0 auto;
     padding: 20px;
