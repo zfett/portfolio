@@ -96,6 +96,49 @@ a:hover {
 	line-height: 1rem;
 }
 
+#expand {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.25rem;
+	border: 3px solid #0f1c21;
+	background-color: white;
+	color: #0f1c21;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+	transition: 0.1s;
+	margin-bottom: 1.5rem;
+}
+
+#expand:hover {
+	border: 3px solid #0f1c21;
+	background-color: #0f1c21;
+	color: white;
+	transition: 0.1s;
+}
+
+#pgp {
+	height: calc(1rem + 10px);
+	position: relative;
+	display: inline-block;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	padding: 20px;
+	border-radius: 4px;
+	background-color: #eee;
+	width: auto;
+	overflow: hidden;
+	word-break: normal;
+	border: 1px solid #ccc;
+}
+
+#pgp.active {
+	height: calc(100%);
+	word-break: normal;
+}
+
 /*Responsive Design Rules*/
 @media screen and (max-width:950px) {
   html, body {
@@ -104,6 +147,14 @@ a:hover {
     width: calc(100% - 40px);
     font-family: 'Source Sans Pro', sans-serif;
   }
+	#pgp {
+		width: calc(100% - 40px);
+		overflow: hidden;
+	}
+	#pgp.active {
+		width: calc(100% - 40px);
+		overflow-x: scroll;
+	}
 	.intro sup {
 		display: none;
 	}
