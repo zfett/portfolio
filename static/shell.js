@@ -21,7 +21,7 @@ function changeLastCMD() {
 }
 
 function submitCmd() {
-  var _CMD = (userInput.value).toString().toLowerCase().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;");
+  var _CMD = (userInput.value).toString().toLowerCase().replace(/\W/gi, "");
 
   if (_CMD == "help" || _CMD == "?") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
