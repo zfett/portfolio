@@ -1,10 +1,23 @@
 const userInput = document.getElementById("shell-input");
 const shellOutput = document.getElementById("shell-output-wrap");
+window.lastCMD = "";
 
 function initShell() {
   userInput.value = "";
   shellOutput.innerHTML = "";
   console.log("initalizing ZShell...");
+}
+
+function flipCoin() {
+	var _COIN = ["heads", "tails"];
+	var _RESULT = _COIN[Math.floor(Math.random() * _COIN.length)];
+	return _RESULT;
+}
+
+function changeLastCMD() {
+	var _LCMD = window.lastCMD;
+	userInput.value = "";
+	userInput.value = _LCMD;
 }
 
 function submitCmd() {
@@ -23,10 +36,12 @@ function submitCmd() {
     shellOutput.innerHTML += "<p id='shell-output'>pgp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:: Gives a URL to download my public PGP key.</p>";
     shellOutput.innerHTML += "<p id='shell-output'>clear&nbsp;&nbsp;&nbsp;:: Clears the terminal screen.</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "about") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>Hey, I'm Zach and I am a freelance web developer and designer. Welcome to my portfolio site! Hope you enjoy your stay!</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "contact") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>Twitter&nbsp;&nbsp;&nbsp;:: @zachary_fetters</p>";
@@ -36,31 +51,50 @@ function submitCmd() {
     shellOutput.innerHTML += "<p id='shell-output'>Keybase&nbsp;&nbsp;&nbsp;:: @zfett</p>";
     shellOutput.innerHTML += "<p id='shell-output'>E-mail&nbsp;&nbsp;&nbsp;&nbsp;:: zachary.fetters@yahoo.com</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "ping") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>Pong!</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "clear" || _CMD == "cls") {
     shellOutput.innerHTML = "";
     shellOutput.innerHTML += "<p id='shell-output'>Cleared the terminal.</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "pgp") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>Use this link to download a copy of my public key: https://zfett.keybase.pub/A987A420B9E1533D7DB194BC70AEC2A00F0D55F3.txt</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
+	} else if (_CMD == "flip") {
+		shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
+		shellOutput.innerHTML += "<p id='shell-output'>Your coin flip result is... "+flipCoin()+"!</p>";
+		userInput.value = "";
+		window.lastCMD = _CMD;
   } else if (_CMD == "close" || _CMD == "quit" || _CMD == "exit" || _CMD == "leave") {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>To close this terminal, click the red 'X' icon in the terminal's titlebar.</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   } else {
     shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
     shellOutput.innerHTML += "<p id='shell-output'>" + _CMD + ": command not found</p>";
     userInput.value = "";
+		window.lastCMD = _CMD;
   }
 }
 
+window.addEventListener("keydown", function(e) {
+	if (e.key == 'ArrowUp') {
+		changeLastCMD();
+	} else if (e.key == 'ArrowDown') {
+		userInput.value = "";
+	}
+});
+
 userInput.addEventListener("keydown", function(e) {
-  if (e.keyCode === 13) {
-    submitCmd();
-  }
+	if (e.keyCode == '13') {
+		submitCmd();
+	}
 });
