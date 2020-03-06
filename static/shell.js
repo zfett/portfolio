@@ -7,7 +7,7 @@ function initShell() {
 }
 
 function submitCmd() {
-	var _CMD = (userInput.value).toString().toLowerCase().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;").replace(/;/g, "&semi;");
+	var _CMD = (userInput.value).toString().toLowerCase().replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&/g, "&amp;");
 	
 	if (_CMD == "help" || _CMD == "?") {
 		shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
