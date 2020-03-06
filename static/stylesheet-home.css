@@ -152,7 +152,7 @@ a:hover {
 	background-color: #0f1c21;
 	margin-top: -40px;
 	vertical-align: middle;
-	border-radius: 4px;
+	border-radius: 0.25rem;
 	user-select: none;
 	pointer-events: none;
 	opacity: 0.0;
@@ -168,11 +168,11 @@ a:hover {
 #copyTooltip::before {
 	content: '';
 	position: absolute;
-	width: 20px;
-	height: 20px;
+	width: 1.3rem;
+	height: 1.3rem;
 	background-color: #0f1c21;
-	border-radius: 4px;
-	margin-top: 18px;
+	border-radius: 0.25rem;
+	margin-top: 1.35rem;
 	transform: rotateZ(45deg);
 	left: calc(50% - 10px);
 	z-index: -1;
