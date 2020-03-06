@@ -241,6 +241,21 @@ a:hover {
 	cursor: pointer;
 }
 
+#ubuntu-max {
+	position: absolute;
+	background-color: rgba(0,0,0,0);
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	height: 16px;
+	width: 16px;
+	z-index: 1002;
+	border-radius: 16px;
+	left: 46px;
+	top: 6px;
+	cursor: pointer;
+}
+
 /*Responsive Design Rules*/
 @media screen and (max-width:70rem) {
 	#ubuntu {
