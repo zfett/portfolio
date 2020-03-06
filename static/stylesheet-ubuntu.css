@@ -78,6 +78,7 @@ body, html {
 	border: 0px;
 	resize: none;
 	background-color: rgba(0,0,0,0);
+	outline: none;
 }
 
 .shell-content input:disabled {
@@ -170,6 +171,7 @@ body, html {
 	left: 8px;
 	top: 6px;
 	cursor: pointer;
+	outline: none;
 }
 
 #ubuntu-max {
@@ -185,4 +187,5 @@ body, html {
 	left: 46px;
 	top: 6px;
 	cursor: pointer;
+	outline: none;
 }
