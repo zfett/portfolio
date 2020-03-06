@@ -38,7 +38,7 @@ function submitCmd() {
 		shellOutput.innerHTML += "<p id='shell-output'>admin@zfett.github.io:~$ " + _CMD + "</p>";
 		shellOutput.innerHTML += "<p id='shell-output'>Pong!</p>";
 		userInput.value = "";
-	} else if (_CMD == "clear") {
+	} else if (_CMD == "clear" || _CMD == "cls") {
 		shellOutput.innerHTML = "";
 		shellOutput.innerHTML += "<p id='shell-output'>Cleared the terminal.</p>";
 		userInput.value = "";
