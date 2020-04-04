@@ -85,6 +85,13 @@ function submitCmd() {
   }
 }
 
+function maxWindow() {
+	document.documentElement.requestFullscreen();
+	document.documentElement.mozRequestFullscreen();
+	document.documentElement.webkitRequestFullscreen();
+	document.documentElement.msRequestFullscreen();
+}
+
 window.addEventListener("keydown", function(e) {
 	if (e.key == 'ArrowUp') {
 		changeLastCMD();

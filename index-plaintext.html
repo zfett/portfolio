@@ -11,7 +11,7 @@
 <pre>
 Hello, I'm Zachary Fetters.
 
-I'm a 19 year-old web and graphic designer, programmer, and Gen.
+I'm a <span id="age"></span> year-old web and graphic designer, programmer, and Gen.
 CIS student at Eastern Kentucky University. I'm currently
 freelance and looking for remote design work! If you have a
 project you think will benefit with my vision, e-mail me at
@@ -92,5 +92,27 @@ TGR+oQ+5KqOaELFjk+cN1LRkFkqx1QPKHg2ZvpY5UPYWaDcruSqNGin0EFr3E3c/
 -----END PGP PUBLIC KEY BLOCK-----
 </pre><br/>
 <p><a href="index.html">Go back to the regular site.</a></p>
+
+<script>
+function calculate_dates(birth_month, birth_day, birth_year) {
+  today_date = new Date();
+  today_year = today_date.getFullYear();
+  today_month = today_date.getMonth();
+  today_day = today_date.getDate();
+  age = today_year - birth_year;
+
+  if (today_month < (birth_month - 1)) {
+    age--;
+  }
+  if (((birth_month - 1) == today_month) && (today_day < birth_day)) {
+    age--;
+  }
+  document.getElementById("age").innerHTML = age;
+  document.getElementById("year").innerHTML = today_year;
+	return true;
+}
+
+calculate_dates(1, 14, 2001);
+</script>
 </body>
 </html>
