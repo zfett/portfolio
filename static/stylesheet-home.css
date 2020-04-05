@@ -53,16 +53,20 @@ a:hover {
   border-bottom: 2px solid #2a6174;
 }
 
-.portrait {
+#portraitCont {
 	position: relative;
 	overflow: hidden;
 	float: left;
-  margin-right: 20px;
+	height: 14.5rem;
+	margin-right: 20px;
   margin-bottom: 0px;
-  height: 14.5rem;
 	vertical-align: bottom;
   user-select: none;
 	border-radius: 5px;
+}
+
+.portrait {
+	height: 100%;
 }
 
 .portraitClick {
@@ -350,11 +354,8 @@ a:hover {
 	position: absolute;
 	border: 0px;
 	right: 25px;
-	top: 9px;
-}
-
-.modelInfo a[rel="license"] img {
-	border-radius: 8px;
+	top: 0px;
+	height: 50px;
 }
 
 .closeModel {
