@@ -373,6 +373,12 @@ a:hover {
 
 /*Responsive Design Rules*/
 @media screen and (max-width:70rem) {
+  #portraitModel {
+    display: none !important;
+  }
+  .portraitClick {
+    display: none !important;
+  }
 	#ubuntu {
 		position: fixed !important;
 		display: none !important;
