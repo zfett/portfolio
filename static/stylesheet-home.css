@@ -374,6 +374,9 @@ a:hover {
 
 /*Responsive Design Rules*/
 @media screen and (max-width:70rem) {
+	#portraitCont {
+		display: none;
+	}
   #portraitModel {
     display: none !important;
   }
