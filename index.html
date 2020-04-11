@@ -34,18 +34,6 @@
 	</head>
 
 	<body onload="setEmail()">
-		<div id="ubuntu" style="display: none;">
-			<div id="ubuntu-titlebar">
-				<div class="shell-titlebar">
-					<img class="shell-titlebar-buttons" src="media/ubuntu/shell-titlebar-buttons.png" />
-					<button id="ubuntu-close" onclick="closeTerminal()"></button>
-					<a href="ubuntu.html" target="_blank"><button id="ubuntu-max"></button></a>
-					<h1>admin@zfett.github.io: ~</h1>
-				</div>
-			</div>
-			<iframe id="ubuntu-shell" src="ubuntu.html"></iframe>
-		</div>
-
 		<div id="portraitModel" class="closed">
 			<button class="closeModel" onclick="$('#portraitModel').toggleClass('closed');">Close</button>
 			<img src="media/portraitFull.jpg" class="portraitFull"></img>
@@ -156,20 +144,6 @@ function expandCode() {
 		$('#expand').html('Expand');
 		window.isToggled = false;
 	}
-}
-
-window.addEventListener("keydown", function(e) {
-	if (e.keyCode === 192) {
-		openTerminal();
-	}
-});
-
-function openTerminal() {
-	document.getElementById("ubuntu").style.display = "block";
-}
-
-function closeTerminal() {
-	document.getElementById("ubuntu").style.display = "none";
 }
 		</script>
 	</body>
