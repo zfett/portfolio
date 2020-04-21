@@ -1,80 +1,77 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Portfolio, Zachary Fetters.</title>
-		<link rel="stylesheet" type="text/css" href="static/stylesheet-home.css" />
-		<script src="static/jquery.min.js"></script>
-		<script src="static/index.js" async></script>
-		<link rel="icon" type="img/png" href="favicon.png" />
-		<link rel="icon" type="img/svg+xml" href="favicon.svg" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio, Zachary Fetters.</title>
+	<link rel="stylesheet" type="text/css" href="static/stylesheet-home.css" />
+	<script src="static/jquery.min.js"></script>
+	<script src="static/index.js" async></script>
+	<link rel="icon" type="img/png" href="favicon.png" />
+	<link rel="icon" type="img/svg+xml" href="favicon.svg" />
 
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Portfolio, Zachary Fetters.">
-		<meta property="og:site_name" content="zfett.github.io">
-		<meta property="og:url" content="https://zfett.github.io">
-		<meta property="og:locale" content="en_US">
-		<meta property="og:site_name" content="Zachary Fetters' Portfolio">
-		<meta property="og:image" content="https://zfett.github.io/media/socialcard.jpg">
-		<meta property="og:image:secure_url" content="https://zfett.github.io/media/socialcard.jpg">
-		<meta property="og:image:alt" content="The text, 'Zachary Fetters', in a white, serif font overlaid on a dark blue, plain background.">
-		<meta property="og:image:type" content="image/jpeg">
-		<meta property="og:image:width" content="1350">
-		<meta property="og:image:height" content="750">
-		<meta property="og:description" content="Hello, I'm Zach, and I'm a designer and programmer! Welcome to my portfolio.">
-		<meta property="article:author" content="https://facebook.com/zachary.fetters">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Portfolio, Zachary Fetters.">
+	<meta property="og:site_name" content="zfett.github.io">
+	<meta property="og:url" content="https://zfett.github.io">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="Zachary Fetters' Portfolio">
+	<meta property="og:image" content="https://zfett.github.io/media/socialcard.jpg">
+	<meta property="og:image:secure_url" content="https://zfett.github.io/media/socialcard.jpg">
+	<meta property="og:image:alt" content="The text, 'Zachary Fetters', in a white, serif font overlaid on a dark blue, plain background.">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1350">
+	<meta property="og:image:height" content="750">
+	<meta property="og:description" content="Hello, I'm Zach, and I'm a designer and programmer! Welcome to my portfolio.">
+	<meta property="article:author" content="https://facebook.com/zachary.fetters">
 
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@zachary_fetters">
-		<meta name="twitter:title" content="Portfolio, Zachary Fetters.">
-		<meta name="twitter:description" content="Hello, I'm Zach, and I'm a designer and programmer! Welcome to my portfolio.">
-		<meta name="twitter:image" content="https://zfett.github.io/media/socialcard.jpg">
-	</head>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@zachary_fetters">
+	<meta name="twitter:title" content="Portfolio, Zachary Fetters.">
+	<meta name="twitter:description" content="Hello, I'm Zach, and I'm a designer and programmer! Welcome to my portfolio.">
+	<meta name="twitter:image" content="https://zfett.github.io/media/socialcard.jpg">
+</head>
 
-	<body onload="setEmail()">
-		<div id="portraitModel" class="closed">
-			<button class="closeModel" onclick="$('#portraitModel').toggleClass('closed');">Close</button>
-			<img src="media/portraitFull.jpg" class="portraitFull"></img>
-			<div class="modelInfo">
-				<a href="media/portraitFull.jpg" download><button class="downloadImage">Download this image</button></a>
-				<p><i>portraitFull.jpg</i> &middot; 3025 x 4032 px &middot; 6.40 MB</p>
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="media/license.png" /></a>
-			</div>
+<body onload="setEmail()">
+	<div id="portraitModel" class="closed">
+		<button class="closeModel" onclick="$('#portraitModel').toggleClass('closed');">Close</button>
+		<img src="media/portraitFull.jpg" class="portraitFull"></img>
+		<div class="modelInfo">
+			<a href="media/portraitFull.jpg" download><button class="downloadImage">Download this image</button></a>
+			<p><i>portraitFull.jpg</i> &middot; 3025 x 4032 px &middot; 6.40 MB</p>
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="media/license.png" /></a>
 		</div>
+	</div>
 
-		<header>
-			<div id="portraitCont">
-				<a href="#" class="portraitClick" onclick="$('#portraitModel').toggleClass('closed');" title="Click to expand.">
-					<img src="media/expandImage.png" class="expandImage" />
-				</a>
-				<img class="portrait" src="media/portrait.jpg" alt="Portrait of Zachary Fetters. My mom thinks I'm cute!" />
-			</div>
-			<h1 class="intro" aria-level="1">Hello, I'm Zachary Fetters. <sup aria-hidden="true">(That's me to the left!)</sup></h1>
-		</header>
-		<section class="description" role="main">
-			<p role="region">I'm a <span id="age" title="I was born on January 14th, 2001.">NaN</span> year-old web and graphic designer, programmer, and Gen. CIS student at Eastern Kentucky University. I'm currently freelance and looking for remote
-				design
-				work! If you have a project you think will benefit with my vision, e-mail me at <a id="email" target="_blank" href="" title="Link to e-mail me about your project!">zachfett(at)protonmail(dot)com</a>.</p>
-			<p role="region">I am fluent in <code>HTML</code>, <code>CSS</code>, and <code>Javascript</code>. I am knowledgeable in <code>C#</code>, <code>Git</code>, <code>PHP</code>, <code>MySQL</code>, <code>Batch</code>, and
-				<code>PowerScript</code>. I
-				am learning <code>R</code>, <code>Haskell</code>, <code>C</code>, <code>C++</code>, and <code>TensorFlow</code>.</p>
-			<p role="region">I have a keen sense for minimal, functionalist design and I like my code like I like my design: clean, simple, yet robust.</p>
-			<p role="region">Keep tabs with me on my <a target="_blank" href="https://twitter.com/zachary_fetters" title="Link to my Twitter.">Twitter</a>, <a target="_blank" href="https://linkedin.com/in/zfett"
-				  title="Link to my LinkedIn.">LinkedIn</a>, <a target="_blank" href="https://github.com/zfett" title="Link to my GitHub.">Github</a>, or <a target="_blank" href="https://fb.com/zachary.fetters"
-				  title="Link to my Facebook.">Facebook</a>!</p>
-			<p role="region">Peek at my thoughts over on my <a target="_blank" href="https://zfett.hashnode.dev/" title="Link to my Hashnode blog, 'The Codedump.'">Hashnode blog, "The Codedump"</a>.</p>
-			<p role="region">I also have <a target="_blank" href="media/ZacharyFetters_Resume_APR2020.pdf" title="Link to my résumé.">a résumé</a> for (potential) employers!</p>
-			<p role="region">Want to securely e-mail me? Use my PGP public key below to send me an encrypted message to my aforementioned e-mail address. If e-mail isn't exactly your speed, then <a href="keybase://chat/zfett"
-				  title="Open the Keybase app to message me!">message me via the Keybase app</a>.</p><br />
+	<header>
+		<div id="portraitCont">
+			<a href="#" class="portraitClick" onclick="$('#portraitModel').toggleClass('closed');" title="Click to expand.">
+				<img src="media/expandImage.png" class="expandImage" />
+			</a>
+			<img class="portrait" src="media/portrait.jpg" alt="Portrait of Zachary Fetters. My mom thinks I'm cute!" />
+		</div>
+		<h1 class="intro" aria-level="1">Hello, I'm Zachary Fetters. <sup aria-hidden="true">(That's me to the left!)</sup></h1>
+	</header>
+	<section class="description" role="main">
+		<p role="region">I'm a <span id="age" title="I was born on January 14th, 2001.">NaN</span> year-old web and graphic designer, programmer, and Gen. CIS student at Eastern Kentucky University. I'm currently freelance and looking for remote
+			design
+			work! If you have a project you think will benefit with my vision, e-mail me at <a id="email" target="_blank" href="" title="Link to e-mail me about your project!">zachfett(at)protonmail(dot)com</a>.</p>
+		<p role="region">I am fluent in <code>HTML</code>, <code>CSS</code>, and <code>Javascript</code>. I am knowledgeable in <code>C#</code>, <code>Git</code>, <code>PHP</code>, <code>MySQL</code>, <code>Batch</code>, and
+			<code>PowerScript</code>. I
+			am learning <code>R</code>, <code>Haskell</code>, <code>C</code>, <code>C++</code>, and <code>TensorFlow</code>.</p>
+		<p role="region">I have a keen sense for minimal, functionalist design and I like my code like I like my design: clean, simple, yet robust.</p>
+		<p role="region">Keep tabs with me on my <a target="_blank" href="https://twitter.com/zachary_fetters" title="Link to my Twitter.">Twitter</a>, <a target="_blank" href="https://linkedin.com/in/zfett" title="Link to my LinkedIn.">LinkedIn</a>, <a target="_blank" href="https://github.com/zfett" title="Link to my GitHub.">Github</a>, or <a target="_blank" href="https://fb.com/zachary.fetters" title="Link to my Facebook.">Facebook</a>!</p>
+		<p role="region">Peek at my thoughts over on my <a target="_blank" href="https://zfett.hashnode.dev/" title="Link to my Hashnode blog, 'The Codedump.'">Hashnode blog, "The Codedump"</a>.</p>
+		<p role="region">I also have <a target="_blank" href="media/ZacharyFetters_Resume_APR2020.pdf" title="Link to my résumé.">a résumé</a> for (potential) employers!</p>
+		<p role="region">Want to securely e-mail me? Use my PGP public key below to send me an encrypted message to my aforementioned e-mail address. If e-mail isn't exactly your speed, then <a href="keybase://chat/zfett" title="Open the Keybase app to message me!">message me via the Keybase app</a>.</p><br />
 
-			<center>
-				<button id="expand" onclick="expandCode()">Expand</button>
+		<center>
+			<button id="expand" onclick="expandCode()">Expand</button>
 
-				<span id="copyTooltip">Copied PGP Code!</span>
-				<button id="copy" onclick="copyText()">Copy Text</button><br />
-				<textarea cols="60" rows="31" readonly id="pgp" style="resize: none;">
+			<span id="copyTooltip">Copied PGP Code!</span>
+			<button id="copy" onclick="copyText()">Copy Text</button><br />
+			<textarea cols="60" rows="31" readonly id="pgp" style="resize: none;">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQENBF6I6GUBCADJ3Xzx0NYb+XkzNwoTb1nYfWBExt+GduIxhfqmWGv8vTdayRod
@@ -106,46 +103,43 @@ ZRZijlL4wGTBT/U/wqWUTBhWLwi+/U1LVGHzeQCgs8iM5Koa6Z5s548UOFgYz8ON
 GExSWsY=
 =Itt6
 -----END PGP PUBLIC KEY BLOCK-----
-</textarea>
-				<br /><br />
-				<p><i>Psst, there's also a <a href="index-plaintext.html">plaintext version</a> of this website as well!</i></p>
-			</center>
-			<p role="region" class="footer">&copy; Zachary Fetters, 2001 &mdash; <span id="year"></span>.</p>
-		</section>
+			</textarea>
+			<br /><br />
+		</center>
+		<p role="region" class="footer">&copy; Zachary Fetters, 2001 &mdash; <span id="year"></span>.</p>
+	</section>
 
-		<script>
-function copyText() {
-	/* Get the text field */
-	var copyText = document.getElementById("pgp");
+	<script>
+		function copyText() {
+			/* Get the text field */
+			var copyText = document.getElementById("pgp");
 
-	/* Select the text field */
-	copyText.select();
-	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+			/* Select the text field */
+			copyText.select();
+			copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-	/* Copy the text inside the text field */
-	document.execCommand("copy");
+			/* Copy the text inside the text field */
+			document.execCommand("copy");
 
-	$("#copyTooltip").addClass("active");
+			$("#copyTooltip").addClass("active");
 
-	setTimeout(function() {
-		$("#copyTooltip").removeClass("active");
-	}, 3000);
-}
+			setTimeout(function() {
+				$("#copyTooltip").removeClass("active");
+			}, 3000);
+		}
 
-window.isToggled = false;
-
-function expandCode() {
-	if (window.isToggled == false) {
-		$('#pgp').toggleClass('active');
-		$('#expand').html('Collapse');
-		window.isToggled = true;
-	} else if (window.isToggled == true) {
-		$('#pgp').toggleClass('active');
-		$('#expand').html('Expand');
 		window.isToggled = false;
-	}
-}
-		</script>
-	</body>
 
-</html>
+		function expandCode() {
+			if (window.isToggled == false) {
+				$('#pgp').toggleClass('active');
+				$('#expand').html('Collapse');
+				window.isToggled = true;
+			} else if (window.isToggled == true) {
+				$('#pgp').toggleClass('active');
+				$('#expand').html('Expand');
+				window.isToggled = false;
+			}
+		}
+	</script>
+</body></html>
