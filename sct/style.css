@@ -4,6 +4,9 @@ html, body {
   margin: 0 auto;
   background-color: #f5f5f5;
   font-family: 'Roboto', sans-serif;
+	
+	/*Global Variables*/
+	--tabbed-outline: 1px dashed #ffa630;
 }
 
 ::selection, -moz-::selection, -webkit-::selection, -o-::selection {
@@ -36,11 +39,23 @@ header {
   position: relative;
   margin: 0px;
   padding: 0px;
-  font-size: 1.5rem;
-  color: #ffa630;
-  margin-top: 24px;
+  height: 20px;
+  margin-top: 30px;
   user-select: none;
   pointer-events: none;
+}
+
+#header-home-link {
+	position: absolute;
+	z-index: 3;
+	left: 0;
+	width: 195px;
+	height: 40px;
+	margin: 20px;
+}
+
+#header-home-link:focus {
+	outline: var(--tabbed-outline);
 }
 
 content {
@@ -64,6 +79,43 @@ featured-series {
   height: 250px;
   background-color: #eee;
   margin-bottom: 25px;
+	overflow: hidden;
+	user-select: none;
+	pointer-events: none;
+}
+
+#featured-series-link:focus {
+	outline: var(--tabbed-outline);
+}
+
+featured-series::after {
+	content: 'FEATURED SERIES';
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-size: 0.8rem;
+	background-color: #2e5077;
+	color: #ffffff;
+	padding: 5px 10px 5px 10px;
+}
+
+featured-series-title {
+	position: absolute;
+	display: block;
+	font-size: 1.25rem;
+	font-weight: bold;
+	width: 100%;
+	color: white;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+	background-color: rgba(0,0,0,0.5);
+}
+
+featured-cover {
+	user-select: none;
+	pointer-events: none;
 }
 
 content-container {
@@ -80,4 +132,29 @@ content-sidebar {
   height: 100px;
   float: right;
   border-left: 1px solid #eee;
+}
+
+content-result {
+	position: relative;
+	display: block;
+	width: calc(100% - 17px);
+	margin: 0px 15px 15px 0px;
+	height: 60px;
+	background-color: white;
+	border: 1px solid rgba(0,0,0,0.05);
+	box-shadow: 0px 0px 0px 0px rgba(255,166,48,0);
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+content-result:hover, content-result:active, content-result:focus {
+	transition: 0.25s;
+	box-shadow: 0px 0px 0px 2px rgba(255,166,48,1.0);
+}
+
+result-image {
+	user-select: none;
+	pointer-events: none;
 }
