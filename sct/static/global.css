@@ -13,6 +13,47 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+ie-warning {
+	position: fixed;
+	width: 500px;
+	z-index: 9999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 50px;
+	background-color: white;
+	box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.9);
+	text-align: center;
+	line-height: 1.2rem;
+	user-select: none;
+	pointer-events: none;
+}
+
+ie-warning span {
+	font-size: 0.7rem;
+	color: #555;
+}
+
+ie-warning i {
+	font-size: 0.8rem;
+}
+
+#blur-filter {
+	margin: 0px;
+	padding: 0px;
+}
+
+#blur-filter.enabled {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	filter: blur(10px);
+	-ms-filter: blur(10px);
+	opacity: 0.5;
+	user-select: none !important;
+	pointer-events: none !important;
+}
+
 ::selection, -moz-::selection, -webkit-::selection, -o-::selection {
   color: white;
   background-color: black;
@@ -144,6 +185,7 @@ content {
   margin-left: auto;
   margin-right: auto;
   margin-top: 120px;
+	margin-bottom: 50px;
   width: calc(1000px - 50px);
   padding: 25px;
   background-color: white;
