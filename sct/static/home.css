@@ -1,0 +1,219 @@
+@import url('global.css');
+
+featured-series {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #000;
+  margin-top: 80px;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  margin-bottom: -80px;
+}
+
+#featured-series-link {
+  margin: 0px;
+  padding: 0px;
+  font-size: 0px;
+}
+
+#featured-series-link:focus {
+  outline: var(--tabbed-outline);
+}
+
+featured-series-info::after {
+  content: 'FEATURED SERIES';
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0px;
+  left: 0px;
+  font-size: 0.8rem;
+  background-color: var(--brand-navy);
+  color: #ffffff;
+  z-index: 2;
+  padding: 5px 0px 5px 0px;
+}
+
+featured-series-info {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  z-index: 1;
+}
+
+featured-cover {
+  position: absolute;
+  height: calc(100vh - 80px);
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+content-sidebar label {
+  position: relative;
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  user-select: none;
+  pointer-events: none;
+  text-align: left;
+  width: 100%;
+}
+
+content-sidebar select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  border: 0px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 3px 0px 3px 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../img/dropdown-arrow.png");
+  background-position: right center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+content-sidebar input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  text-align: left;
+  border: 0px;
+  width: calc(100% - 25px);
+  border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 3px 20px 3px 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+content-sidebar button {
+  padding: 5px 15px 5px 15px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(46, 80, 119);
+  background-color: rgba(46, 80, 119, 0);
+  border: 2px solid var(--brand-navy);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+content-sidebar button:hover {
+  color: white;
+  background-color: rgba(46, 80, 119, 1);
+  border: 2px solid var(--brand-navy);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+content-sidebar select option {
+  font-family: 'Roboto', sans-serif;
+  color: var(--brand-navy);
+}
+
+content-sidebar select::-ms-expand {
+  display: none;
+}
+
+content-result {
+  position: relative;
+  display: block;
+  width: calc(100%);
+  margin: 0px 0px 25px 0px;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+content-result:hover, content-result:active, content-result:focus {
+  transition: 0.25s;
+  background-color: rgb(250, 250, 250);
+}
+
+result-image {
+  position: relative;
+  float: left;
+  user-select: none;
+  pointer-events: none;
+  margin: 0px 25px 0px 0px;
+}
+
+result-title {
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  top: 10px;
+  user-select: none;
+  pointer-events: none;
+  width: calc(100% - 230px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+result-metadata {
+  position: absolute;
+  display: inline-block;
+  color: #ccc;
+  font-size: 0.7rem;
+  bottom: 10px;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  width: calc(100% - 230px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.view-result {
+  position: absolute;
+  right: 20px;
+  padding: 5px 15px 5px 15px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(46, 80, 119);
+  background-color: rgba(46, 80, 119, 0);
+  border: 2px solid var(--brand-navy);
+  cursor: pointer;
+  transition: 0.2s;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.view-result:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(46, 80, 119, 1);
+  border: 2px solid var(--brand-navy);
+  cursor: pointer;
+  transition: 0.2s;
+}

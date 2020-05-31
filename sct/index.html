@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>SelfClosingTag Direct</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="static/home.css">
 	<link rel="icon" type="image/png" href="favicon.png">
-	<script src="src/jquery.js"></script>
-	<script async src="src/elem.js"></script>
+	<script src="static/jquery.js"></script>
+	<script async src="static/elem.js"></script>
 </head>
 
 <body>
@@ -16,22 +16,89 @@
 		<img id="header-logo" src="img/FullColorLogo.svg">
 		<img id="header-title" src="img/DirectWordmark.svg">
 	</header>
-
+	
+	<featured-series>
+		<featured-series-info>
+		</featured-series-info>
+		<featured-cover src="https://res.cloudinary.com/selfclosingtag/image/upload/t_full_cover/v1590900244/series-cover/SCT001-SERIES_COVER_ab9rwe.jpg" />
+	</featured-series>
+	
 	<content>
-		<a id="featured-series-link" href="#" tabindex="0">
-			<featured-series>
-				<featured-series-title>Understanding & Utilizing HTML</featured-series-title>
-				<featured-cover src="img/featured-series-placeholder.jpg" />
-			</featured-series>
-		</a>
-
 		<content-sidebar>
+			<form name="filter-results" id="filter-results" method="GET">
+				<input name="search" id="search" type="text" placeholder="Episode Search" value="">
+				<br/><br/>
+				<label for="sort">Sort: </label>
+				<select id="sort" name="sort">
+					<option value="title-asc">Title (A-Z)</option>
+					<option value="title-des">Title (Z-A)</option>
+					<option disabled></option>
+					<option value="date-asc">Date Published (Oldest)</option>
+					<option value="date-des" selected>Date Published (Latest)</option>
+					<option disabled></option>
+					<option value="episode-asc"># of Episodes (Least)</option>
+					<option value="episode-des"># of Episodes (Most)</option>
+				</select>
+				<br/><br/>
+				<label for="filter">Topic: </label>
+				<select id="filter" name="filter">
+					<option value="">Any Topic</option>
+					<option value="web-design">Web Design</option>
+					<option value="web-security">Web Security</option>
+					<option value="new-features">New Features</option>
+					<option value="qa">Q/A</option>
+					<option value="how-to">How To</option>
+					<option value="misc">Misc.</option>
+				</select>
+				<br/><br/>
+				<label for="lang">Language: </label>
+				<select id="lang" name="lang">
+					<option value="">Any Language</option>
+					<option value="html">HTML</option>
+					<option value="css">CSS</option>
+					<option value="js">JavaScript</option>
+					<option value="php">PHP</option>
+					<option value="sql">SQL</option>
+					<option value="other">Other</option>
+				</select>
+				<br/><br/>
+				<label for="direct">Direct Only: </label>
+				<select id="direct" name="direct">
+					<option value="true">Yes</option>
+					<option value="false" selected>No</option>
+				</select>
+				<br/><br/>
+				<button name="submit" type="submit">SEARCH</button>
+			</form>
 		</content-sidebar>
-
+		
 		<content-container>
+			<h2 id="content-header">Latest Series</h2>
+			
+			<loading-container data-type="small" disabled>
+				<loading-icon></loading-icon>
+			</loading-container>
+			
 			<content-result>
-				<result-image src="img/content-result-placeholder.jpg" />
+				<button class="view-result">VIEW</button>
+				<result-title>Understanding & Utilizing HTML</result-title>
+				<result-metadata>8 Episodes &middot; May 29th, 2020</result-metadata>
+				<result-image src="https://res.cloudinary.com/selfclosingtag/image/upload/t_small_thumb/v1590900244/series-cover/SCT001-SERIES_COVER_ab9rwe.jpg" />
 			</content-result>
+			
+			<h2 id="content-header">Latest Episodes</h2>
+			
+			<loading-container data-type="small" disabled>
+				<loading-icon></loading-icon>
+			</loading-container>
+			
+			<content-result>
+				<button class="view-result">WATCH ►</button>
+				<result-title>Episode One: The Basics</result-title>
+				<result-metadata>Understanding & Utilizing HTML</result-metadata>
+				<result-image src="https://res.cloudinary.com/selfclosingtag/image/upload/t_small_thumb/v1590900440/episode-cover/SCT001-EP001_THUMBNAIL_gdlq6f.jpg" />
+			</content-result>
+			
 		</content-container>
 	</content>
 </body>

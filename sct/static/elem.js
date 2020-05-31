@@ -2,19 +2,22 @@ class FeaturedCover extends HTMLElement {
   constructor() {
     super();
     var shadow = this.attachShadow({mode: 'open'});
-    var wrapper = document.createElement('span');
-    wrapper.setAttribute('class','wrapper');
-    var image = document.createElement('span');
-    image.setAttribute('class', 'image');
     var imgUrl;
     if(this.hasAttribute('src')) {
       imgUrl = this.getAttribute('src');
     }
     var img = document.createElement('img');
+    img.setAttribute('class','image');
     img.src = imgUrl;
-    image.appendChild(img);
-    shadow.appendChild(wrapper);
-    wrapper.appendChild(image);
+    var style = document.createElement('style');
+    style.textContent = `.image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }`;
+    shadow.appendChild(style);
+    shadow.appendChild(img);
   }
 }
 
@@ -22,20 +25,15 @@ class ResultImage extends HTMLElement {
   constructor() {
     super();
     var shadow = this.attachShadow({mode: 'open'});
-    var wrapper = document.createElement('span');
-    wrapper.setAttribute('class','wrapper');
-    var image = document.createElement('span');
-    image.setAttribute('class', 'image');
     var imgUrl;
     if(this.hasAttribute('src')) {
       imgUrl = this.getAttribute('src');
     }
     var img = document.createElement('img');
     img.src = imgUrl;
-    image.appendChild(img);
-    shadow.appendChild(wrapper);
-    wrapper.appendChild(image);
+    shadow.appendChild(img);
   }
 }
 
+customElements.define('featured-cover', FeaturedCover);
 customElements.define('result-image', ResultImage);
