@@ -219,3 +219,22 @@ content-sidebar {
   padding: 25px 0px 25px 25px;
   text-align: center;
 }
+
+/*Breakpoints*/
+
+@media only screen and (max-width:1000px) { 
+  content {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 120px;
+  	margin-bottom: 50px;
+    width: calc(100% - 90px);
+    padding: 25px;
+    background-color: white;
+    z-index: 0;
+    overflow: hidden;
+    clear: both;
+  }
+}
