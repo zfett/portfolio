@@ -1,0 +1,55 @@
+@import url("https://zfett.github.io/static/font/bagnard/bagnard.css");
+@import url("https://zfett.github.io/static/font/junction/junction.css");
+
+html {
+	font-family: 'Junction', sans-serif;
+	background-color: rgb(16, 33, 29);
+	color: rgb(16, 33, 29);
+}
+
+::selection {
+	color: rgb(230, 242, 239);
+	background-color: rgb(16, 33, 29);
+}
+
+body {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	background-color: white;
+	overflow: hidden;
+	text-align: center;
+	padding: 50px;
+	padding-bottom: 40px;
+	margin-top: 50px;
+	box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.5);
+	border-radius: 10px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Bagnard', serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	line-height: 2rem;
+}
+
+a {
+	color: #555;
+	text-decoration: none;
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: 2px;
+	text-decoration-skip-ink: auto;
+}
+
+a:hover {
+	color: #858585;
+	border-color: #858585;
+}
