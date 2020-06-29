@@ -10,10 +10,10 @@
 	<script type="text/javascript" src="static/script/download.js"></script>
 	<link rel="shortcut icon" type="image/svg+xml" href="static/image/favicon.svg">
 	<link rel="shortcut icon" type="image/png" href="static/image/favicon.png">
-
+	
 	<meta property="og:type" content="website">
+	<meta name="author" content="Zachary Fetters">
 	<meta property="og:title" content="Zachary Fetters, Portfolio.">
-	<meta property="og:site_name" content="zfett.github.io">
 	<meta property="og:url" content="https://zfett.github.io">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:site_name" content="Zachary Fetters, Portfolio.">
@@ -25,23 +25,27 @@
 	<meta property="og:image:height" content="750">
 	<meta property="og:description" content="Hello, I'm Zach and I'm a designer and programmer! Welcome to my portfolio.">
 	<meta property="article:author" content="https://facebook.com/zachary.fetters">
-
+	
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@zachary_fetters">
+	<meta name="twitter:creator" content="@zachary_fetters">
+	<meta name="twitter:creator:id" content="938567234900946944">
+	<meta name="twitter:site:id" content="938567234900946944">
 	<meta name="twitter:title" content="Zachary Fetters, Portfolio.">
 	<meta name="twitter:description" content="Hello, I'm Zach and I'm a designer and programmer! Welcome to my portfolio.">
 	<meta name="twitter:image" content="https://zfett.github.io/static/image/socialcard.jpg">
+	<meta name="twitter:image:alt" content="The text, 'ZF', in a white, serif font overlaid on a dark green, plain background.">
 </head>
 
 <body>
 	<div id="copyDialog">Text was copied to the clipboard!</div>
-
+	
 	<aside>
 		<a href="#home" onclick="changeSlide('home');">
 			<div class="sidebar-logo">
 			</div>
 		</a>
-
+		
 		<div class="sidebar-menu">
 			<button class="sidebar-btn active" onclick="changeSlide('home');">Home</button>
 			<button class="sidebar-btn" onclick="changeSlide('about');">About</button>
@@ -49,16 +53,16 @@
 			<button class="sidebar-btn" onclick="changeSlide('contact');">Contact</button>
 		</div>
 	</aside>
-
+	
 	<div id="slide-container" onscroll="scrollGradients()">
 		<div id="grad-top" class="hidden"></div>
 		<div id="grad-bottom"></div>
-
+		
 		<div id="home" class="slide">
 			<p class="home-subtitle">Hello, my name is</p>
 			<h1 class="home-title">Zachary Fetters</h1>
 		</div>
-
+		
 		<div id="about" class="slide hidden">
 			<h1>About</h1>
 			<img src="static/image/portraitSmall.jpg" class="inline left" />
@@ -74,22 +78,22 @@
 				<p id="file-info">.PNG / 4.6MB</p>
 			</div>
 		</div>
-
+		
 		<div id="projects" class="slide hidden">
 			<h1>Projects</h1>
 			<p>Below is a list of the things I'm currently working on/a part of, in no particular order:</p>
-
+			
 			<div class="project-item" onclick="visitPage('https://github.com/quiklib/quikdesign')">
 				<img src="static/image/project-cover/quikdesign-cover.jpg" class="project-cover" />
 				<h1>QuikDesign</h1>
 			</div>
-
+			
 			<div class="project-item" onclick="visitPage('https://rss.com/podcasts/webweekly')">
 				<img src="static/image/project-cover/wwp-cover.jpg" class="project-cover" />
 				<h1>Web Weekly Podcast</h1>
 			</div>
 		</div>
-
+		
 		<div id="contact" class="slide hidden">
 			<h1>Contact</h1>
 			<p>I can be reached via my <a target="_blank" href="https://twitter.com/zachary_fetters">Twitter</a>, <a target="_blank" href="https://fb.com/zachary.fetters">Facebook</a>, <a target="_blank"
@@ -100,5 +104,5 @@
 			</div>
 		</div>
 	</body>
-
+	
 	</html>
