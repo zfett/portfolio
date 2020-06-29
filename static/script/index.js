@@ -113,7 +113,7 @@ async function copyText(fileUrl) {
 	let copyText = (await response.text()).toString();
 
 	navigator.clipboard.writeText(copyText).then(function() {
-		console.log('Async: Copying to clipboard was successful!');
+		diag.innerHTML = "Text was copied to the clipboard!";
 	}, function(err) {
 		diag.innerHTML = "Error: Could not copy text.";
 	});
