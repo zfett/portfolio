@@ -411,7 +411,7 @@ aside {
 	.slide #btn-container #file-info {
 		display: none;
 	}
-	
+
 	.slide #btn-container button:first-of-type::after {
 		display: none;
 	}
@@ -431,14 +431,14 @@ aside {
 		overflow: hidden;
 		z-index: 999;
 	}
-	
+
 	.sidebar-menu {
 		position: relative;
 		width: 100%;
 		margin-top: 85px;
 		top: 0;
 	}
-	
+
 	#slide-container {
 		position: relative;
 		display: block;
@@ -452,135 +452,12 @@ aside {
 		scrollbar-width: thin;
 		text-align: justify;
 	}
-	
+
 	#grad-top {
 		top: 25px;
 	}
-	
+
 	#grad-bottom {
 		bottom: 25px;
 	}
 }
-
-/*Dark Mode*/
-
-html.dark-mode {
-	background-color: rgb(16, 33, 29);
-	color: rgb(230, 242, 239);
-	transition: 0.25s !important;
-}
-
-html.dark-mode a {
-	color: #999;
-}
-
-html.dark-mode ::selection {
-	background-color: rgb(230, 242, 239);
-	color: rgb(16, 33, 29);
-}
-
-html.dark-mode #copyDialog {
-	background-color: rgb(230, 242, 239);
-	color: rgb(16, 33, 29);
-}
-
-html.dark-mode .slide button {
-	border-color: rgb(230, 242, 239);
-	color: rgb(230, 242, 239);
-}
-
-html.dark-mode .slide button:hover {
-	border-color: rgb(230, 242, 239);
-	color: rgb(16, 33, 29);
-}
-
-html.dark-mode .slide button::before {
-	background-color: rgb(230, 242, 239);
-}
-
-html.dark-mode .slide #btn-container #file-info {
-	color: #999;
-}
-
-html.dark-mode .home-subtitle {
-	color: rgb(137, 163, 158);
-}
-
-html.dark-mode #slide-container {
-	scrollbar-color: rgb(207, 227, 222) rgb(32, 55, 49);
-}
-
-html.dark-mode #grad-top {
-	background-image: url("static/image/grad-top-dark.png");
-}
-
-html.dark-mode #grad-bottom {
-	background-image: url("static/image/grad-bottom-dark.png");
-}
-
-/* The switch - the box around the slider */
-.switch {
-	position: absolute;
-	display: block;
-	width: 40px;
-	height: 20px;
-	bottom: 10px;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-/* The slider */
-.slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #ccc;
-	-webkit-transition: .2s;
-	transition: .2s;
-	outline: 0px !important;
-}
-
-.slider:before {
-	position: absolute;
-	content: "";
-	height: 12px;
-	width: 12px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: .2s;
-	transition: .2s;
-}
-
-input:checked + .slider {
-	background-color: rgb(16, 33, 29);
-}
-
-input:focus + .slider {
-	box-shadow: 0 0 1px rgb(16, 33, 29);
-}
-
-input:checked + .slider:before {
-	-webkit-transform: translateX(20px);
-	-ms-transform: translateX(20px);
-	transform: translateX(20px);
-}
-
-/* Rounded sliders */
-.slider.round {
-	border-radius: 12px;
-}
-
-.slider.round:before {
-	border-radius: 50%;
-} 
