@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+/*Color Variables*/
+@logo-blue: #58a4b0;
+
 html {
   background-color: #f5f5f5;
 }
@@ -13,21 +16,57 @@ body {
   margin-top: 50px;
   width: calc(100% - 50px);
   z-index: 0;
+  text-align: justify;
+  margin-bottom: 50px;
 }
 
 ::selection {
-  background-color: #58a4b0;
+  background-color: @logo-blue;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: #58a4b0;
+  background-color: @logo-blue;
   color: white;
 }
 
 p {
   font-size: 1.25rem;
   line-height: 2rem;
+}
+
+a {
+  color: @logo-blue;
+  text-decoration: none;
+  border-bottom: 2px solid @logo-blue;
+  font-weight: bold;
+  transition: 0.1s;
+  padding: 0px 5px 0px 5px;
+}
+
+a:hover {
+  background-color: @logo-blue;
+  color: white;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 10px 30px 10px 30px;
+  border: 2px solid @logo-blue;
+  background-color: transparent;
+  color: @logo-blue;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  background-color: @logo-blue;
+  color: white;
 }
 
 pre, code, textarea {
@@ -41,16 +80,15 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1000;
   box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.05);
 }
 
-.header-logo {
+svg.header-logo {
   position: absolute;
   height: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 15px 0px 15px 0px;
+  right: 0;
+  padding: 15px 30px 15px 30px;
   user-select: none;
   pointer-events: none;
 }
@@ -60,14 +98,14 @@ header {
   padding: 0px;
   height: 20px;
   width: 20px;
-  background-color: transparent;
+  background-color: transparent !important;
   border: 0px;
   font-size: 0px;
   color: transparent;
   background-image: url("../image/ui/menu.svg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   cursor: pointer;
   transition: 0.25s;
 }
@@ -86,13 +124,35 @@ header {
   left: -300px;
   height: calc(100vh - 90px);
   background-color: white;
-  width: 240px;
-  z-index: -1;
+  width: 230px;
+  z-index: 999;
   box-shadow: inset 0px 1px 0px rgba(0,0,0,0.05);
+  transform-style: preserve-3d;
+}
+
+#header-menu::after {
+  content: '';
+  top: 0;
+  left: 0px;
+  width: calc(200vw);
+  height: 100vh;
+  background-color: rgba(0,0,0,0);
+  position: fixed;
+  z-index: -1;
+  transition: 0.25s;
+  user-select: none;
+  pointer-events: none;
+  transform: translateZ(-1px);
 }
 
 #header-menu.active {
   left: 0;
+  transition: 0.25s;
+}
+
+#header-menu.active::after {
+  content: '';
+  background-color: rgba(0,0,0,0.5);
   transition: 0.25s;
 }
 
@@ -120,7 +180,8 @@ header {
   position: relative;
   overflow: hidden;
   height: 85px;
-  width: 100%;
+  width: calc(100% + 10px);
+  margin-left: -5px;
 }
 
 .app-titles {
@@ -152,11 +213,45 @@ header {
 }
 
 .page-hero {
-  background-color: #58a4b0;
+  background-color: @logo-blue;
   padding-top: 75px;
   padding-bottom: 75px;
   width: calc(100% + 50px);
   color: white;
   margin-top: -25px;
   margin-left: -25px;
+  user-select: none;
+  pointer-events: none;
+}
+
+#header-menu h3 {
+  margin-top: 15px;
+  color: @logo-blue;
+}
+
+footer {
+  position: relative;
+  display: block;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  height: 100px;
+  background-color: @logo-blue;
+  margin-bottom: -25px;
+  margin-top: 50px;
+  box-shadow: inset 0px 1px 0px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+footer p {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

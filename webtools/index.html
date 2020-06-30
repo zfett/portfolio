@@ -2,35 +2,25 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zachary's WebTools</title>
   <link rel="stylesheet/less" type="text/css" href="static/style/index.less" />
   <link rel="shortcut icon" type="text/png" href="static/image/favicon.png" />
-  <script src="static/script/global.js"></script>
+  <script async src="static/script/global.js"></script>
   <script src="static/script/less.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <img src="static/image/WT_wordmark_blue.svg" class="header-logo" />
-    <button onclick="toggleMenu()" class="header-menu-toggle"></button>
-    <div id="header-menu" class="">
-      <div class="icon-row">
-        <div id="cv" class="app-icon"></div>
-        <div id="fc" class="app-icon"></div>
-        <div id="mg" class="app-icon"></div>
-        <div class="app-titles">
-          <p>Card Validator</p>
-          <p>Form Creator</p>
-          <p>Meta Generator</p>
-        </div>
-      </div>
-    </div>
-  </header>
-  
+  <header-content></header-content>
+
   <div class="page-hero">
     <h1 align="center">Welcome to <img height="23px" src="static/image/WT_wordmark_white.svg"/></h1>
   </div>
-  
-  <p><b>WebTools</b> is a free, open-source online resource for web developers who just need a shortcut.</p>
+
+  <p><b>WebTools</b> is a free, open-source online resource for web developers who just need a shortcut. All of the tools featured on this site are free-to-use, forever. However, if you feel like donating to help continue the development of future tools, then feel free to click the button below to head to my PayPal.me page to donate!</p>
+  <button href="donate.html">Donate</button>
+
+  <footer-content></footer-content>
 </body>
 </html>
