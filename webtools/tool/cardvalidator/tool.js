@@ -7,7 +7,7 @@ function getQuery() {
   setTimeout(function(){
     const pageTitle = document.getElementById("pagetitle");
     pageTitle.innerHTML = "Card Validator";
-  }, 50);
+  }, 150);
 }
 window.addEventListener("onload", getQuery());
 
