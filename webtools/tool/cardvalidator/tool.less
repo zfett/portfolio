@@ -44,3 +44,119 @@
   margin-left: -32px;
   color: #ccc;
 }
+
+//Page CSS Below
+
+form {
+  width: 100%;
+}
+
+form input[type="link"] {
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding: 15px 25px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: 0px;
+  font-size: 2rem;
+  width: calc(100% - 188px);
+}
+
+form input[type="submit"] {
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding: 15px 25px;
+  border: 2px solid darken(@logo-blue, 20%);
+  background-color: @logo-blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  cursor: pointer;
+  margin-left: -8px;
+  font-size: 2rem;
+}
+
+form input[type="submit"]:hover {
+  border: 2px solid @logo-blue;
+  background-color: lighten(@logo-blue, 20%);
+}
+
+form label {
+  position: relative;
+  display: inline-block;
+  text-align: left !important;
+  font-size: 0.8rem;
+  opacity: 1;
+  background-color: white;
+  padding: 0px 10px;
+  margin-left: 15px;
+  top: -12px;
+  color: #555;
+}
+
+form label a {
+  user-select: all;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+textarea {
+  position: relative;
+  display: block;
+  padding: 20px 10px 10px 10px;
+  border: 2px solid #ccc;
+  max-width: calc(100% - 25px);
+  min-width: calc(100% - 25px);
+  height: 100%;
+  user-select: none;
+  resize: none;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin-top: 0px;
+  word-wrap: normal;
+  white-space: pre;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  border-radius: 4px;
+  color: #555;
+}
+
+#cardContainer {
+  position: relative;
+  display: block;
+  margin: 50px 0px;
+}
+
+.twitterCard {
+  position: relative;
+  display: block;
+  width: 438px;
+  height: 323px;
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #e1e8ed;
+  margin: 0 auto;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.twitterCard #twitterCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background-color: #b2bdc6;
+}
+
+.twitterCard #twitterInfo {
+  height: calc(103px - 31px);
+  width: calc(100% - 30px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  border-top: 1px solid #e1e8ed;
+}

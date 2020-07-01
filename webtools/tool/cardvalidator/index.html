@@ -20,6 +20,27 @@
     <h1 align="center">Social Media Card Validator</h1>
   </div>
   
+  <p align="center">Enter your site's URL below and click "Enter" to see how your site appears when shared to various social media sites.</p>
+  
+  <br>
+  <form method="post" onsubmit="return false;">
+    <input type="link" id="siteURL" placeholder="Site URL" value="https://zfett.github.io/webtools/" required></input>
+    <input type="submit" id="siteSubmit" value="Enter" onclick="getCardData();"></input>
+    <label>🗲 Powered by <a href="https://cors-anywhere.herokuapp.com/">CORS Anywhere.</a></label>
+  </form>
+  
+  <div id="cardContainer">
+    <h2 align="center">Twitter Preview</h2>
+    <div class="twitterCard">
+      <div id="twitterCover"></div>
+      <div id="twitterInfo"></div>
+    </div>
+  </div>
+  
+  <textarea id="rawOutput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    Raw output goes here...
+  </textarea>
+  
   <footer-content></footer-content>
 </body>
 </html>
