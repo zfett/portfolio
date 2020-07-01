@@ -71,15 +71,15 @@ function getCardData() {
     f_pageCover.style.backgroundImage = "none";
     l_pageCover.style.backgroundImage = "none";
 
-    metaTable.innerHTML = "<caption>Visible Meta Tags</caption><tr class='header'><th>Meta Tag Property</th><th>Meta Tag Content</th></tr>";
+    metaTable.innerHTML = "";
 
     for (i = 0; i < metaTitle.length; i++) {
       var metaCont = metaTitle[i].getAttribute("content") || metaTitle[i].getAttribute("value") || metaTitle[i].getAttribute("charset");
       var metaTitleSort = metaTitle[i].getAttribute("property") || metaTitle[i].getAttribute("name") || metaTitle[i].getAttribute("robots") || metaTitle[i].getAttribute("itemprop");
       if (metaTitle[i].getAttribute("charset")) {
-        metaTable.innerHTML += "<tr><th>charset</th><th>"+metaCont+"</th></tr>";
+        metaTable.innerHTML += "<tr><td>charset</td><td>"+metaCont+"</td></tr>";
       } else {
-        metaTable.innerHTML += "<tr><th>"+metaTitleSort+"</th><th>"+metaCont+"</th></tr>";
+        metaTable.innerHTML += "<tr><td>"+metaTitleSort+"</td><td>"+metaCont+"</td></tr>";
       }
     }
 

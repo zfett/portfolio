@@ -443,51 +443,53 @@ hr {
 }
 
 table {
-  width: 100%;
+  position: relative;
+  display: block;
+  max-width: 950px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   font-size: 0.8rem;
   color: #000;
   margin: 25px 0px;
   border: 2px solid #ccc;
   border-radius: 4px;
   text-align: left;
+  table-layout: fixed;
 }
 
-caption {
-  padding: 15px 0px;
-  font-size: 0.9rem;
-}
-
-th:nth-child(1) {
-  width: 25%;
-  background-color: rgba(0,0,0,0.05);
-  margin: 0px;
-  text-align: left;
-  font-style: italic;
-  color: #555;
-}
-
-tr.header th {
-  text-align: center !important;
-  font-weight: 400;
-  color: #888;
-  font-style: normal;
-  user-select: none;
-  pointer-events: none;
-}
-
-th {
+td {
   padding: 10px 20px;
   border-bottom: 1px solid #aaa;
   font-family: 'IBM Plex Mono', monospace;
   height: 0.8rem;
 }
 
-tr:last-of-type th {
-  border-bottom: 0px solid #aaa !important;
+td:nth-child(2) {
+  max-width: 75%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
 }
 
-tr:nth-child(even) {
+td:nth-child(1) {
+  max-width: 25%;
   background-color: rgba(0,0,0,0.05);
+  margin: 0px;
+  text-align: left;
+  font-style: italic;
+  font-weight: bold;
+  color: #555;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+tr {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 @keyframes loading-fade {
