@@ -60,7 +60,7 @@ form input[type="link"] {
   border-bottom-right-radius: 0px;
   border-right: 0px;
   font-size: 2rem;
-  width: calc(100% - 188px);
+  width: calc(100% - 186px);
 }
 
 form input[type="submit"] {
@@ -76,6 +76,19 @@ form input[type="submit"] {
   cursor: pointer;
   margin-left: -8px;
   font-size: 2rem;
+}
+
+form input[type="submit"].loading {
+  background-color: desaturate(@logo-blue, 100%);
+  border-color: desaturate(darken(@logo-blue, 20%), 100%);
+  color: #ccc;
+}
+
+form input[type="submit"]:hover.loading {
+  background-color: desaturate(@logo-blue, 100%);
+  border-color: desaturate(darken(@logo-blue, 20%), 100%);
+  color: #ccc;
+  cursor: wait;
 }
 
 form input[type="submit"]:hover {
@@ -105,15 +118,13 @@ form label a {
 textarea {
   position: relative;
   display: block;
-  padding: 20px 10px 10px 10px;
+  padding: 25px;
   border: 2px solid #ccc;
-  max-width: calc(100% - 25px);
-  min-width: calc(100% - 25px);
-  height: 100%;
+  max-width: calc(100% - 54px);
+  min-width: calc(100% - 54px);
+  height: 600px;
   user-select: none;
   resize: none;
-  overflow-y: hidden;
-  overflow-x: scroll;
   margin-top: 0px;
   word-wrap: normal;
   white-space: pre;
@@ -121,6 +132,20 @@ textarea {
   line-height: 2rem;
   border-radius: 4px;
   color: #555;
+}
+
+label#rawOutputLabel {
+  position: relative;
+  display: inline;
+  padding: 0px 10px;
+  background-color: white;
+  bottom: -10px;
+  z-index: 2;
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: #888;
+  user-select: none;
+  pointer-events: none;
 }
 
 #cardContainer {
@@ -133,30 +158,355 @@ textarea {
   position: relative;
   display: block;
   width: 438px;
-  height: 323px;
+  height: 100%;
   border-radius: 15px;
   background-color: white;
   overflow: hidden;
   border: 1px solid #e1e8ed;
   margin: 0 auto;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  user-select: none;
+  pointer-events: none;
+  text-align: left !important;
 }
 
-.twitterCard #twitterCover {
-  position: absolute;
+.twitterCard #t_pageCover {
+  position: relative;
+  display: block;
   top: 0;
   left: 0;
   width: 100%;
   height: 220px;
   background-color: #b2bdc6;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .twitterCard #twitterInfo {
-  height: calc(103px - 31px);
   width: calc(100% - 30px);
-  position: absolute;
   bottom: 0;
   left: 0;
   padding: 15px;
   border-top: 1px solid #e1e8ed;
+}
+
+.twitterCard #t_pageTitle {
+  max-height: 1.3em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  margin: 0 0 .15em;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.3em;
+}
+
+.twitterCard #t_pageDesc {
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.3em;
+  max-height: 2.6em;
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: .32333em;
+  display: block;
+  margin: 0;
+}
+
+.twitterCard #t_pageURL {
+  text-transform: lowercase;
+  color: #8899A6;
+  max-height: 1.3em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: .32333em;
+  display: block !important;
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.3em;
+}
+
+.facebookCard {
+  position: relative;
+  display: block;
+  width: 525px;
+  height: 100%;
+  border-radius: 0px;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #dadde1;
+  margin: 0 auto;
+  font-family: Helvetica, Arial, sans-serif;
+  user-select: none;
+  pointer-events: none;
+  text-align: left !important;
+}
+
+.facebookCard #f_pageCover {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 273.65px;
+  background-color: #b2bdc6;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.facebookCard #facebookInfo {
+  width: calc(100% - 24px);
+  bottom: 0;
+  left: 0;
+  padding: 10px 12px;
+  border-top: 1px solid #dadde1;
+  background-color: rgba(29, 33, 41, .04);
+  color: #4b4f56;
+}
+
+.facebookCard #f_pageTitle {
+  font-weight: 600;
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 3px 0 0;
+  padding-top: 2px;
+  letter-spacing: normal;
+  max-height: 110px;
+  word-wrap: break-word;
+  text-decoration: none;
+  color: #1d2129;
+}
+
+.facebookCard #f_pageDesc {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0px;
+  margin-top: 3px;
+  color: #606770;
+  font-size: 14px;
+  line-height: 20px;
+  word-break: break-word;
+  max-height: 80px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.facebookCard #f_pageURL {
+  position: relative;
+  color: #606770;
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+  padding: 0;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-spacing: 0;
+  word-wrap: break-word;
+}
+
+.linkedinCard {
+  position: relative;
+  display: block;
+  width: 520px;
+  height: 100%;
+  border-radius: 2px;
+  background-color: white;
+  overflow: hidden;
+  margin: 0 auto;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Fira Sans",Ubuntu,Oxygen,"Oxygen Sans",Cantarell,"Droid Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Emoji","Segoe UI Symbol","Lucida Grande",Helvetica,Arial,sans-serif;
+  user-select: none;
+  pointer-events: none;
+  text-align: left !important;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15),0 2px 3px rgba(0,0,0,.2);
+  font-size: 100%;
+}
+
+.linkedinCard #l_pageCover {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  background-color: #b2bdc6;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.linkedinCard #linkedinInfo {
+  width: calc(100% - 20px);
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: white;
+  color: #4b4f56;
+}
+
+.linkedinCard #l_pageTitle {
+  margin: 0px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(0,0,0,.9);
+  padding-bottom: 2px;
+}
+
+.linkedinCard #l_pageURL {
+  margin: 0px;
+  position: relative;
+  font-size: .8rem;
+  line-height: 1.3;
+  font-weight: 400;
+  color: rgba(0,0,0,.6);
+  overflow: hidden;
+  padding: 0;
+  text-overflow: ellipsis;
+  text-transform: lowercase;
+  white-space: nowrap;
+  border-spacing: 0;
+  word-wrap: break-word;
+}
+
+#results {
+  display: none;
+}
+
+.loading-box {
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 25px 0px;
+  margin-top: 50px;
+}
+
+#loading-box {
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: calc(50% - 6px);
+  top: 28px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px 3px @logo-blue;
+  animation-name: loading-fade;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.loading-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0px 0px 0px 3px white;
+  transform: rotate(0deg);
+  transform-origin: bottom left;
+  animation-name: loading-icon;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#error-box {
+  width: calc(100% - 52px);
+  padding: 10px 25px;
+  background-color: rgb(240,60,60);
+  border: 1px solid rgb(181,57,57);
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 25px;
+  display: none;
+}
+
+hr {
+  border: 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #000;
+  margin: 25px 0px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+}
+
+caption {
+  padding: 15px 0px;
+  font-size: 0.9rem;
+}
+
+th:nth-child(1) {
+  width: 25%;
+  background-color: rgba(0,0,0,0.05);
+  margin: 0px;
+  text-align: left;
+  font-style: italic;
+  color: #555;
+}
+
+tr.header th {
+  text-align: center !important;
+  font-weight: 400;
+  color: #888;
+  font-style: normal;
+  user-select: none;
+  pointer-events: none;
+}
+
+th {
+  padding: 10px 20px;
+  border-bottom: 1px solid #aaa;
+  font-family: 'IBM Plex Mono', monospace;
+  height: 0.8rem;
+}
+
+tr:last-of-type th {
+  border-bottom: 0px solid #aaa !important;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.05);
+}
+
+@keyframes loading-fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes loading-icon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
