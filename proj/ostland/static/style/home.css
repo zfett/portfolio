@@ -1,0 +1,10 @@
+@import url("global.css");
+
+#home-hero {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 300px;
+	margin-top: 141px;
+	background-color: #ddd;
+}

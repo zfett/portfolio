@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html {
+	font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
+	background-color: #f5f5f5;
+	scrollbar-color: #3f95ff white;
+	scrollbar-width: thin;
+}
+
+h1, h2, h3, h4, h5, h6, i {
+	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
+}
+
+body {
+	margin: 0 auto;
+}
+
+#announcement-banner {
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	box-shadow: 0px 1px 0px inset rgba(0,0,0,0.15);
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#announcement-banner .banner-cont {
+	position: relative;
+	display: block;
+	max-width: 1000px;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#announcement-banner .banner-icon {
+	position: absolute;
+	width: 40px;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-position: center left;
+	background-size: 40px;
+	background-repeat: no-repeat;
+}
+
+#announcement-banner .banner-text {
+	position: absolute;
+	width: calc(100% - 120px);
+	max-height: 100px;
+	left: 60px;
+	right: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#announcement-banner .banner-text h3 {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 5px;
+}
+
+#announcement-banner .banner-text p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+#announcement-banner.alert {
+	background-color: rgb(255, 68, 68);
+	color: white;
+}
+
+#announcement-banner.alert .banner-icon {
+	background-image: url("../image/icon/a-alert.png");
+}
+
+header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 141px;
+	transition: 0.3s;
+}
+
+header.announcement {
+	top: 100px;
+	transition: 0.3s;
+}
+
+#verified-banner {
+	width: 100%;
+	position: absolute;
+	display: block;
+	top: 0;
+	padding: 3px 0px;
+	background-color: #b5b5b5;
+	overflow: hidden;
+	z-index: 999;
+}
+
+#verified-banner .banner-cont {
+	position: relative;
+	height: 20px;
+	overflow: hidden;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#verified-banner p {
+	position: relative;
+	font-size: 10px;
+	color: white;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 4px;
+}
+
+#welcome-banner {
+	position: absolute;
+	display: block;
+	z-index: 1001;
+	top: -26px;
+	right: 0;
+	padding: 10px 20px;
+	background-color: #3f95ff;
+	color: white;
+	font-size: 12px;
+	font-weight: 600;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+#page-header {
+	height: 80px;
+	position: absolute;
+	display: block;
+	z-index: 1000;
+	top: 26px;
+	left: 0;
+	background-color: white;
+	width: 100%;
+	box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.1);
+}
+
+#page-header .header-cont {
+	height: 80px;
+	max-width: 1000px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+#page-header .header-banner {
+	height: 80px;
+}
+
+#links-banner {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 35px;
+	background-color: #3f95ff;
+	color: white;
+	overflow: hidden;
+	z-index: 999;
+	top: 106px;
+}
+
+#links-banner .links-cont {
+	position: relative;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 7px;
+}
+
+#links-banner .links-cont a {
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 700;
+	padding: 0px;
+	display: inline;
+	margin: 0 10px;
+}
+
+#links-banner .links-cont a:hover {
+	color: #eee;
+}
+
+#links-banner .links-cont a:focus {
+	border: 2px dotted #eee;
+	outline: none;
+}
+
+#page-cont {
+	position: relative;
+	display: block;
+	max-width: 900px;
+	width: 100%;
+	padding: 50px;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: -25px;
+	margin-bottom: 50px;
+	border-bottom: 3px solid #3f95ff;
+}
+
+#page-footer {
+	width: 100%;
+	height: 150px;
+	position: relative;
+	display: block;
+	background-color: #3f95ff;
+	box-shadow: 0px 1px 0px inset rgba(0,0,0,0.15);
+}
+
+#page-footer .footer-cont {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	max-width: 1000px;
+	width: 100%;
+}
