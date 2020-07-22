@@ -22,8 +22,23 @@ body {
 	z-index: 9999;
 	top: 0;
 	left: 0;
+	opacity: 1.0;
 	box-shadow: 0px 1px 0px inset rgba(0,0,0,0.15);
 	border-bottom: 1px solid rgba(0,0,0,0.15);
+	transition: 0.3s;
+}
+
+#announcement-banner.hidden {
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	z-index: 9999;
+	top: -101px;
+	left: 0;
+	opacity: 0.0;
+	box-shadow: 0px 1px 0px inset rgba(0,0,0,0.15);
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+	transition: 0.3s;
 }
 
 #announcement-banner .banner-cont {
@@ -45,6 +60,19 @@ body {
 	background-position: center left;
 	background-size: 40px;
 	background-repeat: no-repeat;
+}
+
+#announcement-banner .banner-close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 0;
+	top: 20px;
+	background-position: top right;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-image: url("../image/icon/a-close.png");
+	cursor: pointer;
 }
 
 #announcement-banner .banner-text {
@@ -78,18 +106,27 @@ body {
 	background-image: url("../image/icon/a-alert.png");
 }
 
+#announcement-banner.info {
+	background-color: rgb(68, 159, 255);
+	color: white;
+}
+
+#announcement-banner.info .banner-icon {
+	background-image: url("../image/icon/a-info.png");
+}
+
 header {
-	position: absolute;
-	left: 0;
-	top: 0;
+	position: relative;
+	display: block;
 	overflow: hidden;
+	margin-top: 0px;
 	width: 100%;
 	height: 141px;
 	transition: 0.3s;
 }
 
 header.announcement {
-	top: 100px;
+	margin-top: 100px;
 	transition: 0.3s;
 }
 

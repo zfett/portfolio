@@ -6,11 +6,13 @@
 	<title>Official Website of the Government of Ostland.</title>
 	<link rel="stylesheet" href="static/style/home.css">
 	<link rel="shortcut icon" href="favicon.png" />
+	<script async src="static/script/announcement.js"></script>
 </head>
 
 <body>
-	<div id="announcement-banner" class="alert">
+	<div id="announcement-banner" class="info">
 		<div class="banner-cont">
+			<div class="banner-close" onclick="closeAnnouncement()" title="Close Banner"></div>
 			<div class="banner-icon"></div>
 			<div class="banner-text">
 				<h3>Announcement</h3>
@@ -18,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<header class="announcement">
+	<header id="page-header-cont" class="announcement">
 		<div id="verified-banner">
 			<div class="banner-cont">
 				<p>This is an official website of the Ostland government.</p>
