@@ -7,9 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script async type="text/javascript" src="static/script/index.js"></script>
+	<script type="text/javascript" src="static/script/download.js"></script>
 	<link rel="shortcut icon" type="image/svg+xml" href="static/image/favicon.svg">
 	<link rel="shortcut icon" type="image/png" href="static/image/favicon.png">
-	
+
 	<meta property="og:type" content="website">
 	<meta name="author" content="Zachary Fetters">
 	<meta property="og:title" content="Zachary Fetters, Portfolio.">
@@ -24,7 +25,7 @@
 	<meta property="og:image:height" content="750">
 	<meta property="og:description" content="Hello, I'm Zach and I'm a designer and programmer! Welcome to my portfolio.">
 	<meta property="article:author" content="https://facebook.com/zachary.fetters">
-	
+
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@zachary_fetters">
 	<meta name="twitter:creator" content="@zachary_fetters">
@@ -37,15 +38,71 @@
 </head>
 
 <body>
-	<aside id="navbar">
-		<button id="navbutton">HOME</button>
-		<button id="navbutton">ABOUT</button>
-		<button id="navbutton">PROJECTS</button>
-		<button id="navbutton">CONTACT</button>
-	</aside>
-	<header id="topheader">
-		<span class="date">July 22, 2020</span>
-	</header>
-</body>
+	<div id="copyDialog">Text was copied to the clipboard!</div>
 
-</html>
+	<aside>
+		<a href="#home" onclick="changeSlide('home');">
+			<div class="sidebar-logo">
+			</div>
+		</a>
+
+		<div class="sidebar-menu">
+			<button class="sidebar-btn active" onclick="changeSlide('home');">Home</button>
+			<button class="sidebar-btn" onclick="changeSlide('about');">About</button>
+			<button class="sidebar-btn" onclick="changeSlide('projects');">Projects</button>
+			<button class="sidebar-btn" onclick="changeSlide('contact');">Contact</button>
+		</div>
+	</aside>
+
+	<div id="slide-container" onscroll="scrollGradients()">
+		<div id="grad-top" class="hidden"></div>
+		<div id="grad-bottom"></div>
+
+		<div id="home" class="slide">
+			<p class="home-subtitle">Hello, my name is</p>
+			<h1 class="home-title">Zachary Fetters</h1>
+		</div>
+
+		<div id="about" class="slide hidden">
+			<h1>About</h1>
+			<img src="static/image/portraitSmall.jpg" class="inline left" />
+			<p>Hello, my name is Zachary and I am a web developer, graphic designer, and programmer from Kentucky.</p>
+			<p>I'm currently a General Computer Information Systems student at Eastern Kentucky University.</p>
+			<p>Looking for a designer? I'm a freelancer and looking for work, if you're interested, head to my <a href="#contact" onclick="changeSlide('contact')">"contact" section for more information</a>!</p>
+			<p>Interested in seeing the stuff I've done? Visit my <a href="#projects" onclick="changeSlide('projects')">"projects" section</a> to see a list of the things I'm working on or download my resume by clicking the button below!</p>
+			<div id="btn-container">
+				<button onclick="download('static/file/ZacharyFetters_Resume_APR2020.pdf')">Download Resume</button>
+				<button onclick="download('static/file/portraitFull.jpg')">Download Portrait</button>
+				<br />
+				<p id="file-info">.PDF / 122KB</p>
+				<p id="file-info">.PNG / 4.6MB</p>
+			</div>
+		</div>
+
+		<div id="projects" class="slide hidden">
+			<h1>Projects</h1>
+			<p>Below is a list of the things I'm currently working on/a part of, in no particular order:</p>
+
+			<div class="project-item" onclick="visitPage('https://github.com/quiklib/quikdesign')">
+				<img src="static/image/project-cover/quikdesign-cover.jpg" class="project-cover" />
+				<h1>QuikDesign</h1>
+			</div>
+
+			<div class="project-item" onclick="visitPage('https://rss.com/podcasts/webweekly')">
+				<img src="static/image/project-cover/wwp-cover.jpg" class="project-cover" />
+				<h1>Web Weekly Podcast</h1>
+			</div>
+		</div>
+
+		<div id="contact" class="slide hidden">
+			<h1>Contact</h1>
+			<p>I can be reached via my <a target="_blank" href="https://twitter.com/zachary_fetters">Twitter</a>, <a target="_blank" href="https://fb.com/zachary.fetters">Facebook</a>, <a target="_blank"
+				href="https://linkedin.com/in/zfett">LinkedIn</a>, or <a target="_blank" href="https://github.com/zfett">GitHub</a>.</p>
+				<p>If social media isn't your speed, then feel free to e-mail me at <a href="mailto:zachfett@protonmail.com">zachfett (at) protonmail (dot) com</a>.</p>
+				<p>(P.S. I can also be securely reached via e-mail by using my public key, or visiting my <a href="https://keybase.io/zfett">Keybase</a>.)</p>
+				<button onclick="copyText('static/file/pubKey.txt');">Copy Public Key</button>
+			</div>
+		</div>
+	</body>
+
+	</html>
