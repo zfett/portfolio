@@ -8,6 +8,10 @@ html {
 	transition: 0.25s !important;
 }
 
+a[rel="me"] {
+	display: none;
+}
+
 #copyDialog {
 	position: fixed;
 	top: -100px;
