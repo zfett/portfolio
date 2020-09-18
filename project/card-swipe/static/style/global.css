@@ -1,0 +1,52 @@
+@import url("font/opensans.css");
+
+:root {
+  --geek-maroon: #8a003a;
+}
+
+::selection {
+  background-color: var(--geek-maroon);
+  color: white;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif !important;
+  background-color: #eee;
+}
+
+body {
+  position: relative;
+  display: block;
+  max-width: 900px;
+  width: 100%;
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 50px;
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0px;
+  font-weight: 400;
+  padding: 0px 0px 50px 0px;
+  color: var(--geek-maroon);
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  z-index: 1;
+}
+
+@media all and (max-width:1000px) { 
+	body {
+    max-width: calc(100% - 200px);
+    margin: 50px;
+  }
+} 

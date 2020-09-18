@@ -1,0 +1,97 @@
+@import url("global.css");
+
+body {
+  margin: 200px auto;
+}
+
+.login.logo-container {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  display: block;
+  margin-top: -175px;
+  margin-left: -50px;
+}
+
+.login.logo-container img {
+  user-select: none;
+  pointer-events: none;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.login.form-label {
+  max-width: 400px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-bottom: 50px;
+}
+
+.login.form-container {
+  max-width: 400px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login.form-container input {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.login.input-pin {
+  padding: 5px 10px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid #eee;
+  border-right: 0px;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  letter-spacing: 2px;
+  margin-right: -5px;
+}
+
+.login.input-submit {
+  padding: 5px 15px;
+  text-align: center;
+  background-color: var(--geek-maroon);
+  border: 1px solid #610c30;
+  color: white;
+  border-left: 0px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  cursor: pointer;
+}
+
+.login.input-submit:hover {
+  opacity: 0.8;
+}
+
+.login.disclaimer {
+  max-width: 800px;
+  width: 100%;
+  padding: 0px 100px;
+  position: absolute;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+  line-height: 1.4rem;
+  bottom: -125px;
+  margin-left: -50px;
+}
+
+@media all and (max-width:1000px) { 
+  .login.disclaimer {
+    max-width: 100%;
+    padding: 0px 0px;
+  }
+} 

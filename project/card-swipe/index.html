@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Check-in Dashboard - Login</title>
+  <link rel="stylesheet" type="text/css" href="static/style/index.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <div class="login logo-container">
+    <img src="static/image/geekLogoMaroon.png" title="IT Geeks Logo" alt="IT Geeks Logo"/>
+  </div>
+  
+  <h1>Login</h1>
+  <label class="login form-label">Use your employee PIN number to login to the lab check-in dashboard.</label>
+  
+  <form id="system-login" class="login form-container" method="POST">
+    <!--While this form does try to constrict user input to fit the Geeks PIN # format, please add user sanitization on the back end as well.-->
+    <input class="login input-pin" type="password" name="pin-entry" value="" placeholder="# # # # #" autocomplete="off" required pattern="[0-9]*" inputmode="numeric" maxlength="5">
+    <input class="login input-submit" type="submit" name="pin-submit" value="Login" placeholder="Login">
+  </form>
+  
+  <span class="login disclaimer">This system is for internal use only. Unauthorized access of this system is strictly prohibited. Only approved EKU IT Geeks staff and faculty are allowed to access and use this system. Failure to comply may result in academic punishment and potential legal repercussion.</span>
+</body>
+</html>
