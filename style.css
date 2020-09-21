@@ -1,4 +1,4 @@
-@import ""
+@import "res/font/poppins.css";
 
 :root {
   --brand-pink: #d5aca9;
@@ -7,14 +7,18 @@
 html {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #111;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  margin: 250px auto;
+  position: relative;
+  display: block;
+  margin: 0 auto;
   width: 100%;
-  height: auto;
+  height: 3500px;
+  z-index: 1;
 }
 
 .ns {
@@ -31,17 +35,71 @@ body {
   margin: 0 auto;
 }
 
-.page_header {
+#page_header {
   position: absolute;
   width: 100%;
-  height: 200px;
-  top: 0;
+  height: 100px;
+  top: 100vh;
   left: 0;
+  z-index: 1000;
+  background-color: #151515;
+}
+
+#page_header.active {
+  position: fixed;
+  top: 0;
 }
 
 .header_logo {
   position: relative;
   display: block;
-  height: 100px;
-  margin: 50px auto;
+  height: 50px;
+  margin: 25px 0px;
+}
+
+.header_link_cont {
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 37px;
+}
+
+.header_link {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 30px;
+  color: var(--brand-pink);
+  text-decoration: none;
+  transition: 0.2s ease-in-out all;
+  z-index: 1002;
+}
+
+.header_link::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 50%;
+  top: calc(50% + 2px);
+  background-image: url("res/img/hero_blob.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.0);
+  z-index: -1;
+  transition: 0.2s ease-in-out all;
+}
+
+.header_link:hover::after {
+  transform: translate(-50%, -50%) rotate(40deg) scale(1.0);
+}
+
+.header_link:nth-of-type(even):hover::after {
+  transform: translate(-50%, -50%) rotate(-125deg) scale(1.0);
+}
+
+.header_link:hover {
+  color: white;
 }
