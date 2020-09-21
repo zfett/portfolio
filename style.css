@@ -1,305 +1,47 @@
-@import url("static/font/bagnard/bagnard.css");
-@import url("static/font/junction/junction.css");
+@import ""
+
+:root {
+  --brand-pink: #d5aca9;
+}
 
 html {
-	font-family: 'Junction', sans-serif;
-	background-color: rgb(230, 242, 239);
-	color: rgb(16, 33, 29);
-	transition: 0.25s !important;
-}
-
-.loading-icon {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 50px;
-	height: 50px;
-	background-color: #ddd;
-	border-radius: 50px;
-	overflow: hidden;
-	
-	animation-name: fade;
-	animation-duration: 2s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-}
-
-.loading-icon:before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 25px;
-	height: 100px;
-	background-color: rgb(16, 33, 29);
-	overflow: hidden;
-	z-index: 2;
-	
-	animation-name: loading;
-	animation-duration: 1s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-}
-
-.loading-icon:after {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 40px;
-	height: 40px;
-	border-radius: 40px;
-	background-color: #f5f5f5;
-	overflow: hidden;
-	z-index: 3;
-}
-
-@keyframes fade {
-	0% {
-		opacity: 0.5;
-	}
-	50% {
-		opacity: 1.0;
-	}
-	100% {
-		opacity: 0.5;
-	}
-}
-
-@keyframes loading {
-	from {
-		transform: translate(-50%, -50%) rotate(0deg);
-	}
-	to {
-		transform: translate(-50%, -50%) rotate(360deg);
-	}
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Bagnard', serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #111;
 }
 
 body {
-	margin: 100px auto;
-	max-width: 800px;
-	width: 100%;
-	background-color: white;
-	border-top-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.05);
-	padding: 25px;
-	padding-bottom: 50px;
-	clear: both;
+  margin: 250px auto;
+  width: 100%;
+  height: auto;
 }
 
-a {
-	text-decoration: none;
+.ns {
+  user-select: none !important;
+  pointer-events: none !important;
 }
 
-a[rel="me"] {
-	display: none;
+.content_wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-#right-side {
-	position: relative;
-	display: block;
-	width: calc(50% + 25px);
-	float: right;
-	margin-right: -50px;
-	margin-top: -75px;
-	
-	animation-name: fade-in-right;
-	animation-duration: 1s;
-	animation-delay: 1s;
-	animation-fill-mode: backwards;
-	animation-timing-function: cubic-bezier(.5,1.5,.5,.8);
-	animation-iteration-count: 1;
+.page_header {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: 0;
+  left: 0;
 }
 
-aside {
-	position: relative;
-	display: block;
-	width: 100%;
-	margin-top: 25px;
-	overflow: hidden;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.05);
-	background-color: #f5f5f5;
-}
-
-aside button {
-	position: relative;
-	display: block;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border: 0px;
-	background-color: rgb(16, 33, 29);
-	color: rgb(230, 242, 239);
-	padding: 10px 25px;
-	font-family: 'Bagnard', sans-serif;
-	font-size: 1.3rem;
-	margin: 25px auto;
-	cursor: pointer;
-	transform: scale(1.0);
-	box-shadow: 0px 5px 0px 0px rgba(0,0,0,0);
-	transition: 0.2s ease-in-out;
-}
-
-aside button:hover {
-	transform: scale(1.05);
-	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
-	transition: 0.2s ease-in-out;
-}
-
-aside#portrait {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 464px;
-	overflow: hidden;
-	border-top-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	border-top-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.05);
-	user-select: none;
-	pointer-events: none;
-	font-size: 0px;
-	background-color: #f5f5f5;
-}
-
-aside#portrait img {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-main {
-	text-align: center;
-	width: 50%;
-	margin: 50px 0px;
-	margin-bottom: 50px;
-	padding-top: 50px;
-	margin-top: -25px;
-	
-	animation-name: fade-in-down;
-	animation-duration: 1s;
-	animation-timing-function: cubic-bezier(.5,1.5,.5,.8);
-	animation-iteration-count: 1;
-}
-
-main #subtitle {
-	font-size: 0.9rem;
-	color: #777;
-	font-style: italic;
-}
-
-main #title {
-	font-size: 2.2rem;
-	margin-top: -5px;
-}
-
-section {
-	position: relative;
-	padding: 25px;
-	text-align: left;
-	width: 50%;
-	color: rgb(230, 242, 239);
-	background-color: rgb(16, 33, 29);
-	margin-left: -50px;
-	margin-top: 25px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.05);
-	
-	animation-name: fade-in-left;
-	animation-duration: 1s;
-	animation-delay: 1s;
-	animation-fill-mode: backwards;
-	animation-timing-function: cubic-bezier(.5,1.5,.5,.8);
-	animation-iteration-count: 1;
-}
-
-section button {
-	width: 100%;
-	height: 75px;
-	border: 0px;
-	background-color: rgba(255,255,255,0.5);
-	cursor: pointer;
-	border-top-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	margin-bottom: 5px;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-section p {
-	margin: 0px;
-	line-height: 2rem;
-	margin-bottom: 15px;
-}
-
-section:nth-of-type(even) {
-	border-top-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-	border-top-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-}
-
-section h4 {
-	color: rgb(180, 192, 189);
-	background-color: rgb(26, 43, 39);
-	border-bottom-right-radius: 15px;
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	margin-left: -25px;
-	transform: translateY(-25px);
-	font-size: 0.8rem;
-	line-height: 0.8rem;
-	padding: 10px 25px;
-	font-variant: small-caps;
-}
-
-section:nth-of-type(even) h4 {
-	border-bottom-right-radius: 0px;
-	border-top-left-radius: 15px;
-}
-
-@keyframes fade-in-left {
-	from {
-		opacity: 0.0;
-		transform: translateX(-50px);
-	}
-	to {
-		opacity: 1.0;
-		transform: translateX(0px);
-	}
-}
-
-@keyframes fade-in-right {
-	from {
-		opacity: 0.0;
-		transform: translateX(50px);
-	}
-	to {
-		opacity: 1.0;
-		transform: translateX(0px);
-	}
-}
-
-@keyframes fade-in-down {
-	from {
-		opacity: 0.0;
-		transform: translateY(-50px);
-	}
-	to {
-		opacity: 1.0;
-		transform: translateY(0px);
-	}
+.header_logo {
+  position: relative;
+  display: block;
+  height: 100px;
+  margin: 50px auto;
 }
