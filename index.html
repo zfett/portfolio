@@ -3,55 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome! — Zachary Fetters</title>
+  <title>Zachary Fetters Design</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
-  <script async src="res/src/index.js"></script>
 </head>
 <body>
-  <a name="home"></a>
+  <script>0</script>
+  <header>
+    <img src="res/img/brand/ZacharyFetters_Logo_Color.svg" alt="Zachary Fetters Design Logo" id="header-logo"/>
+    <h1 id="header-title">Zachary Fetters <span>Design</span></h1>
+  </header>
   
-  <div id="page-header">
-    <div id="header-container">
-      <img id="header-logo" src="res/img/brand/ZacharyFetters_Logo_Color.svg" alt="Zachary Fetters' Logo"/>
-      
-      <div id="header-link-container">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="http://shop.zachfetters.design/" target="_blank" class="shop-btn">Shop</a>
-      </div>
+  <nav>
+    <div id="nav-links">
+      <a href="#home" class="active" tabindex="0" onclick="setNavLinkActive(0)">Home</a>
+      <a href="#about" tabindex="0" onclick="setNavLinkActive(1)">About</a>
+      <a href="#projects" tabindex="0" onclick="setNavLinkActive(2)">Projects</a>
+      <a href="#services" tabindex="0" onclick="setNavLinkActive(3)">Services</a>
+      <a href="#contact" tabindex="0" onclick="setNavLinkActive(4)">Contact</a>
+      <a href="https://zachfetters.design/shop" target="_blank" tabindex="0"><b>Shop</b></a>
     </div>
-  </div>
-  
-  <div id="home-hero-container">
-    <div id="hero-content">
-      <div id="hero-text">
-        <h1>Title Goes Here</h1>
-        <p>Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here </p>
-        <button>Click Me!</button>
-      </div>
-    </div>
-  </div>
+  </nav>
   
   <main>
+    <section id="home" class="active">
+    </section>
+    
     <section id="about">
       <h2>About Me</h2>
-      <p>Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here</p>
     </section>
     
     <section id="projects">
       <h2>My Projects</h2>
-      <p>Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here</p>
+    </section>
+    
+    <section id="services">
+      <h2>My Services</h2>
     </section>
     
     <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here Description text goes here</p>
+      <h2>Contact Me</h2>
     </section>
   </main>
   
-  <footer>&copy; Zachary Fetters, 2020.</footer>
+  <script src="res/src/index.js"></script>
 </body>
 </html>
