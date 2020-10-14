@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zachary Fetters Design</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zachary Fetters Design</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <script>0</script>
-  <header>
-    <img src="res/img/brand/ZacharyFetters_Logo_Color.svg" alt="Zachary Fetters Design Logo" id="header-logo"/>
-    <h1 id="header-title">Zachary Fetters <span>Design</span></h1>
-  </header>
-  
-  <nav>
-    <div id="nav-links">
-      <a href="#home" class="active" tabindex="0" onclick="setNavLinkActive(0)">Home</a>
-      <a href="#about" tabindex="0" onclick="setNavLinkActive(1)">About</a>
-      <a href="#projects" tabindex="0" onclick="setNavLinkActive(2)">Projects</a>
-      <a href="#services" tabindex="0" onclick="setNavLinkActive(3)">Services</a>
-      <a href="#contact" tabindex="0" onclick="setNavLinkActive(4)">Contact</a>
-      <a href="https://zachfetters.design/shop" target="_blank" tabindex="0"><b>Shop</b></a>
-    </div>
-  </nav>
-  
-  <main>
-    <section id="home" class="active">
-    </section>
-    
-    <section id="about">
-      <h2>About Me</h2>
-    </section>
-    
-    <section id="projects">
-      <h2>My Projects</h2>
-    </section>
-    
-    <section id="services">
-      <h2>My Services</h2>
-    </section>
-    
-    <section id="contact">
-      <h2>Contact Me</h2>
-    </section>
-  </main>
-  
-  <script src="res/src/index.js"></script>
+	<script>0</script><!--prevent ff from giving a stylesheet paint warning.-->
+	<header>
+		<img src="res/img/brand/ZacharyFetters_Logo_Color.svg" class="logo" alt="Zachary Fetters Design Logo"/>
+		<h1>Zachary Fetters <span>Design</span></h1>
+	</header>
+	
+	<nav>
+		<div id="nav-links">
+			<a href="https://zachfetters.design/shop" target="_blank" tabindex="6">Shop</a>
+			<a href="#contact" tabindex="5">Contact</a>
+			<a href="#services" tabindex="4">Services</a>
+			<a href="#projects" tabindex="3">Projects</a>
+			<a href="#about" tabindex="2">About</a>
+			<a href="#top" tabindex="1">Top</a>
+		</div>
+	</nav>
+	
+	<main tabindex="7">
+		<section id="top">
+			<img src="res/img/hero-img.png" alt="Zachary Fetters Design recessed logo." id="hero-img"/>
+		</section>
+		
+		<section id="about">
+			<h2>About Me</h2>
+			<div class="text-container">
+				<p>My name is <b>Zachary Fetters</b> and I am a freelance web and graphic designer. I've been designing since 2011 and I have started freelancing in September of 2020 in the hopes to build upon my client repertoire and gain professional experience in designing. My design focus is built upon strong, flashy colors and minimal presentation that isn't afraid to play with palettes and shapes.</p>
+				<img src="res/img/about-portrait.jpg" class="inline" alt="Zachary Fetters' portrait."/>
+			</div>
+		</section>
+		
+		<section id="projects">
+			<h2>My Projects</h2>
+			<div class="text-container">
+				<h3 class="tag indev">Fora</h3>
+				<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
+				<img src="res/img/fora-logo.jpg" class="inline" alt="Fora logo."/>
+			</div>
+		</section>
+		
+		<section id="services">
+			<h2>My Services</h2>
+		</section>
+		
+		<section id="contact">
+			<h2>Contact Me</h2>
+		</section>
+		
+	</main>
 </body>
 </html>
