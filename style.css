@@ -318,15 +318,17 @@ section:nth-of-type(odd) h2:after {
 section .text-container {
 	position: relative;
 	display: block;
-	margin: 100px 200px 200px 200px;
+	margin: 100px 200px 100px 200px;
 	width: calc(100% - 400px);
 	z-index: 2;
 	text-align: right;
+	float: right;
 	color: #222;
 }
 
 section .text-container:nth-of-type(odd) {
 	text-align: left;
+	float: left;
 }
 
 section .text-container p {
@@ -394,4 +396,112 @@ section h3.tag.alpha:after {
 
 section h3.tag.beta:after {
 	content: 'Beta';
+}
+
+/*web form*/
+form {
+	position: relative;
+	display: block;
+	transform-style: preserve-3d;
+	max-width: 500px;
+	width: 100%;
+	height: 100%;
+	margin: 100px auto 100px auto;
+	padding: 50px;
+	background-color: white;
+	clear: both;
+}
+
+form .form-wrap {
+	position: relative;
+	display: block;
+	clear: both;
+	height: 100%;
+	width: 100%;
+}
+
+form:after {
+	content: '';
+	position: absolute;
+	display: block;
+	transform: translateZ(-1px);
+	z-index: 0;
+	width: 50px;
+	height: 50px;
+	background-color: var(--brand-pink);
+	top: -25px;
+	left: -25px;
+	transition: 0.2s ease-in-out all;
+	user-select: none;
+	pointer-events: none;
+}
+
+form:hover:after {
+	width: 100%;
+	height: 100%;
+}
+
+form input, form textarea {
+	position: relative;
+	display: block;
+	min-width: calc(100% - 130px);
+	max-width: calc(100% - 130px);
+	width: calc(100% - 150px);
+	margin: 0px 0px 25px 0px;
+	font-size: 0.9rem;
+	line-height: 0.9rem;
+	padding: 5px 15px;
+	border: 1px solid #ddd;
+}
+
+form textarea {
+	padding: 12px 15px;
+	line-height: 1.2rem;
+}
+
+form label {
+	position: relative;
+	display: block;
+	float: left;
+	width: 80px;
+	text-align: left;
+	margin: 0px 18px 25px 0px;
+	padding: 0px;
+	font-size: 0.9rem;
+	line-height: 34px;
+	vertical-align: middle;
+	color: var(--brand-darkpink);
+}
+
+form hr {
+	position: relative;
+	display: block;
+	clear: both;
+	margin: 0px 0px 25px 0px;
+	height: 0;
+	border: 0px;
+	border-bottom: 2px solid #ddd;
+}
+
+form input[type="submit"] {
+	position: relative;
+	display: block;
+	clear: both;
+	margin: 0px auto 0px auto;
+	max-width: 100%;
+	min-width: 0px;
+	width: auto;
+	font-size: 0.8rem;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 2px solid var(--brand-darkpink);
+	color: var(--brand-darkpink);
+	background-color: white;
+	font-weight: 600;
+	transition: 0.2s ease-in-out all;
+}
+
+form input[type="submit"]:hover, form input[type="submit"]:focus {
+	background-color: var(--brand-darkpink);
+	color: white;
 }

@@ -12,7 +12,7 @@
 	<script>0</script><!--prevent ff from giving a stylesheet paint warning.-->
 	<header>
 		<img src="res/img/brand/ZacharyFetters_Logo_Color.svg" class="logo" alt="Zachary Fetters Design Logo"/>
-		<a href="https://twitch.tv/zachsdesigncorner" target="_blank"><span class="live-tag" title="I'm live on Twitch right now!">LIVE</span></a>
+		<a href="https://twitch.tv/zachsdesigncorner" id="live" target="_blank"><span class="live-tag" title="">LIVE</span></a>
 		<h1>Zachary Fetters<span> Design</span></h1>
 	</header>
 	
@@ -51,24 +51,36 @@
 		
 		<section id="skills">
 			<h2>My Skills</h2>
-			<div class="text-container">
+			<div class="text-container" style="max-width:50%;">
 				<h3>Front-end Design</h3>
-				<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
+				<p>I started learning how to design websites by learning plain HTML & CSS code. Even though I know how to utilize a variety of frameworks (React, Jekyll, Gatsby, etc.), I start all of my projects with simple, valid HTML & CSS code to keep it flexible and accessible.</p>
 			</div>
 			
-			<div class="text-container">
+			<div class="text-container" style="max-width:50%;">
 				<h3>UI/UX Design</h3>
-				<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
+				<p>One of my priorities for web design is accessibility and ease-of-use. I believe that good, innovative design doesn't need to compromise the user's experience.</p>
 			</div>
 			
-			<div class="text-container">
+			<div class="text-container" style="max-width:50%;">
 				<h3>Graphic Design</h3>
-				<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
+				<p>My first foray into art and design was through graphic design. I've used Adobe Photoshop and the Creative Cloud suite of products since 2011 and have developed a professional understanding of most Adobe products and am more than capable of using them for design.</p>
 			</div>
 		</section>
 		
 		<section id="contact">
 			<h2>Contact Me</h2>
+			<form name="Web Contact" method="POST" data-netlify="true">
+				<div class="form-wrap">
+					<label for="Name">Name</label>
+					<input type="text" name="Name" placeholder="Jane Doe" required pattern="[A-Za-z]"></input>
+					<label for="Email">Email</label>
+					<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
+					<label for="Message">Message</label>
+					<textarea name="Message" placeholder="Your message here..." required></textarea>
+				</div>
+				<hr>
+				<input type="submit" value="Send Message" name="Send"></input>
+			</form>
 		</section>
 		
 	</main>
