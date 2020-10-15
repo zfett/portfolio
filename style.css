@@ -487,7 +487,7 @@ form input[type="submit"] {
 	position: relative;
 	display: block;
 	clear: both;
-	margin: 0px auto 0px auto;
+	margin: 0px auto 25px auto;
 	max-width: 100%;
 	min-width: 0px;
 	width: auto;
@@ -529,4 +529,67 @@ form div.captcha:after {
 	width: 100%;
 	vertical-align: middle;
 	z-index: -1;
+}
+
+form .social-icons {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	height: 30px;
+	overflow: hidden;
+	width: 160px;
+	font-size: 0px;
+	color: transparent;
+	border: 0px;
+}
+
+form .social-icon {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding: 0px;
+	margin: 0px 5px;
+	border-radius: 5px;
+	background-color: #eee;
+	background-size: 20px;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-size: 0px;
+	color: transparent;
+	border: 0px;
+	cursor: pointer;
+}
+
+form .social-icon:hover {
+	background-size: 30px;
+	background-color: var(--brand-pink);
+}
+
+form .social-icon.twitter {
+	background-image: url("res/img/social/twitter-hover.png");
+}
+form .social-icon.twitter:hover {
+	background-image: url("res/img/social/twitter.png");
+}
+
+form .social-icon.linkedin {
+	background-image: url("res/img/social/linkedin-hover.png");
+}
+form .social-icon.linkedin:hover {
+	background-image: url("res/img/social/linkedin.png");
+}
+
+form .social-icon.github {
+	background-image: url("res/img/social/github-hover.png");
+}
+form .social-icon.github:hover {
+	background-image: url("res/img/social/github.png");
+}
+
+form .social-icon.twitch {
+	background-image: url("res/img/social/twitch-hover.png");
+}
+form .social-icon.twitch:hover {
+	background-image: url("res/img/social/twitch.png");
 }
