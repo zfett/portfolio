@@ -1,2 +1,5 @@
 [[plugins]]
   package = "@helloample/netlify-plugin-replace"
+	[plugins.inputs]
+    delimiter = "\${env:([^}]_)}"
+    fileTypes = ".js"
