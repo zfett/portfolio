@@ -74,10 +74,13 @@
 					<label for="Name">Name</label>
 					<input type="text" name="Name" placeholder="Jane Doe" required pattern="[A-Za-z]"></input>
 					<label for="Email">Email</label>
+					<label for="bot-field" style="display: none;">Don’t fill this out if you're human: <input name="bot-field" /></label>
 					<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
 					<label for="Message">Message</label>
 					<textarea name="Message" placeholder="Your message here..." required></textarea>
 				</div>
+				<hr>
+				<div data-netlify-recaptcha="true"></div>
 				<hr>
 				<input type="submit" value="Send Message" name="Send"></input>
 			</form>
