@@ -506,7 +506,7 @@ form input[type="submit"]:hover, form input[type="submit"]:focus {
 	color: white;
 }
 
-form div[data-netlify-recaptcha="true"] {
+form div.captcha {
 	position: relative;
 	display: block;
 	width: 304px;
@@ -517,7 +517,7 @@ form div[data-netlify-recaptcha="true"] {
 	margin: 10px auto 25px auto;
 }
 
-form div[data-netlify-recaptcha="true"]:after {
+form div.captcha:after {
 	content: 'reCAPTCHA goes here...';
 	position: absolute;
 	line-height: 78px;
