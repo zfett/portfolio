@@ -511,7 +511,6 @@ form div.captcha {
 	display: block;
 	width: 304px;
 	height: 78px;
-	overflow: hidden;
 	background-color: #f5f5f5;
 	border-radius: 5px;
 	margin: 10px auto 25px auto;
