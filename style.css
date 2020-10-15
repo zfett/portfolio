@@ -80,7 +80,7 @@ header {
 header:after {
 	position: absolute;
 	content: '';
-	width: calc(100% + 26px - 50px);
+	width: calc(100% + 26px - 70px);
 	height: 2px;
 	top: 50%;
 	transform: translateY(-50%);
@@ -129,6 +129,42 @@ header h1 span {
 	font-weight: 400;
 }
 
+header .live-tag {
+	position: absolute;
+	display: none;
+	right: 285px;
+	font-size: 0.8rem;
+	background-color: #fff;
+	color: rgba(244,54,54,1);
+	padding: 0px 0px 0px 25px;
+	line-height: 50px;
+	vertical-align: middle;
+	font-weight: 700;
+	letter-spacing: 2px;
+	cursor: pointer;
+	user-select: none;
+	animation-name: live;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+header .live-tag.active {
+	display: block;
+}
+
+@keyframes live {
+	0% {
+		color: rgba(244,54,54,1);
+	}
+	50% {
+		color: rgba(244,54,54,0.3);
+	}
+	100% {
+		color: rgba(244,54,54,1);
+	}
+}
+
 /*navigation elements*/
 
 nav {
@@ -144,7 +180,7 @@ nav {
 nav:after {
 	position: absolute;
 	content: '';
-	height: calc(100% + 26px - 50px);
+	height: calc(100% + 26px - 70px);
 	width: 2px;
 	left: 50%;
 	transform: translateX(-50%);
@@ -289,7 +325,7 @@ section .text-container {
 	color: #222;
 }
 
-section:nth-of-type(odd) .text-container {
+section .text-container:nth-of-type(odd) {
 	text-align: left;
 }
 
@@ -330,7 +366,7 @@ section .text-container:hover img.inline {
 	opacity: 0.5;
 }
 
-section:nth-of-type(odd) img.inline {
+section .text-container:nth-of-type(odd) img.inline {
 	right: auto;
 	left: 0;
 	transform: translateX(calc(-50% - 0.625rem));
@@ -340,8 +376,8 @@ section h3.tag:after {
 	content: '';
 	display: inline;
 	margin: 0px 0px 0px 10px;
-	font-weight: 500;
-	color: #aaa;
+	font-weight: 400;
+	color: var(--brand-darkpink);
 }
 
 section h3.tag.indev:after {
