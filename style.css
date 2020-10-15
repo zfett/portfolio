@@ -514,6 +514,7 @@ form div.captcha {
 	background-color: #f5f5f5;
 	border-radius: 5px;
 	margin: 10px auto 25px auto;
+	z-index: 2;
 }
 
 form div.captcha:after {
@@ -527,5 +528,5 @@ form div.captcha:after {
 	color: #ccc;
 	width: 100%;
 	vertical-align: middle;
-	z-index: 0;
+	z-index: -1;
 }
