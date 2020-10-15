@@ -522,6 +522,8 @@ form div.captcha:after {
 	line-height: 78px;
 	text-align: center;
 	font-size: 0.8rem;
+	top: 0;
+	left: 0;
 	color: #ccc;
 	width: 100%;
 	vertical-align: middle;
