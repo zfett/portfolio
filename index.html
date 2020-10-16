@@ -71,13 +71,19 @@
 			<h2>Contact Me</h2>
 			<form name="Web Contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" netlify>
 				<div class="form-wrap">
-					<label for="Name">Name</label>
-					<input type="text" name="Name" placeholder="Jane Doe" required></input>
-					<label for="Email">Email</label>
 					<label for="bot-field" style="display: none;">Don’t fill this out if you're human: <input name="bot-field"/></label>
-					<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
-					<label for="Message">Message</label>
-					<textarea name="Message" placeholder="Your message here..." required></textarea>
+					
+					<div class="labels">
+						<label for="Name">Name</label>
+						<label for="Email">Email</label>
+						<label for="Message">Message</label>
+					</div>
+					
+					<div class="inputs">
+						<input type="text" name="Name" placeholder="Jane Doe" required></input>
+						<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
+						<textarea name="Message" placeholder="Your message here..." required></textarea>
+					</div>
 				</div>
 				<hr>
 				<div data-netlify-recaptcha="true" class="captcha"></div>

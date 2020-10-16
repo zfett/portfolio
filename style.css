@@ -444,9 +444,9 @@ form:hover:after {
 form input, form textarea {
 	position: relative;
 	display: block;
-	min-width: calc(100% - 130px);
-	max-width: calc(100% - 130px);
-	width: calc(100% - 150px);
+	min-width: calc(100% - 32px);
+	width: calc(100% - 32px);
+	max-width: calc(100% - 32px);
 	margin: 0px 0px 25px 0px;
 	font-size: 0.9rem;
 	line-height: 0.9rem;
@@ -459,10 +459,24 @@ form textarea {
 	line-height: 1.2rem;
 }
 
-form label {
+form .inputs {
+	position: relative;
+	display: block;
+	float: right;
+	overflow: hidden;
+	width: calc(100% - 105px);
+}
+
+form .labels {
 	position: relative;
 	display: block;
 	float: left;
+	width: 105px;
+}
+
+form label {
+	position: relative;
+	display: block;
 	width: 80px;
 	text-align: left;
 	margin: 0px 18px 25px 0px;
@@ -509,8 +523,8 @@ form input[type="submit"]:hover, form input[type="submit"]:focus {
 form div.captcha {
 	position: relative;
 	display: block;
-	width: 304px;
-	height: 78px;
+	width: 302px;
+	height: 76px;
 	background-color: #f5f5f5;
 	border-radius: 5px;
 	margin: 10px auto 25px auto;
@@ -562,7 +576,6 @@ form .social-icon {
 }
 
 form .social-icon:hover {
-	background-size: 30px;
 	background-color: var(--brand-pink);
 }
 
