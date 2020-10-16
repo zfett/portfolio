@@ -236,11 +236,14 @@ section {
 	display: block;
 	height: 100%;
 	min-height: calc(100vh - 100px);
+	max-width: 1500px;
 	width: 100%;
+	margin: 0px auto 50px auto;
 	overflow: hidden;
 }
 
 section#top {
+	max-width: 100%;
 	background-color: var(--brand-pink);
 }
 
@@ -303,7 +306,7 @@ section h2:after {
 }
 
 section:nth-of-type(odd) {
-	background-color: #f5f5f5;
+	background-color: rgb(250,250,250);
 }
 
 section:nth-of-type(odd) h2 {
@@ -614,4 +617,13 @@ form .social-icon.unsplash {
 }
 form .social-icon.unsplash:hover {
 	background-image: url("res/img/social/unsplash.png");
+}
+
+/*breakpoint*/
+
+@media screen and (max-width:1550px) { 
+	section {
+		max-width: calc(100% - 50px);
+		margin: 0px 25px 50px 25px;
+	}
 }
