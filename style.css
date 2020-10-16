@@ -552,10 +552,11 @@ form .social-icons {
 	margin: 0 auto;
 	height: 30px;
 	overflow: hidden;
-	width: 160px;
+	width: auto;
 	font-size: 0px;
 	color: transparent;
 	border: 0px;
+	text-align: center;
 }
 
 form .social-icon {
@@ -606,4 +607,11 @@ form .social-icon.twitch {
 }
 form .social-icon.twitch:hover {
 	background-image: url("res/img/social/twitch.png");
+}
+
+form .social-icon.unsplash {
+	background-image: url("res/img/social/unsplash-hover.png");
+}
+form .social-icon.unsplash:hover {
+	background-image: url("res/img/social/unsplash.png");
 }
