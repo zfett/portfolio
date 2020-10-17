@@ -1,5 +1,3 @@
-const liveElem = document.getElementsByClassName("live-tag")[0];
-const liveCont = document.getElementById("live");
 $.ajax({
 	type: "POST",
 	url: "https://id.twitch.tv/oauth2/token?client_id="+process.env.TWITCH_CLIENT_ID+"&client_secret="+process.env.TWITCH_AUTH_KEY+"&grant_type=client_credentials",
@@ -18,9 +16,9 @@ $.ajax({
 			success: function (result){
 				liveElem.title = "I'm live on Twitch: "+result.data[0].title;
 				if (result.data[0].is_live === false) {
-					liveCont.remove();
+					return false;
 				} else if (result.data[0].is_live === true) {
-					liveElem.classList.add("active");
+					return true;
 				}
 			}
 		});
