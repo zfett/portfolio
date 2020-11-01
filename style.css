@@ -14,16 +14,16 @@
 	color: white !important;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
 	width: 8px;
 	background-color: #eeeeee;
 }
 
-::-webkit-scrollbar:horizontal{
+::-webkit-scrollbar:horizontal {
 	height: 8px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
 	border: 1px #eeeeee solid;
 	border-top: 0px;
 	border-bottom: 0px;
@@ -31,7 +31,7 @@
 	-webkit-box-shadow: 0 0 0px transparent inset;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
 	background-color: var(--brand-pink);
 	border: 1px solid #eeeeee;
 	border-top: 0px;
@@ -39,7 +39,7 @@
 	border-radius: 0px;
 }
 
-::-webkit-scrollbar-thumb:hover, -webkit-scrollbar-thumb:active{
+::-webkit-scrollbar-thumb:hover, -webkit-scrollbar-thumb:active {
 	background-color: var(--brand-darkpink);
 	border: 1px solid #eeeeee;
 	border-top: 0px;
@@ -617,13 +617,4 @@ form .social-icon.unsplash {
 }
 form .social-icon.unsplash:hover {
 	background-image: url("res/img/social/unsplash.png");
-}
-
-/*breakpoint*/
-
-@media screen and (max-width:1550px) { 
-	section {
-		max-width: calc(100% - 50px);
-		margin: 0px 25px 50px 25px;
-	}
 }

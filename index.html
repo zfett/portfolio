@@ -10,97 +10,123 @@
 </head>
 <body>
 	<script>0</script><!--prevent ff from giving a stylesheet paint warning.-->
-	<header>
-		<img src="res/img/brand/ZacharyFetters_Logo_Color.svg" class="logo" alt="Zachary Fetters Design Logo"/>
-		<a href="https://twitch.tv/zachsdesigncorner" id="live" target="_blank"><span class="live-tag" title="">LIVE</span></a>
-		<h1>Zachary Fetters<span>&nbsp;Design</span></h1>
-	</header>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			xfbml            : true,
+			version          : 'v8.0'
+		});
+	};
 	
-	<nav>
-		<div id="nav-links">
-			<a href="https://zachfetters.design/shop" target="_blank" tabindex="6">Shop</a>
-			<a href="#contact" tabindex="5">Contact</a>
-			<a href="#skills" tabindex="4">Skills</a>
-			<a href="#projects" tabindex="3">Projects</a>
-			<a href="#about" tabindex="2">About</a>
-			<a href="#top" tabindex="1">Top</a>
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	
+	<!-- Your Chat Plugin code -->
+	<div class="fb-customerchat"
+	attribution=setup_tool
+	page_id="104415124808773"
+	theme_color="#d5aca9"
+	logged_in_greeting="Hi! How can I help you?"
+	logged_out_greeting="Hi! How can I help you?">
+</div>
+<header>
+	<img src="res/img/brand/ZacharyFetters_Logo_Color.svg" class="logo" alt="Zachary Fetters Design Logo"/>
+	<a href="https://twitch.tv/zachsdesigncorner" id="live" target="_blank"><span class="live-tag" title="">LIVE</span></a>
+	<h1>Zachary Fetters<span>&nbsp;Design</span></h1>
+</header>
+
+<nav>
+	<div id="nav-links">
+		<a href="https://zachfetters.design/shop" target="_blank" tabindex="6">Shop</a>
+		<a href="#contact" tabindex="5">Contact</a>
+		<a href="#skills" tabindex="4">Skills</a>
+		<a href="#projects" tabindex="3">Projects</a>
+		<a href="#about" tabindex="2">About</a>
+		<a href="#top" tabindex="1">Top</a>
+	</div>
+</nav>
+
+<main tabindex="7">
+	<section id="top">
+		<img src="res/img/hero-img.png" alt="Zachary Fetters Design recessed logo." id="hero-img"/>
+	</section>
+	
+	<section id="about">
+		<h2>About Me</h2>
+		<div class="text-container">
+			<p>My name is<b>&nbsp;Zachary Fetters&nbsp;</b>and I am a freelance web and graphic designer. I've been designing since 2011 and I have started freelancing in September of 2020 in the hopes to build upon my client repertoire and gain professional experience in designing. My design focus is built upon strong, flashy colors and minimal presentation that isn't afraid to play with palettes and shapes.</p>
+			<img src="res/img/about-portrait.jpg" class="inline" alt="Zachary Fetters' portrait."/>
 		</div>
-	</nav>
+	</section>
 	
-	<main tabindex="7">
-		<section id="top">
-			<img src="res/img/hero-img.png" alt="Zachary Fetters Design recessed logo." id="hero-img"/>
-		</section>
-		
-		<section id="about">
-			<h2>About Me</h2>
-			<div class="text-container">
-				<p>My name is<b>&nbsp;Zachary Fetters&nbsp;</b>and I am a freelance web and graphic designer. I've been designing since 2011 and I have started freelancing in September of 2020 in the hopes to build upon my client repertoire and gain professional experience in designing. My design focus is built upon strong, flashy colors and minimal presentation that isn't afraid to play with palettes and shapes.</p>
-				<img src="res/img/about-portrait.jpg" class="inline" alt="Zachary Fetters' portrait."/>
-			</div>
-		</section>
-		
-		<section id="projects">
-			<h2>My Projects</h2>
-			<div class="text-container">
-				<h3 class="tag indev">Fora</h3>
-				<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
-				<img src="res/img/fora-logo.jpg" class="inline" alt="Fora logo."/>
-			</div>
-		</section>
-		
-		<section id="skills">
-			<h2>My Skills</h2>
-			<div class="text-container" style="max-width:50%;">
-				<h3>Front-end Design</h3>
-				<p>I started learning how to design websites by learning plain HTML & CSS code. Even though I know how to utilize a variety of frameworks (React, Jekyll, Gatsby, etc.), I start all of my projects with simple, valid HTML & CSS code to keep it flexible and accessible.</p>
-			</div>
-			
-			<div class="text-container" style="max-width:50%;">
-				<h3>UI/UX Design</h3>
-				<p>One of my priorities for web design is accessibility and ease-of-use. I believe that good, innovative design doesn't need to compromise the user's experience.</p>
-			</div>
-			
-			<div class="text-container" style="max-width:50%;">
-				<h3>Graphic Design</h3>
-				<p>My first foray into art and design was through graphic design. I've used Adobe Photoshop and the Creative Cloud suite of products since 2011 and have developed a professional understanding of most Adobe products and am more than capable of using them for design.</p>
-			</div>
-		</section>
-		
-		<section id="contact">
-			<h2>Contact Me</h2>
-			<form name="Web Contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" netlify>
-				<div class="form-wrap">
-					<label for="bot-field" style="display: none;">Don’t fill this out if you're human: <input name="bot-field"/></label>
-					
-					<div class="labels">
-						<label for="Name">Name</label>
-						<label for="Email">Email</label>
-						<label for="Message">Message</label>
-					</div>
-					
-					<div class="inputs">
-						<input type="text" name="Name" placeholder="Jane Doe" required></input>
-						<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
-						<textarea name="Message" placeholder="Your message here..." required></textarea>
-					</div>
-				</div>
-				<hr>
-				<div data-netlify-recaptcha="true" class="captcha"></div>
-				<hr>
-				<input type="submit" value="Send Message" name="Send"></input>
-				<div class="social-icons">
-					<a href="https://twitter.com/zachfettdesign" target="_blank" title="Follow me on Twitter!"><div class="social-icon twitter">Follow me on Twitter!</div></a>
-					<a href="https://twitch.tv/zachsdesigncorner" target="_blank" title="Follow me on Twitch!"><div class="social-icon twitch">Follow me on Twitch!</div></a>
-					<a href="https://linkedin.com/in/zfett" target="_blank" title="Follow me on LinkedIn!"><div class="social-icon linkedin">Follow me on LinkedIn!</div></a>
-					<a href="https://github.com/zfett" target="_blank" title="Follow me on GitHub!"><div class="social-icon github">Follow me on GitHub!</div></a>
-					<a href="https://unsplash.com/@zfett" target="_blank" title="Follow me on Unsplash!"><div class="social-icon unsplash">Follow me on Unsplash!</div></a>
-				</div>
-			</form>
-		</section>
-		
-	</main>
+	<section id="projects">
+		<h2>My Projects</h2>
+		<div class="text-container">
+			<h3 class="tag indev">Fora</h3>
+			<p>Fora is an open-source, free/libre web software for communities. Fora aims to fuse the community features of Reddit, as well as the organization of the common forum to provide the best experience for communities of any size and purpose. Fora's purpose is to remove the toxic, unconducive features of many social media sites to prioritize and promote dialog and communication between community member.</p>
+			<img src="res/img/fora-logo.jpg" class="inline" alt="Fora logo."/>
+		</div>
+	</section>
 	
-	<script src="res/src/twitch.js"></script>
+	<section id="skills">
+		<h2>My Skills</h2>
+		<div class="text-container" style="max-width:50%;">
+			<h3>Front-end Design</h3>
+			<p>I started learning how to design websites by learning plain HTML & CSS code. Even though I know how to utilize a variety of frameworks (React, Jekyll, Gatsby, etc.), I start all of my projects with simple, valid HTML & CSS code to keep it flexible and accessible.</p>
+		</div>
+		
+		<div class="text-container" style="max-width:50%;">
+			<h3>UI/UX Design</h3>
+			<p>One of my priorities for web design is accessibility and ease-of-use. I believe that good, innovative design doesn't need to compromise the user's experience.</p>
+		</div>
+		
+		<div class="text-container" style="max-width:50%;">
+			<h3>Graphic Design</h3>
+			<p>My first foray into art and design was through graphic design. I've used Adobe Photoshop and the Creative Cloud suite of products since 2011 and have developed a professional understanding of most Adobe products and am more than capable of using them for design.</p>
+		</div>
+	</section>
+	
+	<section id="contact">
+		<h2>Contact Me</h2>
+		<form name="Web Contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" netlify>
+			<div class="form-wrap">
+				<label for="bot-field" style="display: none;">Don’t fill this out if you're human: <input name="bot-field"/></label>
+				
+				<div class="labels">
+					<label for="Name">Name</label>
+					<label for="Email">Email</label>
+					<label for="Message">Message</label>
+				</div>
+				
+				<div class="inputs">
+					<input type="text" name="Name" placeholder="Jane Doe" required></input>
+					<input type="email" name="Email" placeholder="jane.doe@example.com" required></input>
+					<textarea name="Message" placeholder="Your message here..." required></textarea>
+				</div>
+			</div>
+			<hr>
+			<div data-netlify-recaptcha="true" class="captcha"></div>
+			<hr>
+			<input type="submit" value="Send Message" name="Send"></input>
+			<div class="social-icons">
+				<a href="https://twitter.com/zachfettdesign" target="_blank" title="Follow me on Twitter!"><div class="social-icon twitter">Follow me on Twitter!</div></a>
+				<a href="https://twitch.tv/zachsdesigncorner" target="_blank" title="Follow me on Twitch!"><div class="social-icon twitch">Follow me on Twitch!</div></a>
+				<a href="https://linkedin.com/in/zfett" target="_blank" title="Follow me on LinkedIn!"><div class="social-icon linkedin">Follow me on LinkedIn!</div></a>
+				<a href="https://github.com/zfett" target="_blank" title="Follow me on GitHub!"><div class="social-icon github">Follow me on GitHub!</div></a>
+				<a href="https://unsplash.com/@zfett" target="_blank" title="Follow me on Unsplash!"><div class="social-icon unsplash">Follow me on Unsplash!</div></a>
+			</div>
+		</form>
+	</section>
+	
+</main>
+
+<script src="res/src/twitch.js"></script>
 </body>
 </html>
