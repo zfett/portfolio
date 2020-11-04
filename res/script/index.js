@@ -9,3 +9,23 @@ const _SOCIAL = document.getElementsByClassName("social");
 for (i=0;i<_SOCIAL.length;i++) {
 	_SOCIAL[i].style.animationDelay = (1+i*.2)+"s";
 }
+
+window.addEventListener("scroll", () => {
+	if (window.pageYOffset >= 75) {
+		document.getElementById("header").classList.add("fixed");
+		document.getElementsByTagName("section")[1].style.marginTop = "175px";
+	} else {
+		document.getElementById("header").classList.remove("fixed");
+		document.getElementsByTagName("section")[1].style.marginTop = "0px";
+	}
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+	if (window.pageYOffset >= 75) {
+		document.getElementById("header").classList.add("fixed");
+		document.getElementsByTagName("section")[1].style.marginTop = "175px";
+	} else {
+		document.getElementById("header").classList.remove("fixed");
+		document.getElementsByTagName("section")[1].style.marginTop = "0px";
+	}
+});

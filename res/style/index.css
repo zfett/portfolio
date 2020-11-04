@@ -18,7 +18,7 @@
 	from {
 		opacity: 0.0;
 		filter: blur(5px);
-		transform: translateX(-50px) rotate(360deg) scale(1.0);
+		transform: translateX(-50px) rotate(-360deg) scale(1.0);
 	}
 	to {
 		opacity: 1.0;
@@ -98,6 +98,23 @@ main section {
 	animation-timing-function: cubic-bezier(0,0,0.3,1.0);
 	animation-fill-mode: backwards;
 	animation-iteration-count: 1;
+}
+
+#header {
+	position: relative;
+	background-color: var(--light);
+	z-index: 1000;
+}
+
+#header.fixed {
+	position: fixed;
+	max-width: 1000px;
+	width: 100%;
+	height: 125px;
+	padding: 25px 0px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #social_icons {
@@ -284,6 +301,29 @@ p {
 	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0);
 }
 
+.image span {
+	position: absolute;
+	display: block;
+	z-index: 2;
+	width: 100%;
+	padding: 10px;
+	bottom: 0;
+	left: 0;
+	color: white;
+	font-size: 0.8rem;
+	text-align: left;
+	transition: 0.2s ease-in-out all;
+	opacity: 0.5;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.5);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+}
+
+.image:hover span {
+	opacity: 1;
+}
+
 .image img {
 	position: relative;
 	display: block;
@@ -291,6 +331,7 @@ p {
 	height: auto;
 	user-select: none;
 	pointer-events: none;
+	z-index: 1;
 }
 
 .image:hover, .image:focus {
@@ -305,12 +346,19 @@ p {
 	body {
 		max-width: 600px;
 	}
+	#header.fixed {
+		max-width: 600px;
+	}
 }
 
 @media all and (max-width:600px) { 
 	body {
 		max-width: 100%;
-		margin: 50px auto;
+	}
+	#header.fixed {
+		max-width: calc(100% - 25px);
+		left: 0;
+		transform: none;
 	}
 	main {
 		width: calc(100% - 25px);
@@ -324,7 +372,7 @@ p {
 		left: 125px;
 		text-align: right;
 	}
-	.social:last-of-type {
+	.social.github {
 		margin-right: 0px;
 	}
 	h3 {
