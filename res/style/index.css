@@ -4,18 +4,33 @@
 @keyframes fade_down {
 	from {
 		opacity: 0.0;
+		filter: blur(5px);
 		transform: translateY(-25px);
 	}
 	to {
 		opacity: 1.0;
+		filter: blur(0px);
 		transform: translateY(0px);
+	}
+}
+
+@keyframes social {
+	from {
+		opacity: 0.0;
+		filter: blur(5px);
+		transform: translateX(-50px) rotate(360deg) scale(1.0);
+	}
+	to {
+		opacity: 1.0;
+		filter: blur(0px);
+		transform: translateX(0px) rotate(0deg) scale(1.0);
 	}
 }
 
 :root {
 	--accent: rgb(56,207,130);
 	--accent-light: rgb(124,242,182);
-	--aceent-dark: rgb(54,149,100);
+	--accent-dark: rgb(54,149,100);
 	
 	--light: rgb(231,244,237);
 	--dark: rgb(28,33,31);
@@ -71,6 +86,12 @@ main {
 }
 
 main section {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	height: auto;
+	font-size: 0px;
+	
 	animation-name: fade_down;
 	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(0,0,0.3,1.0);
@@ -78,11 +99,69 @@ main section {
 	animation-iteration-count: 1;
 }
 
+#social_icons {
+	position: absolute;
+	width: calc(100% - 175px);
+	left: 175px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.social {
+	position: relative;
+	display: inline;
+	padding: 0px;
+	margin: 10px 25px 10px 0px;
+	font-size: 0px;
+	height: 20px;
+	width: 20px;
+	border: 0px;
+	background-color: transparent;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	filter: brightness(100%);
+	transform: translateX(0px) rotate(0deg) scale(1.0);
+	transition: 0.15s ease-in-out all;
+	cursor: pointer;
+	
+	animation-name: social;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0,0,0.3,1.0);
+	animation-fill-mode: backwards;
+	animation-iteration-count: 1;
+}
+
+.social.twitter {background-image: url("../image/social/twitter.png");}
+
+.social.medium {background-image: url("../image/social/medium.png");}
+
+.social.unsplash {background-image: url("../image/social/unsplash.png");}
+
+.social.linkedin {background-image: url("../image/social/linkedin.png");}
+
+.social.github {background-image: url("../image/social/github.png");}
+
+.social:hover, .social:focus {
+	filter: brightness(75%);
+	transform: translateX(0px) rotate(0deg) scale(1.15);
+}
+
 #page_logo {
 	height: 75px;
 	margin: 0px 0px 0px 55px;
 	user-select: none;
 	pointer-events: none;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover, a:focus {
+	color: var(--accent-dark);
 }
 
 h3 {
@@ -109,4 +188,121 @@ p {
 	line-height: 2.15rem;
 	color: var(--dark);
 	text-align: justify;
+}
+
+#skill_container {
+	position: relative;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	width: calc(100% - 45px);
+	height: auto;
+	margin: 0px 0px 25px 50px;
+	overflow-y: hidden;
+}
+
+.skill {
+	position: relative;
+	display: inline;
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	color: var(--accent-dark);
+	text-align: center;
+	min-width: 150px;
+	width: calc(33.33% - 10px);
+	min-height: 1.2rem;
+	padding: 25px 0px;
+	margin: 5px;
+	border-radius: 10px;
+	background-color: rgb(209,226,217);
+	border-bottom: 3px solid rgb(192,212,201);
+	transform: translateY(0px);
+	transition: 0.2s ease-in-out all;
+	cursor: pointer;
+	z-index: 1;
+	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0);
+	
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
+}
+
+.skill:hover, .skill:focus {
+	transform: translateY(-5px);
+	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0.5);
+	z-index: 2;
+}
+
+/*Breakpoints*/
+
+@media all and (max-width:1000px) { 
+	body {
+		max-width: 600px;
+	}
+}
+
+@media all and (max-width:600px) { 
+	body {
+		max-width: 100%;
+		margin: 50px auto;
+	}
+	main {
+		width: calc(100% - 25px);
+		margin: 0px 25px 0px 0px;
+	}
+	#page_logo {
+		margin: 0px 0px 0px 25px;
+	}
+	#social_icons {
+		width: calc(100% - 125px);
+		left: 125px;
+		text-align: right;
+	}
+	.social:last-of-type {
+		margin-right: 0px;
+	}
+	h3 {
+		font-size: 2rem;
+		line-height: 2rem;
+		margin: 100px 0px 25px 9px;
+	}
+	h3::before {
+		content: '';
+	}
+	p {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		width: calc(100% - 25px);
+		margin: 0px 0px 25px 25px;
+	}
+	#skill_container {
+		width: calc(100% - 15px);
+		margin: 0px 0px 25px 20px;
+	}
+	.skill {
+		min-width: calc(50% - 10px);
+		width: calc(50% - 10px);
+	}
 }
