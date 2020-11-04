@@ -57,6 +57,7 @@
 
 * {
 	font-family: 'Poppins', 'Arial', 'SF Pro', sans-serif;
+	box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -255,6 +256,49 @@ p {
 	z-index: 2;
 }
 
+#portfolio_container {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 10px 10px;
+	width: calc(100% - 55px);
+	padding: 10px 0px;
+	margin: 0px 0px 25px 55px;
+	overflow-y: hidden;
+}
+
+.image {
+	position: relative;
+	display: block;
+	font-size: 0px;
+	text-align: center;
+	width: 100%;
+	margin: 0px 0px 10px 0px;
+	background-color: white;
+	border-radius: 10px;
+	overflow: hidden;
+	transform: translateY(0px);
+	transition: 0.2s ease-in-out all;
+	cursor: pointer;
+	z-index: 1;
+	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0);
+}
+
+.image img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	user-select: none;
+	pointer-events: none;
+}
+
+.image:hover, .image:focus {
+	transform: translateY(-5px);
+	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0.5);
+	z-index: 2;
+}
+
 /*Breakpoints*/
 
 @media all and (max-width:1000px) { 
@@ -297,7 +341,7 @@ p {
 		width: calc(100% - 25px);
 		margin: 0px 0px 25px 25px;
 	}
-	#skill_container {
+	#skill_container, #portfolio_container {
 		width: calc(100% - 15px);
 		margin: 0px 0px 25px 20px;
 	}

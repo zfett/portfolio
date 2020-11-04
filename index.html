@@ -45,13 +45,46 @@
 		
 		<section>
 			<h3>Portfolio</h3>
-		</section>
-		
-		<section>
-			<h3>Contact Me</h3>
-		</section>
-	</main>
+			<div id="portfolio_container">
+				<div>
+					<div class="image">
+						<img class="lazy" src="res/image/portfolio/concept_lo-res.jpg" data-src="res/image/portfolio/concept.jpg"/>
+					</div>
+					<div class="image">
+						<img class="lazy" src="res/image/portfolio/above_lo-res.jpg" data-src="res/image/portfolio/above.jpg"/>
+					</div>
+				</div>
+				<div>
+					<div class="image">
+						<img class="lazy" src="res/image/portfolio/entropy_lo-res.jpg" data-src="res/image/portfolio/entropy.jpg"/>
+					</div>
+					<div class="image">
+						<img class="lazy" src="res/image/portfolio/stay_lo-res.jpg" data-src="res/image/portfolio/stay.jpg"/>
+					</div>
+				</div>
+				<div>
+					<div class="image">
+						<img class="lazy" src="res/image/portfolio/shine_lo-res.jpg" data-src="res/image/portfolio/shine.jpg"/>
+					</div>
+				</div>
+			</div>
+			<p style="text-align: center">View more on my <a target="_blank" href="https://instagram.com/zacharyfetters">Instagram</a>!</p>
+		</div>
+	</section>
 	
-	<script src="res/script/index.js" type="text/javascript"></script>
+	<section>
+		<h3>Contact Me</h3>
+	</section>
+</main>
+
+<script async src="res/script/lazyload.js" type="text/javascript"></script>
+<script>
+const lazyContent = new LazyLoad({
+	threshold: 0,
+	use_native: true,
+	container: document.body
+});
+</script>
+<script src="res/script/index.js" type="text/javascript"></script>
 </body>
 </html>
