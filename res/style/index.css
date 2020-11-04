@@ -160,6 +160,8 @@ main section {
 
 .social.github {background-image: url("../image/social/github.png");}
 
+.social.dribbble {background-image: url("../image/social/dribbble.png");}
+
 .social:hover, .social:focus {
 	filter: brightness(75%);
 	transform: translateX(0px) rotate(0deg) scale(1.15);
