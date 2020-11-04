@@ -2,7 +2,11 @@
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
 
-/res/
+/res/image/
+	Access-Control-Allow-Origin: https://zachfetters.design
+	Vary: Origin
+	
+/res/font/
 	Access-Control-Allow-Origin: https://zachfetters.design
 	Vary: Origin
 
