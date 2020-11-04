@@ -389,9 +389,13 @@ p {
 		width: calc(100% - 25px);
 		margin: 0px 0px 25px 25px;
 	}
-	#skill_container, #portfolio_container {
+	#skill_container {
 		width: calc(100% - 15px);
 		margin: 0px 0px 25px 20px;
+	}
+	#portfolio_container {
+		width: calc(100% - 25px);
+		margin: 0px 0px 25px 25px;
 	}
 	.skill {
 		min-width: calc(50% - 10px);
