@@ -1,0 +1,10 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+
+/res/
+	Access-Control-Allow-Origin: https://zachfetters.design
+	Vary: Origin
+
+/res/image/seocover.jpg
+	Access-Control-Allow-Origin: *
