@@ -408,14 +408,15 @@ form button:hover {
 	position: relative;
 	display: block;
 	overflow: hidden;
-	width: 304px;
-	height: 78px;
+	width: 302px;
+	height: 76px;
 	margin: 0px 0px 15px 0px;
 	background-color: #eee;
 	border-radius: 2px;
+	z-index: 1;
 }
 
-#recaptcha-container::after {
+#recaptcha-container::before {
 	content: 'Enable Javascript if reCAPTCHA doesn\'t appear';
 	width: 100%;
 	position: absolute;
