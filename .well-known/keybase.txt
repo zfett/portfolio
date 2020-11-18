@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/zfett
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zachfetters.design
+  * I am zfett (https://keybase.io/zfett) on keybase.
+  * I have a public key ASD1zdfeH5nqoXAkBqv2IaKUDlh-gRlw-eAYRVzBJKAsJAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017d8100365fae0c12cd710d794dec4fe8bfcb01194590413be7c3cc39d783dbd20a",
+      "host": "keybase.io",
+      "kid": "0120f5cdd7de1f99eaa1702406abf621a2940e587e811970f9e018455cc124a02c240a",
+      "uid": "8d193f66691153f2f6119b7244d25f19",
+      "username": "zfett"
+    },
+    "merkle_root": {
+      "ctime": 1605733460,
+      "hash": "e4b838976b1a64910132ab3875897c5697dd254d68001c89b75481d07e5bdd33e3db104960f9c07f719d4020b2ce72ce30fca5aa687db9618dceac84383f6e67",
+      "hash_meta": "bfd54c64d51e60db19387b194fbbfc05831ecc79bb40984eb907159d54a12ddc",
+      "seqno": 18162242
+    },
+    "service": {
+      "entropy": "BI9tkHNXMCEkVz04SbyvJif4",
+      "hostname": "zachfetters.design",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1605733466,
+  "expire_in": 504576000,
+  "prev": "e7bbd6a7bbbfc8e91ae7680b3a1b456c8d86d5e20423ff27da93949e15c20722",
+  "seqno": 54,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg9c3X3h+Z6qFwJAar9iGilA5YfoEZcPngGEVcwSSgLCQKp3BheWxvYWTESpcCNsQg57vWp7u/yOka52gLOhtFbI2G1eIEI/8n2pOUnhXCByLEIAjvgewk0sLv8hV4AlQro8VmGt62pRPxL/442NPuG3RdAgHCo3NpZ8RAGwtrmJk92rtybrdohUzypjAqysTw65S2rNloREF3BBXahthyTVPLraFp81lMXI0rXBi4o2oQ7w5cL5atGsPjB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIA1UqN3L45L2EBwrTW22s06d2uevU212IuxN+uVCffteo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zfett
+
+==================================================================
