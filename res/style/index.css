@@ -425,6 +425,7 @@ form button:hover {
 	text-align: center;
 	font-size: 10px;
 	color: #aaa;
+	z-index: -1;
 }
 
 /*Breakpoints*/
