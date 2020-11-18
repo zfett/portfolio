@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html {
-	background-color: var(--light);
+	background-color: white;
 	color: var(--dark);
 	scroll-behavior: smooth;
 	scrollbar-color: var(--light) var(--dark);
@@ -102,7 +102,7 @@ main section {
 
 #header {
 	position: relative;
-	background-color: var(--light);
+	background-color: white;
 	z-index: 1000;
 }
 
@@ -161,6 +161,8 @@ main section {
 .social.github {background-image: url("../image/social/github.png");}
 
 .social.dribbble {background-image: url("../image/social/dribbble.png");}
+
+.social.mastodon {background-image: url("../image/social/mastodon.png");}
 
 .social:hover, .social:focus {
 	filter: brightness(75%);
@@ -340,6 +342,88 @@ p {
 	transform: translateY(-5px);
 	box-shadow: 0px 0px 0px 5000px rgba(231,244,237,0.5);
 	z-index: 2;
+}
+
+form {
+	position: relative;
+	display: block;
+	max-width: 500px;
+	margin: 50px auto;
+	background-color: rgb(250,250,250);
+	padding: 25px;
+	border-radius: 10px;
+}
+
+form input {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 5px 15px;
+	margin: 0px auto 15px auto;
+	background-color: white;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+
+form textarea {
+	position: relative;
+	display: block;
+	max-width: 100%;
+	min-width: 100%;
+	width: 100%;
+	padding: 5px 15px;
+	margin: 0px auto 15px auto;
+	background-color: white;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	font-size: 0.8rem;
+}
+
+form button {
+	padding: 5px 15px;
+	background-color: white;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	position: relative;
+	display: block;
+	margin: 0px;
+	cursor: pointer;
+}
+
+form input[name="bot-field"] {
+	height: 0px;
+	width: 0px;
+	border: 0px;
+	opacity: 0.0;
+	margin: 0px;
+	padding: 0px;
+	font-size: 0px;
+}
+
+form button:hover {
+	background-color: rgb(230, 230, 230);
+}
+
+#recaptcha-container {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 304px;
+	height: 78px;
+	margin: 0px 0px 15px 0px;
+	background-color: #eee;
+	border-radius: 2px;
+}
+
+#recaptcha-container::after {
+	content: 'Enable Javascript if reCAPTCHA doesn\'t appear';
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+	font-size: 10px;
+	color: #aaa;
 }
 
 /*Breakpoints*/

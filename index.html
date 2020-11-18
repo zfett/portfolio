@@ -17,6 +17,7 @@
 				<a target="_blank" href="https://unsplash.com/@zfett"><button class="social unsplash" title="@zfett on Unsplash">Unsplash</button></a>
 				<a target="_blank" href="https://dribbble.com/zfett"><button class="social dribbble" title="zfett on Dribbble">Dribbble</button></a>
 				<a target="_blank" href="https://github.com/zfett"><button class="social github" title="@zfett on GitHub">GitHub</button></a>
+				<a rel="me" target="_blank" href="https://mastodon.social/@zfett"><button class="social mastodon" title="@zfett at Mastodon.Social">Mastodon.Social</button></a>
 			</div>
 			<img src="res/image/brand/ZacharyFetters_Logo_Dark.svg" id="page_logo" alt="Zachary Fetters"/>
 		</section>
@@ -80,6 +81,14 @@
 	
 	<section>
 		<h3>Contact Me</h3>
+		<form netlify name="web-contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+			<input name="name" type="text" placeholder="Your Name" value="" required>
+			<input name="bot-field">
+			<input name="email" type="email" placeholder="Your Email" value="" required>
+			<textarea name="message" placeholder="Your Message" required></textarea>
+			<div id="recaptcha-container" data-netlify-recaptcha="true"></div>
+			<button type="submit">Send</button>
+		</form>
 	</section>
 </main>
 <script src="res/script/index.js" type="text/javascript"></script>
