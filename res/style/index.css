@@ -50,7 +50,7 @@ nav .nav-link {
   margin: 0px 0px 5px 10px;
   background: white;
   text-decoration: none;
-  color: rgb(0,143,255);
+  color: rgb(25,25,25);
   border: 1px solid rgb(205,233,255);
   text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
   border-right: 0px;
@@ -104,7 +104,7 @@ h1 {
 }
 
 h2 {
-  color: rgb(0,143,255);
+  color: rgb(0,100,190);
   font-size: 2rem;
   line-height: 2rem;
   margin: 0px 0px 15px 0px;
@@ -119,17 +119,21 @@ p {
   margin: 0px 0px 15px 0px;
 }
 
+main p {
+  text-align: justify;
+}
+
 main a {
   font-weight: bold;
-  color: rgb(0,143,255);
+  color: rgb(0,100,190);
   text-decoration: underline;
   text-decoration-style: solid;
-  text-decoration-color: rgb(0,143,255);
+  text-decoration-color: rgb(0,100,190);
 }
 
 main a:hover {
-  color: rgb(0,86,153);
-  text-decoration-color: rgb(0,86,153);
+  color: rgb(0,60,107);
+  text-decoration-color: rgb(0,60,107);
 }
 
 p:last-of-type {
@@ -152,6 +156,21 @@ footer p {
   text-align: center;
 }
 
+#footer_icons {
+  width: 100%;
+  margin: 25px 0px 0px 0px;
+  font-size: 0px;
+  height: 20px;
+  text-align: center;
+}
+
+#footer_icons img {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  margin: 0px 5px;
+}
+
 .social_link {
   position: relative;
   display: inline-block;
@@ -161,7 +180,7 @@ footer p {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  border: 0px;
+  border: 0px solid transparent;
   background-color: transparent;
   font-size: 0px;
   cursor: pointer;
@@ -176,7 +195,7 @@ footer p {
 .social_link.github:hover {background-image: url("../image/social/github_hover.png");}
 
 sub {
-  color: rgb(100,100,100);
+  color: rgb(80,80,80);
 }
 
 picture {
@@ -223,3 +242,27 @@ picture.inline.left {
   float: left;
   margin: 0px 10px 0px 0px;
 }
+
+#page_audio {
+  float: right;
+  margin-top: 1px;
+}
+
+#audio_toggle {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  background: transparent;
+  font-size: 0px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#audio_toggle.on {background-image: url("../image/icon/speaker_on.png");}
+#audio_toggle.off {background-image: url("../image/icon/speaker_off.png");}

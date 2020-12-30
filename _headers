@@ -6,5 +6,8 @@
 	Access-Control-Allow-Origin: https://zachfetters.design
 	Vary: Origin
 
-/res/image/seocover.jpg
+/res/image/seo_cover.jpg
 	Access-Control-Allow-Origin: *
+  
+/res/image/zacharyfetters_logo.png
+  Access-Control-Allow-Origin: *

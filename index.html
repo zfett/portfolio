@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
   <!--#IMissWeb1.0-->
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <title>Zachary Fetters' Personal Site</title>
   <link rel="stylesheet" type="text/css" href="res/style/index.css">
   <link rel="shortcut icon" type="image/png" href="res/image/favicon.png">
+  
+  <!--Site Metadata-->
+  <meta name="description" content="Hello and welcome to my personal website!">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Zachary Fetters">
+  
+  <!--Open Graph-->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zachary Fetters' Personal Site">
+  <meta property="og:description" content="Hello and welcome to my personal website!">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://zachfetters.design">
+  <meta property="og:image" content="https://zachfetters.design/res/image/seo_cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="A small, blue circle is placed in the middle of an off-white background. Overlaid on this circle are the letters 'ZF' anchored to the bottom right of the circle, in a bold, monospaced font.">
+  <meta property="article:published_time" content="2020-12-30">
+  
+  <!--Twitter Card Data-->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@zachary_fetters">
+  <meta name="twitter:title" content="Zachary Fetters' Personal Site">
+  <meta name="twitter:description" content="Hello and welcome to my personal website!">
+  <meta name="twitter:image" content="https://zachfetters.design/res/image/seo_cover.jpg">
 </head>
 <body>
   <header>
@@ -15,16 +40,21 @@
     </aside>
     
     <h1>Hello, I'm <span>Zachary!</span></h1>
-    <sub>...and welcome to my personal site!</sub>
+    <sub>Welcome to my personal site!</sub>
   </header>
   
   <nav>
     <a href="index.html" class="nav-link active">About Me</a>
+    <a href="https://medium.com/@zfett" target="_blank" class="nav-link">My Blog</a>
     <a href="work.html" class="nav-link">My Work</a>
-    <a href="blog/index.html" class="nav-link">The Case for Open-Source</a>
   </nav>
   
   <main>
+    <div id="page_audio">
+      <audio id="audio_src" preload="metadata" src="res/media/test.mp3" type="audio/mpeg"></audio>
+      <button id="audio_toggle" title="Listen to this page spoken aloud." class="off">Listen to this page spoken aloud.</button>
+    </div>
+    
     <h2>About Me</h2>
     
     <picture class="inline right">
@@ -38,9 +68,12 @@
   <footer>
     <p>Copyright &copy; Zachary Fetters 2020 <span id="curDate"></span> unless otherwise noted. Yes, this is designed to look like a Wikipedia page.</p>
     <div id="footer_social_links">
-      <a href="https://twitter.com/zachary_fetters" target="_blank"><button tabindex="-1" class="social_link twitter">Follow me on Twitter</button></a>
-      <a href="https://github.com/zfett" target="_blank"><button tabindex="-1" class="social_link github">Follow me on GitHub</button></a>
-      <a href="https://unsplash.com/@zfett" target="_blank"><button tabindex="-1" class="social_link unsplash">Follow me on Unsplash</button></a>
+      <a href="https://twitter.com/zachary_fetters" target="_blank" title="Follow me on Twitter"><img class="social_link twitter" alt="Logo for Twitter"/></a>
+      <a href="https://github.com/zfett" target="_blank" title="Follow me on GitHub"><img class="social_link github" alt="Logo for GitHub"/></a>
+      <a href="https://unsplash.com/@zfett" target="_blank" title="Follow me on Unsplash"><img class="social_link unsplash" alt="Logo for Unsplash"/></a>
+    </div>
+    <div id="footer_icons">
+      <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" title="Explanation of WCAG 2 Level AAA conformance"><img src="res\image\badge\wcag2.1AAA-v.png" alt="Level AAA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
     </div>
   </footer>
   
