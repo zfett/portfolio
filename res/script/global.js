@@ -9,27 +9,16 @@ if (y == "2020") {
   curDateElem.innerHTML = " - "+y;
 }
 
-let isPlaying = false;
-const audioSrc = document.getElementById("audio_src");
-const audioToggle = document.getElementById("audio_toggle");
+var a = document.getElementsByTagName('a');
+var b = a.length;
 
-function toggleAudio() {
-  if (isPlaying) {
-    isPlaying = false;
-    audioSrc.pause();
-    audioSrc.volume = 0;
-    audioToggle.style.backgroundImage = "url('res/image/icon/speaker_off.png')";
-  } else if (!isPlaying) {
-    isPlaying = true;
-    audioSrc.play();
-    audioSrc.volume = 0.4;
-    audioToggle.style.backgroundImage = "url('res/image/icon/speaker_on.png')";
-  }
-  
-  audioSrc.addEventListener('ended', (event) => {
-    isPlaying = false;
-    audioToggle.style.backgroundImage = "url('res/image/icon/speaker_off.png')";
-  });
+while(b--){
+  a[b].onclick = function(){
+    if(this.href.indexOf('zachfetters.design')<0){
+      var c = confirm('This link will take you to '+this.href+'. \n\nAre you sure you want to continue? Click "Cancel" to stay on this page or click "OK" to continue.');
+      if (!c) {
+        event.preventDefault();
+      }
+    }
+  };
 }
-
-audioToggle.addEventListener("click", toggleAudio);

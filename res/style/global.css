@@ -3,7 +3,7 @@
 
 html {
   font-family: 'IBM Plex Sans', 'Arial', 'SF Pro', sans-serif;
-  color: rgb(25,25,25);
+  color: black;
   background: #f5f5f5;
 }
 
@@ -14,11 +14,32 @@ body {
   max-width: 1050px;
 }
 
+no-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+  background: transparent;
+  overflow: hidden;
+  clear: both;
+}
+
+no-content::before {
+  content: 'Nothing here, yet!';
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 aside {
   position: relative;
   display: block;
-  height: 55px;
-  width: 160px;
+  height: 100%;
+  width: 120px;
   margin: 0px 50px 0px 0px;
   overflow: hidden;
   float: left;
@@ -35,39 +56,76 @@ nav {
   position: relative;
   display: block;
   float: left;
-  width: 160px;
-  height: 100%;
+  width: 120px;
+  padding: 0px 0px 2px 0px;
   margin: -1px 0px 50px 25px;
   z-index: 3;
+  overflow: hidden;
+}
+
+nav:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: calc(100% - 1px);
+  top: 0px;
+  right: 0px;
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+  z-index: 3;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.2;
 }
 
 nav .nav-link {
   position: relative;
   display: block;
   padding: 10px 15px;
-  border-radius: 3px 0px 0px 3px;
+  border-radius: 0px;
   width: calc(100% - 41px);
-  margin: 0px 0px 5px 10px;
+  margin: 0px 0px -1px 10px;
   background: white;
   text-decoration: none;
   color: rgb(25,25,25);
   border: 1px solid rgb(205,233,255);
   text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
   border-right: 0px;
+  text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
-  transition: 0.2s ease-in-out margin, 0.2s ease-in-out width;
+  z-index: 1;
+}
+
+nav .nav-link:first-of-type {
+  border-radius: 3px 0px 0px 0px;
+}
+
+nav .nav-link:last-of-type {
+  border-radius: 0px 0px 0px 3px;
 }
 
 .nav-link:hover, .nav-link:focus {
   width: calc(100% - 36px);
-  margin: 0px 0px 5px 5px;
+  margin: 0px 0px -1px 5px;
+  border-radius: 3px 0px 0px 3px !important;
+  z-index: 2;
+  box-shadow: 0px 1px 0px 0px rgb(205,233,255);
   background: linear-gradient(to right, #f5f5f5 0%,white 100%);
+}
+
+.nav-link.active + .nav-link:hover, 
+.nav-link.active + .nav-link:focus,
+.nav-link:active + .nav-link:hover,
+.nav-link:active + .nav-link:focus {
+  border-radius: 0px 0px 0px 3px !important;
 }
 
 .nav-link:active, .nav-link.active {
   width: calc(100% - 31px);
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px -1px 0px;
+  border-radius: 3px 0px 0px 3px !important;
   background: linear-gradient(to right, rgb(205,233,255) 0%,white 100%);
   color: rgb(0,86,153);
 }
@@ -88,7 +146,7 @@ main {
   margin: 0px 25px 0px 0px;
   border-radius: 0px 3px 3px 3px;
   background: white;
-  width: calc(100% - 310px);
+  width: calc(100% - 271px);
   float: right;
   height: auto;
   padding: 25px 50px;
@@ -119,9 +177,7 @@ p {
   margin: 0px 0px 15px 0px;
 }
 
-main p {
-  text-align: justify;
-}
+main p {text-align: justify}
 
 main a {
   font-weight: bold;
@@ -131,14 +187,29 @@ main a {
   text-decoration-color: rgb(0,100,190);
 }
 
+a[target="_blank"]:after {
+  position: relative;
+  display: inline-block;
+  content: '';
+  background-image: url("../image/icon/ext_link.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  margin: 0px 0px 2px 2px;
+}
+
+footer a[target="_blank"]:after {
+  content: '';
+  display: none;
+}
+
 main a:hover {
   color: rgb(0,60,107);
   text-decoration-color: rgb(0,60,107);
 }
 
-p:last-of-type {
-  margin: 0px;
-}
+p:last-of-type {margin: 0px}
 
 footer p {
   font-size: 0.65rem;
@@ -186,17 +257,15 @@ footer p {
   cursor: pointer;
 }
 
-.social_link.twitter {background-image: url("../image/social/twitter.png");}
-.social_link.unsplash {background-image: url("../image/social/unsplash.png");}
-.social_link.github {background-image: url("../image/social/github.png");}
+.social_link.twitter {background-image: url("../image/social/twitter.png")}
+.social_link.unsplash {background-image: url("../image/social/unsplash.png")}
+.social_link.github {background-image: url("../image/social/github.png")}
 
-.social_link.twitter:hover {background-image: url("../image/social/twitter_hover.png");}
-.social_link.unsplash:hover {background-image: url("../image/social/unsplash_hover.png");}
-.social_link.github:hover {background-image: url("../image/social/github_hover.png");}
+.social_link.twitter:hover {background-image: url("../image/social/twitter_hover.png")}
+.social_link.unsplash:hover {background-image: url("../image/social/unsplash_hover.png")}
+.social_link.github:hover {background-image: url("../image/social/github_hover.png")}
 
-sub {
-  color: rgb(80,80,80);
-}
+sub {color: rgb(80,80,80)}
 
 picture {
   position: relative;
@@ -205,7 +274,7 @@ picture {
   max-width: 150px;
   overflow: hidden;
   background: #f5f5f5;
-  border: 1px solid #eee;
+  border: 1px solid #d5d5d5;
   font-size: 0px;
   user-select: none;
   pointer-events: none;
@@ -225,13 +294,9 @@ picture img {
   overflow: hidden;
 }
 
-picture.inline {
-  float: right;
-}
+picture.inline {float: right}
 
-picture.center {
-  margin: 10px auto;
-}
+picture.center {margin: 10px auto}
 
 picture.inline.right {
   float: right;
@@ -264,5 +329,5 @@ picture.inline.left {
   cursor: pointer;
 }
 
-#audio_toggle.on {background-image: url("../image/icon/speaker_on.png");}
-#audio_toggle.off {background-image: url("../image/icon/speaker_off.png");}
+#audio_toggle.on {background-image: url("../image/icon/speaker_on.png")}
+#audio_toggle.off {background-image: url("../image/icon/speaker_off.png")}

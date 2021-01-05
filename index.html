@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <title>Zachary Fetters' Personal Site</title>
-  <link rel="stylesheet" type="text/css" href="res/style/index.css">
+  <link rel="stylesheet" type="text/css" href="res/style/global.css">
   <link rel="shortcut icon" type="image/png" href="res/image/favicon.png">
   
   <!--Site Metadata-->
@@ -34,46 +34,44 @@
   <meta name="twitter:image" content="https://zachfetters.design/res/image/seo_cover.jpg">
 </head>
 <body>
-  <header>
-    <aside>
-      <a href="index.html"><img src="res/image/zacharyfetters_logo_small.jpg" title="Zachary Fetters Logo"/></a>
+  <header role="banner">
+    <aside role="complementary">
+      <a role="link" href="index.html"><img src="res/image/zacharyfetters_logo_small.jpg" alt="Zachary Fetters' Logo"/></a>
     </aside>
     
-    <h1>Hello, I'm <span>Zachary!</span></h1>
+    <h1>Hello, I'm Zachary!</h1>
     <sub>Welcome to my personal site!</sub>
   </header>
   
-  <nav>
-    <a href="index.html" class="nav-link active">About Me</a>
-    <a href="https://medium.com/@zfett" target="_blank" class="nav-link">My Blog</a>
-    <a href="work.html" class="nav-link">My Work</a>
+  <nav role="navigation">
+    <a role="link" href="index.html" class="nav-link active">About Me</a>
+    <a role="link" href="work.html" class="nav-link">My Work</a>
+    <a role="link" href="contact.html" class="nav-link">Contact Me</a>
+    <a role="link" href="https://medium.com/includeweb" target="_blank" class="nav-link">My Blog</a>
+    <a role="link" href="https://github.com/zfett/Include-Data" target="_blank" class="nav-link">Open Data</a>
   </nav>
   
-  <main>
-    <div id="page_audio">
-      <audio id="audio_src" preload="metadata" src="res/media/test.mp3" type="audio/mpeg"></audio>
-      <button id="audio_toggle" title="Listen to this page spoken aloud." class="off">Listen to this page spoken aloud.</button>
-    </div>
-    
-    <h2>About Me</h2>
+  <main role="main">
+    <h2 role="heading">About Me</h2>
     
     <picture class="inline right">
       <img src="res/image/portrait_small.jpg" title="Official portrait of Zachary Fetters."/>
-      <figcaption>My official portrait. Click <a href="res/file/ZacharyFetters_OfficialPortrait_20200129.jpg" download="ZacharyFetters_OfficialPortrait_20200129" target="_blank">this link</a> to download the full-size version.</figcaption>
+      <figcaption>My official portrait. Click <a role="link" href="res/file/ZacharyFetters_OfficialPortrait_20200129.jpg" download="ZacharyFetters_OfficialPortrait_20200129" target="_blank">this link</a> to download the full-size version.</figcaption>
     </picture>
     
     <p>Hello, my name is <b>Zachary Fetters</b> and I am a freelance web/graphic designer and programmer. I'm also a staunch advocate for open-source software and data security.</p>
+    <p>In my free time, which I have too much of nowadays, I write articles and posts for <a role="link" href="https://medium.com/includeweb" target="_blank">#include</a>, my personal publication about web design and programming, as well as web accessibility and data privacy. Alongside that, I also like to dabble in freelance design and am currently accepting commissions!</p>
   </main>
   
   <footer>
     <p>Copyright &copy; Zachary Fetters 2020 <span id="curDate"></span> unless otherwise noted. Yes, this is designed to look like a Wikipedia page.</p>
     <div id="footer_social_links">
-      <a href="https://twitter.com/zachary_fetters" target="_blank" title="Follow me on Twitter"><img class="social_link twitter" alt="Logo for Twitter"/></a>
-      <a href="https://github.com/zfett" target="_blank" title="Follow me on GitHub"><img class="social_link github" alt="Logo for GitHub"/></a>
-      <a href="https://unsplash.com/@zfett" target="_blank" title="Follow me on Unsplash"><img class="social_link unsplash" alt="Logo for Unsplash"/></a>
+      <a role="link" href="https://twitter.com/zachary_fetters" target="_blank" title="Follow me on Twitter"><img class="social_link twitter" alt="Logo for Twitter"/></a>
+      <a role="link" href="https://github.com/zfett" target="_blank" title="Follow me on GitHub"><img class="social_link github" alt="Logo for GitHub"/></a>
+      <a role="link" href="https://unsplash.com/@zfett" target="_blank" title="Follow me on Unsplash"><img class="social_link unsplash" alt="Logo for Unsplash"/></a>
     </div>
     <div id="footer_icons">
-      <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" title="Explanation of WCAG 2 Level AAA conformance"><img src="res\image\badge\wcag2.1AAA-v.png" alt="Level AAA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
+      <a role="link" href="https://www.w3.org/WAI/WCAG2AAA-Conformance" title="Explanation of WCAG 2 Level AAA conformance"><img src="res\image\badge\wcag2.1AAA-v.png" alt="Level AAA conformance, W3C WAI Web Content Accessibility Guidelines 2.1"></a>
     </div>
   </footer>
   
