@@ -1,24 +1,16 @@
 console.info("%cRecruiters & Employers: I'm looking for work if you need a front-end designer! @zfett on LinkedIn", "color: limegreen; font-size: 20px;");
 
-const curDateElem = document.getElementById("curDate");
-const y = new Date().getFullYear();
-
-if (y == "2020") {
-  //do nothing
-} else {
-  curDateElem.innerHTML = " - "+y;
+let curSlide = 0;
+const imgList = document.getElementsByClassName("slide_img");
+function imageSlide() {
+  var i;
+  for (i = 0; i < imgList.length; i++) {
+    imgList[i].classList.remove("active");
+  }
+  curSlide++;
+  if (curSlide > imgList.length) {curSlide = 1}    
+  imgList[curSlide-1].classList.add("active");
+  setTimeout(imageSlide, 8000);
 }
 
-var a = document.getElementsByTagName('a');
-var b = a.length;
-
-while(b--){
-  a[b].onclick = function(){
-    if(this.href.indexOf('zachfetters.design')<0){
-      var c = confirm('This link will take you to '+this.href+'. \n\nAre you sure you want to continue? Click "Cancel" to stay on this page or click "OK" to continue.');
-      if (!c) {
-        event.preventDefault();
-      }
-    }
-  };
-}
+imageSlide();
