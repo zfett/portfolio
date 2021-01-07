@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="unsplash" class="cls-1" d="M40,55H5V30H22V42H38V30H55V55H40ZM21,5H39V18H21V5Z"/>
+</svg>
