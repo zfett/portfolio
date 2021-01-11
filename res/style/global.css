@@ -232,9 +232,12 @@ textarea {
   margin: 0 auto;
   border: 1px solid #ccc;
   min-height: 27rem;
+  max-width: 28rem;
+  width: 100%;
   background: white;
   resize: none;
-  overflow: hidden;
+  overflow: hidden auto;
+  scrollbar-width: thin;
   text-align: justify;
   padding: 15px;
   border-radius: 15px;
