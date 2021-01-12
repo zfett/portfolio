@@ -1,5 +1,1 @@
-User-agent: *
-Disallow: /res/
-Allow: /index.html
-
 Sitemap: https://zachfetters.design/sitemap.xml
