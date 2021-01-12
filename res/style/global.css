@@ -1,322 +1,431 @@
 @import url("../font/ibmplexmono/stylesheet.css");
 @import url("../font/ibmplexsans/stylesheet.css");
 
+:root {
+  --blue: #008efe;
+}
+
 html {
-  background: #eee;
-  color: black;
+  background: #141516;
+  color: white;
   font-family: 'IBM Plex Sans', sans-serif;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  scrollbar-color: var(--blue) #202122;
 }
 
 ::selection, ::-moz-selection {
-  background: black;
+  background: #008efe;
   color: white;
 }
 
 body {
-  margin: 0 auto;
+  max-width: 950px;
+  margin: 50px auto;
 }
 
 main {
+  margin: 0px 25px;
+  width: calc(100% - 50px);
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  display: block;
+  margin: 0px 0px 75px 0px;
+  padding: 0px 25px 0px 25px;
+  width: calc(100% - 50px);
+  height: 75px;
+}
+
+header::after {
+  content: '';
   position: absolute;
-  background: white;
-  left: 10px;
-  top: 10px;
-  width: calc(50% - 10px);
-  min-height: calc(100% - 20px);
-  height: calc(100% - 20px);
-  max-width: 600px;
-  overflow: hidden auto;
-  z-index: 2;
-  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.25);
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
+  width: 100%;
+  height: 1px;
+  background: #333;
+  bottom: -25px;
+  left: 0;
+}
+
+footer {
+  position: relative;
+  display: block;
+  margin: 75px 0px 0px 0px;
+  width: 100%;
+  font-size: 0px;
+  padding: 25px 0px;
+  clear: both;
+  text-align: center;
+}
+
+footer::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #333;
+  top: -25px;
+  left: 0;
+}
+
+header img {
+  height: 75px;
+  float: left;
+}
+
+header h1 {
+  position: relative;
+  display: block;
+  margin: 0;
+  float: right;
+  color: var(--blue);
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  text-align: right;
+}
+
+header span {
+  position: relative;
+  display: block;
+  float: right;
+  margin: -17px 0px 0px 0px;
+  clear: both;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
 }
 
 section {
   position: relative;
   display: block;
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
-  margin: 50px;
-}
-
-.line {
-  position: absolute;
-  height: calc(100% - 150px);
-  width: 1px;
-  background: #ccc;
-  z-index: -1;
-  left: 50%;
-  top: 200px;
-  transform: translateX(-50%);
-}
-
-.line:before {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #ccc;
-  transform: rotate(45deg);
-  bottom: 1px;
-  left: -2px;
-}
-
-.contact_btn {
-  position: absolute;
-  font-family: 'IBM Plex Mono', monospace;
-  bottom: 0px;
-  border: 1px solid #ccc;
-  background: white;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 30px;
-  width: 30px;
-  color: transparent;
-  cursor: pointer;
-  transition: 0.15s ease-in-out all;
-  border-radius: 30px;
-}
-
-.contact_btn:hover {
-  width: 100%;
-  color: black;
-}
-
-.contact_btn:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../image/btn_arrow.svg");
-  background-size: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1.0;
-  transition: 0.15s ease-in-out opacity;
-}
-
-.contact_btn:hover:before {opacity: 0.0}
-
-p {
-  width: 100%;
-  text-align: justify;
-  margin: 25px 0px 0px 0px;
-  padding-bottom: 25px;
-  font-size: 0.9rem;
-  line-height: 2rem;
-  background: white;
-}
-
-a {
-  color: #555;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {color: #000}
-
-h1 {
-  margin: 0px 0px 15px 0px;
-  padding: 0px;
-  text-align: center;
-  font-size: 2.5rem;
-  background: white;
-}
-
-h2 {
-  margin: 0px 0px 15px 0px;
-  padding: 0px 0px 25px 0px;
-  text-align: center;
-  font-size: 2.5rem;
-  background: white;
-  color: #888;
-}
-
-sub {
-  position: relative;
-  display: block;
-  margin: 0px;
-  padding: 0px;
-  color: #888;
-  width: 100%;
-  text-align: center;
-  background: white;
-}
-
-aside {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  margin-bottom: 75px;
+  padding: 75px 0px;
+  padding-top: 0px;
   overflow: hidden;
-  z-index: 1;
 }
 
-span {
-  font-size: 0.8rem;
-  color: black;
-  background: white;
+section:after {
+  content: '· · ·';
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  color: #333;
   position: absolute;
-  z-index: 1;
-  padding: 5px 10px;
-  bottom: 10px;
-  right: 10px;
-  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.25);
-}
-
-#photo_slideshow {
-  position: absolute;
-  right: 0;
-  top: 0;
+  bottom: -7px;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  text-align: center;
   user-select: none;
   pointer-events: none;
 }
 
-#photo_slideshow .slide_img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.0;
-  transition: 0.25s ease-in-out opacity;
-  z-index: 0;
+section:last-of-type {
+  margin-bottom: 0px;
+  padding: 0px;
 }
 
-#photo_slideshow .slide_img.active {
-  opacity: 1.0;
-  animation-name: photoslide;
-  animation-duration: 8s;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+section:last-of-type:after {
+  content: '';
+  display: none;
 }
 
-.contact {
+section a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+section a:hover {
+  text-decoration: underline var(--blue);
+}
+
+h2 {
   position: relative;
   display: block;
-  margin: 0px auto 15px auto;
-  padding: 0px 15px 0px 35px;
+  font-size: 2rem;
+  line-height: 60px;
+  vertical-align: middle;
+  color: white;
+  text-shadow: 0px 2.5px 5px rgba(0,0,0,0.25);
+  text-align: right;
+  margin: 0px 25px 25px 50px;
+  float: right;
+}
+
+section:nth-of-type(even) h2 {
+  text-align: left;
+  margin: 0px 50px 25px 25px;
+  float: left;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  z-index: -1;
+  right: -25px;
+  background: #008efe;
+  background: -moz-linear-gradient(top,  #008efe 0%, #005dff 100%);
+  background: -webkit-linear-gradient(top,  #008efe 0%,#005dff 100%);
+  background: linear-gradient(to bottom,  #008efe 0%,#005dff 100%);
+}
+
+section:nth-of-type(even) h2::after {
+  left: -25px;
+}
+
+section p {
+  position: relative;
+  display: block;
+  margin: 0px 25px 50px 25px;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: justify;
+}
+
+section p:last-of-type {
+  margin: 0px 25px;
+}
+
+section blockquote {
+  position: relative;
+  display: block;
+  margin: 0px 25px 25px 25px;
+  padding: 10px 0px 10px 25px;
+  font-style: italic;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: justify;
+  border-left: 3px solid #555;
+}
+
+.quote_source {
+  position: relative;
+  display: block;
+  margin: 0px 0px 25px 50px;
   height: 30px;
-  color: black;
-  font-family: 'IBM Plex Mono', monospace;
-  background-color: white;
-  border: 1px solid #ccc;
+  font-size: 0px;
+}
+
+.quote_source:last-of-type {
+  margin: 0px 0px 0px 50px;
+}
+
+.quote_source img {
+  position: relative;
+  display: block;
+  float: left;
+  height: 28px;
+  width: 28px;
   border-radius: 30px;
-  cursor: pointer;
-  background-position: 10px center;
-  background-size: 20px;
+  margin: 0px 0px 0px 2px;
+  user-select: none;
+  pointer-events: none;
+  box-shadow: 0px 0px 0px 2px var(--blue);
+}
+
+.quote_source span {
+  line-height: 30px;
+  vertical-align: middle;
+  color: #888;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin: 0px 0px 0px 15px;
+}
+
+#skillset_container, #cert_container {
+  position: relative;
+  width: calc(100% - 50px);
+  margin: 0px 25px 0px 25px;
+}
+
+#cert_container {
+  clear: both;
+}
+
+#legend {
+  margin: 25px 0px 0px 55px;
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 25px;
+  vertical-align: middle;
+  clear: both;
+}
+
+#legend span {
+  color: #FFB72B;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.skill, .cert {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0px 0px 15px 0px;
+  padding: 0px 30px 15px 30px;
+  border-bottom: 1px solid #222;
+}
+
+.skill.primary {
+  background-color: #222;
+  background-image: url("../image/primary_skill_bg.svg");
+  background-position: right center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-bottom: 0px;
+  padding: 15px 30px;
+}
+
+.skill.primary:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../image/primary_skill_bg_start.svg");
+  background-position: left center;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-.contact:hover {background-color: #eee}
-
-.contact.email {background-image: url("../image/btn_email.svg")}
-
-.contact.email_secure {background-image: url("../image/btn_email_secure.svg")}
-
-textarea {
-  position: relative;
-  display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  min-height: 27rem;
-  max-width: 28rem;
-  width: 100%;
-  background: white;
-  resize: none;
-  overflow: hidden auto;
-  scrollbar-width: thin;
-  text-align: justify;
-  padding: 15px;
-  border-radius: 15px;
-  margin-bottom: 25px;
+.skill.primary h3 {
+  color: var(--blue);
+  font-size: 1.3rem;
 }
 
-#social_media {
+.skill.primary span {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.skill.primary h3:after {
+  content: '*';
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0px 10px;
-  background: white;
-  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.25);
-  z-index: 5;
+  font-size: 0.8rem;
+  color: #FFB72B;
+  top: 0;
+  margin-right: -2px;
+}
+
+.skill h3, .cert h3 {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-size: 1rem;
+  margin: 0px 0px 10px 0px;
+  max-width: calc(100% - 250px);
+}
+
+.skill span, .cert span {
+  position: relative;
+  display: block;
+  color: #888;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  max-width: calc(100% - 250px);
+}
+
+.cert h3, .cert span {
+  max-width: 100%;
+}
+
+.skill .rating {
+  position: relative;
+  display: block;
+  float: right;
+  height: 25px;
+  margin: -32px 0px 0px 0px;
+  font-size: 0px;
+  max-width: 250px;
+  text-align: right;
+}
+
+.skill.primary .rating {
+  margin: -40px 0px 0px 0px;
+}
+
+.skill .rating .dot {
+  position: relative;
+  display: inline-block;
+  margin: 0px 0px 0px 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.skill .rating .dot.filled {
+  background: #008efe;
+  background: -moz-linear-gradient(top,  #008efe 0%, #005dff 100%);
+  background: -webkit-linear-gradient(top,  #008efe 0%,#005dff 100%);
+  background: linear-gradient(to bottom,  #008efe 0%,#005dff 100%);
+}
+
+.skill .rating .dot.empty {
+  border: 3px solid #0073fe;
+  width: 19px;
+  height: 19px;
+}
+
+.skill .rating span {
+  position: relative;
+  display: inline-block;
+  line-height: 25px;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  margin: -25px 10px 0px 0px;
+  max-width: inherit;
 }
 
 .social {
   position: relative;
-  display: block;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border: 0px;
-  font-size: 0px;
-  color: transparent;
-  background-size: 25px;
-  background-position: center;
-  margin: 10px 0px;
-  background-repeat: no-repeat;
-  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0px 10px;
+  opacity: 0.2;
 }
 
-.social.twitter {background-image: url("../image/social/twitter.svg")}
-.social.github {background-image: url("../image/social/github.svg")}
-.social.unsplash {background-image: url("../image/social/unsplash_hover.svg")}
-
-.social.twitter:hover {background-image: url("../image/social/twitter_hover.svg")}
-.social.github:hover {background-image: url("../image/social/github_hover.svg")}
-.social.unsplash:hover {background-image: url("../image/social/unsplash.svg")}
-
-@keyframes photoslide {
-  0% {
-    transform: scale(1.0);
-  }
-  100% {
-    transform: scale(1.2);
-  }
+.social:hover {
+  opacity: 1.0;
 }
 
-@media all and (max-width: 600px) {
-  html {background: white}
-  aside {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-  }
-  .contact {
-    width: 100%;
-    font-size: 0.7rem;
-  }
-  span {
-    width: calc(100% - 40px);
-    text-align: center;
-    background: #f5f5f5;
-  }
-  main {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 50vh;
-    height: auto;
-    box-shadow: none;
-  }
-  textarea {
-    width: calc(100% + 25px);
-    margin-left: -25px;
-    height: 100%;
-  }
-  .line, .contact_btn {
+@media all and (max-width: 800px) {
+  .skill .rating {
     display: none;
+  }
+  .skill h3, .cert h3, .skill span, .cert span {
+    max-width: 100%;
+  }
+}
+
+@media all and (max-width: 530px) {
+  #skillset_container {
+    clear: both;
+  }
+  blockquote {
+    clear: both;
+  }
+  section p {
+    clear: both;
+  }
+  header img {
+    display: none;
+  }
+  header h1, header span {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+    float: none;
+  }
+  header span {
+    margin: 15px 0px 0px 0px;
   }
 }
