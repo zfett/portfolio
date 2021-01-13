@@ -10,3 +10,9 @@
   [plugins.inputs.minifierOptions]
     removeComments = true
     collapseInlineTagWhitespace = false
+
+[[plugins]]
+  package = "@helloample/netlify-plugin-replace"
+  [plugins.inputs]
+    delimiter = "\${env:([^}]_)}"
+    fileTypes = ".html"
