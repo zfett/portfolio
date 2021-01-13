@@ -1,7 +1,5 @@
 [context.production]
-  environment = {
-    PROJ_TG_VER = "1.0.0"
-  }
+  environment = {PROJ_TG_VER = "1.0.0"}
   
 
 [[plugins]]
