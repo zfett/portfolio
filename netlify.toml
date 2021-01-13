@@ -1,3 +1,9 @@
+[context.production]
+  environment = {
+    PROJ_TG_VER = "1.0.0"
+  }
+  
+
 [[plugins]]
   package = "netlify-plugin-minify-html"
   [plugins.inputs]
