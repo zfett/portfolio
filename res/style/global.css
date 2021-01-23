@@ -303,7 +303,7 @@ section blockquote {
   margin: 0px 25px 0px 25px;
 }
 
-#cert_container {
+#cert_container, #contact_container {
   clear: both;
 }
 
@@ -322,7 +322,7 @@ section blockquote {
   font-size: 1rem;
 }
 
-.skill, .cert {
+.skill, .cert, .contact {
   position: relative;
   display: block;
   overflow: hidden;
@@ -373,7 +373,7 @@ section blockquote {
   margin-right: -2px;
 }
 
-.skill h3, .cert h3 {
+.skill h3, .cert h3, .contact h3 {
   position: relative;
   overflow: hidden;
   color: white;
@@ -382,7 +382,7 @@ section blockquote {
   max-width: calc(100% - 250px);
 }
 
-.skill span, .cert span {
+.skill span, .cert span, .contact span {
   position: relative;
   display: block;
   color: #888;
@@ -391,7 +391,7 @@ section blockquote {
   max-width: calc(100% - 250px);
 }
 
-.cert h3, .cert span {
+.cert h3, .cert span, .contact span {
   max-width: 100%;
 }
 
@@ -455,11 +455,34 @@ section blockquote {
   opacity: 1.0;
 }
 
+.email {
+  position: relative;
+  clear: both;
+  width: calc(100% - 32px);
+  padding: 30px 15px;
+  background-color: #101112;
+  border: 1px solid #202122;
+  border-radius: 5px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.email img {
+  position: relative;
+  display: block;
+  max-height: 25px;
+  max-width: 100%;
+  margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
+}
+
 @media all and (max-width: 800px) {
   .skill .rating {
     display: none;
   }
-  .skill h3, .cert h3, .skill span, .cert span {
+  .skill h3, .cert h3, .skill span, .cert span,
+  .contact h3, .contact span {
     max-width: 100%;
   }
 }
