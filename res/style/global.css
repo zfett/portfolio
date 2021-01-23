@@ -263,12 +263,35 @@ section blockquote {
   border-left: 3px solid #555;
 }
 
+section:nth-of-type(even) blockquote {
+  position: relative;
+  display: block;
+  margin: 0px 25px 25px 25px;
+  padding: 10px 25px 10px 0px;
+  font-style: italic;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: justify;
+  border-left: 0px;
+  border-right: 3px solid #555;
+}
+
 .quote_source {
   position: relative;
   display: block;
   margin: 0px 0px 25px 50px;
   height: 30px;
   font-size: 0px;
+}
+
+section:nth-of-type(even) .quote_source {
+  position: relative;
+  display: block;
+  margin: 0px 50px 25px 0px;
+  height: 30px;
+  font-size: 0px;
+  text-align: right;
 }
 
 .quote_source:last-of-type {
@@ -288,6 +311,11 @@ section blockquote {
   box-shadow: 0px 0px 0px 2px var(--blue);
 }
 
+section:nth-of-type(even) .quote_source img {
+  float: right;
+  margin: 0px 2px 0px 0px;
+}
+
 .quote_source span {
   line-height: 30px;
   vertical-align: middle;
@@ -295,6 +323,10 @@ section blockquote {
   font-style: italic;
   font-size: 0.8rem;
   margin: 0px 0px 0px 15px;
+}
+
+section:nth-of-type(even) .quote_source span {
+  margin: 0px 15px 0px 0px;
 }
 
 #skillset_container, #cert_container {
