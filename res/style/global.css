@@ -5,6 +5,36 @@
   --blue: #008efe;
 }
 
+#nojs_banner {
+  position: fixed;
+  display: block;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  user-select: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#nojs_banner:after {
+  content: 'NO JS';
+  position: absolute;
+  display: inline;
+  line-height: 20px;
+  width: 100%;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  text-align: center;
+  background: var(--blue);
+  color: white;
+  top: -20px;
+  left: 15px;
+  padding: 0px 15px;
+  transform: rotate(-45deg) translate(-50%, -50%);
+}
+
 #tracking_banner {
   position: fixed;
   display: block;
@@ -170,7 +200,7 @@ section:after {
   font-size: 1.5rem;
   line-height: 1.5rem;
   vertical-align: middle;
-  color: #333;
+  color: #888;
   position: absolute;
   bottom: -7px;
   width: 100%;
