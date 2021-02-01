@@ -159,6 +159,30 @@ footer::after {
   left: 0;
 }
 
+footer .reg_link {
+  position: relative;
+  display: inline-block;
+  font-size: 0.8rem;
+  line-height: 30px;
+  vertical-align: middle;
+  margin: 0 10px;
+  margin-top: -20px;
+  color: white;
+  opacity: 0.2;
+  text-decoration: none;
+}
+
+footer .reg_link:hover {opacity: 1}
+
+footer a:nth-of-type(5) {
+  padding-left: 20px;
+  border-left: 1px solid #555;
+}
+
+footer a:nth-of-type(5):hover {
+  border-color: #222;
+}
+
 header img {
   height: 75px;
   float: left;
