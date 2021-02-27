@@ -1,23 +1,28 @@
+@import url("res/font/stylesheet.css");
+
 * {
   image-rendering: crisp-edges;
   font-family: sans-serif;
 }
 
 html {
-  color: white;
+  background-color: #25211a;
   background-image: url("res/img/PageBackground.png");
+  background-position: center top;
+  background-size: auto;
+  background-repeat: repeat-y;
 }
 
 body {
   position: relative;
   margin: 50px auto;
-  width: 100%;
+  width: 1000px;
 }
 
 .logo {
   position: relative;
   display: block;
-  height: 144px;
+  width: 512px;
   margin: 0px auto 50px auto;
   user-select: none;
   pointer-events: none;
@@ -26,13 +31,33 @@ body {
 board-container {
   position: relative;
   display: block;
-  width: 400px;
-  height: 400px;
+  width: 512px;
+  height: 512px;
+  padding: 20px;
   margin: 0 auto;
   overflow: hidden;
-  background: white;
-  box-shadow: 0px 0px 0px 2px #555;
+  background-image: url("res/img/BoardBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-size: 0px;
+  z-index: 1;
+}
+
+board-container:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  background-image: url("res/img/BoardForeground.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  user-select: none;
+  pointer-events: none;
 }
 
 board-container grid {
@@ -47,21 +72,68 @@ board-container grid {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
 }
 
-board-container grid::after {
-  content: attr(gridId);
+@keyframes moveSelector {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+board-container piece:hover:before {
+  content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 100%;
-  line-height: 10px;
-  font-size: 10px;
-  text-align: center;
-  color: #aaa;
-  font-weight: bold;
-  opacity: 0.5;
-  text-shadow: 0px 0px 1px rgba(0,0,0,1);
+  height: 100%;
+  z-index: 5;
+  background-image: url("res/img/PieceHover.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: moveSelector;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+board-container piece.selected:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-image: url("res/img/MoveSelector.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: moveSelector;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+board-container grid:not(grid.active):hover:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-image: url("res/img/GridHover.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: moveSelector;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 board-container grid:nth-of-type(-2n+8), 
@@ -83,20 +155,29 @@ board-container grid piece {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 3;
 }
 
-board-container grid piece[black] {
+board-container grid piece.select:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+board-container grid piece[data-ptyp = "black"] {
   background-image: url("res/img/PieceBlack.png");
 }
 
-board-container grid piece[white] {
+board-container grid piece[data-ptyp = "white"] {
   background-image: url("res/img/PieceWhite.png");
 }
 
-board-container grid piece[black][king] {
+board-container grid piece[data-ptyp = "black"][data-isking = "true"] {
   background-image: url("res/img/KingBlack.png");
 }
 
-board-container grid piece[white][king] {
+board-container grid piece[data-ptyp = "white"][data-isking = "true"] {
   background-image: url("res/img/KingWhite.png");
 }
