@@ -376,7 +376,7 @@ event-list event.update {
 .scoreboard {
   position: absolute;
   display: block;
-  width: calc(198px - 32px);
+  width: calc(198px - 20px);
   top: 20px;
   height: calc(512px - 32px);
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
