@@ -278,21 +278,9 @@ BOARD.addEventListener('click', function(e) {
 }, false);
 
 function kingPiece(pelem,pcid) {
-  if (pelem.getAttribute("data-ptyp") !== CTURN) {
-    console.warn("Cannot change status of pieces from opponent!");
-    return false;
-  } else if (pelem.getAttribute("data-ptyp") == "black" && pelem.parentNode.getAttribute("data-row") !== "H") {
-    console.warn("Cannot king a black piece that is not on row \"H\"!");
-    return false;
-  } else if (pelem.getAttribute("data-ptyp") == "white" && pelem.parentNode.getAttribute("data-row") !== "A") {
-    console.warn("Cannot king a white piece that is not on row \"A\"!");
-    return false;
-  } else if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "false") {
+  if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "false") {
     pelem.setAttribute("data-isking", "true");
     sendMessage(CTURN.toUpperCase()+" kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
-  } else if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "true") {
-    pelem.setAttribute("data-isking", "false");
-    sendMessage(CTURN.toUpperCase()+" un-kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
   }
 }
 
