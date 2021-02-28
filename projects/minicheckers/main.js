@@ -313,6 +313,30 @@ function restart() {
   sendMessage("Restarted game","info");
 }
 
+function exportEvents() {
+  const D = new Date();
+  let EXPORT = "";
+  for (i=0;i<MESSG.children.length;i++) {
+    EXPORT += ("[" + MESSG.children[i].className.toUpperCase()+ "] ").padEnd(10, " ") + MESSG.children[i].getAttribute("data-ts") + ": " + MESSG.children[i].innerHTML + "\n";
+  }
+  
+  var filename = "MiniCheckers Events List - " + D.getFullYear().toString() + MNTHS[D.getUTCMonth()] + D.getUTCDate().toString().padStart(2,"0") + "T" + D.getUTCHours().toString().padStart(2,"0") + D.getUTCMinutes().toString().padStart(2,"0") + D.getUTCSeconds().toString().padStart(2,"0") + " UTC.txt";
+  var file = new Blob([EXPORT], {type: "text/plain"});
+  if (window.navigator.msSaveOrOpenBlob) {
+    window.navigator.msSaveOrOpenBlob(file, filename);
+  } else {
+    var a = document.createElement("a"), url = URL.createObjectURL(file);
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);  
+    }, 0); 
+  }
+}
+
 window.addEventListener("DOMContentLoaded", function() {
   init();
   sendMessage("Welcome to version "+MCVER+" of MiniCheckers!","info");

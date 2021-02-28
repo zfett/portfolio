@@ -48,10 +48,12 @@
     </board-container>
   </div>
   <div id="btn-container">
-    <button onclick="restart()">Restart</button>
+    <button onclick="restart()">New Game</button>
+    <button onclick="exportEvents()">Export Event List</button>
   </div>
 
   <event-list>
+    <label>Event List</label>
     <div id="event-container">
     </div>
   </event-list>
@@ -68,7 +70,7 @@
     <p>Remember, regular pieces cannot take kings, but kings can take regular pieces. Also, you cannot jump over your own pieces, only your opponent's.</p>
     <p>The goal of the game is simple: take as many of your opponent's pieces as possible until none are left, or the game ends in a stalemate!</p>
     <p>To know whose turn it is, either check the event list and look for the latest message telling you what turn it is, or look at the scoreboards for a graphic "turn" indicator below the player's color.</p>
-    <p>When finished, click the "Restart" button to restart the game completely!</p>
+    <p>When finished, click the "New Game" button to restart the game completely!</p>
     <h2>Current Limitations:</h2>
     <ul>
       <li>Kings cannot move more than two diagonal spaces if jumping.</li>

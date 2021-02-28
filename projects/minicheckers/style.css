@@ -74,6 +74,7 @@ body {
   width: 100%;
   text-align: center;
   margin: 40px auto 0px auto;
+  font-size: 0px;
 }
 
 #btn-container button {
@@ -301,14 +302,31 @@ event-list {
   display: block;
   margin: 50px auto;
   width: calc(800px - 32px);
-  padding: 16px;
+  padding: 36px 16px;
   min-height: 8rem;
   max-height: 8rem;
   border: 1px solid #2e2b23;
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
   background: #1d1b18;
+  clear: both;
+}
+
+event-list label {
+  position: absolute;
+  display: block;
+  padding: 8px 16px;
+  border: 1px solid #2e2b23;
+  font-family: 'Pixeled', monospace;
+  font-size: 8px;
+  top: -18px;
+  left: 16px;
+  color: #dbd0c2;
+  text-shadow: 0px 1px 0px rgba(0,0,0,.25);
+  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  background: #1d1b18;
   overflow: hidden;
   clear: both;
+  text-transform: uppercase;
 }
 
 event-list #event-container {
