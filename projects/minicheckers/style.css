@@ -382,7 +382,7 @@ event-list event.update {
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
   background-image: url("res/img/ScoreBackground.png");
   background-position: center;
-  background-size: 16px;
+  background-size: 32px;
   padding: 16px;
   overflow: hidden;
 }
