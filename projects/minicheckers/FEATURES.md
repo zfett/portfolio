@@ -7,6 +7,7 @@
 - [x] Added sound effects
 - [x] Score tracker  
 - [ ] Save and load games  
+  - [x] Export event list
 
 ***
 
