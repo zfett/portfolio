@@ -11,7 +11,15 @@
 <body>
   <img src="res/img/GameLogo.png" class="logo"/>
 
-  <board-container oncontextmenu="return false"></board-container>
+  <div id="game-container">
+    <div class="scoreboard black turn">
+      <div class="scoreboard-title">Black</div>
+    </div>
+    <div class="scoreboard white">
+      <div class="scoreboard-title">White</div>
+    </div>
+    <board-container oncontextmenu="return false"></board-container>
+  </div>
 
   <event-list>
     <div id="event-container">

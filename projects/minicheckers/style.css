@@ -28,6 +28,16 @@ body {
   pointer-events: none;
 }
 
+#game-container {
+  position: relative;
+  display: block;
+  width: calc(100% - 46px);
+  margin: 0 auto;
+  clear: both;
+  height: 552px;
+  overflow: hidden;
+}
+
 board-container {
   position: relative;
   display: block;
@@ -65,7 +75,7 @@ board-container grid {
   display: inline-block;
   width: 12.5%;
   height: 12.5%;
-  background-image: url("res/img/GridWhite.png");
+  background-image: url('res/img/GridWhite.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -262,4 +272,87 @@ event-list event.info {
 
 event-list event.update {
   color: #555;
+}
+
+.scoreboard {
+  position: absolute;
+  display: block;
+  width: calc(198px - 32px);
+  top: 20px;
+  height: calc(512px - 32px);
+  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  background-image: url("res/img/ScoreBackground.png");
+  background-position: center;
+  background-size: 16px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.scoreboard-title {
+  position: absolute;
+  display: block;
+  z-index: 2;
+  width: 100%;
+  height: 40px;
+  left: 0;
+  line-height: 35px;
+  vertical-align: middle;
+  text-align: center;
+  color: #e2ded6;
+  font-family: 'Pixeled', monospace;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 0px rgba(0,0,0,.5);
+  user-select: none;
+  pointer-events: none;
+}
+
+.scoreboard-title:after {
+  content: '';
+  position: absolute;
+  display: block;
+  z-index: -1;
+  height: 60px;
+  width: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
+.scoreboard-title:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 24px;
+  bottom: -30px;
+  left: 0;
+  background-image: url("res/img/UserTurn.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.0;
+}
+
+.scoreboard.turn .scoreboard-title:before {
+  opacity: 1.0;
+  transition: 0.1s ease-in-out opacity;
+}
+
+.scoreboard.black {
+  left: 0;
+}
+
+.scoreboard.black .scoreboard-title:after {
+  background-image: url("res/img/PieceBlack.png");
+}
+
+.scoreboard.white {
+  right: 0;
+}
+
+.scoreboard.white .scoreboard-title:after {
+  background-image: url("res/img/PieceWhite.png");
 }

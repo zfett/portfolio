@@ -2,6 +2,8 @@ const MCVER = "1.0";
 const MESSG = document.getElementById("event-container");
 const BOARD = document.getElementsByTagName("board-container")[0]; //The base element for the board
 const GRIDS = document.getElementsByTagName("grid"); //The list of indiv. grid elements
+const BSCBD = document.getElementsByClassName("scoreboard")[0];
+const WSCBD = document.getElementsByClassName("scoreboard")[1];
 const ALPHA = ["A","B","C","D","E","F","G","H","I","J"]; //All column letters
 const NUMBR = ["1","2","3","4","5","6","7","8","9","10"]; //All row numbers
 const MNTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -9,6 +11,8 @@ let   PCIDS = []; //A piece list generated after board init
 let   PCELM; //A elementlist of pieces
 let   CTURN = "black"; //Whose turn is it?
 let   SELPC = " "; //Selected piece
+let   BLKPT = 0;
+let   WHTPT = 0;
 
 function sendMessage(text,type) {
   const D = new Date();
@@ -29,26 +33,27 @@ function sendMessage(text,type) {
     default:
       MESSG.innerHTML += "<event data-ts=\""+timestamp+"\">"+text.toUpperCase()+"</event>";
   }
+  MESSG.scrollTop = MESSG.scrollHeight;
 }
 
 function initBoard() {
   for(i=0;i<=64;i++) {
     if (i>0 && i<=8) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[7]+"\" data-col=\""+NUMBR[i-1]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[7]+"\" data-col=\""+NUMBR[i-1]+"\" title=\"Grid "+ALPHA[7]+NUMBR[i-1]+"\"></grid>";
     } else if (i>8 && i<=16) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[6]+"\" data-col=\""+NUMBR[i-9]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[6]+"\" data-col=\""+NUMBR[i-9]+"\" title=\"Grid "+ALPHA[6]+NUMBR[i-9]+"\"></grid>";
     } else if (i>16 && i<=24) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[5]+"\" data-col=\""+NUMBR[i-17]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[5]+"\" data-col=\""+NUMBR[i-17]+"\" title=\"Grid "+ALPHA[5]+NUMBR[i-17]+"\"></grid>";
     } else if (i>24 && i<=32) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[4]+"\" data-col=\""+NUMBR[i-25]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[4]+"\" data-col=\""+NUMBR[i-25]+"\" title=\"Grid "+ALPHA[4]+NUMBR[i-25]+"\"></grid>";
     } else if (i>32 && i<=40) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[3]+"\" data-col=\""+NUMBR[i-33]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[3]+"\" data-col=\""+NUMBR[i-33]+"\" title=\"Grid "+ALPHA[3]+NUMBR[i-33]+"\"></grid>";
     } else if (i>40 && i<=48) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[2]+"\" data-col=\""+NUMBR[i-41]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[2]+"\" data-col=\""+NUMBR[i-41]+"\" title=\"Grid "+ALPHA[2]+NUMBR[i-41]+"\"></grid>";
     } else if (i>48 && i<=56) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[1]+"\" data-col=\""+NUMBR[i-49]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[1]+"\" data-col=\""+NUMBR[i-49]+"\" title=\"Grid "+ALPHA[1]+NUMBR[i-49]+"\"></grid>";
     } else if (i>56 && i<=64) {
-      BOARD.innerHTML += "<grid data-row=\""+ALPHA[0]+"\" data-col=\""+NUMBR[i-57]+"\"></grid>";
+      BOARD.innerHTML += "<grid data-row=\""+ALPHA[0]+"\" data-col=\""+NUMBR[i-57]+"\" title=\"Grid "+ALPHA[0]+NUMBR[i-57]+"\"></grid>";
     }
   }
   console.info("Board layout initialized");
@@ -111,10 +116,69 @@ function selectPiece(pelem,pcid) {
     } else if (PCELM[i].getAttribute("data-pcid") == pcid.toString() && !pelem.classList.contains("selected")) {
       pelem.classList.add("selected");
       SELPC = pelem;
-      sendMessage(CTURN.toUpperCase()+" selected piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
     } else if (PCELM[i].getAttribute("data-pcid") == pcid.toString() && pelem.classList.contains("selected")) {
       pelem.classList.remove("selected");
       SELPC = " ";
+    }
+  }
+}
+
+function givePoints(team) {
+  if (team == "white") {
+    WHTPT += 1;
+    sendMessage("White has taken Black's piece", "info");
+  } else {
+    BLKPT += 1;
+    sendMessage("Black has taken White's piece", "info");
+  }
+  return true;
+}
+
+function checkPiece(row, col) {
+  console.log(row, col);
+  if (row == undefined || col < 0) {
+    return false;
+  } else {
+    var gridCoord = (((8 - (ALPHA.indexOf(row) + 1)) * 8) + parseInt(col)) - 1;
+    if (GRIDS[gridCoord].children.length >= 1) {
+      var childInfo = GRIDS[gridCoord].children[0].getAttribute("data-ptyp");
+      if (childInfo == CTURN) {
+        return false;
+      } else if (childInfo == "black" || childInfo == "white") {
+        GRIDS[gridCoord].children[0].remove();
+        childInfo == "black" ? givePoints("white") : givePoints("black");
+        return true;
+      }
+    } else if (GRIDS[gridCoord].children.length == 0) {
+      return false;
+    }
+  }
+}
+
+function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
+  var rowDiff = ALPHA.indexOf(newRow) - ALPHA.indexOf(oldRow);
+  var colDiff = parseInt(newCol) - parseInt(oldCol);
+  var newGridBG = window.getComputedStyle(newGrid).getPropertyValue("background-image");
+
+  var colorCheck = oldGrid.children[0].getAttribute("data-ptyp");
+  var kingCheck = oldGrid.children[0].getAttribute("data-isking");
+
+  var middleRow = ALPHA[(parseInt(ALPHA.indexOf(newRow)+ALPHA.indexOf(oldRow))/2)];
+  var middleCol = ((parseInt(oldCol)+parseInt(newCol))/2);
+
+  if (Math.abs(rowDiff) >= 1 || Math.abs(colDiff) >= 1) {
+    if (Math.abs(rowDiff) > 2 || Math.abs(colDiff) > 2) {
+      return false;
+    } else if (!newGridBG.includes("GridWhite.png")) {
+      if (colorCheck == "black" && kingCheck == "false" && rowDiff < 0) {
+        return false;
+      } else if (colorCheck == "white" && kingCheck == "false" && rowDiff > 0) {
+        return false;
+      } else if (Math.abs(rowDiff) == 1 && Math.abs(colDiff) == 1) {
+        return true;
+      } else {
+        return checkPiece(middleRow, middleCol);
+      }
     }
   }
 }
@@ -126,19 +190,31 @@ BOARD.addEventListener('click', function(e) {
   e = e || window.event;
   var target = e.target;
   if (target.tagName == "GRID" && SELPC !== " ") {
-    target.classList.add("active");
-    OLDPARENT.classList.remove("active");
-    SELPC.classList.remove("selected");
-    target.appendChild(SELPC);
-    sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
-    if (target.attributes[0].nodeValue == "H" && CTURN == "black") {
-      kingPiece(SELPC, SELPC.attributes[1].nodeValue);
-    } else if (target.attributes[0].nodeValue == "A" && CTURN == "white") {
-      kingPiece(SELPC, SELPC.attributes[1].nodeValue);
+    if (checkMove(OLDPARENT.attributes[1].nodeValue, OLDPARENT.attributes[0].nodeValue, target.attributes[1].nodeValue, target.attributes[0].nodeValue, OLDPARENT, target) == true) {
+      target.classList.add("active");
+      OLDPARENT.classList.remove("active");
+      SELPC.classList.remove("selected");
+      target.appendChild(SELPC);
+      sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+      if (target.attributes[0].nodeValue == "H" && CTURN == "black") {
+        kingPiece(SELPC, SELPC.attributes[1].nodeValue);
+      } else if (target.attributes[0].nodeValue == "A" && CTURN == "white") {
+        kingPiece(SELPC, SELPC.attributes[1].nodeValue);
+      }
+      if (CTURN == "black") {
+        CTURN = "white";
+        BSCBD.classList.remove("turn");
+        WSCBD.classList.add("turn");
+      } else if (CTURN == "white") {
+        CTURN = "black";
+        BSCBD.classList.add("turn");
+        WSCBD.classList.remove("turn");
+      }
+      sendMessage("It's "+CTURN+"'s turn!","info");
+      SELPC = " ";
+    } else {
+      sendMessage("Invalid movement for "+CTURN, "warning");
     }
-    (CTURN == "black") ? CTURN = "white" : CTURN = "black";
-    sendMessage("It's "+CTURN+"'s turn!","info");
-    SELPC = " ";
   }
 }, false);
 
