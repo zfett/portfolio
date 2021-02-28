@@ -2,7 +2,8 @@
 ## Version 1.0 Release:
 
 - [x] Select and king pieces  
-- [ ] Move and take pieces  
+- [x] ~~Move~~ and take pieces  
+- [x] Events list
 - [ ] Score tracker  
 - [ ] Save and load games  
 

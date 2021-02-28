@@ -6,7 +6,7 @@
 }
 
 html {
-  background-color: #25211a;
+  background-color: #1d1b18;
   background-image: url("res/img/PageBackground.png");
   background-position: center top;
   background-size: auto;
@@ -180,4 +180,86 @@ board-container grid piece[data-ptyp = "black"][data-isking = "true"] {
 
 board-container grid piece[data-ptyp = "white"][data-isking = "true"] {
   background-image: url("res/img/KingWhite.png");
+}
+
+event-list {
+  position: relative;
+  display: block;
+  margin: 50px auto;
+  width: calc(800px - 32px);
+  padding: 16px;
+  min-height: 8rem;
+  max-height: 8rem;
+  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  background: #1d1b18;
+  overflow: hidden;
+  clear: both;
+}
+
+event-list #event-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 8rem;
+  max-height: 8rem;
+  overflow: hidden auto;
+  scrollbar-width: thin;
+  scrollbar-color: inherit;
+}
+
+event-list event {
+  position: relative;
+  display: block;
+  font-family: 'Pixeled', monospace;
+  padding: 4px 114px 8px 4px;
+  margin: 0px 0px 2px 0px;
+  width: calc(100% - 118px);
+  font-size: 10px;
+  line-height: 10px;
+  max-height: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: white;
+  text-transform: uppercase;
+  background-color: #211f1c;
+}
+
+event-list event:before {
+  content: attr(data-ts);
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 22px;
+  width: 110px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 8px;
+  font-family: sans-serif;
+  color: white;
+  opacity: 0.5;
+}
+
+event-list event:last-of-type {
+  margin: 0px;
+}
+
+event-list event:nth-of-type(odd) {
+  background-color: #292623;
+}
+
+event-list event.error {
+  color: #f12828;
+}
+
+event-list event.warning {
+  color: #fcda1a;
+}
+
+event-list event.info {
+  color: #2c76ff;
+}
+
+event-list event.update {
+  color: #555;
 }

@@ -1,12 +1,35 @@
-console.info("MiniCheckers JS library, version 1.0 (2021FEB27)")
-
+const MCVER = "1.0";
+const MESSG = document.getElementById("event-container");
 const BOARD = document.getElementsByTagName("board-container")[0]; //The base element for the board
 const GRIDS = document.getElementsByTagName("grid"); //The list of indiv. grid elements
 const ALPHA = ["A","B","C","D","E","F","G","H","I","J"]; //All column letters
 const NUMBR = ["1","2","3","4","5","6","7","8","9","10"]; //All row numbers
+const MNTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 let   PCIDS = []; //A piece list generated after board init
 let   PCELM; //A elementlist of pieces
 let   CTURN = "black"; //Whose turn is it?
+let   SELPC = " "; //Selected piece
+
+function sendMessage(text,type) {
+  const D = new Date();
+  var timestamp = D.getFullYear().toString() + " " + MNTHS[D.getUTCMonth()] + " " + D.getUTCDate().toString().padStart(2,"0") + " " + D.getUTCHours().toString().padStart(2,"0") + ":" + D.getUTCMinutes().toString().padStart(2,"0") + ":" + D.getUTCSeconds().toString().padStart(2,"0") + " UTC";
+  switch (type) {
+    case "error":
+      MESSG.innerHTML += "<event data-ts=\""+timestamp+"\" class=\""+type+"\">"+text.toUpperCase()+"</event>";
+      break;
+    case "warning":
+      MESSG.innerHTML += "<event data-ts=\""+timestamp+"\" class=\""+type+"\">"+text.toUpperCase()+"</event>";
+      break;
+    case "info":
+      MESSG.innerHTML += "<event data-ts=\""+timestamp+"\" class=\""+type+"\">"+text.toUpperCase()+"</event>";
+      break;
+    case "update":
+      MESSG.innerHTML += "<event data-ts=\""+timestamp+"\" class=\""+type+"\">"+text.toUpperCase()+"</event>";
+      break;
+    default:
+      MESSG.innerHTML += "<event data-ts=\""+timestamp+"\">"+text.toUpperCase()+"</event>";
+  }
+}
 
 function initBoard() {
   for(i=0;i<=64;i++) {
@@ -71,6 +94,7 @@ function initPieces() {
   }
 
   console.info("Placed all pieces successfully");
+  sendMessage("Welcome to version "+MCVER+" of MiniCheckers!","info");
   return true;
 }
 
@@ -83,15 +107,40 @@ function selectPiece(pelem,pcid) {
   for(i=0;i<PCELM.length;i++) {
     if (PCELM[i].classList.contains("selected") && PCELM[i].getAttribute("data-pcid") !== pcid.toString()) {
       PCELM[i].classList.remove("selected");
+      SELPC = " ";
     } else if (PCELM[i].getAttribute("data-pcid") == pcid.toString() && !pelem.classList.contains("selected")) {
       pelem.classList.add("selected");
-      console.info(CTURN.toUpperCase()+" selected "+pelem.getAttribute("data-ptyp")+" piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"));
+      SELPC = pelem;
+      sendMessage(CTURN.toUpperCase()+" selected piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
     } else if (PCELM[i].getAttribute("data-pcid") == pcid.toString() && pelem.classList.contains("selected")) {
       pelem.classList.remove("selected");
-      console.info(CTURN.toUpperCase()+" de-selected "+pelem.getAttribute("data-ptyp")+" piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"));
+      SELPC = " ";
     }
   }
 }
+
+const AGRID = document.querySelectorAll("grid.active");
+let OLDPARENT;
+BOARD.addEventListener('click', function(e) {
+  OLDPARENT = SELPC.parentNode;
+  e = e || window.event;
+  var target = e.target;
+  if (target.tagName == "GRID" && SELPC !== " ") {
+    target.classList.add("active");
+    OLDPARENT.classList.remove("active");
+    SELPC.classList.remove("selected");
+    target.appendChild(SELPC);
+    sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+    if (target.attributes[0].nodeValue == "H" && CTURN == "black") {
+      kingPiece(SELPC, SELPC.attributes[1].nodeValue);
+    } else if (target.attributes[0].nodeValue == "A" && CTURN == "white") {
+      kingPiece(SELPC, SELPC.attributes[1].nodeValue);
+    }
+    (CTURN == "black") ? CTURN = "white" : CTURN = "black";
+    sendMessage("It's "+CTURN+"'s turn!","info");
+    SELPC = " ";
+  }
+}, false);
 
 function kingPiece(pelem,pcid) {
   if (pelem.getAttribute("data-ptyp") !== CTURN) {
@@ -105,24 +154,16 @@ function kingPiece(pelem,pcid) {
     return false;
   } else if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "false") {
     pelem.setAttribute("data-isking", "true");
-    console.info(CTURN.toUpperCase()+" kinged "+pelem.getAttribute("data-ptyp")+" piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"));
+    sendMessage(CTURN.toUpperCase()+" kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
   } else if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "true") {
     pelem.setAttribute("data-isking", "false");
-    console.info(CTURN.toUpperCase()+" un-kinged "+pelem.getAttribute("data-ptyp")+" piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"));
+    sendMessage(CTURN.toUpperCase()+" un-kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
   }
 }
 
-function checkMove(curRow, curCol, movRow, movCol) {
-  //check if move is valid
-}
-
 function init() {
-  var initFlag = false;
   if (initBoard() == true) {
     initPieces();
-    initFlag = true;
-  } else if (initFlag) {
-    //do something
   }
 }
 

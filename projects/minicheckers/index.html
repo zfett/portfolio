@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MiniCheckers by Zachary Fetters.</title>
+  <title>MiniCheckers by Zachary Fetters</title>
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="main.js" as="script">
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
   <img src="res/img/GameLogo.png" class="logo"/>
+
   <board-container oncontextmenu="return false"></board-container>
+
+  <event-list>
+    <div id="event-container">
+    </div>
+  </event-list>
+
   <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
