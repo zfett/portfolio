@@ -288,6 +288,7 @@ function init() {
   if (initBoard() == true) {
     initPieces();
   }
+  document.getElementById("version").innerHTML = "Version "+MCVER;
 }
 
 function restart() {
