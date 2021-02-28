@@ -6,17 +6,18 @@
 }
 
 html {
-  background-color: #1d1b18;
-  background-image: url("res/img/PageBackground.png");
-  background-position: center top;
-  background-size: auto;
-  background-repeat: repeat-y;
+  background-color: #22201b;
 }
 
 body {
   position: relative;
-  margin: 50px auto;
+  margin: 0 auto;
+  padding: 50px 0px;
   width: 1000px;
+  background-image: url("res/img/PageBackground.png");
+  background-position: center top;
+  background-size: auto;
+  background-repeat: repeat-y;
 }
 
 .logo {
@@ -28,14 +29,78 @@ body {
   pointer-events: none;
 }
 
+#win-banner {
+  position: absolute;
+  z-index: 8;
+  top: calc(50% - 20px);
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 20px;
+  font-family: 'Pixeled', monospace;
+  color: #dbd0c2;
+  opacity: 0.0;
+  padding: 0px 20px 8px 20px;
+  text-shadow: 0px 4px 0px rgba(0,0,0,0.25);
+  background-color: #258649;
+  background-image: url("res/img/ButtonBackgroundActive.png");
+  border-image: url("res/img/ButtonBorderActive.png") 48 / 8px round;
+  user-select: none;
+  pointer-events: none;
+}
+
+#win-banner.visible {
+  top: 50%;
+  opacity: 1.0;
+  transition: 0.2s ease-in-out all;
+}
+
 #game-container {
   position: relative;
   display: block;
   width: calc(100% - 46px);
   margin: 0 auto;
   clear: both;
-  height: 552px;
   overflow: hidden;
+}
+
+#btn-container {
+  position: relative;
+  display: block;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  margin: 40px auto 0px auto;
+}
+
+#btn-container button {
+  position: relative;
+  display: inline-block;
+  margin: 0px 10px;
+  padding: 5px 20px 8px 20px;
+  font-family: 'Pixeled', monospace;
+  text-align: center;
+  color: #2b2722;
+  font-size: 10px;
+  text-transform: uppercase;
+  background-color: #c0b8af;
+  background-image: url("res/img/ButtonBackground.png");
+  border-image: url("res/img/ButtonBorder.png") 48 / 8px round;
+  text-shadow: 0px 2px 0px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+#btn-container button:hover {
+  color: #24211e;
+  background-color: #9c948b;
+  background-image: url("res/img/ButtonBackgroundHover.png");
+  border-image: url("res/img/ButtonBorderHover.png") 48 / 8px round;
+}
+
+#btn-container button:active {
+  color: #dbd0c2;
+  background-color: #258649;
+  background-image: url("res/img/ButtonBackgroundActive.png");
+  border-image: url("res/img/ButtonBorderActive.png") 48 / 8px round;
 }
 
 board-container {
@@ -192,6 +257,40 @@ board-container grid piece[data-ptyp = "white"][data-isking = "true"] {
   background-image: url("res/img/KingWhite.png");
 }
 
+message-box {
+  position: relative;
+  display: block;
+  margin: 50px auto;
+  width: calc(800px - 32px);
+  padding: 32px 16px;
+  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  background: #1d1b18;
+  overflow: hidden;
+  clear: both;
+}
+
+message-box h2 {
+  line-height: 16px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0px auto 24px auto;
+  font-family: 'Pixeled', monospace;
+  text-transform: uppercase;
+  color: #dbd0c2;
+  text-shadow: 0px 3px 0px rgba(0,0,0,.5);
+}
+
+message-box ul, message-box ol {
+  padding: 0px 0px 0px 15px;
+}
+
+message-box p, message-box ul, message-box ol {
+  color: white;
+  line-height: 2rem;
+  margin: 0px 32px 16px 32px;
+  text-align: justify;
+}
+
 event-list {
   position: relative;
   display: block;
@@ -286,6 +385,36 @@ event-list event.update {
   background-size: 16px;
   padding: 16px;
   overflow: hidden;
+}
+
+#black-scoreboard, #white-scoreboard {
+  position: relative;
+  width: 60px;
+  margin: 100px auto 0px auto;
+  height: calc(100% - 100px);
+}
+
+.piece {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 40px;
+  margin-top: -30px;
+  background-size: 60px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.piece:nth-of-type(1) {
+  margin-top: 0px;
+}
+
+.piece.black {
+  background-image: url("res/img/PieceBlack.png");
+}
+
+.piece.white {
+  background-image: url("res/img/PieceWhite.png");
 }
 
 .scoreboard-title {

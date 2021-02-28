@@ -14,17 +14,49 @@
   <div id="game-container">
     <div class="scoreboard black turn">
       <div class="scoreboard-title">Black</div>
+      <div id="black-scoreboard">   
+      </div>
     </div>
     <div class="scoreboard white">
       <div class="scoreboard-title">White</div>
+      <div id="white-scoreboard">   
+      </div>
     </div>
-    <board-container oncontextmenu="return false"></board-container>
+    <div id="win-banner" class=""></div>
+    <board-container oncontextmenu="return false">
+    </board-container>
+  </div>
+  <div id="btn-container">
+    <button onclick="restart()">Restart</button>
   </div>
 
   <event-list>
     <div id="event-container">
     </div>
   </event-list>
+
+  <message-box>
+    <h2>About MiniCheckers!</h2>
+    <p>MiniCheckers is a pure HTML5/CSS3/JavaScript implementation of American checkers. It uses no external libraries and all graphics are handmade. It's not a fully faithful rendering of American checkers, but it covers most of the ground rules. The directions are simple:</p>
+    <ol>
+      <li>Black always starts first in MiniCheckers.</li>
+      <li>To move, click a piece when it's your turn to select it, then click an empty, green grid to move.</li>
+      <li>To jump, make sure there's a space diagonally after the piece you want to jump, then click that grid space to take the piece you jumped over.</li>
+      <li>Get to the final row on your opponent's side to king your pieces, then you can move forwards and backwards to take pieces!</li>
+    </ol>
+    <p>Remember, regular pieces cannot take kings, but kings can take regular pieces. Also, you cannot jump over your own pieces, only your opponent's.</p>
+    <p>The goal of the game is simple: take as many of your opponent's pieces as possible until none are left, or the game ends in a stalemate!</p>
+    <p>To know whose turn it is, either check the event list and look for the latest message telling you what turn it is, or look at the scoreboards for a graphic "turn" indicator below the player's color.</p>
+    <p>When finished, click the "Restart" button to restart the game completely!</p>
+    <h2>Current Limitations:</h2>
+    <ul>
+      <li>Kings cannot move more than two diagonal spaces if jumping.</li>
+      <li>Cannot perform multi-jumps (Jumping two or more pieces if aligned correctly.)</li>
+      <li>Only abides by a loose version of the American checkers ruleset.</li>
+      <li>Can only play on an 8x8 board with 24 pieces. Can only play with pieces in the American checkers formation.</li>
+      <li>No online/LAN play features. (Yet!)</li>
+    </ul>
+  </message-box>
 
   <script type="text/javascript" src="main.js"></script>
 </body>

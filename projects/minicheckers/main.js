@@ -4,6 +4,9 @@ const BOARD = document.getElementsByTagName("board-container")[0]; //The base el
 const GRIDS = document.getElementsByTagName("grid"); //The list of indiv. grid elements
 const BSCBD = document.getElementsByClassName("scoreboard")[0];
 const WSCBD = document.getElementsByClassName("scoreboard")[1];
+const BLKSC = document.getElementById("black-scoreboard");
+const WHTSC = document.getElementById("white-scoreboard");
+const WINBR = document.getElementById("win-banner");
 const ALPHA = ["A","B","C","D","E","F","G","H","I","J"]; //All column letters
 const NUMBR = ["1","2","3","4","5","6","7","8","9","10"]; //All row numbers
 const MNTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -13,6 +16,18 @@ let   CTURN = "black"; //Whose turn is it?
 let   SELPC = " "; //Selected piece
 let   BLKPT = 0;
 let   WHTPT = 0;
+let   BLPCS = 12;
+let   WTPCS = 12;
+let   GMEND = false;
+
+const AGRID = document.querySelectorAll("grid.active");
+let OLDPARENT;
+let target;
+
+function playSound(path) {
+  var audioSrc = new Audio(path);
+  audioSrc.play();
+}
 
 function sendMessage(text,type) {
   const D = new Date();
@@ -95,17 +110,15 @@ function initPieces() {
 
   for(i=0;i<PCELM.length;i++) {
     PCELM[i].setAttribute("onclick", "selectPiece(this,this.attributes[1].nodeValue)");
-    PCELM[i].setAttribute("oncontextmenu", "kingPiece(this,this.attributes[1].nodeValue)");
   }
 
   console.info("Placed all pieces successfully");
-  sendMessage("Welcome to version "+MCVER+" of MiniCheckers!","info");
   return true;
 }
 
 function selectPiece(pelem,pcid) {
   if (pelem.getAttribute("data-ptyp") !== CTURN) {
-    console.warn("Cannot select an opponent's piece!");
+    sendMessage("Cannot select an opponent's piece!", "warning");
     return false;
   }
 
@@ -123,31 +136,75 @@ function selectPiece(pelem,pcid) {
   }
 }
 
+function checkEnd() {
+  if (WTPCS == 0) {
+    WINBR.classList.add("visible");
+    WINBR.innerHTML = "BLACK WINS!";
+    sendMessage("Black wins with a final score of "+BLKPT,"info");
+    GMEND = true;
+    playSound("res/snd/Win.ogg");
+    return true;
+  } else if (BLPCS == 0) {
+    WINBR.classList.add("visible");
+    WINBR.innerHTML = "WHITE WINS!";
+    sendMessage("White wins with a final score of "+WHTPT,"info");
+    GMEND = true;
+    playSound("res/snd/Win.ogg");
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function givePoints(team) {
+  checkEnd();
   if (team == "white") {
     WHTPT += 1;
+    BLPCS -= 1;
+    WHTSC.innerHTML += "<div class=\"piece black\"></div>";
     sendMessage("White has taken Black's piece", "info");
-  } else {
+  } else if (team == "black") {
     BLKPT += 1;
+    WTPCS -= 1;
+    BLKSC.innerHTML += "<div class=\"piece white\"></div>";
     sendMessage("Black has taken White's piece", "info");
   }
   return true;
 }
 
-function checkPiece(row, col) {
-  console.log(row, col);
+function checkPiece(row, col, isKing) {
+  checkEnd();
   if (row == undefined || col < 0) {
     return false;
   } else {
     var gridCoord = (((8 - (ALPHA.indexOf(row) + 1)) * 8) + parseInt(col)) - 1;
     if (GRIDS[gridCoord].children.length >= 1) {
       var childInfo = GRIDS[gridCoord].children[0].getAttribute("data-ptyp");
+      var kingInfo = GRIDS[gridCoord].children[0].getAttribute("data-isking");
       if (childInfo == CTURN) {
         return false;
       } else if (childInfo == "black" || childInfo == "white") {
-        GRIDS[gridCoord].children[0].remove();
-        childInfo == "black" ? givePoints("white") : givePoints("black");
-        return true;
+        if (isKing == "false" && kingInfo == "false") {
+          sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+          GRIDS[gridCoord].children[0].remove();
+          childInfo == "black" ? givePoints("white") : givePoints("black");
+          playSound("res/snd/Clack.ogg");
+          return true;
+        } else if (isKing == "true" && kingInfo == "false") {
+          sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+          GRIDS[gridCoord].children[0].remove();
+          childInfo == "black" ? givePoints("white") : givePoints("black");
+          playSound("res/snd/Clack.ogg");
+          return true;
+        } else if (isKing == "true" && kingInfo == "true") {
+          sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+          GRIDS[gridCoord].children[0].remove();
+          childInfo == "black" ? givePoints("white") : givePoints("black");
+          playSound("res/snd/Clack.ogg");
+          return true;
+        } else if (isKing == "false" && kingInfo == "true") {
+          return false;
+        }
       }
     } else if (GRIDS[gridCoord].children.length == 0) {
       return false;
@@ -156,6 +213,8 @@ function checkPiece(row, col) {
 }
 
 function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
+  checkEnd();
+
   var rowDiff = ALPHA.indexOf(newRow) - ALPHA.indexOf(oldRow);
   var colDiff = parseInt(newCol) - parseInt(oldCol);
   var newGridBG = window.getComputedStyle(newGrid).getPropertyValue("background-image");
@@ -175,27 +234,26 @@ function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
       } else if (colorCheck == "white" && kingCheck == "false" && rowDiff > 0) {
         return false;
       } else if (Math.abs(rowDiff) == 1 && Math.abs(colDiff) == 1) {
+        sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
+        playSound("res/snd/Clack.ogg");
         return true;
       } else {
-        return checkPiece(middleRow, middleCol);
+        return checkPiece(middleRow, middleCol, kingCheck);
       }
     }
   }
 }
 
-const AGRID = document.querySelectorAll("grid.active");
-let OLDPARENT;
 BOARD.addEventListener('click', function(e) {
   OLDPARENT = SELPC.parentNode;
   e = e || window.event;
-  var target = e.target;
+  target = e.target;
   if (target.tagName == "GRID" && SELPC !== " ") {
-    if (checkMove(OLDPARENT.attributes[1].nodeValue, OLDPARENT.attributes[0].nodeValue, target.attributes[1].nodeValue, target.attributes[0].nodeValue, OLDPARENT, target) == true) {
+    if (checkMove(OLDPARENT.attributes[1].nodeValue, OLDPARENT.attributes[0].nodeValue, target.attributes[1].nodeValue, target.attributes[0].nodeValue, OLDPARENT, target) == true && GMEND == false) {
       target.classList.add("active");
       OLDPARENT.classList.remove("active");
       SELPC.classList.remove("selected");
       target.appendChild(SELPC);
-      sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
       if (target.attributes[0].nodeValue == "H" && CTURN == "black") {
         kingPiece(SELPC, SELPC.attributes[1].nodeValue);
       } else if (target.attributes[0].nodeValue == "A" && CTURN == "white") {
@@ -210,6 +268,7 @@ BOARD.addEventListener('click', function(e) {
         BSCBD.classList.add("turn");
         WSCBD.classList.remove("turn");
       }
+      checkEnd();
       sendMessage("It's "+CTURN+"'s turn!","info");
       SELPC = " ";
     } else {
@@ -243,4 +302,30 @@ function init() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", init);
+function restart() {
+  console.clear();
+  BOARD.innerHTML = "";
+  CTURN = "black";
+  GMEND = false;
+  BSCBD.classList.add("turn");
+  WSCBD.classList.remove("turn");
+  BLKSC.innerHTML = "";
+  WHTSC.innerHTML = "";
+  WINBR.classList.remove("visible");
+  WINBR.innerHTML = "";
+  PCIDS = [];
+  PCELM = [];
+  SELPC = "";
+  BLKPT = 0;
+  WHTPT = 0;
+  BLPCS = 12;
+  WTPCS = 12;
+  MESSG.innerHTML = "";
+  init();
+  sendMessage("Restarted game","info");
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+  init();
+  sendMessage("Welcome to version "+MCVER+" of MiniCheckers!","info");
+});

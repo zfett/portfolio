@@ -4,7 +4,8 @@
 - [x] Select and king pieces  
 - [x] ~~Move~~ and take pieces  
 - [x] Events list
-- [ ] Score tracker  
+- [x] Added sound effects
+- [x] Score tracker  
 - [ ] Save and load games  
 
 ***
