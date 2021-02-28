@@ -1,7 +1,10 @@
 @import url("res/font/stylesheet.css");
 
 * {
-  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-pixelated;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
   font-family: sans-serif;
 }
 
@@ -43,6 +46,7 @@ body {
   text-shadow: 0px 4px 0px rgba(0,0,0,0.25);
   background-color: #258649;
   background-image: url("res/img/ButtonBackgroundActive.png");
+  border: 1px solid #205c36;
   border-image: url("res/img/ButtonBorderActive.png") 48 / 8px round;
   user-select: none;
   pointer-events: none;
@@ -263,6 +267,7 @@ message-box {
   margin: 50px auto;
   width: calc(800px - 32px);
   padding: 32px 16px;
+  border: 1px solid #2e2b23;
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
   background: #1d1b18;
   overflow: hidden;
@@ -299,6 +304,7 @@ event-list {
   padding: 16px;
   min-height: 8rem;
   max-height: 8rem;
+  border: 1px solid #2e2b23;
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
   background: #1d1b18;
   overflow: hidden;
@@ -379,6 +385,7 @@ event-list event.update {
   width: calc(198px - 20px);
   top: 20px;
   height: calc(512px - 32px);
+  border: 1px solid #2e2b23;
   border-image: url("res/img/BorderImage.png") 48 / 8px round;
   background-image: url("res/img/ScoreBackground.png");
   background-position: center;
