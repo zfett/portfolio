@@ -156,18 +156,18 @@ function checkEnd() {
   }
 }
 
-function givePoints(team) {
+function givePoints(team, col, row) {
   checkEnd();
   if (team == "white") {
     WHTPT += 1;
     BLPCS -= 1;
     WHTSC.innerHTML += "<div class=\"piece black\"></div>";
-    sendMessage("White has taken Black's piece", "info");
+    sendMessage("White has taken Black's piece at grid "+row+col, "info");
   } else if (team == "black") {
     BLKPT += 1;
     WTPCS -= 1;
     BLKSC.innerHTML += "<div class=\"piece white\"></div>";
-    sendMessage("Black has taken White's piece", "info");
+    sendMessage("Black has taken White's piece at grid "+row+col, "info");
   }
   return true;
 }
@@ -187,19 +187,19 @@ function checkPiece(row, col, isKing) {
         if (isKing == "false" && kingInfo == "false") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
-          childInfo == "black" ? givePoints("white") : givePoints("black");
+          childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
         } else if (isKing == "true" && kingInfo == "false") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
-          childInfo == "black" ? givePoints("white") : givePoints("black");
+          childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
         } else if (isKing == "true" && kingInfo == "true") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
-          childInfo == "black" ? givePoints("white") : givePoints("black");
+          childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
         } else if (isKing == "false" && kingInfo == "true") {
@@ -269,7 +269,7 @@ BOARD.addEventListener('click', function(e) {
         WSCBD.classList.remove("turn");
       }
       checkEnd();
-      sendMessage("It's "+CTURN+"'s turn!","info");
+      sendMessage("It's "+CTURN+"'s turn!","update");
       SELPC = " ";
     } else {
       sendMessage("Invalid movement for "+CTURN, "warning");
