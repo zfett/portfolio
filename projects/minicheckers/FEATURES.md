@@ -1,11 +1,11 @@
 # Features list
-## Version 1.0 Release:
 
 - [x] Select and king pieces  
 - [x] ~~Move~~ and take pieces  
 - [x] Events list
 - [x] Added sound effects
 - [x] Score tracker  
+- [x] Automatic timer
 - [ ] Save and load games  
   - [x] Export event list
 

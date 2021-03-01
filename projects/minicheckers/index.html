@@ -6,6 +6,9 @@
   <title>MiniCheckers</title>
   <link rel="preload" href="style.css" as="style">
   <link rel="preload" href="main.js" as="script">
+  <link rel="preload" href="res/snd/Win.ogg" as="audio">
+  <link rel="preload" href="res/snd/Clack.ogg" as="audio">
+  <link rel="preload" href="res/snd/King.ogg" as="audio">
   <link rel="stylesheet" type="text/css" href="style.css"/>
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
@@ -46,6 +49,7 @@
       <div id="white-scoreboard">   
       </div>
     </div>
+    <div id="match-time">--:--</div>
     <div id="win-banner" class=""></div>
     <board-container oncontextmenu="return false">
     </board-container>
@@ -73,6 +77,7 @@
     <p>Remember, regular pieces cannot take kings, but kings can take regular pieces. Also, you cannot jump over your own pieces, only your opponent's.</p>
     <p>The goal of the game is simple: take as many of your opponent's pieces as possible until none are left, or the game ends in a stalemate!</p>
     <p>To know whose turn it is, either check the event list and look for the latest message telling you what turn it is, or look at the scoreboards for a graphic "turn" indicator below the player's color.</p>
+    <p>The timer at the top of the board starts whenever the first move is made and ends when the game is won.</p>
     <p>When finished, click the "New Game" button to restart the game completely!</p>
     <h2>Current Limitations:</h2>
     <ul>
@@ -81,6 +86,17 @@
       <li>Only abides by a loose version of the American checkers ruleset.</li>
       <li>Can only play on an 8x8 board with 24 pieces. Can only play with pieces in the American checkers formation.</li>
       <li>No online/LAN play features. (Yet!)</li>
+    </ul>
+  </message-box>
+
+  <message-box>
+    <h2>Changelog:</h2>
+    <h3>Version 1.1</h3>
+    <ul>
+      <li>Added new sound effect for kings.</li>
+      <li><strike>Added new save/load game feature!</strike> - Coming soon!</li>
+      <li>Added preloading for critical resources to prevent texture pop-in and sound delays.</li>
+      <li>Added timer for matches.</li>
     </ul>
   </message-box>
 

@@ -1,4 +1,4 @@
-const MCVER = "1.0";
+const MCVER = "1.1";
 const MESSG = document.getElementById("event-container");
 const BOARD = document.getElementsByTagName("board-container")[0]; //The base element for the board
 const GRIDS = document.getElementsByTagName("grid"); //The list of indiv. grid elements
@@ -10,15 +10,22 @@ const WINBR = document.getElementById("win-banner");
 const ALPHA = ["A","B","C","D","E","F","G","H","I","J"]; //All column letters
 const NUMBR = ["1","2","3","4","5","6","7","8","9","10"]; //All row numbers
 const MNTHS = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+const CLOCK = document.getElementById("match-time");
+
+let   MCHTM = "00:00"; //Total match time
 let   PCIDS = []; //A piece list generated after board init
 let   PCELM; //A elementlist of pieces
 let   CTURN = "black"; //Whose turn is it?
 let   SELPC = " "; //Selected piece
-let   BLKPT = 0;
-let   WHTPT = 0;
-let   BLPCS = 12;
-let   WTPCS = 12;
-let   GMEND = false;
+let   BLKPT = 0; //Points for black
+let   WHTPT = 0; //Points for white
+let   BLPCS = 12; //Total black pieces
+let   WTPCS = 12; //Total white pieces
+let   GMEND = false; //Is game ended?
+
+let firstMove = false;
+
+let stopwatch;
 
 const AGRID = document.querySelectorAll("grid.active");
 let OLDPARENT;
@@ -141,6 +148,7 @@ function checkEnd() {
     WINBR.classList.add("visible");
     WINBR.innerHTML = "BLACK WINS!";
     sendMessage("Black wins with a final score of "+BLKPT,"info");
+    endClock();
     GMEND = true;
     playSound("res/snd/Win.ogg");
     return true;
@@ -148,6 +156,7 @@ function checkEnd() {
     WINBR.classList.add("visible");
     WINBR.innerHTML = "WHITE WINS!";
     sendMessage("White wins with a final score of "+WHTPT,"info");
+    endClock();
     GMEND = true;
     playSound("res/snd/Win.ogg");
     return true;
@@ -250,6 +259,10 @@ BOARD.addEventListener('click', function(e) {
   target = e.target;
   if (target.tagName == "GRID" && SELPC !== " ") {
     if (checkMove(OLDPARENT.attributes[1].nodeValue, OLDPARENT.attributes[0].nodeValue, target.attributes[1].nodeValue, target.attributes[0].nodeValue, OLDPARENT, target) == true && GMEND == false) {
+      if (!firstMove) {
+        firstMove = true;
+        startClock();
+      }
       target.classList.add("active");
       OLDPARENT.classList.remove("active");
       SELPC.classList.remove("selected");
@@ -269,7 +282,9 @@ BOARD.addEventListener('click', function(e) {
         WSCBD.classList.remove("turn");
       }
       checkEnd();
-      sendMessage("It's "+CTURN+"'s turn!","update");
+      if (!GMEND) {
+        sendMessage("It's "+CTURN+"'s turn!","update");
+      }
       SELPC = " ";
     } else {
       sendMessage("Invalid movement for "+CTURN, "warning");
@@ -279,6 +294,7 @@ BOARD.addEventListener('click', function(e) {
 
 function kingPiece(pelem,pcid) {
   if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "false") {
+    playSound("res/snd/King.ogg");
     pelem.setAttribute("data-isking", "true");
     sendMessage(CTURN.toUpperCase()+" kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
   }
@@ -310,6 +326,10 @@ function restart() {
   BLPCS = 12;
   WTPCS = 12;
   MESSG.innerHTML = "";
+  endClock();
+  CLOCK.innerHTML = "--:--";
+  MCHTM = "00:00";
+  firstMove = false;
   init();
   sendMessage("Restarted game","info");
 }
@@ -336,6 +356,33 @@ function exportEvents() {
       window.URL.revokeObjectURL(url);  
     }, 0); 
   }
+}
+
+function startClock() {
+  CLOCK.innerHTML = "00:00";
+  var start = Date.now();
+  var minute = 0;
+  stopwatch = setInterval(function() {
+      var delta = Date.now() - start;
+      var seconds = Math.floor(delta / 1000);
+      if (seconds%60==0) {
+        start = Date.now();
+        minute += 1;
+      }
+      CLOCK.innerHTML = minute.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2, "0");
+      if (seconds>=60) {
+        CLOCK.innerHTML = minute.toString().padStart(2,"0") + ":00";
+      }
+      if (CLOCK.innerHTML == "99:59") {
+        endClock();
+      }
+      MCHTM = CLOCK.innerHTML;
+  }, 1000);
+}
+
+function endClock() {
+  clearInterval(stopwatch);
+  sendMessage("Match over! Final time: "+MCHTM, "info");
 }
 
 window.addEventListener("DOMContentLoaded", function() {
