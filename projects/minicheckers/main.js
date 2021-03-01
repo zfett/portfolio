@@ -31,9 +31,14 @@ const AGRID = document.querySelectorAll("grid.active");
 let OLDPARENT;
 let target;
 
-function playSound(path) {
+function playSound(path, volume) {
   var audioSrc = new Audio(path);
-  audioSrc.play();
+  if (volume !== null) {
+    audioSrc.volume = volume;
+    audioSrc.play();
+  } else {
+    audioSrc.play();
+  }
 }
 
 function sendMessage(text,type) {
@@ -123,6 +128,17 @@ function initPieces() {
   return true;
 }
 
+function init() {
+  if (initBoard() == true) {
+    initPieces();
+    //wierd hack to "preload" the audio
+    playSound("res/snd/Clack.ogg",0.0);
+    playSound("res/snd/King.ogg",0.0);
+    playSound("res/snd/Win.ogg",0.0);
+  }
+  document.getElementById("version").innerHTML = "Version "+MCVER;
+}
+
 function setTurn(team) {
   if (team == "black") {
     BSCBD.classList.add("turn");
@@ -160,7 +176,7 @@ function checkEnd() {
     sendMessage("Black wins with a final score of "+BLKPT,"info");
     endClock();
     GMEND = true;
-    playSound("res/snd/Win.ogg");
+    playSound("res/snd/Win.ogg",1.0);
     return true;
   } else if (BLPCS == 0) {
     WINBR.classList.add("visible");
@@ -168,7 +184,7 @@ function checkEnd() {
     sendMessage("White wins with a final score of "+WHTPT,"info");
     endClock();
     GMEND = true;
-    playSound("res/snd/Win.ogg");
+    playSound("res/snd/Win.ogg",1.0);
     return true;
   } else {
     return false;
@@ -208,21 +224,21 @@ function checkPiece(row, col, isKing) {
           GRIDS[gridCoord].children[0].remove();
           GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
-          playSound("res/snd/Clack.ogg");
+          playSound("res/snd/Clack.ogg",1.0);
           return true;
         } else if (isKing == "true" && kingInfo == "false") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
           GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
-          playSound("res/snd/Clack.ogg");
+          playSound("res/snd/Clack.ogg",1.0);
           return true;
         } else if (isKing == "true" && kingInfo == "true") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
           GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
-          playSound("res/snd/Clack.ogg");
+          playSound("res/snd/Clack.ogg",1.0);
           return true;
         } else if (isKing == "false" && kingInfo == "true") {
           return false;
@@ -257,7 +273,7 @@ function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
         return false;
       } else if (Math.abs(rowDiff) == 1 && Math.abs(colDiff) == 1) {
         sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
-        playSound("res/snd/Clack.ogg");
+        playSound("res/snd/Clack.ogg",1.0);
         return true;
       } else {
         return checkPiece(middleRow, middleCol, kingCheck);
@@ -305,17 +321,10 @@ BOARD.addEventListener('click', function(e) {
 
 function kingPiece(pelem,pcid) {
   if (pelem.getAttribute("data-pcid") == pcid && pelem.getAttribute("data-isking") == "false") {
-    playSound("res/snd/King.ogg");
+    playSound("res/snd/King.ogg",1.0);
     pelem.setAttribute("data-isking", "true");
     sendMessage(CTURN.toUpperCase()+" kinged piece at grid "+pelem.parentNode.getAttribute("data-row")+pelem.parentNode.getAttribute("data-col"),"update");
   }
-}
-
-function init() {
-  if (initBoard() == true) {
-    initPieces();
-  }
-  document.getElementById("version").innerHTML = "Version "+MCVER;
 }
 
 function restart() {
