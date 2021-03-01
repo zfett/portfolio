@@ -98,7 +98,7 @@ body {
   font-size: 0px;
 }
 
-#btn-container button {
+#btn-container button{
   position: relative;
   display: inline-block;
   margin: 0px 10px;
@@ -113,6 +113,10 @@ body {
   border-image: url("res/img/ButtonBorder.png") 48 / 8px round;
   text-shadow: 0px 2px 0px rgba(0,0,0,0.25);
   cursor: pointer;
+}
+
+#btn-container input {
+  display: none;
 }
 
 #btn-container button:hover {
@@ -319,7 +323,7 @@ message-box h3 {
 }
 
 message-box ul, message-box ol {
-  padding: 0px 0px 0px 15px;
+  padding: 0px 0px 0px 25px;
 }
 
 message-box p, message-box ul, message-box ol {

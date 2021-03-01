@@ -123,6 +123,16 @@ function initPieces() {
   return true;
 }
 
+function setTurn(team) {
+  if (team == "black") {
+    BSCBD.classList.add("turn");
+    WSCBD.classList.remove("turn");
+  } else if (team == "white") {
+    BSCBD.classList.remove("turn");
+    WSCBD.classList.add("turn");
+  }
+}
+
 function selectPiece(pelem,pcid) {
   if (pelem.getAttribute("data-ptyp") !== CTURN) {
     sendMessage("Cannot select an opponent's piece!", "warning");
@@ -196,18 +206,21 @@ function checkPiece(row, col, isKing) {
         if (isKing == "false" && kingInfo == "false") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
+          GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
         } else if (isKing == "true" && kingInfo == "false") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
+          GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
         } else if (isKing == "true" && kingInfo == "true") {
           sendMessage(CTURN+" moved piece at "+OLDPARENT.attributes[0].nodeValue+OLDPARENT.attributes[1].nodeValue+" to grid "+target.attributes[0].nodeValue+target.attributes[1].nodeValue,"update");
           GRIDS[gridCoord].children[0].remove();
+          GRIDS[gridCoord].classList.remove("active");
           childInfo == "black" ? givePoints("white", col, row) : givePoints("black", col, row);
           playSound("res/snd/Clack.ogg");
           return true;
@@ -273,13 +286,11 @@ BOARD.addEventListener('click', function(e) {
         kingPiece(SELPC, SELPC.attributes[1].nodeValue);
       }
       if (CTURN == "black") {
+        setTurn(CTURN);
         CTURN = "white";
-        BSCBD.classList.remove("turn");
-        WSCBD.classList.add("turn");
       } else if (CTURN == "white") {
+        setTurn(CTURN);
         CTURN = "black";
-        BSCBD.classList.add("turn");
-        WSCBD.classList.remove("turn");
       }
       checkEnd();
       if (!GMEND) {
@@ -383,6 +394,67 @@ function startClock() {
 function endClock() {
   clearInterval(stopwatch);
   sendMessage("Match over! Final time: "+MCHTM, "info");
+}
+function saveGame() {
+  const D = new Date();
+  var HTML = BOARD.innerHTML;
+  var EVENTS = MESSG.innerHTML;
+  var data = JSON.stringify({PCIDS,CTURN,BLKPT,WHTPT,BLPCS,WTPCS,GMEND,EVENTS,HTML});
+
+  var filename = "MiniCheckers Save Game - " + D.getFullYear().toString() + MNTHS[D.getUTCMonth()] + D.getUTCDate().toString().padStart(2,"0") + "T" + D.getUTCHours().toString().padStart(2,"0") + D.getUTCMinutes().toString().padStart(2,"0") + D.getUTCSeconds().toString().padStart(2,"0") + " UTC.json";
+  var file = new Blob([data], {type: "application/json"});
+  if (window.navigator.msSaveOrOpenBlob) {
+    window.navigator.msSaveOrOpenBlob(file, filename);
+  } else {
+    var a = document.createElement("a"), url = URL.createObjectURL(file);
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() {
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);  
+    }, 0); 
+  }
+}
+
+function loadGame(input) {
+  let reader = new FileReader();
+  let file = input.files[0];
+  let json;
+
+  reader.readAsText(file);
+
+  reader.onload = function() {
+    json = JSON.parse(reader.result);
+    restart();
+    PCIDS = json.PCIDS;
+    CTURN = json.CTURN;
+    setTurn(json.CTURN);
+    setPoints(json.BLKPT);
+    setPoints(json.WHTPT);
+    BLPCS = json.BLPCS;
+    WTPCS = json.WTPCS;
+    GMEND = json.GMEND;
+    MESSG.innerHTML = json.EVENTS;
+    BOARD.innerHTML = json.HTML;
+  };
+
+  reader.onerror = function() {
+    console.log(reader.error);
+  };
+}
+
+function setPoints(team, amount) {
+  if (team == "black") {
+    for (i=0;i<amount;i++) {
+      BLKSC.innerHTML += "<div class=\"piece white\"></div>";
+    }
+  } else if (team == "white") {
+    for (i=0;i<amount;i++) {
+      WHTSC.innerHTML += "<div class=\"piece black\"></div>";
+    }
+  }
 }
 
 window.addEventListener("DOMContentLoaded", function() {

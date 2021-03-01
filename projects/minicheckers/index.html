@@ -55,7 +55,10 @@
     </board-container>
   </div>
   <div id="btn-container">
+    <input id="loadfileinput" type="file" accept="application/json,.json" onchange="loadGame(this)">
     <button onclick="restart()">New Game</button>
+    <button onclick="saveGame()">Save Game</button>
+    <button onclick="document.getElementById('loadfileinput').click()">Load Game</button>
     <button onclick="exportEvents()">Export Event List</button>
   </div>
 
@@ -67,7 +70,7 @@
 
   <message-box>
     <h2>About MiniCheckers!</h2>
-    <p>MiniCheckers is a pure HTML5/CSS3/JavaScript implementation of American checkers. It uses no external libraries, all graphics are handmade, and it was all done under 400 lines of JavaScript code (so far!). It's not a fully faithful rendering of American checkers, but it covers most of the ground rules. The directions are simple:</p>
+    <p>MiniCheckers is a pure HTML5/CSS3/JavaScript implementation of American checkers. It uses no external libraries, all graphics are handmade, and it was all done under 450 lines of JavaScript code (so far!). It's not a fully faithful rendering of American checkers, but it covers most of the ground rules. The directions are simple:</p>
     <ol>
       <li>Black always starts first in MiniCheckers.</li>
       <li>To move, click a piece when it's your turn to select it, then click an empty, green grid to move.</li>
@@ -79,6 +82,7 @@
     <p>To know whose turn it is, either check the event list and look for the latest message telling you what turn it is, or look at the scoreboards for a graphic "turn" indicator below the player's color.</p>
     <p>The timer at the top of the board starts whenever the first move is made and ends when the game is won.</p>
     <p>When finished, click the "New Game" button to restart the game completely!</p>
+    <p>Want to resume a game for later? Simply click "Save Game", pick a save location, and click "Ok" to save your game! When you want to load an earlier game, click "Load Game", pick the save game file that you want, and click "Open".</p>
     <h2>Current Limitations:</h2>
     <ul>
       <li>Kings cannot move more than two diagonal spaces if jumping.</li>
@@ -94,7 +98,7 @@
     <h3>Version 1.1</h3>
     <ul>
       <li>Added new sound effect for kings.</li>
-      <li><strike>Added new save/load game feature!</strike> - Coming soon!</li>
+      <li>Added new save/load game feature!</li>
       <li>Added preloading for critical resources to prevent texture pop-in and sound delays.</li>
       <li>Added timer for matches.</li>
     </ul>
