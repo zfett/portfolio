@@ -278,6 +278,8 @@ function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
       } else {
         return checkPiece(middleRow, middleCol, kingCheck);
       }
+    } else {
+      return false;
     }
   }
 }
