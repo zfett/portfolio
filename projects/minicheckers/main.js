@@ -440,6 +440,8 @@ function loadGame(input) {
     PCIDS = json.PCIDS;
     CTURN = json.CTURN;
     setTurn(json.CTURN);
+    BLKSC.innerHTML = "";
+    WHTSC.innerHTML = "";
     for (i=0;i<json.BLKPT;i++) {
       BLKSC.innerHTML += "<div class=\"piece white\"></div>";
     }
