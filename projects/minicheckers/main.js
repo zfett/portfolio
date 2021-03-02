@@ -263,8 +263,8 @@ function checkMove(oldCol, oldRow, newCol, newRow, oldGrid, newGrid) {
   var middleRow = ALPHA[(parseInt(ALPHA.indexOf(newRow)+ALPHA.indexOf(oldRow))/2)];
   var middleCol = ((parseInt(oldCol)+parseInt(newCol))/2);
 
-  if (Math.abs(rowDiff) >= 1 || Math.abs(colDiff) >= 1) {
-    if (Math.abs(rowDiff) > 2 || Math.abs(colDiff) > 2) {
+  if (Math.abs(rowDiff) >= 1 && Math.abs(colDiff) >= 1) {
+    if (Math.abs(rowDiff) > 2 && Math.abs(colDiff) > 2) {
       return false;
     } else if (!newGridBG.includes("GridWhite.png")) {
       if (colorCheck == "black" && kingCheck == "false" && rowDiff < 0) {
