@@ -141,11 +141,11 @@ function init() {
 
 function setTurn(team) {
   if (team == "black") {
-    BSCBD.classList.add("turn");
-    WSCBD.classList.remove("turn");
-  } else if (team == "white") {
     BSCBD.classList.remove("turn");
     WSCBD.classList.add("turn");
+  } else if (team == "white") {
+    BSCBD.classList.add("turn");
+    WSCBD.classList.remove("turn");
   }
 }
 
