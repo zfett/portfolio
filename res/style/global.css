@@ -170,16 +170,12 @@ footer .reg_link {
   color: white;
   opacity: 0.2;
   text-decoration: none;
-}
-
-footer .reg_link:hover {opacity: 1}
-
-footer a:nth-of-type(5) {
   padding-left: 20px;
   border-left: 1px solid #555;
 }
 
-footer a:nth-of-type(5):hover {
+footer .reg_link:hover {
+  opacity: 1;
   border-color: #222;
 }
 
