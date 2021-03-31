@@ -211,7 +211,7 @@ header .subtitle {
   text-align: right;
 }
 
-header h1 span {
+header h1 span, header h1 span a {
   position: relative;
   display: block;
   margin: 0;
@@ -220,6 +220,7 @@ header h1 span {
   font-size: 2.5rem;
   line-height: 2.5rem;
   text-align: right;
+  text-decoration: none;
 }
 
 section {
