@@ -1,0 +1,21 @@
+<svg id="ZacharyFetters_Badge_Light" xmlns="http://www.w3.org/2000/svg" width="2551" height="2822" viewBox="0 0 2551 2822">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #111;
+      }
+
+      .cls-2 {
+        fill: #efe323;
+      }
+
+      .cls-3 {
+        fill: #e7e6d9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Background" class="cls-1" width="2551" height="2822"/>
+  <rect id="Underline" class="cls-2" x="247" y="2284" width="2056" height="290"/>
+  <path id="_zf_Signature" data-name="&quot;zf&quot; Signature" class="cls-3" d="M281.983,855.012l915.327,0.21,278.33-.33-0.39-182.227q0-122.4,58.22-218.846,58.2-96.414,172.93-151.288,114.7-54.837,276.11-54.856,175.695,0,320.13,41.968l-35.89,261.133q-107.1-33.994-227.75-34.017-108.39,0-155.06,39.265-46.7,39.274-46.69,130.5l0.11,168.368h387.58l-39.76,289.238H1837.34L1836.65,2079H1474.27l1.39-934.87-193.53-.34v0.53L677.751,1804.03H1293.99L1254.25,2079H247V1804.64l611.845-664.41L247,1139.6Z"/>
+</svg>
