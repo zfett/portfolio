@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: zfett.github.io
-Token: 178cddf2a772a249afeba91c2116c75d7ceb59c2f54adab48188bef3756247c3

@@ -17,6 +17,14 @@
 
 h1, h2, h3, h4, h5, h6 {font-family: var(--f-fira)}
 
+code {
+  font-size: 1rem;
+  line-height: inherit;
+  font-weight: 500;
+  font-family: var(--f-fira);
+  color: #555;
+}
+
 p {
   font-size: 1.4em;
   line-height: 1.8em;
@@ -102,17 +110,6 @@ header {
 
 #header_links a:hover::after {height: 7.75px}
 
-#header_links a[target="_blank"]::before {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: url("../image/icons/ext_link.svg") no-repeat center;
-  background-size: 10px;
-  top: 20px;
-  right: -14px;
-}
-
 #title {
   position: relative;
   display: block;
@@ -182,7 +179,7 @@ footer {
   display: block;
   clear: both;
   width: 100%;
-  margin: 60px 0 0 0;
+  margin: 60px 0 60px 0;
   padding: 40px 0 0 0;
   border-top: 2px solid var(--b-yellow);
 }
@@ -195,7 +192,7 @@ footer::after {
   left: 50%;
   top: -21px;
   transform: translateX(-50%);
-  background: url("../image/brand/ZacharyFetters_Badge_Light.svg") no-repeat center;
+  background: #eee url("../image/brand/ZacharyFetters_Badge_Light.svg") no-repeat center;
   background-size: auto 40px;
   box-shadow: 0px 0px 0px 10px #eee;
 }
