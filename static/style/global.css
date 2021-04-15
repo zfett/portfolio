@@ -72,9 +72,11 @@ header {
   display: block;
   width: calc(100% - 53px);
   height: 60px;
-  float: right;
+  float: left;
   text-align: right;
 }
+
+#header_links.reader {width: calc(100% - 101px)}
 
 #header_links a {
   position: relative;
@@ -205,4 +207,47 @@ footer p {
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+#reader_mode {
+  position: relative;
+  display: block;
+  float: right;
+  margin: 10px 0 10px 20px;
+  font-size: 0px;
+  height: 40px;
+  width: 28px;
+  border: 0px;
+  padding: 0;
+  background: #eee url("../image/reader_mode.svg") no-repeat center;
+  cursor: pointer;
+}
+
+#reader_mode:hover {opacity: 0.75}
+
+@media all and (max-width: 600px) {
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+  #title h2 {
+    font-size: 1.4rem;
+  }
+  #header_links a {
+    font-size: 0.9rem;
+    margin: 0 0 0 12px;
+  }
+}
+
+@media all and (max-width: 430px) {
+  #reader_mode {
+    display: none;
+  }
+  #header_logo {
+    display: none;
+  }
+  #header_links {
+    width: 100%;
+    text-align: center;
+  }
 }
