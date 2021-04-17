@@ -80,9 +80,16 @@ form input[type="submit"] {
 form .g-recaptcha {
   position: relative;
   display: block;
-  width: 304px;
-  height: 78px;
+  width: 298px;
+  height: 72px;
+  overflow: hidden;
   margin: 20px auto;
+  border: 2px solid var(--b-dark);
+  background: #eee;
+}
+
+form .g-recaptcha iframe {
+  margin: -2px 0 0 -2px;
 }
 
 form input[name="bot-field"] {display: none !important}
