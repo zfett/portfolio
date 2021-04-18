@@ -26,7 +26,7 @@ SELECT_INPUT.addEventListener("input", function() {
     MESSAGE_LABEL.style.display = "inline-block"
     WARNING_BOX.setAttribute("disabled","")
     WARNING_BOX.innerHTML = ""
-    CONTACT_FORM.removeEventListener("onsubmit")
+    CONTACT_FORM.removeEventListener("onsubmit", function(){})
     SUBMIT_BTN.removeAttribute("disabled")
     CAPTCHA_ELEM.style.display = "block"
   }
