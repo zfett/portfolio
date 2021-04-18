@@ -32,9 +32,10 @@ form label {
   border: 2px solid var(--b-dark);
   padding: 2px 6px;
   font-family: var(--f-fira);
+  cursor: pointer;
 }
 
-form input, form textarea {
+form input, form textarea, form select, form p {
   position: relative;
   display: block;
   width: calc(100% - 12px);
@@ -59,7 +60,17 @@ form *[required] {
   max-width: calc(100% - 26px);
   min-width: calc(100% - 26px);
   background: #eee url("../image/input_required.svg") no-repeat calc(100% - 4px) 8px;
-  background-size: 12px;
+  background-size: auto 12px;
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 100% !important;
+  cursor: pointer;
+  background: #eee url("../image/down_arrow.svg") no-repeat calc(100% - 4px) 12px !important;
+  background-size: 12px auto !important;
 }
 
 form *:invalid {
@@ -93,6 +104,22 @@ form .g-recaptcha iframe {
 }
 
 form input[name="bot-field"] {display: none !important}
+
+form input[disabled], form textarea[disabled], form select[disabled], form p[disabled] {
+  background-color: #aaa;
+  color: #555;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+form p {
+  text-align: center;
+  padding: 24px 14px;
+  min-width: calc(100% - 32px);
+  max-width: calc(100% - 32px);
+}
+
+form p[disabled] {display: none}
 
 #key {
   position: relative;

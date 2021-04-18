@@ -39,7 +39,7 @@
         <p>Fan of forms? Use the following to get in touch with me:</p>
         <p><i>(For any fields that don't apply to you, leave them blank unless required.)</i></p>
         <form id="Contact Form" method="POST" data-netlify-recaptcha="true" data-netlify="true" autocomplete="off">
-          <input name="bot-field" />
+          <input name="bot-field" value="" placeholder="If you can see this and you're not a bot, don't fill it out!">
           <label for="name">Your Name</label>
           <input type="text" name="name" id="name" placeholder="Jane Doe" value="">
           <label for="organization">Company or Organization</label>
@@ -48,8 +48,19 @@
           <input type="text" name="position" id="position" placeholder="Sales" value="">
           <label for="email">Your Contact Email</label>
           <input type="email" name="email" id="email" placeholder="jdoe@acme.inc" value="" required>
+          <label for="reason">Reason for Contact</label>
+          <select name="reason" id="reason" value="" required>
+            <option value="" disabled selected>Pick a reason:</option>
+            <option value="GitHub Question">Comment/Concern/Question about a GitHub project.</option>
+            <option value="Security Issue">Security vulnerability or concern about a GitHub Project or other project.</option>
+            <option value="Job Offer">Job offer or recruitment opportunity.</option>
+            <option value="Commission Enquiry">Web/Graphic design commission enquiry.</option>
+            <option value="Article Question">Question or comment about a blog post or article I've written.</option>
+            <option value="Other">Other/Not applicable.</option>
+          </select>
           <label for="message">Your Message</label>
           <textarea name="message" id="message" placeholder="Lorem ipsum..." value="" required></textarea>
+          <p id="warning" disabled></p>
           <div class="g-recaptcha" data-sitekey="6LcF96kaAAAAABuCIxmyWNCZOUN02YMvypQMx6OO"></div>
           <input type="submit" name="submit" id="submit" value="Send">
         </form>
