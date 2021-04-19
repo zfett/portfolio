@@ -1,0 +1,309 @@
+@import url("font/ibmsans/stylesheet.css");
+@import url("font/firacode/stylesheet.css");
+
+html {
+  background: #eee;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+::selection, ::-moz-selection {
+  background: rgb(242,142,38);
+  color: white;
+}
+
+body {
+  position: relative;
+  display: block;
+  width: calc(100% - 60px);
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 50px 30px;
+  background: white;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 0;
+  left: 0;
+  background: url("../image/page_border.svg") repeat-x left top;
+  background-size: auto 10px;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  background: url("../image/page_border.svg") repeat-x left top;
+  background-size: auto 10px;
+  transform: rotateX(180deg);
+}
+
+section {
+  position: relative;
+  margin: 0 0 100px 0;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54px;
+  height: 8px;
+  background: url("../image/section_sep.png") no-repeat center;
+  background-size: contain;
+}
+
+section:last-of-type::after {display: none}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+  text-align: justify;
+}
+
+hr {
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(230,230,230);
+}
+
+a {
+  color: rgb(242,142,38);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {color: rgb(206, 123, 35)}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0 0 2rem 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 400;
+  color: black;
+  padding: 0 0 1rem 0;
+  border-bottom: 2px dashed rgb(200,200,200);
+}
+
+h1 span {
+  font-weight: 800;
+  background: linear-gradient(0deg, rgb(253,100,79) 0%, rgb(242,142,38) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#byline {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  margin: 0 30px 4rem 30px;
+  color: rgb(75,75,75);
+}
+
+/*Accordian CSS*/
+
+.accordian.container {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 40px 0;
+}
+
+.accordian.header {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: 'Fira Code', monospace;
+  border: 0;
+  padding: 20px 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.accordian.header::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotateX(0deg);
+  height: 20px;
+  width: 20px;
+  background: url("../image/icon_arrow.svg") no-repeat center;
+  background-size: 20px auto;
+  transition: 0.1s ease-in transform;
+}
+
+.accordian.header.open::after {
+  transform: translateY(-50%) rotateX(180deg);
+}
+
+.accordian.content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  border-top: 2px solid black;
+}
+
+.accordian.content.open {height: 100%}
+
+.clear {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
+}
+
+.service {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+}
+
+.service.logo {
+  margin: 0 auto;
+  padding: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.service.header {
+  border: 1px solid rgb(200,200,200);
+  border-radius: 5px;
+  background: rgb(245,245,245);
+  padding: 40px 0;
+  margin: 0 0 20px 0;
+}
+
+.service.body {
+  padding: 40px 0;
+  margin: 0;
+  clear: both;
+}
+
+.service.body .service.logo {
+  width: 100px;
+  padding: 20px 40px;
+  margin: 0 20px 20px 0;
+  float: left;
+}
+
+.service.body .service.desc {margin: 0 20px 0 0}
+
+.service.body .service.desc p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.service.body ul {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  padding: 0 0 0 40px;
+  width: calc(50% - 40px);
+}
+
+.service.body ul.pro_list {float: left}
+
+.service.body ul.con_list {float: right}
+
+.service.body ul li {
+  list-style: none;
+  overflow: hidden;
+  margin: 0 0 10px 0;
+}
+
+.service.body ul li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  top: 0;
+  left: 10px;
+}
+
+.service.body ul.pro_list li::before {
+  background: url("../image/icon_plus.svg") no-repeat center;
+  background-size: 10px auto;
+}
+
+.service.body ul.con_list li::before {
+  background: url("../image/icon_minus.svg") no-repeat center;
+  background-size: 10px auto;
+}
+
+.service.header::before {
+  content: 'If you use...';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: rgb(100,100,100);
+  text-align: center;
+  padding: 0 10px 5px 10px;
+  background: white;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border: 1px solid rgb(200,200,200);
+  border-top: none;
+}
+
+.service.body::before {
+  content: '...use this instead!';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: rgb(100,100,100);
+  text-align: center;
+  padding: 5px 10px;
+  background: white;
+  border-radius: 5px;
+}
+
+footer {
+  padding: 1rem 0;
+  margin: 2rem 0 0 0;
+  border-top: 2px dashed rgb(200,200,200);
+}
+
+footer p {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: rgb(100,100,100);
+  margin: 0 0 .8rem 0;
+  padding: 0;
+  text-align: center;
+}
+
+footer p:last-of-type {margin: 0}

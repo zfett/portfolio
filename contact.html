@@ -6,7 +6,6 @@
     <title>Contact — zachfetters.design</title>
     <link rel="stylesheet" type="text/css" href="static/style/contact.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <meta name="description" content="Hello, I am Zachary and I am a self-taught, freelance web designer and developer from the U.S.">
     <meta property="og:type" content="website">
@@ -38,7 +37,7 @@
         <p><a href="https://twitter.com/zachary_fetters" target="_blank" ref="noreferrer">Twitter</a> &middot; <a href="https://www.linkedin.com/in/zfett" target="_blank" ref="noreferrer">LinkedIn</a> &middot; <a href="https://github.com/zfett" target="_blank" ref="noreferrer">GitHub</a></p>
         <p>Fan of forms? Use the following to get in touch with me:</p>
         <p><i>(For any fields that don't apply to you, leave them blank unless required.)</i></p>
-        <form id="Contact Form" method="POST" data-netlify-recaptcha="true" data-netlify="true" autocomplete="off">
+        <form id="Contact Form" method="POST" data-netlify="true" autocomplete="off">
           <input name="bot-field" value="" placeholder="If you can see this and you're not a bot, don't fill it out!">
           <label for="name">Your Name</label>
           <input type="text" name="name" id="name" placeholder="Jane Doe" value="">
@@ -61,7 +60,6 @@
           <label for="message">Your Message</label>
           <textarea name="message" id="message" placeholder="Lorem ipsum..." value="" required></textarea>
           <p id="warning" disabled></p>
-          <div class="g-recaptcha" data-sitekey="6LcF96kaAAAAABuCIxmyWNCZOUN02YMvypQMx6OO"></div>
           <input type="submit" name="submit" id="submit" value="Send">
         </form>
         <p>Looking for something more secure for important messages? Use my public PGP key below and send all correspondance to <a href="mailto:zachfett@protonmail.com">zachfett at protonmail dot com</a>.</p>
@@ -101,8 +99,8 @@ ojCMjb3S0z6S2ZfrnqOOY4LjvQMGVswoeP+IIlnXWTFfnMD25erL96ALjjcX
       <p>You can also download the keyfile <code>(.asc)</code> for my public key via <a href="static/file/publickey.zachfett@protonmail.com-a7ed608a6eec37712936de426f9ce1e0bb548984.asc" target="_blank" download>this link</a>.</p>
       </section>
       <footer>
-        <div id="bmc-container"><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="zfett" data-color="#efe323" data-emoji="☕"  data-font="Poppins" data-text="Buy Me a Coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#FFDD00"></script></div>
         <p>All content on this website is copyright &copy; Zachary Fetters 2021 unless otherwise noted.</p>
+        <a href="https://zachfetters.design/projects/privacyfirst/"><img src="projects/privacyfirst/static/image/badge/PrivacyFirst_Badge_Dark_Vector.svg" id="pf_badge" alt="This site is a PrivacyFirst site." title="This site is a PrivacyFirst site."></a>
       </footer>
     </main>
     <script src="static/script/contact.js"></script>

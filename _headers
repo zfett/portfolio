@@ -1,6 +1,7 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
+  Content-Security-Policy: script-src 'self' https://*.cloudfront.net; style-src 'self' https://*.cloudfront.net; img-src 'self' https://*.cloudfront.net; font-src 'self' https://*.cloudfront.net; connect-src 'self' https://*.cloudfront.net; frame-src 'self' https://*.cloudfront.net
 
 /static/
 	Access-Control-Allow-Origin: https://zachfetters.design

@@ -194,21 +194,11 @@ footer p {
   padding: 0;
 }
 
-#bmc-container {
+#pf_badge {
   position: relative;
-  display: block !important;
-  width: 289.217px;
-  height: 60px;
-  overflow: hidden;
-  margin: -71px auto 0 auto;
-  transform: scale(0.5);
-  background: #eee;
-  box-shadow: 0 0 0 10px #eee;
-  border-radius: 6px;
-  transition: 0.1s ease-in-out transform;
+  display: block;
+  margin: 20px auto;
 }
-
-#bmc-container:hover {transform: scale(0.55)}
 
 @media all and (max-width: 600px) {
   p {
