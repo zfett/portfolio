@@ -53,7 +53,7 @@ section::after {
   content: '';
   position: absolute;
   display: block;
-  bottom: -46px;
+  bottom: -56px;
   left: 50%;
   transform: translateX(-50%);
   width: 54px;
@@ -116,58 +116,6 @@ h1 span {
   color: rgb(75,75,75);
 }
 
-/*Accordian CSS*/
-
-.accordian.container {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 0 0 40px 0;
-}
-
-.accordian.header {
-  position: relative;
-  display: block;
-  width: 100%;
-  font-family: 'Fira Code', monospace;
-  border: 0;
-  padding: 20px 0;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  background: transparent;
-  font-weight: 600;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.accordian.header::after {
-  content: '';
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%) rotateX(0deg);
-  height: 20px;
-  width: 20px;
-  background: url("../image/icon_arrow.svg") no-repeat center;
-  background-size: 20px auto;
-  transition: 0.1s ease-in transform;
-}
-
-.accordian.header.open::after {
-  transform: translateY(-50%) rotateX(180deg);
-}
-
-.accordian.content {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 0px;
-  overflow: hidden;
-  border-top: 2px solid black;
-}
-
-.accordian.content.open {height: 100%}
-
 .clear {
   position: relative;
   display: block;
@@ -197,6 +145,11 @@ h1 span {
   margin: 0 0 20px 0;
 }
 
+.service h3 {
+  margin: 20px 0;
+  text-align: center;
+}
+
 .service.body {
   padding: 40px 0;
   margin: 0;
@@ -212,7 +165,7 @@ h1 span {
 
 .service.body .service.desc {margin: 0 20px 0 0}
 
-.service.body .service.desc p {
+.service.body p {
   font-size: 1rem;
   line-height: 1.4rem;
 }
@@ -220,8 +173,8 @@ h1 span {
 .service.body ul {
   position: relative;
   display: block;
-  margin: 20px 0;
-  padding: 0 0 0 40px;
+  margin: 0;
+  padding: 0;
   width: calc(50% - 40px);
 }
 
@@ -233,25 +186,16 @@ h1 span {
   list-style: none;
   overflow: hidden;
   margin: 0 0 10px 0;
+  padding: 0 0 0 40px;
 }
 
-.service.body ul li::before {
-  content: '';
-  position: absolute;
-  display: block;
-  height: 20px;
-  width: 20px;
-  top: 0;
-  left: 10px;
-}
-
-.service.body ul.pro_list li::before {
-  background: url("../image/icon_plus.svg") no-repeat center;
+.service.body ul.pro_list li {
+  background: url("../image/icon_plus.svg") no-repeat 10px 5px;
   background-size: 10px auto;
 }
 
-.service.body ul.con_list li::before {
-  background: url("../image/icon_minus.svg") no-repeat center;
+.service.body ul.con_list li {
+  background: url("../image/icon_minus.svg") no-repeat 10px 8px;
   background-size: 10px auto;
 }
 
@@ -276,7 +220,7 @@ h1 span {
 }
 
 .service.body::before {
-  content: '...use this instead!';
+  content: '...try this instead!';
   position: absolute;
   top: -5px;
   left: 50%;
@@ -291,14 +235,50 @@ h1 span {
   border-radius: 5px;
 }
 
+.service .btn_container {
+  position: relative;
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.service .btn_container .btn {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 16px 8px 16px;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  font-family: 'Fira Code', monospace;
+}
+
+.service .btn_container .btn.visit {
+  background: rgb(253,100,79);
+  color: white;
+  font-weight: bold;
+}
+
+.service .btn_container .btn.visit:hover {background: rgb(242,142,38)}
+
+.service .btn_container .btn.privacy {
+  background: black;
+  color: white;
+  font-weight: bold;
+}
+
+.service .btn_container .btn.privacy:hover {background: rgb(50,50,50)}
+
 footer {
-  padding: 1rem 0;
+  padding: 40px 40px 0 40px;
   margin: 2rem 0 0 0;
   border-top: 2px dashed rgb(200,200,200);
 }
 
 footer p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   line-height: 1rem;
   color: rgb(100,100,100);
   margin: 0 0 .8rem 0;

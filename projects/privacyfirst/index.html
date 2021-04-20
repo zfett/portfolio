@@ -17,51 +17,49 @@
       <p>Below, you'll find a non-comprehensive list of various commonly-used services that don't respect user privacy or have shady/unknown security practices, along with better alternatives.</p>
     </section>
     <section id="alternatives">
-      <div class="accordian container">
-        <button class="accordian header open" data-content="ac_analytics" onclick="toggleAccordian(this)">Analytics & Tracking Services</button>
-        <div class="accordian content open" id="ac_analytics">
-          <div class="service">
-            <div class="service header">
-              <img src="static/image/service/google_analytics.png" class="service logo" alt="Google Analytics">
-            </div>
-            <div class="service body">
-              <img src="static/image/service/heap_analytics.png" class="service logo" alt="Heap Analytics">
-              <div class="service desc">
-                <p>"Heap is an analytics platform that helps product, marketing, and customer success teams craft exceptional digital experiences that convert and retain users." &mdash; Heap's website.</p>
-              </div>
-              <div class="clear"></div><hr>
-              <ul class="pro_list">
-                <li>This is a pro</li>
-              </ul>
-              <ul class="con_list">
-                <li>This is a con</li>
-              </ul>
-              <div class="clear"></div>
-            </div>
+      <div class="service">
+        <div class="service header">
+          <img src="static/image/service/google_analytics.png" class="service logo" alt="Google Analytics">
+        </div>
+        <div class="service body">
+          <img src="static/image/service/heap_analytics.png" class="service logo" alt="Heap Analytics">
+          <div class="service desc">
+            <p>"Heap is an analytics platform that helps product, marketing, and customer success teams craft exceptional digital experiences that convert and retain users." &mdash; Heap's website.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="accordian container">
-        <button class="accordian header" data-content="ac_ecommerce" onclick="toggleAccordian(this)">E-commerce</button>
-        <div class="accordian content" id="ac_ecommerce">
-          
-        </div>
-      </div>
-
-      <div class="accordian container">
-        <button class="accordian header" data-content="ac_email" onclick="toggleAccordian(this)">Professional E-mail Services</button>
-        <div class="accordian content" id="ac_email">
-          
+          <div class="clear"></div><hr>
+          <h3>Feature List Pros & Cons</h3>
+          <ul class="pro_list">
+            <li>APIs for multiple platforms & frameworks.</li>
+            <li>Robust free plan fit for most small-scale sites.</li>
+            <li>Better performance on web when using the Javascript API.</li>
+            <li>Documented security features and policies.</li>
+          </ul>
+          <ul class="con_list">
+            <li>Dashboard setup can be confusing for beginners.</li>
+            <li>Analytic user identity deletion feature for the web can be difficult to setup.</li>
+            <li>Some features can be a bit bloated for most purposes.</li>
+            <li>Plans do not have clear pricing. Pricing only available on inquiry.</li>
+            <li>Uses Amazon Web Services for their data hosting servers.<sup>1</sup></li>
+          </ul>
+          <div class="clear"></div>
+          <h3>Privacy Features</h3>
+          <p>Heap allows admins to create and delete user identities. All data sent to Heap from your site is encrypted with TLS. All stored data on Heap's AWS servers are encrypted at rest. Heap is SOC 2 and GDPR compliant. Heap conducts biannual pen tests of their infrastructure. Heap allows customization to avoid the capture of Personally Identifiable Information (PII.) Heap can allow the admin to disable all text capture and prevent data collection where required. Heap has a documented Data Protection Officer (DPO.) Heap has no recorded data breaches.</p>
+          <h3>Notes</h3>
+          <p><sup>1</sup> While this isn't nessesarily a bad thing, Amazon is a corporation known for their deceptive or lackluster data security and privacy policies, and have had <a href="https://www.theregister.com/2020/08/03/leaky_s3_buckets/" target="_blank" ref="noreferrer">data leaks in the past from their storage services</a>.</p>
+          <hr>
+          <div class="btn_container">
+            <a href="https://heap.io/" ref="noreferrer" target="_blank"><button class="btn visit">Visit Service</button></a><a href="https://heap.io/product/security-compliance" ref="noreferrer" target="_blank"><button class="btn privacy">View Security Policies</button></a>
+          </div>
+          <hr>
         </div>
       </div>
     </section>
     <footer>
       <p>This page was last updated on <i>2021-APR-19</i>. This initiative & website were created by <a href="https://zachfetters.design" rel="noreferrer" target="_blank">Zachary Fetters</a>.</p>
+      <p>I am not sponsored by anyone to choose certain alternatives. These choices come from my own personal experiences or the experiences of others in the field.</p>
       <p>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 License.</p>
       <p>"Google," "Google Analytics," and the Google Analytics brand is a registered trademark of Google LLC and/or its affiliates.</p>
       <p>"Heap" and the Heap brand is a registered trademark of Heap, Inc.</p>
     </footer>
-    <script src="static/script/home.js" type="text/javascript"></script>
   </body>
 </html>
