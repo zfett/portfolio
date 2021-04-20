@@ -194,12 +194,6 @@ footer p {
   padding: 0;
 }
 
-#pf_badge {
-  position: relative;
-  display: block;
-  margin: 20px auto;
-}
-
 @media all and (max-width: 600px) {
   p {
     font-size: 1.2rem;
