@@ -5,7 +5,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: no-referrer
   Strict-Transport-Security: max-age=15768000; includeSubdomains
-  Content-Security-Policy: script-src 'sha386-hhykVLWx/I0fVTHdvzzebxUrDOtp+vPFeYj1SVPNG0VyO6w1Tq3ywgTIDCJh+Qi9' 'strict-dynamic'; style-src 'self' https://*.cloudfront.net; img-src 'self' https://*.cloudfront.net; font-src 'self' https://*.cloudfront.net; connect-src 'self' https://*.cloudfront.net; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; default-src 'none'
+  Content-Security-Policy: script-src 'self' https://*.cloudfront.net; style-src 'self' https://*.cloudfront.net; img-src 'self' https://*.cloudfront.net; font-src 'self' https://*.cloudfront.net; connect-src 'self' https://*.cloudfront.net; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; default-src 'none'
 
 /static/
 	Access-Control-Allow-Origin: https://zachfetters.design
