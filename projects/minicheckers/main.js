@@ -408,6 +408,7 @@ function endClock() {
   clearInterval(stopwatch);
   sendMessage("Match over! Final time: "+MCHTM, "info");
 }
+
 function saveGame() {
   const D = new Date();
   var HTML = BOARD.innerHTML;
