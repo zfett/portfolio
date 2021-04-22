@@ -8,6 +8,8 @@
   font-family: sans-serif;
 }
 
+.preload {width: 0px}
+
 html {
   background-color: #22201b;
 }
