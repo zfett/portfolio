@@ -52,6 +52,7 @@ form input, form textarea, form select, form p {
   font-weight: 500;
   outline: none !important;
   border-radius: 0px !important;
+  transition: 0.15s ease-in box-shadow;
 }
 
 form *[required] {
@@ -87,6 +88,8 @@ form input[type="submit"] {
   margin: 0 auto;
   cursor: pointer;
 }
+
+form input:focus, form textarea:focus {box-shadow: 3px 3px 0 0 var(--b-dark)}
 
 form input[name="bot-field"] {display: none !important}
 
