@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>An Ally for A11Y — Sample</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+  </head>
+  <body>
+    <div id="controls">
+      <button class="control zoom_in" onclick="zoomPage(0.25)" title="Zoom in">Zoom In</button>
+      <div id="zoom_amount">100%</div>
+      <button class="control zoom_out" onclick="zoomPage(-0.25)" title="Zoom out">Zoom Out</button>
+      <hr>
+      <button class="control mode_light" onclick="toggleMode('light')" title="Toggle light mode">Light Mode</button>
+      <button class="control mode_dark" onclick="toggleMode('dark')" title="Toggle dark mode">Dark Mode</button>
+    </div>
+    <main style="transform:scale(1.0)">
+      <div class="page cover nonum">
+        <img src="../res/book/cover.jpg" alt="An Ally for A11Y. Web design trends have often overlooked accessibility. Now's the time to change that and become an ally for a11y. Written by Zachary Fetters. Published independently through Leanpub. Text licensed under the CC BY-NC-SA 4.0 license." id="book_cover"/>
+      </div>
+      <div class="page nonum">
+        <p class="misc">Copyright &copy; 2021 Zachary Fetters</p>
+        <p class="misc"></p>
+        <p class="misc">The text contained within this book is licensed under the Creative Commons BY-NC-SA 4.0 International license unless otherwise noted within the ending “Credits” section. This license allows the sharing and adaptation of the content of this book, so long as it is “shared alike,” meaning under the same license, not used commercially, and proper credit is given to the author. You can read more about this license by visiting its associated page on the Creative Commons website.</p>
+        <p class="misc"></p>
+        <p class="misc">ISBN 978-1-6671-2487-2 (Paperback Edition)</p>
+        <p class="misc"></p>
+        <p class="misc">Edited by Jesse Day</p>
+        <p class="misc">Front cover image by Zachary Fetters</p>
+        <p class="misc">All graphics by Zachary Fetters unless otherwise noted</p>
+        <p class="misc">Book design by Zachary Fetters</p>
+        <p class="misc"></p>
+        <p class="misc">Published independently through Leanpub</p>
+        <p class="misc">Paperback Edition printed and published via Lulu Press, Inc.</p>
+      </div>
+      <div class="page nonum" id="table-of-contents">
+        <h2 class="heading1">Table Of Contents</h2>
+        <p class="misc">Foreword ..................................................................................................................... 1</p>
+        <p class="misc">More Than Code ....................................................................................................... 2</p>
+      </div>
+      <div class="page" id="foreword" data-pagenum="1">
+        <h2 class="heading1">Foreword</h2>
+        <p class="normal">As I will address in the following chapters, accessibility is more than just implementing the bare minimum required to meet certain standards. Accessibility that is truly accessible is more than an afterthought and requires a dedicated mindset to ensure that it meets the needs, not the standards, of those it plans to serve. This book—while admittedly limited in its scope—aims to provide more context for and address misconceptions of web accessibility by showing the perspectives and statistics of those who rely upon accessible design to utilize the World Wide Web.</p>
+        <p class="normal">For the sake of transparency, I would like to tell you something about myself that I am, quite honestly, ashamed about. While I have been a web developer since 2012 or 2013, web accessibility wasn't something that I ever gave much attention to until around the end of 2018. This was not done out of malice, but more so out of a misunderstanding of how many disabled people utilize the Web for their day-to-day activities, including those who are programmers themselves. I have tried to make amends to counter this ignorance on my part, which is part of the reason why I am writing this book. I want to aid others in escaping the mindset that I harbored not too long ago, as it is not an alien mindset to many web developers.</p>
+        <p class="normal">Misunderstandings are no excuse for complete ignorance or malice, but humans are not infallible and are prone to ingesting attitudes and feelings that run counter to reality. What defines people is not so much the misunderstandings that they hold, but it is how they respond to them, or how they don’t respond. While I cannot atone for my ignorance towards the experiences of disabled people on the Internet in the past, I can try to make my actions and thoughts from now on focused on including them in design decisions the same as I would anyone else. Good, accessible design is not unlike good internationalization: it requires direct input and involvement from those who it will affect the most. When translating your product to enable those who don't speak English to be able to use your product with ease, you don't typically use Google Translate to do so. Instead, you hire or get volunteers to help translate your product in the languages that they understand as well. This will result in a complete and accurate final product. Accessibility is no different.</p>
+        <p class="normal">If you are not involving or centering those with disabilities in your accessible design, then who are you designing for?</p>
+      </div>
+      <div class="page" id="more-than-code" data-pagenum="2">
+        <h2 class="heading1">More Than Code</h2>
+        <p class="normal">One of the most common trends seen when developers talk about accessibility is the amount of extra code that is required. While that is one of the steps towards making a product easy-to-use for those with disabilities, it is but a stepping stone in the grand scheme of designing accessible experiences. As was mentioned in the foreword of this book, accessibility is a mindset that must be maintained through every part of the prototyping, design, and construction stages, not just when it is time to put actions to ideas.</p>
+        <p class="normal">Perplexingly, also seen is the initial reaction to the recommendation of accessibility changes being annoyance or even anger. The first step towards creating an accessible, well, anything is to get rid of that attitude. Coming to terms with the fact that disabled people don’t all share the same type of stereotypically-perceived forms of disability will go a long way to creating a more robust accessible experience. Accessibility shouldn’t be a “political” issue, it should be a right for those who need it to use the same services that many of us get to use without hinderance every day. Alas, we don’t live in a perfect world. Where progress lacks, we must pick up the torch and light the way. It rests on the shoulders of the developers and designers of the world to make the Web a more friendly place for disabled people.</p>
+        <p class="normal">Enough philosophical talk, let’s get down to brass tacks. What is required to make the iterative design process involve accessibility better? Well, the first point is that accessibility is more than a list to check off before release. It is a mindset and a process in of itself. No matter how many one-hundred percent scores your product may receive from accessibility validation tests, if accessibility wasn’t a critical part of the iterative process, you’re not done yet. Take a look at the average iterative design process...</p>
+        <span class="sample">This is a sample, please buy the book to read the rest!</span>
+      </div>
+    </main>
+    <script src="controls.js"></script>
+  </body>
+</html>

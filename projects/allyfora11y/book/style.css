@@ -1,0 +1,218 @@
+@import url("../res/font/goudy/stylesheet.css");
+@import url("../res/font/league/stylesheet.css");
+
+:root {
+  --purple: rgb(69, 48, 86);
+  --heading: 'League Spartan', sans-serif;
+  --body: 'OFL Sorts Mill Goudy', serif;
+  --background: rgb(230, 230, 230);
+  --page-background: rgb(255, 255, 255);
+  --page-foreground: rgb(0, 0, 0);
+  --subtle: rgb(110, 110, 110);
+  --page-width: 5.5in;
+  --page-height: 8.5in;
+  --margin: .6in;
+}
+
+html.dark:root {
+  --purple: rgb(124, 83, 158);
+  --background: rgb(30, 30, 30);
+  --page-background: rgb(0, 0, 0);
+  --page-foreground: rgb(255, 255, 255);
+  --subtle: rgb(150, 150, 150);
+}
+
+::selection, ::-moz-selection {
+  background: rgb(168, 220, 255);
+  color: black;
+}
+
+html {
+  background: var(--background);
+}
+
+body {margin: .6in auto}
+
+main {
+  position: relative;
+  display: block;
+  margin: .6in auto;
+  max-width: var(--page-width);
+  transform-origin: top center;
+}
+
+.page {
+  position: relative;
+  display: block;
+  width: calc(var(--page-width) - (var(--margin)*2));
+  height: calc(var(--page-height) - (var(--margin)*2));
+  background: var(--page-background);
+  margin: 0 0 var(--margin) 0;
+  padding: .6in;
+  overflow: hidden;
+  box-shadow: 0 .05in .1in 0 rgba(0, 0, 0, 0.1);
+}
+
+.page::after {
+  content: attr(data-pagenum);
+  position: absolute;
+  bottom: .3in;
+  right: .6in;
+  font-size: 9pt;
+  line-height: 1.0;
+  color: var(--subtle);
+}
+
+.page.cover {
+  user-select: none;
+  pointer-events: none;
+  width: var(--page-width);
+  height: var(--page-height);
+  padding: 0;
+  object-fit: contain;
+}
+
+#book_cover {
+  width: var(--page-width);
+  height: var(--page-height);
+}
+
+.page.cover::after, .page.nonum::after {
+  content: '';
+  display: none;
+}
+
+#controls {
+  position: fixed;
+  bottom: .6in;
+  right: .6in;
+  padding: 15px 10px;
+  background: white;
+  box-shadow: 0 .02in .04in 0 rgba(0, 0, 0, 0.05);
+  z-index: 999;
+  border-radius: 50px;
+}
+
+#controls .control {
+  position: relative;
+  display: block;
+  background: rgba(0,0,0,0);
+  border: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  cursor: pointer;
+  margin: 0 0 8px 0;
+  border-radius: 30px;
+}
+
+#controls .control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#controls .control:last-of-type {margin: 0}
+
+#controls .control.zoom_in {
+  background: transparent url("../res/image/icon/icon_plus.svg") no-repeat center;
+  background-size: 15px auto;
+}
+
+#controls .control.zoom_out {
+  background: transparent url("../res/image/icon/icon_minus.svg") no-repeat center;
+  background-size: 15px auto;
+}
+
+#controls .control.mode_light {
+  background: transparent url("../res/image/icon/icon_light.svg") no-repeat center;
+  background-size: 15px auto;
+}
+
+#controls .control.mode_dark {
+  background: transparent url("../res/image/icon/icon_dark.svg") no-repeat center;
+  background-size: 15px auto;
+}
+
+#controls hr {
+  margin: 8px 0;
+  border: 0;
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  background: rgb(235, 235, 235);
+}
+
+#zoom_amount {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-size: 11px;
+  line-height: 11px;
+  margin: 5px 0;
+  font-family: var(--heading);
+  text-align: center;
+  width: 30px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/*Text Styles*/
+.misc {
+  position: relative;
+  display: block;
+  text-align: justify;
+  font-family: var(--body);
+  color: var(--page-foreground);
+  line-height: 1.4;
+  min-height: 9pt;
+  font-size: 9pt;
+  margin: 0 0 6pt 0;
+}
+
+.heading1 {
+  position: relative;
+  display: block;
+  text-align: left;
+  font-family: var(--heading);
+  color: var(--purple);
+  line-height: 1.0;
+  min-height: 24pt;
+  font-size: 24pt;
+  margin: 0 0 6pt 0;
+}
+
+.normal {
+  position: relative;
+  display: block;
+  text-align: justify;
+  font-family: var(--body);
+  color: var(--page-foreground);
+  line-height: 1.4;
+  min-height: 9pt;
+  font-size: 9pt;
+  margin: 0 0 0pt 0;
+  text-indent: .2in;
+}
+
+.heading1 + .normal {
+  text-indent: 0in;
+}
+
+.italic {font-style: italic}
+
+.normal.list {
+  text-indent: 0in;
+}
+
+span.sample {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: var(--body);
+  color: var(--subtle);
+  line-height: 1.0;
+  min-height: 9pt;
+  font-size: 9pt;
+  margin: .6in 0 0 0;
+  text-indent: 0in;
+}

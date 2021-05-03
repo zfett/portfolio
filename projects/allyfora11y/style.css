@@ -16,6 +16,18 @@
   color: var(--background);
 }
 
+section {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+section:focus {
+  outline-style: dashed;
+  outline-color: var(--subtle);
+  outline-width: 1px;
+}
+
 html {
   background: var(--background);
   color: var(--foreground);
