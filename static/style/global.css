@@ -168,9 +168,9 @@ header {
   }
 }
 
-main a {color: var(--b-dark)}
+main a, #alert_container a {color: var(--b-dark)}
 
-main a:hover {background: var(--b-yellow)}
+main a, #alert_container a:hover {background: var(--b-yellow)}
 
 section {margin: 0 0 40px 0}
 
@@ -192,6 +192,22 @@ footer p {
   text-align: center;
   margin: 0;
   padding: 0;
+}
+
+#alert_container {
+  position: relative;
+  display: block;
+  padding: 20px;
+  background: var(--b-yellow);
+  color: var(--b-dark);
+  margin: 0 0 40px 0;
+  width: calc(100% - 40px);
+  box-shadow: 5px 5px 0 0 var(--b-dark);
+  font-family: var(--f-mono);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: justify;
+  font-weight: 600;
 }
 
 @media all and (max-width: 600px) {
