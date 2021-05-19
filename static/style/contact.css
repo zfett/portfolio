@@ -91,7 +91,7 @@ form input[type="submit"] {
 
 form input:focus, form textarea:focus {box-shadow: 3px 3px 0 0 var(--b-dark)}
 
-form input[name="bot-field"] {display: none !important}
+form input[name="phone"] {display: none !important}
 
 form input[disabled], form textarea[disabled], form select[disabled], form p[disabled] {
   background-color: #aaa;
