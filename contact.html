@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="static/style/contact.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="static/script/contact.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <meta name="description" content="Hello, I am Zachary and I am a self-taught, freelance web designer and developer from the U.S.">
     <meta property="og:type" content="website">
@@ -38,8 +39,8 @@
         <p><a href="https://twitter.com/zachary_fetters" target="_blank" ref="noreferrer">Twitter</a> &middot; <a href="https://www.linkedin.com/in/zfett" target="_blank" ref="noreferrer">LinkedIn</a> &middot; <a href="https://github.com/zfett" target="_blank" ref="noreferrer">GitHub</a></p>
         <p>Fan of forms? Use the following to get in touch with me:</p>
         <p><i>(For any fields that don't apply to you, leave them blank unless required.)</i></p>
-        <form id="Contact Form" method="POST" data-netlify="true" autocomplete="off">
-          <input name="bot-field" value="" placeholder="If you can see this and you're not a bot, don't fill it out!">
+        <form id="Contact Form" method="POST" netlify-honeypot="phone" data-netlify-recaptcha="true" data-netlify="true" autocomplete="off">
+          <input name="phone" value="" placeholder="If you can see this and you're a human, don't fill it out!">
           <label for="name">Your Name</label>
           <input type="text" name="name" id="name" placeholder="Jane Doe" value="">
           <label for="organization">Company or Organization</label>
@@ -61,6 +62,7 @@
           <label for="message">Your Message</label>
           <textarea name="message" id="message" placeholder="Lorem ipsum..." value="" required></textarea>
           <p id="warning" disabled></p>
+          <div id="recaptcha-field"><div class="g-recaptcha" data-netlify-recaptcha="true" data-sitekey="6LcF96kaAAAAABuCIxmyWNCZOUN02YMvypQMx6OO"></div></div>
           <input type="submit" name="submit" id="submit" value="Send">
         </form>
         <p>Looking for something more secure for important messages? Use my public PGP key below and send all correspondance to <a href="mailto:zachfett@protonmail.com">zachfett at protonmail dot com</a>.</p>

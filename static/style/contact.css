@@ -124,3 +124,18 @@ form p[disabled] {display: none}
   font-weight: 500;
   outline: none;
 }
+
+#recaptcha-field {
+  position: relative;
+  display: block;
+  width: 304px;
+  height: 78px;
+  width: 298px;
+  height: 72px;
+  overflow: hidden;
+  margin: 20px auto;
+  border: 2px solid var(--b-dark);
+  background: #eee;
+}
+
+#recaptcha-field iframe {margin: -2px 0 0 -2px}
