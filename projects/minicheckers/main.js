@@ -1,3 +1,5 @@
+//To build prod version, run 'uglifyjs -c --mangle --toplevel --keep-fnames -- main.js > main.prod.js'
+
 const MCVER = "1.1.1";
 const MESSG = document.getElementById("event-container");
 const BOARD = document.getElementsByTagName("board-container")[0]; //The base element for the board
