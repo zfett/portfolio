@@ -24,7 +24,7 @@
 </head>
 <body>
   <!--Image preloading, the easy way-->
-  <img src="res/img/ButtonBackground.png" class="preload"/><img src="res/img/ButtonBackgroundHover.png" class="preload"/><img src="res/img/ButtonBackgroundActive.png" class="preload"/><img src="res/img/ButtonBorderActive.png" class="preload"/><img src="res/img/ButtonBorderHover.png" class="preload"/><img src="res/img/KingBlack.png" class="preload"/><img src="res/img/KingWhite.png" class="preload"/><img src="res/img/MoveSelector.png" class="preload"/><img src="res/img/PieceBlackScore.png" class="preload"/><img src="res/img/PieceWhiteScore.png" class="preload"/><img src="res/img/PieceHover.png" class="preload"/>
+  <img src="res/img/GameSprites.png" class="preload"/>
 
   <div id="logo-container">
     <span id="version"></span>
@@ -95,12 +95,9 @@
 
   <message-box>
     <h2>Changelog:</h2>
-    <h3>Version 1.1</h3>
+    <h3>Version 1.1.1</h3>
     <ul>
-      <li>Added new sound effect for kings.</li>
-      <li>Added new save/load game feature!</li>
-      <li>Added preloading for critical resources to prevent texture pop-in and sound delays.</li>
-      <li>Added timer for matches.</li>
+      <li>Compiled all game image files to one spritesheet to reduce load times and remove delayed image load upon change.</li>
     </ul>
   </message-box>
   <script type="text/javascript" src="main.js?version=1.1.1"></script>

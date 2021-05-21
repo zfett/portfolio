@@ -172,9 +172,9 @@ board-container grid {
   display: inline-block;
   width: 12.5%;
   height: 12.5%;
-  background-image: url('res/img/GridWhite.png');
+  background-image: url("res/img/GameSprites.png");
+  background-position: -64px 0;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   margin: 0px;
   padding: 0px;
@@ -201,7 +201,8 @@ board-container piece:hover:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/PieceHover.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: center 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -217,8 +218,8 @@ board-container piece.selected:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/MoveSelector.png");
-  background-position: center;
+  background-image: url("res/img/GameSprites.png");
+  background-position: -192px 0;
   background-size: cover;
   background-repeat: no-repeat;
   animation-name: moveSelector;
@@ -233,8 +234,8 @@ board-container grid:not(grid.active):hover:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/GridHover.png");
-  background-position: center;
+  background-image: url("res/img/GameSprites.png");
+  background-position: -128px 0;
   background-size: cover;
   background-repeat: no-repeat;
   animation-name: moveSelector;
@@ -251,7 +252,8 @@ board-container grid:nth-of-type(32) ~ grid:nth-of-type(-2n+40),
 board-container grid:nth-of-type(40) ~ grid:nth-of-type(-2n+47),
 board-container grid:nth-of-type(48) ~ grid:nth-of-type(-2n+56),
 board-container grid:nth-of-type(56) ~ grid:nth-of-type(-2n+63) {
-  background-image: url("res/img/GridBlack.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: 0 0;
 }
 
 board-container grid piece {
@@ -274,19 +276,23 @@ board-container grid piece.select:before {
 }
 
 board-container grid piece[data-ptyp = "black"] {
-  background-image: url("res/img/PieceBlack.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: -448px 0;
 }
 
 board-container grid piece[data-ptyp = "white"] {
-  background-image: url("res/img/PieceWhite.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: -512px 0;
 }
 
 board-container grid piece[data-ptyp = "black"][data-isking = "true"] {
-  background-image: url("res/img/KingBlack.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: -320px 0;
 }
 
 board-container grid piece[data-ptyp = "white"][data-isking = "true"] {
-  background-image: url("res/img/KingWhite.png");
+  background-image: url("res/img/GameSprites.png");
+  background-position: -384px 0;
 }
 
 message-box {
@@ -537,16 +543,8 @@ event-list event.update {
   left: 0;
 }
 
-.scoreboard.black .scoreboard-title:after {
-  background-image: url("res/img/PieceBlack.png");
-}
-
 .scoreboard.white {
   right: 0;
-}
-
-.scoreboard.white .scoreboard-title:after {
-  background-image: url("res/img/PieceWhite.png");
 }
 
 #match-time {

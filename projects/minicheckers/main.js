@@ -1,4 +1,4 @@
-const MCVER = "1.1";
+const MCVER = "1.1.1";
 const MESSG = document.getElementById("event-container");
 const BOARD = document.getElementsByTagName("board-container")[0]; //The base element for the board
 const GRIDS = document.getElementsByTagName("grid"); //The list of indiv. grid elements
