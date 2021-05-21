@@ -4,17 +4,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <title>MiniCheckers</title>
+  <link rel="preload" href="res/img/GameSprites.webp" as="image">
+  <link rel="preload" href="res/img/GameLogo.webp" as="image">
+  <link rel="preload" href="main.js" as="script">
   <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="main.js?version=1.1" as="script">
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <script type="text/javascript" src="main.js?version=1.1.1" defer></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MiniCheckers">
-  <meta property="og:site_name" content="zachfetters.design/projects/minicheckers">
+  <meta property="og:site_name" content="MiniCheckers">
   <meta property="og:url" content="https://zachfetters.design/projects/minicheckers">
   <meta property="og:image" content="https://zachfetters.design/projects/minicheckers/res/img/SEOCover.jpg">
-  <meta property="og:image:height" content="800">
-  <meta property="og:image:width" content="1250">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:width" content="1200">
   <meta property="og:image:type" content="image/jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@zachary_fetters">
@@ -23,12 +26,9 @@
   <meta name="twitter:image" content="https://zachfetters.design/projects/minicheckers/res/img/SEOCover.jpg">
 </head>
 <body>
-  <!--Image preloading, the easy way-->
-  <img src="res/img/GameSprites.png" class="preload"/>
-
   <div id="logo-container">
     <span id="version"></span>
-    <img src="res/img/GameLogo.png" class="logo"/>
+    <img src="res/img/GameLogo.webp" class="logo"/>
   </div>
 
   <div id="game-container">
@@ -98,8 +98,8 @@
     <h3>Version 1.1.1</h3>
     <ul>
       <li>Compiled all game image files to one spritesheet to reduce load times and remove delayed image load upon change.</li>
+      <li>Various optimizations.</li>
     </ul>
   </message-box>
-  <script type="text/javascript" src="main.js?version=1.1.1"></script>
 </body>
 </html>

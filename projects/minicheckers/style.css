@@ -8,8 +8,6 @@
   font-family: sans-serif;
 }
 
-.preload {width: 0px}
-
 html {
   background-color: #22201b;
 }
@@ -19,7 +17,7 @@ body {
   margin: 0 auto;
   padding: 50px 0px;
   width: 1000px;
-  background-image: url("res/img/PageBackground.png");
+  background-image: url("res/img/PageBackground.webp");
   background-position: center top;
   background-size: auto;
   background-repeat: repeat-y;
@@ -69,9 +67,9 @@ body {
   padding: 0px 20px 8px 20px;
   text-shadow: 0px 4px 0px rgba(0,0,0,0.25);
   background-color: #258649;
-  background-image: url("res/img/ButtonBackgroundActive.png");
+  background-image: url("res/img/ButtonBackgroundActive.webp");
   border: 1px solid #205c36;
-  border-image: url("res/img/ButtonBorderActive.png") 48 / 8px round;
+  border-image: url("res/img/ButtonBorderActive.webp") 48 / 8px round;
   user-select: none;
   pointer-events: none;
 }
@@ -111,8 +109,8 @@ body {
   font-size: 10px;
   text-transform: uppercase;
   background-color: #c0b8af;
-  background-image: url("res/img/ButtonBackground.png");
-  border-image: url("res/img/ButtonBorder.png") 48 / 8px round;
+  background-image: url("res/img/ButtonBackground.webp");
+  border-image: url("res/img/ButtonBorder.webp") 48 / 8px round;
   text-shadow: 0px 2px 0px rgba(0,0,0,0.25);
   cursor: pointer;
 }
@@ -124,15 +122,15 @@ body {
 #btn-container button:hover {
   color: #24211e;
   background-color: #9c948b;
-  background-image: url("res/img/ButtonBackgroundHover.png");
-  border-image: url("res/img/ButtonBorderHover.png") 48 / 8px round;
+  background-image: url("res/img/ButtonBackgroundHover.webp");
+  border-image: url("res/img/ButtonBorderHover.webp") 48 / 8px round;
 }
 
 #btn-container button:active {
   color: #dbd0c2;
   background-color: #258649;
-  background-image: url("res/img/ButtonBackgroundActive.png");
-  border-image: url("res/img/ButtonBorderActive.png") 48 / 8px round;
+  background-image: url("res/img/ButtonBackgroundActive.webp");
+  border-image: url("res/img/ButtonBorderActive.webp") 48 / 8px round;
 }
 
 board-container {
@@ -143,7 +141,7 @@ board-container {
   padding: 20px;
   margin: 0 auto;
   overflow: hidden;
-  background-image: url("res/img/BoardBackground.png");
+  background-image: url("res/img/BoardBackground.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,7 +157,7 @@ board-container:before {
   top: 0;
   left: 0;
   z-index: 6;
-  background-image: url("res/img/BoardForeground.png");
+  background-image: url("res/img/BoardForeground.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -172,7 +170,7 @@ board-container grid {
   display: inline-block;
   width: 12.5%;
   height: 12.5%;
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -64px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -201,7 +199,7 @@ board-container piece:hover:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: center 0;
   background-position: center;
   background-size: cover;
@@ -218,7 +216,7 @@ board-container piece.selected:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -192px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -234,7 +232,7 @@ board-container grid:not(grid.active):hover:before {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -128px 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -252,7 +250,7 @@ board-container grid:nth-of-type(32) ~ grid:nth-of-type(-2n+40),
 board-container grid:nth-of-type(40) ~ grid:nth-of-type(-2n+47),
 board-container grid:nth-of-type(48) ~ grid:nth-of-type(-2n+56),
 board-container grid:nth-of-type(56) ~ grid:nth-of-type(-2n+63) {
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: 0 0;
 }
 
@@ -276,22 +274,22 @@ board-container grid piece.select:before {
 }
 
 board-container grid piece[data-ptyp = "black"] {
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -448px 0;
 }
 
 board-container grid piece[data-ptyp = "white"] {
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -512px 0;
 }
 
 board-container grid piece[data-ptyp = "black"][data-isking = "true"] {
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -320px 0;
 }
 
 board-container grid piece[data-ptyp = "white"][data-isking = "true"] {
-  background-image: url("res/img/GameSprites.png");
+  background-image: url("res/img/GameSprites.webp");
   background-position: -384px 0;
 }
 
@@ -302,7 +300,7 @@ message-box {
   width: calc(800px - 32px);
   padding: 32px 16px;
   border: 1px solid #2e2b23;
-  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  border-image: url("res/img/BorderImage.webp") 48 / 8px round;
   background: #1d1b18;
   overflow: hidden;
   clear: both;
@@ -350,7 +348,7 @@ event-list {
   min-height: 8rem;
   max-height: 8rem;
   border: 1px solid #2e2b23;
-  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  border-image: url("res/img/BorderImage.webp") 48 / 8px round;
   background: #1d1b18;
   clear: both;
 }
@@ -366,7 +364,7 @@ event-list label {
   left: 16px;
   color: #dbd0c2;
   text-shadow: 0px 1px 0px rgba(0,0,0,.25);
-  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  border-image: url("res/img/BorderImage.webp") 48 / 8px round;
   background: #1d1b18;
   overflow: hidden;
   clear: both;
@@ -448,8 +446,8 @@ event-list event.update {
   top: 20px;
   height: calc(512px - 32px);
   border: 1px solid #2e2b23;
-  border-image: url("res/img/BorderImage.png") 48 / 8px round;
-  background-image: url("res/img/ScoreBackground.png");
+  border-image: url("res/img/BorderImage.webp") 48 / 8px round;
+  background-image: url("res/img/ScoreBackground.webp");
   background-position: center;
   background-size: 32px;
   padding: 16px;
@@ -479,11 +477,11 @@ event-list event.update {
 }
 
 .piece.black {
-  background-image: url("res/img/PieceBlackScore.png");
+  background-image: url("res/img/PieceBlackScore.webp");
 }
 
 .piece.white {
-  background-image: url("res/img/PieceWhiteScore.png");
+  background-image: url("res/img/PieceWhiteScore.webp");
 }
 
 .scoreboard-title {
@@ -527,7 +525,7 @@ event-list event.update {
   height: 24px;
   bottom: -30px;
   left: 0;
-  background-image: url("res/img/UserTurn.png");
+  background-image: url("res/img/UserTurn.webp");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -561,7 +559,7 @@ event-list event.update {
   top: -24px;
   transform: translateX(-50%);
   text-shadow: 0px 1px 0px rgba(0,0,0,.25);
-  border-image: url("res/img/BorderImage.png") 48 / 8px round;
+  border-image: url("res/img/BorderImage.webp") 48 / 8px round;
   background: #1d1b18;
   overflow: hidden;
   clear: both;
