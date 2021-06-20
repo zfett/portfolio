@@ -2,14 +2,12 @@ title: ZACHARY FETTERS
 baseurl: ""
 url: "https://zachfetters.design"
 post_dirs: true
+include: [_pages]
 permalink: pretty
 
 theme: null
 plugins:
   - jekyll-feed
-
-kramdown:
-  input: GFM
 
 defaults:
   - scope:
