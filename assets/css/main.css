@@ -85,6 +85,11 @@ aside::after {
   to {transform: rotate(45deg) scale(1)}
 }
 
+@keyframes zoom-out {
+  from {transform: rotate(45deg) scale(1)}
+  to {transform: rotate(-135deg) scale(0)}
+}
+
 aside::before {
   content: '';
   position: absolute;
@@ -101,6 +106,23 @@ aside::before {
   from {width: 0px}
   to {width: 18px}
 }
+
+@keyframes wipe-left {
+  from {
+    width: 18px;
+    right: -32px;
+  }
+  to {
+    width: 0px;
+    right: -14px;
+  }
+}
+
+aside.scroll::before {animation: wipe-left .5s ease-in-out 0s 1 forwards}
+aside.scroll::after {animation: zoom-out .5s ease-in-out .5s 1 forwards}
+
+aside.unscroll::before {animation: wipe-right .5s ease-in-out 0s 1 backwards}
+aside.unscroll::after {animation: zoom-in .5s ease-in-out .5s 1 backwards}
 
 #aside-logo {
   width: 100%;
