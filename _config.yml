@@ -1,7 +1,6 @@
 title: ZACHARY FETTERS
-email: zachfett@protonmail.com
-description: 
 baseurl: ""
+url: "https://zachfetters.design"
 post_dirs: true
 permalink: /:categories/:title/
 
