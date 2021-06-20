@@ -5,23 +5,7 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://zachfetters.design/home</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://zachfetters.design/projects</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://zachfetters.design/contact</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://blog.zachfetters.design/</loc>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://zachfetters.design/projects/minicheckers/</loc>
-  <priority>0.64</priority>
+  <priority>1.0</priority>
 </url>
 </urlset>
