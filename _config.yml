@@ -1,8 +1,8 @@
 title: ZACHARY FETTERS
-baseurl: ""
+baseurl: "/"
 url: "https://zachfetters.design"
 post_dirs: true
-permalink: /:categories/:title/
+permalink: pretty
 
 theme: null
 plugins:
