@@ -1,0 +1,91 @@
+:root {
+  --f_sans: 'Arial', sans-serif;
+  --f_serif: 'Times New Roman', serif;
+  --f_mono: 'Courier New', monospace;
+}
+
+html {
+  background: #eee url("page-bg.png") repeat top left fixed;
+}
+
+body {
+  position: relative;
+  display: block;
+  max-width: 760px;
+  width: calc(100% - 40px);
+  background: #fff;
+  color: #000;
+  font-family: var(--f_sans);
+  margin: 20px auto;
+  padding: 0 20px 40px 20px;
+}
+
+body::before {
+  content: "WORKING DRAFT";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  height: 20px;
+  background: rgb(255, 185, 0);
+  color: #fff;
+  font-size: 30px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 2px;
+  font-weight: 200;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: justify;
+  padding: 20px;
+  width: 100%;
+  margin: 0 0 5px -20px;
+  background: rgb(50, 100, 255);
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  box-shadow: 0 5px 0 0 #eee;
+  color: #fff;
+}
+
+h3 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+section p {
+  line-height: 1.5;
+  text-indent: 20px;
+  margin: 0;
+  text-align: justify;
+}
+
+section p span {font-family: var(--f_mono)}
+
+#front-matter {
+  width: 100%;
+  margin: 0 0 45px -20px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  background: #ddd;
+  text-shadow: 0 1px 0 #fff;
+  box-shadow: 0 5px 0 0 #eee;
+}
+
+#front-matter * {margin: 0}
+#front-matter *:first-child {margin: 0 0 20px 0}
+
+#abstract {margin: 0 40px}
+
+#keywords p {
+  text-align: center;
+  margin: 20px 40px 0 40px;
+  text-indent: 0px;
+}
+
+section.chapter {margin: 40px 0 0 0}
+
+section.chapter p:first-of-type {text-indent: 0px}
