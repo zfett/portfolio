@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Realm Currency Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <h1>Ingots (¤) Calculator</h1>
+    <div id="calc">
+      <label>Num. of Iron Ingots:</label>
+      <input id="iron" type="number" value="0" min=0>
+
+      <label>Num. of Diamonds:</label>
+      <input id="diamond" type="number" value="0" min=0>
+
+      <label>Num. of Emeralds:</label>
+      <input id="emerald" type="number" value="0" min=0>
+
+      <button id="submit" onclick="calcValues()">Calculate</button>
+      <button id="clear" onclick="clearInput()">Clear Values</button>
+
+      <hr>
+
+      <label for="result">Ingots Amount:</label>
+      <input name="result" id="result" type="text" value="¤0">
+
+      <hr>
+
+      <h2>Conversion Tables:</h2>
+
+      <ul>
+        <li>1 Iron Ingot = 1 Ingot</li>
+        <li>1 Diamond = 9 Ingots</li>
+        <li>1 Emerald (18 Diamonds) = 162 Ingots</li>
+      </ul>
+
+      <ul>
+        <li>1 Iron Block (9 Iron Ingots) = 9 Igs.</li>
+        <li>1 Diamond Block (9 Diamonds) = 81 Igs.</li>
+        <li>1 Emerald Block (9 Emeralds) = 1,458 Igs.</li>
+      </ul>
+    </div>
+  </body>
+</html>

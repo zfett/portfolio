@@ -1,0 +1,46 @@
+body {
+  width: 500px;
+  margin: 50px auto;
+  font-family: sans-serif;
+}
+
+#calc {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#calc label {
+  position: relative;
+  display: block;
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  line-height: 12px;
+  color: #555;
+}
+
+#calc input {
+  position: relative;
+  display: block;
+  margin: 8px 0;
+  width: calc(100% - 10px);
+}
+
+#calc button {
+  display: inline-block;
+  width: 100px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+hr {
+  border: 0;
+  background: #ccc;
+  height: 2px;
+  margin: 12px auto;
+}
+
+#result {
+  -webkit-appearance: none !important;
+  -moz-appearance: textfield !important;
+}
