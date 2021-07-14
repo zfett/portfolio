@@ -1,0 +1,6 @@
+@import url("main.css");
+
+section::before {
+  content: "";
+  display: none;
+}

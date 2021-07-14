@@ -46,10 +46,10 @@
         </ul>
         {% assign postCount = site.posts | size %}
         {% if postCount > 0 %}
-          <h3>Recent Briefs:</h3>
-          {% for brief in site.posts limit:5 %}
+          <h3>Recent Posts:</h3>
+          {% for post in site.posts limit:5 %}
           <ul>
-            <li>"<i>{{brief.title}}</i>" for {{brief.client}} &mdash; <a href="{{brief.url}}">View here.</a></li>
+            <li>"<i>{{post.title}}</i>" posted on {{ post.date | date_to_string: "ordinal", "US" }} &mdash; <a href="{{post.url}}">Read here.</a></li>
           </ul>
           {% endfor %}
         {% endif %}
