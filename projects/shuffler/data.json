@@ -1,0 +1,10 @@
+stage = [
+  {
+    "id": "ST_CAR_RIDE_INTRO", 
+    "desc": "You find yourself in the back seat of a car, just awoken from a deep nap. As you peer around, you notice familiar sights and sounds from your childhood.", 
+    "actions": [null], 
+    "exits": [null], 
+    "continue": true, 
+    "continueDest": "ST_CAR_ARRIVAL"
+  }
+];
